@@ -1,0 +1,115 @@
+---
+title: "Clase 1 - Introducción"
+---
+
+## Objetivos de Aprendizaje
+
+* Describir las diferencias entre Ciencia de Datos, Minería de Datos, Aprendizaje Automático e Inteligencia Artificial.
+
+* Definir Dato e Información.
+
+* Identificar y describir siete dimensiones de los datos.
+
+* Definir tipos de apertura de datos.
+
+* Analizar casos de uso e identificar las diferencias de los conceptos mencionados anteriormente.
+
+
+## Slides
+
+<iframe src="https://docs.google.com/presentation/d/139gwVdSPxBcQnNQWyB8DMhqrMZImjiRADi6f0t3ic3U/embed?start=false&loop=false&delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+
+## Ejercicios
+
+#### 1) Miren los siguientes tres videos sobre Ciencia de Datos y contesten en grupo las preguntas:
+
+**Duración total**: ~20 minutos
+
+##### Video 1: (1:30 minutos) 
+[BIG DATA: Oportunidades y desafíos](https://www.youtube.com/watch?v=Wt1r3DdeodQ)
+
+Charlar en grupo para contestar esta pregunta (5 minutos)
+
+  * ¿Cuál es el contexto y la oportunidad que menciona el especialista en el video con respecto de los datos?
+
+
+##### Video 2: (1:10 minutos) 
+[BIG DATA: Oportunidades y desafíos II](https://www.youtube.com/watch?v=clxOjep2TkU)
+
+Charlar en grupo para contestar estas preguntas (7 minutos)
+
+  * Este video es del 2017, ¿les parece que algo ha cambiado con respecto a la comunidad de organizaciones y/o empresas que aprovechan estas tecnologías?, 
+
+  * ¿Se les ocurren ejemplos de Argentina?
+
+
+##### Video 3: (2:00 minutos)
+[BIG DATA: Oportunidades y desafíos III](https://www.youtube.com/watch?v=OimifQK1Y7I)
+
+Charlar en grupo para contestar estas preguntas (5 minutos) 
+
+  * ¿Qué roles menciona dentro de lo que se conoce como Ciencia de Datos?
+  
+  * ¿Se ven reflejados en alguno de esos roles? 
+
+
+#### 2) Miren el video de este club deportivo que utiliza Ciencia de Datos, discutan en grupo para contestar las siguientes preguntas:
+
+**Duración**: ~15 minutos
+Video: (5 minutos): [Big Data y fútbol: así aprovecha el Real Madrid la tecnología](https://youtu.be/DXq30dvE0Xg)
+
+Charlar en grupo para contestar estas preguntas (10 minutos):
+
+¿Cómo toman los datos de los jugadores?
+
+Anoten algunos de los datos que se mencionan que se registran y alguna de las 
+
+¿Mencionan modelos?¿Cuáles?
+
+
+#### 3) Miren el video de esta empresa AgTech que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:
+
+**Duración:** ~15 minutos
+
+Video: [Kilimo](https://youtu.be/4lwa-6Li6t8)
+
+**Preguntas: **
+
+* ¿Cuál es el servicio que brindan? 
+
+* ¿Pueden identificar las 3 Vs del BigData en este servicio? mencione como está representada y porqué.
+  - Velocidad: 
+  - Volumen:  
+  - Variedad: 
+  
+* ¿Pueden identificar alguna V más? 
+
+* ¿Les parece que el servicio es exitoso?, ¿Por qué? 
+
+
+#### 4) Miren el video de esta municipalidad que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:
+
+**Duración:** ~15 minutos
+
+[Video](https://www.youtube.com/watch?v=_s7YOkX6C2Y)  
+
+**Preguntas:**
+
+* ¿Sobre qué servicio trabajaron?
+
+* ¿Pueden identificar las 3 Vs del BigData en este proyecto? mencione como está representada y porqué.
+  - Velocidad: 
+  - Volumen: 
+  - Variedad: 
+
+* ¿Pueden identificar alguna V más? 
+
+* ¿Se les ocurren problemas con estas características en sus trabajos?, mencione algunos ejemplos de ser así.
+
+
+::: {.callout-tip}
+## Documento compartido para resolver ejercicios
+Esta es una [plantilla del documento compartido](https://docs.google.com/document/d/1dIa92lHSONYKNWHcQTywbgrqOq8ROdJikg-1gIYyjhc/edit?usp=sharing) utilizando google docs.  Se debe generar un archivo por cada grupo.  Los grupos se recomiendan que sean entre dos a cuatro personas.
+::: 
