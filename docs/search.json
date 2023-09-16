@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introducción al manejo de grandes volúmenes de datos y datos no estructurados",
+    "section": "",
+    "text": "10 clases de tres horas sincrónicas por semana más horas de lectura de bibliografía obligatoria y práctica.\n\n\n\n\nYanina Bellini Saibene\n\n\n\n\nAnte la necesidad de cualquier persona que practique la ciencia de datos de manipular distintos volúmenes de datos, la gestión de los mismos cobra gran importancia. En este curso abordaremos el tema de la gestión de datos no estructurados principalmente desde el punto de vista teórico y práctico, incluyendo estudios de casos y actividades para brindarles las herramientas necesarias para continuar con su formación.\n\n\n\n\nIntroducción a Big Data y una serie de conceptos relacionados.\nDatos estructurados y no estructurados. Dimensiones de los datos. Información.\nAnalizar casos de uso de datos masivos y no estructurados en empresas e instituciones.\nConocer soluciones de software para el tratamiento de datos estructurados, no estructurados y masivos.\nEl lenguaje de programación R para el tratamiento de datos no estructurados.\nIntroducción a OpenRefine.\n\n\n\n\nLos objetivos de la materia son:\n\nAdquirir nociones sobre la generación y origen de los datos, formas de almacenamiento y su organización.\nDiferenciar datos estructurados de datos no estructurados.\nDefinir Big Data, Ciencia de Datos, Minería de Texto, Aprendizaje Automático e Inteligencia Artificial.\nIdentificar como estas disciplinas pueden influir en la vida de las personas, especialmente en el ámbito de las políticas públicas.\nManipular datos de texto con lenguaje R y OpenRefine.\nManipular datos de sensores remotos con R.\nManipular un conjunto de datos masivo con R.\nConsumir APIs utilizando R.\n\n\n\n\n\nR para ciencia de datos. de Hadley Wickham y Garrett Grolemund. Disponible es:\n\nSe solicitará a los estudiantes que instalen software libre y gratuito para la realización de las prácticas de la materia:\n\nR (lenguaje de programación)\nRStudio (IDE)\nOpenRefine\n\nOtros materiales y bibliografía serán sugeridos de acuerdo a las discusiones que se generen y el interés de las y los estudiantes.\n\n\n\nLa materia se llevará a cabo en clases sincrónicas e interactivas que incluyen exposiciones teóricas y ejercicios prácticos. Para cada clase se sugerirá bibliografía para leer y complementar los temas vistos como así también ejercicios de práctica si correspondiera. En el campus virtual están disponibles los materiales, clases grabadas y se abrirán foros para preguntas y discusión de los distintos temas. La comunicación se realizará por ese medio.\n\n\n\nRequisitos de aprobación: para aprobar la cursada será necesario entregar todos los trabajos prácticos que se presentan en las clases y los que se solicitan en el campus.\nVer la agenda de la materia con el cronograma de clases."
+  },
+  {
+    "objectID": "index.html#curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown",
+    "href": "index.html#curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown",
+    "title": "Introducción al manejo de grandes volúmenes de datos y datos no estructurados",
+    "section": "",
+    "text": "10 clases de tres horas sincrónicas por semana más horas de lectura de bibliografía obligatoria y práctica.\n\n\n\n\nYanina Bellini Saibene\n\n\n\n\nAnte la necesidad de cualquier persona que practique la ciencia de datos de manipular distintos volúmenes de datos, la gestión de los mismos cobra gran importancia. En este curso abordaremos el tema de la gestión de datos no estructurados principalmente desde el punto de vista teórico y práctico, incluyendo estudios de casos y actividades para brindarles las herramientas necesarias para continuar con su formación.\n\n\n\n\nIntroducción a Big Data y una serie de conceptos relacionados.\nDatos estructurados y no estructurados. Dimensiones de los datos. Información.\nAnalizar casos de uso de datos masivos y no estructurados en empresas e instituciones.\nConocer soluciones de software para el tratamiento de datos estructurados, no estructurados y masivos.\nEl lenguaje de programación R para el tratamiento de datos no estructurados.\nIntroducción a OpenRefine.\n\n\n\n\nLos objetivos de la materia son:\n\nAdquirir nociones sobre la generación y origen de los datos, formas de almacenamiento y su organización.\nDiferenciar datos estructurados de datos no estructurados.\nDefinir Big Data, Ciencia de Datos, Minería de Texto, Aprendizaje Automático e Inteligencia Artificial.\nIdentificar como estas disciplinas pueden influir en la vida de las personas, especialmente en el ámbito de las políticas públicas.\nManipular datos de texto con lenguaje R y OpenRefine.\nManipular datos de sensores remotos con R.\nManipular un conjunto de datos masivo con R.\nConsumir APIs utilizando R.\n\n\n\n\n\nR para ciencia de datos. de Hadley Wickham y Garrett Grolemund. Disponible es:\n\nSe solicitará a los estudiantes que instalen software libre y gratuito para la realización de las prácticas de la materia:\n\nR (lenguaje de programación)\nRStudio (IDE)\nOpenRefine\n\nOtros materiales y bibliografía serán sugeridos de acuerdo a las discusiones que se generen y el interés de las y los estudiantes.\n\n\n\nLa materia se llevará a cabo en clases sincrónicas e interactivas que incluyen exposiciones teóricas y ejercicios prácticos. Para cada clase se sugerirá bibliografía para leer y complementar los temas vistos como así también ejercicios de práctica si correspondiera. En el campus virtual están disponibles los materiales, clases grabadas y se abrirán foros para preguntas y discusión de los distintos temas. La comunicación se realizará por ese medio.\n\n\n\nRequisitos de aprobación: para aprobar la cursada será necesario entregar todos los trabajos prácticos que se presentan en las clases y los que se solicitan en el campus.\nVer la agenda de la materia con el cronograma de clases."
+  },
+  {
+    "objectID": "index.html#presentación-de-la-materia",
+    "href": "index.html#presentación-de-la-materia",
+    "title": "Introducción al manejo de grandes volúmenes de datos y datos no estructurados",
+    "section": "Presentación de la materia",
+    "text": "Presentación de la materia"
+  },
+  {
+    "objectID": "index.html#citar-como",
+    "href": "index.html#citar-como",
+    "title": "Introducción al manejo de grandes volúmenes de datos y datos no estructurados",
+    "section": "Citar como",
+    "text": "Citar como\nYanina Bellini Saibene."
+  },
+  {
+    "objectID": "clase1.html",
+    "href": "clase1.html",
+    "title": "Clase 1 - Introducción",
+    "section": "",
+    "text": "Describir las diferencias entre Ciencia de Datos, Minería de Datos, Aprendizaje Automático e Inteligencia Artificial.\nDefinir Dato e Información.\nIdentificar y describir siete dimensiones de los datos.\nDefinir tipos de apertura de datos.\nAnalizar casos de uso e identificar las diferencias de los conceptos mencionados anteriormente."
+  },
+  {
+    "objectID": "clase1.html#objetivos-de-aprendizaje",
+    "href": "clase1.html#objetivos-de-aprendizaje",
+    "title": "Clase 1 - Introducción",
+    "section": "",
+    "text": "Describir las diferencias entre Ciencia de Datos, Minería de Datos, Aprendizaje Automático e Inteligencia Artificial.\nDefinir Dato e Información.\nIdentificar y describir siete dimensiones de los datos.\nDefinir tipos de apertura de datos.\nAnalizar casos de uso e identificar las diferencias de los conceptos mencionados anteriormente."
+  },
+  {
+    "objectID": "clase1.html#slides",
+    "href": "clase1.html#slides",
+    "title": "Clase 1 - Introducción",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "clase1.html#ejercicios",
+    "href": "clase1.html#ejercicios",
+    "title": "Clase 1 - Introducción",
+    "section": "Ejercicios",
+    "text": "Ejercicios\n\n1) Miren los siguientes tres videos sobre Ciencia de Datos y contesten en grupo las preguntas:\nDuración total: ~20 minutos\n\nVideo 1: (1:30 minutos)\nBIG DATA: Oportunidades y desafíos\nCharlar en grupo para contestar esta pregunta (5 minutos)\n\n¿Cuál es el contexto y la oportunidad que menciona el especialista en el video con respecto de los datos?\n\n\n\nVideo 2: (1:10 minutos)\nBIG DATA: Oportunidades y desafíos II\nCharlar en grupo para contestar estas preguntas (7 minutos)\n\nEste video es del 2017, ¿les parece que algo ha cambiado con respecto a la comunidad de organizaciones y/o empresas que aprovechan estas tecnologías?,\n¿Se les ocurren ejemplos de Argentina?\n\n\n\nVideo 3: (2:00 minutos)\nBIG DATA: Oportunidades y desafíos III\nCharlar en grupo para contestar estas preguntas (5 minutos)\n\n¿Qué roles menciona dentro de lo que se conoce como Ciencia de Datos?\n¿Se ven reflejados en alguno de esos roles?\n\n\n\n\n2) Miren el video de este club deportivo que utiliza Ciencia de Datos, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos Video: (5 minutos): Big Data y fútbol: así aprovecha el Real Madrid la tecnología\nCharlar en grupo para contestar estas preguntas (10 minutos):\n¿Cómo toman los datos de los jugadores?\nAnoten algunos de los datos que se mencionan que se registran y alguna de las\n¿Mencionan modelos?¿Cuáles?\n\n\n3) Miren el video de esta empresa AgTech que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos\nVideo: Kilimo\nPreguntas: \n\n¿Cuál es el servicio que brindan?\n¿Pueden identificar las 3 Vs del BigData en este servicio? mencione como está representada y porqué.\n\nVelocidad:\nVolumen:\n\nVariedad:\n\n¿Pueden identificar alguna V más?\n¿Les parece que el servicio es exitoso?, ¿Por qué?\n\n\n\n4) Miren el video de esta municipalidad que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos\nVideo\nPreguntas:\n\n¿Sobre qué servicio trabajaron?\n¿Pueden identificar las 3 Vs del BigData en este proyecto? mencione como está representada y porqué.\n\nVelocidad:\nVolumen:\nVariedad:\n\n¿Pueden identificar alguna V más?\n¿Se les ocurren problemas con estas características en sus trabajos?, mencione algunos ejemplos de ser así.\n\n\n\n\n\n\n\nDocumento compartido para resolver ejercicios\n\n\n\nEsta es una plantilla del documento compartido utilizando google docs. Se debe generar un archivo por cada grupo. Los grupos se recomiendan que sean entre dos a cuatro personas."
+  }
+]
