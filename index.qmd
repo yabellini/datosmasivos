@@ -1,0 +1,70 @@
+---
+title: "Introducción al manejo de grandes volúmenes de datos y datos no estructurados"
+---
+
+## Curso de la Diplomatura en Ciencias de Datos Aplicada a Políticas Públcias de la Universidad Nacional Guillermo Brown
+
+### Cantidad de horas semanales y totales
+
+10 clases de tres horas sincrónicas por semana más horas de lectura de bibliografía obligatoria y práctica.
+
+### Nombres de las/los integrantes del equipo docente
+
+-   Yanina Bellini Saibene
+
+
+### Fundamentación
+
+Ante la necesidad de cualquier persona que practique la ciencia de datos de manipular distintos volúmenes de datos, la gestión de los mismos cobra gran importancia. En este curso abordaremos el tema de la gestión de datos no estructurados principalmente desde el punto de vista teórico y práctico, incluyendo estudios de casos y actividades para brindarles las herramientas necesarias para continuar con su formación.
+
+### Programa sintético
+
+- Introducción a Big Data y una serie de conceptos relacionados.
+- Datos estructurados y no estructurados. Dimensiones de los datos. Información. 
+- Analizar casos de uso de datos masivos y no estructurados en empresas e instituciones.
+- Conocer soluciones de software para el tratamiento de datos estructurados, no estructurados y masivos.
+- El lenguaje de programación R para el tratamiento de datos no estructurados.
+- Introducción a OpenRefine.   
+
+### Objetivos
+
+Los objetivos de la materia son:
+
+-   Adquirir nociones sobre la generación y origen de los datos, formas de almacenamiento y su organización.
+-   Diferenciar datos estructurados de datos no estructurados.
+-   Definir Big Data, Ciencia de Datos, Minería de Texto, Aprendizaje Automático e Inteligencia Artificial. 
+-   Identificar como estas disciplinas pueden influir en la vida de las personas, especialmente en el ámbito de las políticas públicas.
+-   Manipular datos de texto con lenguaje R y OpenRefine.
+-   Manipular datos de sensores remotos con R.
+-   Manipular un conjunto de datos masivo con R.
+
+
+### Bibliografía y recursos audiovisuales
+
+-   [R para ciencia de datos](https://es.r4ds.hadley.nz/). de Hadley Wickham y Garrett Grolemund. Disponible es:
+
+
+Se solicitará a los estudiantes que instalen software libre y gratuito para la realización de las prácticas de la materia:
+
+-   [R (lenguaje de programación)](https://www.r-project.org/)
+
+-   [RStudio (IDE)](https://www.rstudio.com/products/rstudio/)
+
+-   [OpenRefine](https://openrefine.org/)
+
+Otros materiales y bibliografía serán sugeridos de acuerdo a las discusiones que se generen y el interés de las y los estudiantes.
+
+### Metodología
+
+La materia se llevará a cabo en clases sincrónicas e interactivas que incluyen exposiciones teóricas y ejercicios prácticos. Para cada clase se sugerirá bibliografía para leer y complementar los temas vistos como así también ejercicios de práctica si correspondiera. En el campus virtual están disponibles los materiales, clases grabadas y se abrirán foros para preguntas y discusión de los distintos temas. La comunicación se realizará por ese medio.
+
+### Evaluación
+
+**Requisitos de aprobación:** para aprobar la cursada será necesario entregar todos los trabajos prácticos que se presentan en las clases y los que se solicitan en el campus.
+
+Ver la [agenda](schedule.html) de la materia con el cronograma de clases.
+
+## Citar como 
+
+
+Yanina Bellini Saibene. 
