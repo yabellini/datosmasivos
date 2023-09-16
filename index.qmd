@@ -12,7 +12,6 @@ title: "Introducción al manejo de grandes volúmenes de datos y datos no estruc
 
 -   Yanina Bellini Saibene
 
-
 ### Fundamentación
 
 Ante la necesidad de cualquier persona que practique la ciencia de datos de manipular distintos volúmenes de datos, la gestión de los mismos cobra gran importancia. En este curso abordaremos el tema de la gestión de datos no estructurados principalmente desde el punto de vista teórico y práctico, incluyendo estudios de casos y actividades para brindarles las herramientas necesarias para continuar con su formación.
@@ -37,6 +36,7 @@ Los objetivos de la materia son:
 -   Manipular datos de texto con lenguaje R y OpenRefine.
 -   Manipular datos de sensores remotos con R.
 -   Manipular un conjunto de datos masivo con R.
+-   Consumir APIs utilizando R.
 
 
 ### Bibliografía y recursos audiovisuales
@@ -63,6 +63,12 @@ La materia se llevará a cabo en clases sincrónicas e interactivas que incluyen
 **Requisitos de aprobación:** para aprobar la cursada será necesario entregar todos los trabajos prácticos que se presentan en las clases y los que se solicitan en el campus.
 
 Ver la [agenda](schedule.html) de la materia con el cronograma de clases.
+
+## Presentación de la materia
+
+<iframe src="https://docs.google.com/presentation/d/1mgEBpE_UnQ7Fgud3ty73lAzw7NZmkRUOlr_BnQ7RS1Q/embed?start=false&loop=false&delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
 
 ## Citar como 
 
