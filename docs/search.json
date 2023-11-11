@@ -53,6 +53,62 @@
     "href": "clase1.html#ejercicios",
     "title": "Clase 1 - Introducción",
     "section": "Ejercicios",
-    "text": "Ejercicios\n\n1) Miren los siguientes tres videos sobre Ciencia de Datos y contesten en grupo las preguntas:\nDuración total: ~20 minutos\n\nVideo 1: (1:30 minutos)\nBIG DATA: Oportunidades y desafíos\nCharlar en grupo para contestar esta pregunta (5 minutos)\n\n¿Cuál es el contexto y la oportunidad que menciona el especialista en el video con respecto de los datos?\n\n\n\nVideo 2: (1:10 minutos)\nBIG DATA: Oportunidades y desafíos II\nCharlar en grupo para contestar estas preguntas (7 minutos)\n\nEste video es del 2017, ¿les parece que algo ha cambiado con respecto a la comunidad de organizaciones y/o empresas que aprovechan estas tecnologías?,\n¿Se les ocurren ejemplos de Argentina?\n\n\n\nVideo 3: (2:00 minutos)\nBIG DATA: Oportunidades y desafíos III\nCharlar en grupo para contestar estas preguntas (5 minutos)\n\n¿Qué roles menciona dentro de lo que se conoce como Ciencia de Datos?\n¿Se ven reflejados en alguno de esos roles?\n\n\n\n\n2) Miren el video de este club deportivo que utiliza Ciencia de Datos, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos Video: (5 minutos): Big Data y fútbol: así aprovecha el Real Madrid la tecnología\nCharlar en grupo para contestar estas preguntas (10 minutos):\n¿Cómo toman los datos de los jugadores?\nAnoten algunos de los datos que se mencionan que se registran y alguna de las\n¿Mencionan modelos?¿Cuáles?\n\n\n3) Miren el video de esta empresa AgTech que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos\nVideo: Kilimo\nPreguntas: \n\n¿Cuál es el servicio que brindan?\n¿Pueden identificar las 3 Vs del BigData en este servicio? mencione como está representada y porqué.\n\nVelocidad:\nVolumen:\n\nVariedad:\n\n¿Pueden identificar alguna V más?\n¿Les parece que el servicio es exitoso?, ¿Por qué?\n\n\n\n4) Miren el video de esta municipalidad que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos\nVideo\nPreguntas:\n\n¿Sobre qué servicio trabajaron?\n¿Pueden identificar las 3 Vs del BigData en este proyecto? mencione como está representada y porqué.\n\nVelocidad:\nVolumen:\nVariedad:\n\n¿Pueden identificar alguna V más?\n¿Se les ocurren problemas con estas características en sus trabajos?, mencione algunos ejemplos de ser así.\n\n\n\n\n\n\n\nDocumento compartido para resolver ejercicios\n\n\n\nEsta es una plantilla del documento compartido utilizando google docs. Se debe generar un archivo por cada grupo. Los grupos se recomiendan que sean entre dos a cuatro personas."
+    "text": "Ejercicios\n\n1) Miren los siguientes tres videos sobre Ciencia de Datos y contesten en grupo las preguntas:\nDuración total: ~20 minutos\n\nVideo 1: (1:30 minutos)\nBIG DATA: Oportunidades y desafíos\nCharlar en grupo para contestar esta pregunta (5 minutos)\n\n¿Cuál es el contexto y la oportunidad que menciona el especialista en el video con respecto de los datos?\n\n\n\nVideo 2: (1:10 minutos)\nBIG DATA: Oportunidades y desafíos II\nCharlar en grupo para contestar estas preguntas (7 minutos)\n\nEste video es del 2017, ¿les parece que algo ha cambiado con respecto a la comunidad de organizaciones y/o empresas que aprovechan estas tecnologías?,\n¿Se les ocurren ejemplos de Argentina?\n\n\n\nVideo 3: (2:00 minutos)\nBIG DATA: Oportunidades y desafíos III\nCharlar en grupo para contestar estas preguntas (5 minutos)\n\n¿Qué roles menciona dentro de lo que se conoce como Ciencia de Datos?\n¿Se ven reflejados en alguno de esos roles?\n\n\n\n\n3) Miren el video de esta empresa AgTech que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos\nVideo: Kilimo\nPreguntas: \n\n¿Cuál es el servicio que brindan?\n¿Pueden identificar las 3 Vs del BigData en este servicio? mencione como está representada y porqué.\n\nVelocidad:\nVolumen:\n\nVariedad:\n\n¿Pueden identificar alguna V más?\n¿Les parece que el servicio es exitoso?, ¿Por qué?\n\n\n\n\n\n\n\nDocumento compartido para resolver ejercicios\n\n\n\nEsta es una plantilla del documento compartido utilizando google docs. Se debe generar un archivo por cada grupo. Los grupos se recomiendan que sean entre dos a cuatro personas."
+  },
+  {
+    "objectID": "clase2.html",
+    "href": "clase2.html",
+    "title": "Clase 2 - Tipos de datos",
+    "section": "",
+    "text": "Definir Big Data.\nMencionar y definir diferentes fuentes de datos de big data.\nIdentificar y explicar las diferentes etapas de un proceso de ciencias de datos.\nExplicar de forma general el proceso de aprendizaje automatico supervisado y aprendizaje automatico no supervisado.\nDefinir e identificar datos estructurados y datos no estructurados.\nDescribir tres propiedades de los datos estructurados ordenados.\nDescribir cinco sintomas de datos desordenados.\nAnalizar casos de uso e identificar al menos tres caracteristicas asociadas con big data."
+  },
+  {
+    "objectID": "clase2.html#objetivos-de-aprendizaje",
+    "href": "clase2.html#objetivos-de-aprendizaje",
+    "title": "Clase 2 - Tipos de datos",
+    "section": "",
+    "text": "Definir Big Data.\nMencionar y definir diferentes fuentes de datos de big data.\nIdentificar y explicar las diferentes etapas de un proceso de ciencias de datos.\nExplicar de forma general el proceso de aprendizaje automatico supervisado y aprendizaje automatico no supervisado.\nDefinir e identificar datos estructurados y datos no estructurados.\nDescribir tres propiedades de los datos estructurados ordenados.\nDescribir cinco sintomas de datos desordenados.\nAnalizar casos de uso e identificar al menos tres caracteristicas asociadas con big data."
+  },
+  {
+    "objectID": "clase2.html#slides",
+    "href": "clase2.html#slides",
+    "title": "Clase 2 - Tipos de datos",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "clase2.html#ejercicios",
+    "href": "clase2.html#ejercicios",
+    "title": "Clase 2 - Tipos de datos",
+    "section": "Ejercicios",
+    "text": "Ejercicios\n\n1) Miren el video de esta municipalidad que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos\nVideo\nPreguntas:\n\n¿Sobre qué servicio trabajaron?\n¿Pueden identificar las 3 Vs del BigData en este proyecto? mencione como está representada y porqué.\n\nVelocidad:\nVolumen:\nVariedad:\n\n¿Pueden identificar alguna V más?\n¿Se les ocurren problemas con estas características en sus trabajos?, mencione algunos ejemplos de ser así.\n\n\n\n2) Miren el video de este club deportivo que utiliza Ciencia de Datos, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos Video: (5 minutos): Big Data y fútbol: así aprovecha el Real Madrid la tecnología\nCharlar en grupo para contestar estas preguntas (10 minutos):\n¿Cómo toman los datos de los jugadores?\nAnoten algunos de los datos que se mencionan que se registran\n¿Mencionan modelos?¿Cuáles?\nDe acuerdo a lo que vimos en la teoría, ¿pueden indicar si son modelos de predicción o clasificación? ¿pueden indicar si podrían utilizar aprendizaje supervisado o no supervisado?\n\n\n3) Crear una estructura tidy\nDuración: ~10 minutos\nTengo que recolectar datos de lluvias de diversas localidades, necesito almacenar la latitud y longitud del lugar donde está el pluviómetro, el nombre del lugar y el nombre y teléfono del responsable de tomar los datos.  También debo almacenar la fecha y la cantidad de mm de lluvia precipitados en esa fecha.\n\n¿Cuántas tablas debería generar?\nCuáles serían las columnas (estructura) del conjunto o conjuntos de datos para poder almacenar esta información de forma tidy. \n\n\n\nExtra: 4) Ordenen el siguiente conjunto de datos de forma tidy u ordenada.\nDuración: ~10 minutos\nLa columna lote hace referencia al nombre del lote en un campo, contiene tres columnas por cada año con los valores promedio, máximo y mínimo del porcentaje de superficie cosechada en cada lote.\nGenerar una estructura tidy de este conjunto de datos.\n\n\n\n\n\n\n\n\n\n\n\n\n\nLote\n2009 avg\n2009 max\n2009 min\n2010 avg\n2010 max\n2010 min\n\n\nA\n-\n-\n-\n-\n-\n-\n\n\n18\n&gt;95%\n&gt;95%\n&gt;95%\n&gt;95%\n&gt;95%\n&gt;95%\n\n\nLa loma\n77%\n89%\n3%\n75%\n88%\n3%\n\n\nA2\n25%\n35%\n19%\n25%\n35%\n19%"
+  },
+  {
+    "objectID": "clase3.html",
+    "href": "clase3.html",
+    "title": "Clase 3 - Text Mining",
+    "section": "",
+    "text": "Explicar que es SQL y que lo diferencia de NOSQL.\nMencionar diferentes productos de software para administrar datos SQL y NOSQL.\nIdentificar y explicar cuatro soluciones de base de datos noSQL.\nExplicar el concepto de “la nube” y mencionar productos para trabajar grandes datos en la nube.\nDefinir Text Mining/Analisis de Texto.\nDefinir bolsa de palabras, análisis y etiquetado sintáctico, asociación de palabras y analisis de sentimiento.\nIdentificar las tecnicas de mineria de texto en diferentes casos de uso."
+  },
+  {
+    "objectID": "clase3.html#objetivos-de-aprendizaje",
+    "href": "clase3.html#objetivos-de-aprendizaje",
+    "title": "Clase 3 - Text Mining",
+    "section": "",
+    "text": "Explicar que es SQL y que lo diferencia de NOSQL.\nMencionar diferentes productos de software para administrar datos SQL y NOSQL.\nIdentificar y explicar cuatro soluciones de base de datos noSQL.\nExplicar el concepto de “la nube” y mencionar productos para trabajar grandes datos en la nube.\nDefinir Text Mining/Analisis de Texto.\nDefinir bolsa de palabras, análisis y etiquetado sintáctico, asociación de palabras y analisis de sentimiento.\nIdentificar las tecnicas de mineria de texto en diferentes casos de uso."
+  },
+  {
+    "objectID": "clase3.html#slides",
+    "href": "clase3.html#slides",
+    "title": "Clase 3 - Text Mining",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "clase3.html#ejercicios",
+    "href": "clase3.html#ejercicios",
+    "title": "Clase 3 - Text Mining",
+    "section": "Ejercicios",
+    "text": "Ejercicios\n\n1) Usar una herramienta en la nube\nDuración: ~10 minutos\n\nIr a la web: https://earthengine.google.com/timelapse/ \nPoner el nombre del lugar donde viven y ver cómo ha cambiado con los años.\nIr a la web: https://global-surface-water.appspot.com/map \nBuscar el lugar donde viven y vean como se comporta el agua en superficie en los alrrededores.\n\n\n\n2) Generando nubes de palabras\nDuración: ~12 minutos\n\nIngresara la web: https://wordart.com/\nTomar los datos de este archivo y generar una nube de palabras: https://docs.google.com/spreadsheets/d/1POHmFKShKbSjUfrRECiZHFTHH_ObIO1zXMsN8dgGp0s/edit?usp=sharing\nIngresar en: https://www.nubedepalabras.es/\nUtilizando el mismo archivo, generar una nube de palabras que tenga la forma de una letra R.\nPeguen aquí debajo las nubes de palabras que generaron en el lugar de cada sala\n\n\n\n3) Instalando el software para trabajar con texto\nDuración: ~20 minutos\n\nInstalando OpenRefine\n\na.1) Ir a https://openrefine.org/download.html y seleccionar la versión correcta para tu sistema operativo.\na.2) Seguir las instrucciones en la página para instalar y dejar funcionando OpenRefine.\n\nInstalando Tabula\n\nb.1) Ir a la página: https://tabula.technology/\nb.2) Seleccionar la versión para instalar de acuerdo al Sistema Operativo (windows, Mac o Linux). Se debe descargar un .zip.\nb.3) Extraer el archivo zip en una carpeta de tu disco rígido que se llama Tabula.\nb.4) Dentro de la carpeta ejecutar el archivo Tabula.exe, si se instaló de forma correcta un navegador de internet se tiene que abrir con el Tabula funcionando.\nb.5) Si el navegador no se abre solo, ir a nuestro navegador de internet y escribir esta dirección: http://localhost:8080 . Ahí está Tabula!\n\nInstalando los paquetes en R\n\nc.1) Abrir R Studio\nc.2) Instalar los siguientes paquetes (esto puede llevar un tiempo así que no te preocupes si tarda un rato):\n\ntidyverse (si ya lo tienen no lo instalen)\nreadr (si ya lo tienen no lo instalen)\ntidytext\nwordcloud2\ntm"
   }
 ]

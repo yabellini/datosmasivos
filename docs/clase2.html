@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Datos Masivos - Introducción al manejo de grandes volúmenes de datos y datos no estructurados</title>
+<title>Datos Masivos - Clase 2 - Tipos de datos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./clase2.html">Clase 2 - Tipos de Datos</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -119,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./clase2.html" class="sidebar-item-text sidebar-link">
+  <a href="./clase2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Clase 2 - Tipos de Datos</span></a>
   </div>
 </li>
@@ -187,19 +187,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown" id="toc-curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown" class="nav-link active" data-scroll-target="#curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown">Curso de la Diplomatura en Ciencias de Datos Aplicada a Políticas Públcias de la Universidad Nacional Guillermo Brown</a>
-  <ul class="collapse">
-  <li><a href="#cantidad-de-horas-semanales-y-totales" id="toc-cantidad-de-horas-semanales-y-totales" class="nav-link" data-scroll-target="#cantidad-de-horas-semanales-y-totales">Cantidad de horas semanales y totales</a></li>
-  <li><a href="#nombres-de-laslos-integrantes-del-equipo-docente" id="toc-nombres-de-laslos-integrantes-del-equipo-docente" class="nav-link" data-scroll-target="#nombres-de-laslos-integrantes-del-equipo-docente">Nombres de las/los integrantes del equipo docente</a></li>
-  <li><a href="#fundamentación" id="toc-fundamentación" class="nav-link" data-scroll-target="#fundamentación">Fundamentación</a></li>
-  <li><a href="#programa-sintético" id="toc-programa-sintético" class="nav-link" data-scroll-target="#programa-sintético">Programa sintético</a></li>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos">Objetivos</a></li>
-  <li><a href="#bibliografía-y-recursos-audiovisuales" id="toc-bibliografía-y-recursos-audiovisuales" class="nav-link" data-scroll-target="#bibliografía-y-recursos-audiovisuales">Bibliografía y recursos audiovisuales</a></li>
-  <li><a href="#metodología" id="toc-metodología" class="nav-link" data-scroll-target="#metodología">Metodología</a></li>
-  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación">Evaluación</a></li>
-  </ul></li>
-  <li><a href="#presentación-de-la-materia" id="toc-presentación-de-la-materia" class="nav-link" data-scroll-target="#presentación-de-la-materia">Presentación de la materia</a></li>
-  <li><a href="#citar-como" id="toc-citar-como" class="nav-link" data-scroll-target="#citar-como">Citar como</a></li>
+  <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje" class="nav-link active" data-scroll-target="#objetivos-de-aprendizaje">Objetivos de Aprendizaje</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -208,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción al manejo de grandes volúmenes de datos y datos no estructurados</h1>
+<h1 class="title">Clase 2 - Tipos de datos</h1>
 </div>
 
 
@@ -223,80 +213,128 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown" class="level2">
-<h2 class="anchored" data-anchor-id="curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown">Curso de la Diplomatura en Ciencias de Datos Aplicada a Políticas Públcias de la Universidad Nacional Guillermo Brown</h2>
-<section id="cantidad-de-horas-semanales-y-totales" class="level3">
-<h3 class="anchored" data-anchor-id="cantidad-de-horas-semanales-y-totales">Cantidad de horas semanales y totales</h3>
-<p>10 clases de tres horas sincrónicas por semana más horas de lectura de bibliografía obligatoria y práctica.</p>
-</section>
-<section id="nombres-de-laslos-integrantes-del-equipo-docente" class="level3">
-<h3 class="anchored" data-anchor-id="nombres-de-laslos-integrantes-del-equipo-docente">Nombres de las/los integrantes del equipo docente</h3>
+<section id="objetivos-de-aprendizaje" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-aprendizaje">Objetivos de Aprendizaje</h2>
 <ul>
-<li>Yanina Bellini Saibene</li>
+<li><p>Definir Big Data.</p></li>
+<li><p>Mencionar y definir diferentes fuentes de datos de big data.</p></li>
+<li><p>Identificar y explicar las diferentes etapas de un proceso de ciencias de datos.</p></li>
+<li><p>Explicar de forma general el proceso de aprendizaje automatico supervisado y aprendizaje automatico no supervisado.</p></li>
+<li><p>Definir e identificar datos estructurados y datos no estructurados.</p></li>
+<li><p>Describir tres propiedades de los datos estructurados ordenados.</p></li>
+<li><p>Describir cinco sintomas de datos desordenados.</p></li>
+<li><p>Analizar casos de uso e identificar al menos tres caracteristicas asociadas con big data.</p></li>
 </ul>
 </section>
-<section id="fundamentación" class="level3">
-<h3 class="anchored" data-anchor-id="fundamentación">Fundamentación</h3>
-<p>Ante la necesidad de cualquier persona que practique la ciencia de datos de manipular distintos volúmenes de datos, la gestión de los mismos cobra gran importancia. En este curso abordaremos el tema de la gestión de datos no estructurados principalmente desde el punto de vista teórico y práctico, incluyendo estudios de casos y actividades para brindarles las herramientas necesarias para continuar con su formación.</p>
-</section>
-<section id="programa-sintético" class="level3">
-<h3 class="anchored" data-anchor-id="programa-sintético">Programa sintético</h3>
-<ul>
-<li>Introducción a Big Data y una serie de conceptos relacionados.</li>
-<li>Datos estructurados y no estructurados. Dimensiones de los datos. Información.</li>
-<li>Analizar casos de uso de datos masivos y no estructurados en empresas e instituciones.</li>
-<li>Conocer soluciones de software para el tratamiento de datos estructurados, no estructurados y masivos.</li>
-<li>El lenguaje de programación R para el tratamiento de datos no estructurados.</li>
-<li>Introducción a OpenRefine.</li>
-</ul>
-</section>
-<section id="objetivos" class="level3">
-<h3 class="anchored" data-anchor-id="objetivos">Objetivos</h3>
-<p>Los objetivos de la materia son:</p>
-<ul>
-<li>Adquirir nociones sobre la generación y origen de los datos, formas de almacenamiento y su organización.</li>
-<li>Diferenciar datos estructurados de datos no estructurados.</li>
-<li>Definir Big Data, Ciencia de Datos, Minería de Texto, Aprendizaje Automático e Inteligencia Artificial.</li>
-<li>Identificar como estas disciplinas pueden influir en la vida de las personas, especialmente en el ámbito de las políticas públicas.</li>
-<li>Manipular datos de texto con lenguaje R y OpenRefine.</li>
-<li>Manipular datos de sensores remotos con R.</li>
-<li>Manipular un conjunto de datos masivo con R.</li>
-<li>Consumir APIs utilizando R.</li>
-</ul>
-</section>
-<section id="bibliografía-y-recursos-audiovisuales" class="level3">
-<h3 class="anchored" data-anchor-id="bibliografía-y-recursos-audiovisuales">Bibliografía y recursos audiovisuales</h3>
-<ul>
-<li><a href="https://es.r4ds.hadley.nz/">R para ciencia de datos</a>. de Hadley Wickham y Garrett Grolemund. Disponible es:</li>
-</ul>
-<p>Se solicitará a los estudiantes que instalen software libre y gratuito para la realización de las prácticas de la materia:</p>
-<ul>
-<li><p><a href="https://www.r-project.org/">R (lenguaje de programación)</a></p></li>
-<li><p><a href="https://www.rstudio.com/products/rstudio/">RStudio (IDE)</a></p></li>
-<li><p><a href="https://openrefine.org/">OpenRefine</a></p></li>
-</ul>
-<p>Otros materiales y bibliografía serán sugeridos de acuerdo a las discusiones que se generen y el interés de las y los estudiantes.</p>
-</section>
-<section id="metodología" class="level3">
-<h3 class="anchored" data-anchor-id="metodología">Metodología</h3>
-<p>La materia se llevará a cabo en clases sincrónicas e interactivas que incluyen exposiciones teóricas y ejercicios prácticos. Para cada clase se sugerirá bibliografía para leer y complementar los temas vistos como así también ejercicios de práctica si correspondiera. En el campus virtual están disponibles los materiales, clases grabadas y se abrirán foros para preguntas y discusión de los distintos temas. La comunicación se realizará por ese medio.</p>
-</section>
-<section id="evaluación" class="level3">
-<h3 class="anchored" data-anchor-id="evaluación">Evaluación</h3>
-<p><strong>Requisitos de aprobación:</strong> para aprobar la cursada será necesario entregar todos los trabajos prácticos que se presentan en las clases y los que se solicitan en el campus.</p>
-<p>Ver la <a href="schedule.html">agenda</a> de la materia con el cronograma de clases.</p>
-</section>
-</section>
-<section id="presentación-de-la-materia" class="level2">
-<h2 class="anchored" data-anchor-id="presentación-de-la-materia">Presentación de la materia</h2>
-<iframe src="https://docs.google.com/presentation/d/1mgEBpE_UnQ7Fgud3ty73lAzw7NZmkRUOlr_BnQ7RS1Q/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<iframe src="https://docs.google.com/presentation/d/1ElbJdEJAtRs1BlEfLUwJaYbODDvVkEbxWbIKcR9ZYjY/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 </iframe>
 </section>
-<section id="citar-como" class="level2">
-<h2 class="anchored" data-anchor-id="citar-como">Citar como</h2>
-<p>Yanina Bellini Saibene.</p>
+<section id="ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<section id="miren-el-video-de-esta-municipalidad-que-utiliza-bigdata-discutan-en-grupo-para-contestar-las-siguientes-preguntas" class="level4">
+<h4 class="anchored" data-anchor-id="miren-el-video-de-esta-municipalidad-que-utiliza-bigdata-discutan-en-grupo-para-contestar-las-siguientes-preguntas">1) Miren el video de esta municipalidad que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:</h4>
+<p><strong>Duración:</strong> ~15 minutos</p>
+<p><a href="https://www.youtube.com/watch?v=_s7YOkX6C2Y">Video</a></p>
+<p><strong>Preguntas:</strong></p>
+<ul>
+<li><p>¿Sobre qué servicio trabajaron?</p></li>
+<li><p>¿Pueden identificar las 3 Vs del BigData en este proyecto? mencione como está representada y porqué.</p>
+<ul>
+<li>Velocidad:</li>
+<li>Volumen:</li>
+<li>Variedad:</li>
+</ul></li>
+<li><p>¿Pueden identificar alguna V más?</p></li>
+<li><p>¿Se les ocurren problemas con estas características en sus trabajos?, mencione algunos ejemplos de ser así.</p></li>
+</ul>
+</section>
+<section id="miren-el-video-de-este-club-deportivo-que-utiliza-ciencia-de-datos-discutan-en-grupo-para-contestar-las-siguientes-preguntas" class="level4">
+<h4 class="anchored" data-anchor-id="miren-el-video-de-este-club-deportivo-que-utiliza-ciencia-de-datos-discutan-en-grupo-para-contestar-las-siguientes-preguntas">2) Miren el video de este club deportivo que utiliza Ciencia de Datos, discutan en grupo para contestar las siguientes preguntas:</h4>
+<p><strong>Duración</strong>: ~15 minutos Video: (5 minutos): <a href="https://youtu.be/DXq30dvE0Xg">Big Data y fútbol: así aprovecha el Real Madrid la tecnología</a></p>
+<p>Charlar en grupo para contestar estas preguntas (10 minutos):</p>
+<p>¿Cómo toman los datos de los jugadores?</p>
+<p>Anoten algunos de los datos que se mencionan que se registran</p>
+<p>¿Mencionan modelos?¿Cuáles?</p>
+<p>De acuerdo a lo que vimos en la teoría, ¿pueden indicar si son modelos de predicción o clasificación? ¿pueden indicar si podrían utilizar aprendizaje supervisado o no supervisado?</p>
+</section>
+<section id="crear-una-estructura-tidy" class="level4">
+<h4 class="anchored" data-anchor-id="crear-una-estructura-tidy">3) Crear una estructura tidy</h4>
+<p><strong>Duración:</strong> ~10 minutos</p>
+<p>Tengo que recolectar datos de lluvias de diversas localidades, necesito almacenar la latitud y longitud del lugar donde está el pluviómetro, el nombre del lugar y el nombre y teléfono del responsable de tomar los datos.&nbsp; También debo almacenar la fecha y la cantidad de mm de lluvia precipitados en esa fecha.</p>
+<ol type="1">
+<li><p>¿Cuántas tablas debería generar?</p></li>
+<li><p>Cuáles serían las columnas (estructura) del conjunto o conjuntos de datos para poder almacenar esta información de forma tidy.&nbsp;</p></li>
+</ol>
+</section>
+<section id="extra-4-ordenen-el-siguiente-conjunto-de-datos-de-forma-tidy-u-ordenada." class="level4">
+<h4 class="anchored" data-anchor-id="extra-4-ordenen-el-siguiente-conjunto-de-datos-de-forma-tidy-u-ordenada.">Extra: 4) Ordenen el siguiente conjunto de datos de forma tidy u ordenada.</h4>
+<p><strong>Duración:</strong> ~10 minutos</p>
+<p>La columna lote hace referencia al nombre del lote en un campo, contiene tres columnas por cada año con los valores promedio, máximo y mínimo del porcentaje de superficie cosechada en cada lote.</p>
+<p>Generar una estructura tidy de este conjunto de datos.<br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Lote</td>
+<td>2009 avg</td>
+<td>2009 max</td>
+<td>2009 min</td>
+<td>2010 avg</td>
+<td>2010 max</td>
+<td>2010 min</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>18</td>
+<td>&gt;95%</td>
+<td>&gt;95%</td>
+<td>&gt;95%</td>
+<td>&gt;95%</td>
+<td>&gt;95%</td>
+<td>&gt;95%</td>
+</tr>
+<tr class="even">
+<td>La loma</td>
+<td>77%</td>
+<td>89%</td>
+<td>3%</td>
+<td>75%</td>
+<td>88%</td>
+<td>3%</td>
+</tr>
+<tr class="odd">
+<td>A2</td>
+<td>25%</td>
+<td>35%</td>
+<td>19%</td>
+<td>25%</td>
+<td>35%</td>
+<td>19%</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
