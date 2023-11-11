@@ -1,0 +1,96 @@
+---
+title: "Clase 4 - "
+---
+
+## Objetivos de Aprendizaje
+
+-   Explicar que es SQL y que lo diferencia de NOSQL.
+
+-   Mencionar diferentes productos de software para administrar datos SQL y NOSQL.
+
+-   Identificar y explicar cuatro soluciones de base de datos noSQL.
+
+-   Explicar el concepto de "la nube" y mencionar productos para trabajar grandes datos en la nube.
+
+-   Definir Text Mining/Analisis de Texto.
+
+-   Definir bolsa de palabras, análisis y etiquetado sintáctico, asociación de palabras y analisis de sentimiento.
+
+- Identificar las tecnicas de mineria de texto en diferentes casos de uso.
+
+## Slides
+
+<iframe src="https://docs.google.com/presentation/d/1VIYEe8IYNolCswoKjZ_3B7Qqr4qLe8E9gL4MjYfsOQA/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+
+</iframe>
+
+## Ejercicios
+
+#### 1) Usar una herramienta en la nube
+
+**Duración:** ~10 minutos
+
+1.  Ir a la web: <https://earthengine.google.com/timelapse/> 
+
+2.  Poner el nombre del lugar donde viven y ver cómo ha cambiado con los años.
+
+
+1.  Ir a la web: <https://global-surface-water.appspot.com/map> 
+
+2.  Buscar el lugar donde viven y vean como se comporta el agua en superficie en los alrrededores.
+
+
+#### 2) Generando nubes de palabras
+
+**Duración:** ~12 minutos
+
+1. Ingresara la web: <https://wordart.com/>
+2. Tomar los datos de este archivo y generar una nube de palabras: <https://docs.google.com/spreadsheets/d/1POHmFKShKbSjUfrRECiZHFTHH_ObIO1zXMsN8dgGp0s/edit?usp=sharing>
+3. Ingresar en: <https://www.nubedepalabras.es/>
+4. Utilizando el mismo archivo, generar una nube de palabras que tenga la forma de una letra R.
+5. Peguen aquí debajo las nubes de palabras que generaron en el lugar de cada sala
+
+
+#### 3) Instalando el software para trabajar con texto
+
+**Duración:** ~20 minutos
+
+a.  **Instalando OpenRefine**
+
+
+a.1) Ir a <https://openrefine.org/download.html> y seleccionar la versión correcta para tu sistema operativo.
+
+a.2) Seguir las instrucciones en la página para instalar y dejar funcionando OpenRefine.
+
+
+b.  **Instalando Tabula**
+
+
+b.1) Ir a la página: <https://tabula.technology/>
+
+b.2) Seleccionar la versión para instalar de acuerdo al Sistema Operativo (windows, Mac o Linux). Se debe descargar un .zip.
+
+b.3) Extraer el archivo zip en una carpeta de tu disco rígido que se llama Tabula.
+
+b.4) Dentro de la carpeta ejecutar el archivo Tabula.exe, si se instaló de forma correcta un navegador de internet se tiene que abrir con el Tabula funcionando.
+
+b.5) Si el navegador no se abre solo, ir a nuestro navegador de internet y escribir esta dirección: [http://localhost:8080](http://localhost:8080/) . Ahí está Tabula!
+
+
+c.  **Instalando los paquetes en R**
+
+
+c.1) Abrir R Studio
+
+c.2) Instalar los siguientes paquetes (esto puede llevar un tiempo así que no te preocupes si tarda un rato):
+
+
+-   **tidyverse (si ya lo tienen no lo instalen)**
+
+-   **readr (si ya lo tienen no lo instalen)**
+
+-   tidytext
+
+-   wordcloud2
+
+-   tm
