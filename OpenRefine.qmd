@@ -64,7 +64,7 @@ Toda la edición de los datos se realizará con la herramienta Open Refine, que 
 
 ## Tercer Ejercicio: Limpieza del conjunto de datos.
 
-**Duracion:** 15 minutos.
+**Duracion:** 20 minutos.
 
 6.  El primer paso es eliminar las columnas sobrantes o sin datos, para ello hay que hacer clic en la flecha a la derecha de la columna **\"Todo\"**, seleccionar la opción **\"Ordenar/Eliminar Columnas...\"** del menú **\"Editar Columnas\"**.
 
@@ -113,7 +113,7 @@ Toda la edición de los datos se realizará con la herramienta Open Refine, que 
 
 ## Cuarto Ejercicio: limpiar los datos de las Localidades
 
-**Duracion:** 15 minutos
+**Duracion:** 20 minutos
 
 1.  Vamos a generar un nuevo proyecto y vamos a importar nuevamente el set de datos Lectores, pero en esta ocasión, seleccionaremos la hoja de Localidades. Al proyecto le pondremos de nombre *Localidades*.
 
@@ -149,7 +149,9 @@ Toda la edición de los datos se realizará con la herramienta Open Refine, que 
 
 12. Seleccionar en la columna **\"Todo\"**, la opción **\"Faceta por estrellas\"** en el menú **\"Facetas\"**, aparece la ventana en el panel izquierdo, con las opciones *\"true\"* y *\"false\"*, seleccionar **\"true\"** en dicha ventana. Luego seleccionar la opción **\"Eliminar todas las filas que encajan\"** del menú **\"Editar filas\"** de la columna **\"Todo\"**. Cerramos nuevamente todas las ventanas del panel izquierdo
 
-## Quinto Ejercicio: Unificar los set de datos de Lectores con Localidades
+## Quinto Ejercicio: Unificar los set de datos de Lectores con Localidades.
+
+**Duracion:** 15 minutos.
 
 1.  Para comenzar con la última parte de la consolidación de los datos del caso de estudio abrir nuevamente el set de datos *Lectores*, con el botón **\"Abrir...\"** que se encuentra en el rincón superior derecho.
 
@@ -181,12 +183,16 @@ Toda la edición de los datos se realizará con la herramienta Open Refine, que 
 
 ## Sexto Ejercicio: Registro de todos los cambios realizados
 
+**Duracion:** 5 minutos.
+
 Open Refine lleva un registro de todos los cambios y acciones que realizamos sobre los datos trabajados en el proyecto. Si es necesario volver algún paso atrás o tener el historial de acciones realizadas sobre los datos, la herramienta los documenta por nosotros. Se pueden ver haciendo clic sobre la opción Deshacer/Rehacer:
 
 ![](img/open_refine_clean21.png)
 
 
 ## Septimo Ejercicio: guardando los datos trabajados
+
+**Duracion:** 5 minutos.
 
 1.  Para finalizar y obtener un archivo con los datos ya limpios y trabajados como necesitamos debemos hacer clic en **\"Exportar\"** y allí seleccionar el formato que más nos convenga.
 
