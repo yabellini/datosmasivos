@@ -1,0 +1,89 @@
+---
+title: "Clase 2 - Tipos de datos"
+---
+
+## Objetivos de Aprendizaje
+
+- Definir Big Data.
+
+- Mencionar y definir diferentes fuentes de datos de big data.
+
+- Identificar y explicar las diferentes etapas de un proceso de ciencias de datos.
+
+- Explicar de forma general el proceso de aprendizaje automatico supervisado y aprendizaje automatico no supervisado.
+
+- Definir e identificar datos estructurados y datos no estructurados.
+
+- Describir tres propiedades de los datos estructurados ordenados.
+
+- Describir cinco sintomas de datos desordenados.
+
+- Analizar casos de uso e identificar al menos tres caracteristicas asociadas con big data.
+
+## Slides
+
+<iframe src="https://docs.google.com/presentation/d/1ElbJdEJAtRs1BlEfLUwJaYbODDvVkEbxWbIKcR9ZYjY/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+
+</iframe>
+
+## Ejercicios
+
+#### 1) Miren el video de esta municipalidad que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:
+
+**Duración:** \~15 minutos
+
+[Video](https://www.youtube.com/watch?v=_s7YOkX6C2Y)
+
+**Preguntas:**
+
+-   ¿Sobre qué servicio trabajaron?
+
+-   ¿Pueden identificar las 3 Vs del BigData en este proyecto? mencione como está representada y porqué.
+
+    -   Velocidad:
+    -   Volumen:
+    -   Variedad:
+
+-   ¿Pueden identificar alguna V más?
+
+-   ¿Se les ocurren problemas con estas características en sus trabajos?, mencione algunos ejemplos de ser así.
+
+#### 2) Miren el video de este club deportivo que utiliza Ciencia de Datos, discutan en grupo para contestar las siguientes preguntas:
+
+**Duración**: \~15 minutos Video: (5 minutos): [Big Data y fútbol: así aprovecha el Real Madrid la tecnología](https://youtu.be/DXq30dvE0Xg)
+
+Charlar en grupo para contestar estas preguntas (10 minutos):
+
+¿Cómo toman los datos de los jugadores?
+
+Anoten algunos de los datos que se mencionan que se registran
+
+¿Mencionan modelos?¿Cuáles?
+
+De acuerdo a lo que vimos en la teoría, ¿pueden indicar si son modelos de predicción o clasificación? ¿pueden indicar si podrían utilizar aprendizaje supervisado o no supervisado?
+
+#### 3) Crear una estructura tidy
+
+**Duración:** \~10 minutos
+
+Tengo que recolectar datos de lluvias de diversas localidades, necesito almacenar la latitud y longitud del lugar donde está el pluviómetro, el nombre del lugar y el nombre y teléfono del responsable de tomar los datos.  También debo almacenar la fecha y la cantidad de mm de lluvia precipitados en esa fecha.
+
+1.  ¿Cuántas tablas debería generar?
+
+2.  Cuáles serían las columnas (estructura) del conjunto o conjuntos de datos para poder almacenar esta información de forma tidy. 
+
+#### Extra: 4) Ordenen el siguiente conjunto de datos de forma tidy u ordenada.
+
+**Duración:** \~10 minutos
+
+La columna lote hace referencia al nombre del lote en un campo, contiene tres columnas por cada año con los valores promedio, máximo y mínimo del porcentaje de superficie cosechada en cada lote.
+
+Generar una estructura tidy de este conjunto de datos.\
+
+|         |          |          |          |          |          |          |
+|---------|----------|----------|----------|----------|----------|----------|
+| Lote    | 2009 avg | 2009 max | 2009 min | 2010 avg | 2010 max | 2010 min |
+| A       | \-       | \-       | \-       | \-       | \-       | \-       |
+| 18      | \>95%    | \>95%    | \>95%    | \>95%    | \>95%    | \>95%    |
+| La loma | 77%      | 89%      | 3%       | 75%      | 88%      | 3%       |
+| A2      | 25%      | 35%      | 19%      | 25%      | 35%      | 19%      |
