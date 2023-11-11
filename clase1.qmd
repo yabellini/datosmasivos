@@ -55,20 +55,6 @@ Charlar en grupo para contestar estas preguntas (5 minutos)
   * ¿Se ven reflejados en alguno de esos roles? 
 
 
-#### 2) Miren el video de este club deportivo que utiliza Ciencia de Datos, discutan en grupo para contestar las siguientes preguntas:
-
-**Duración**: ~15 minutos
-Video: (5 minutos): [Big Data y fútbol: así aprovecha el Real Madrid la tecnología](https://youtu.be/DXq30dvE0Xg)
-
-Charlar en grupo para contestar estas preguntas (10 minutos):
-
-¿Cómo toman los datos de los jugadores?
-
-Anoten algunos de los datos que se mencionan que se registran y alguna de las 
-
-¿Mencionan modelos?¿Cuáles?
-
-
 #### 3) Miren el video de esta empresa AgTech que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:
 
 **Duración:** ~15 minutos
@@ -88,25 +74,6 @@ Video: [Kilimo](https://youtu.be/4lwa-6Li6t8)
 
 * ¿Les parece que el servicio es exitoso?, ¿Por qué? 
 
-
-#### 4) Miren el video de esta municipalidad que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:
-
-**Duración:** ~15 minutos
-
-[Video](https://www.youtube.com/watch?v=_s7YOkX6C2Y)  
-
-**Preguntas:**
-
-* ¿Sobre qué servicio trabajaron?
-
-* ¿Pueden identificar las 3 Vs del BigData en este proyecto? mencione como está representada y porqué.
-  - Velocidad: 
-  - Volumen: 
-  - Variedad: 
-
-* ¿Pueden identificar alguna V más? 
-
-* ¿Se les ocurren problemas con estas características en sus trabajos?, mencione algunos ejemplos de ser así.
 
 
 ::: {.callout-tip}
