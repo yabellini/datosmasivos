@@ -39,8 +39,8 @@ website:
         text: Clase 9 -
       - href: clase10.qmd
         text: Clase 10 -
-      - href: ejerciciosextra.qmd
-        text: Guía de Ejercicios
+      - href: OpenRefine.qmd
+        text: Guía de OpenRefine
 
 format:
   html:
