@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Datos Masivos - Limpieza de datos con OpenRefine</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./OpenRefine.html">Guía de OpenRefine</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Datos Masivos</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/yabellini/gestiondedatos" rel="" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./schedule.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 1 - Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 2 - Tipos de Datos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 3 - NOSQL y Text Mining</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 4 -</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase5.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 5 -</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase6.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 6 -</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase7.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 7 -</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase8.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 8 -</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase9.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 9 -</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase10.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 10 -</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./OpenRefine.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Guía de OpenRefine</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link active" data-scroll-target="#resumen">Resumen</a></li>
+  <li><a href="#caso-lectores-del-suplemento-horizonte-agropecuario" id="toc-caso-lectores-del-suplemento-horizonte-agropecuario" class="nav-link" data-scroll-target="#caso-lectores-del-suplemento-horizonte-agropecuario">Caso: Lectores del suplemento <strong>Horizonte Agropecuario</strong></a></li>
+  <li><a href="#primer-ejercicio-conociendo-los-datos-y-entrando-a-openrefine" id="toc-primer-ejercicio-conociendo-los-datos-y-entrando-a-openrefine" class="nav-link" data-scroll-target="#primer-ejercicio-conociendo-los-datos-y-entrando-a-openrefine">Primer ejercicio: conociendo los datos y entrando a OpenRefine</a></li>
+  <li><a href="#segundo-ejercicio-conformación-del-set-de-datos-lectores." id="toc-segundo-ejercicio-conformación-del-set-de-datos-lectores." class="nav-link" data-scroll-target="#segundo-ejercicio-conformación-del-set-de-datos-lectores.">Segundo ejercicio: conformación del set de datos Lectores.</a></li>
+  <li><a href="#tercer-ejercicio-limpieza-del-conjunto-de-datos." id="toc-tercer-ejercicio-limpieza-del-conjunto-de-datos." class="nav-link" data-scroll-target="#tercer-ejercicio-limpieza-del-conjunto-de-datos.">Tercer Ejercicio: Limpieza del conjunto de datos.</a></li>
+  <li><a href="#cuarto-ejercicio-limpiar-los-datos-de-las-localidades" id="toc-cuarto-ejercicio-limpiar-los-datos-de-las-localidades" class="nav-link" data-scroll-target="#cuarto-ejercicio-limpiar-los-datos-de-las-localidades">Cuarto Ejercicio: limpiar los datos de las Localidades</a></li>
+  <li><a href="#caso-unificar-los-set-de-datos-de-lectores-con-localidades" id="toc-caso-unificar-los-set-de-datos-de-lectores-con-localidades" class="nav-link" data-scroll-target="#caso-unificar-los-set-de-datos-de-lectores-con-localidades">Caso: Unificar los set de datos de Lectores con Localidades</a></li>
+  <li><a href="#caso-registro-de-todos-los-cambios-realizados" id="toc-caso-registro-de-todos-los-cambios-realizados" class="nav-link" data-scroll-target="#caso-registro-de-todos-los-cambios-realizados">Caso: Registro de todos los cambios realizados</a></li>
+  <li><a href="#caso-guardando-los-datos-trabajados" id="toc-caso-guardando-los-datos-trabajados" class="nav-link" data-scroll-target="#caso-guardando-los-datos-trabajados">Caso: Guardando los datos trabajados</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Limpieza de datos con OpenRefine</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="resumen" class="level2">
+<h2 class="anchored" data-anchor-id="resumen">Resumen</h2>
+<p>Para esta práctica utilizaremos la herramienta OpenRefine que instalamos en la clase anterior.</p>
+<p>Se puede descargar desde <a href="http://openrefine.org/" class="uri">http://openrefine.org/</a> y corre en cualquier versión de sistema operativo. Cuando se ejecuta la herramienta abre una ventana de la línea de comandos y el explorador de internet por defecto, que es donde se usa la herramienta.</p>
+<p>OpenRefine se define como una herramienta libre y abierta para <strong>trabajar con datos llenos de problemas.</strong></p>
+</section>
+<section id="caso-lectores-del-suplemento-horizonte-agropecuario" class="level2">
+<h2 class="anchored" data-anchor-id="caso-lectores-del-suplemento-horizonte-agropecuario">Caso: Lectores del suplemento <strong>Horizonte Agropecuario</strong></h2>
+<p>La editorial que imprime y distribuye el suplemento Horizonte Agropecuario, dispone su lista de lectores en una planilla <strong>Lectores.xlsx</strong>, la que utiliza para imprimir las etiquetas que luego son utilizadas en el franqueo de los envíos, en la misma a lo largo del tiempo <strong>se le han ido agregando filas únicamente.</strong> Cada fila se <strong>agrega al principio del listado</strong> por lo que <strong>no se controla si figura o no el destinatario en la lista.</strong> Solo se tiene en cuenta el <strong>código postal</strong> que se encuentra en otra hoja de la planilla para la carga del mismo, junto con la dirección y el nombre del destinatario.</p>
+<p>La estructura de los datos son dos tablas con los siguientes campos:&nbsp;</p>
+<p><img src="img/openrefine_tablas.png" class="img-fluid"></p>
+</section>
+<section id="primer-ejercicio-conociendo-los-datos-y-entrando-a-openrefine" class="level2">
+<h2 class="anchored" data-anchor-id="primer-ejercicio-conociendo-los-datos-y-entrando-a-openrefine">Primer ejercicio: conociendo los datos y entrando a OpenRefine</h2>
+<p><strong>Duracion:</strong> 5 minutos.</p>
+<ol type="1">
+<li><p>Descargar el archivo Lectores.xlsx del campus&nbsp;</p></li>
+<li><p>Abrir la planilla de Excel descargada y realizar una vista rápida de los datos. <strong>¿Pueden encontrar algunos problemas de consistencia?.</strong> Hagan un listado de los problemas que encuentren en los datos.</p></li>
+</ol>
+<p>Toda la edición de los datos se realizará con la herramienta Open Refine, que realiza una importación de los datos y <strong>nos permite dejar el archivo original intacto cumpliendo una de las buenas prácticas del manejo de datos.</strong></p>
+<ol start="3" type="1">
+<li>Ejecutar Open Refine haciendo doble clic sobre el icono del diamante. Se debe abrir un ventana de comandos en la que se ejecuta OpenRefine. De forma predeterminada, la ventana de comandos tiene un fondo negro, similar a la siguiente figura.</li>
+</ol>
+<p><img src="img/open_refine_start.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Además se abrirá el explorador de internet que esté configurado por defecto. Dentro de la pagina en el explorador sobre el lado izquierdo hay un grupo de solapas: Crear Proyecto, Abrir Proyecto, Importar Proyecto e Idioma. Si al ejecutar el programa no aparece en la versión en español, ingresando en la solapa <strong>"Language Settings"</strong> y configurar la opción <strong>"Español".</strong></li>
+</ol>
+<p><img src="img/open_refine_inicio.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Por defecto la herramienta se encuentra en la solapa <strong>"Crear Proyecto"</strong>, donde da una serie de alternativas para importar datos a OpenRefine, para esta práctica utilizaremos <strong>"Este Equipo"</strong></li>
+</ol>
+</section>
+<section id="segundo-ejercicio-conformación-del-set-de-datos-lectores." class="level2">
+<h2 class="anchored" data-anchor-id="segundo-ejercicio-conformación-del-set-de-datos-lectores.">Segundo ejercicio: conformación del set de datos Lectores.</h2>
+<p><strong>Duracion:</strong> 5 minutos.</p>
+<ol type="1">
+<li>Dentro de la solapa <strong>"Crear Proyecto"</strong>, en la opción <strong>"Este Equipo"</strong>, hacer clic en el botón <strong>"Examinar"</strong> y buscar el archivo <strong>"Lectores.xlsx"</strong> descargado del aula virtual.</li>
+</ol>
+<p><img src="img/open_refine_proyecto.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li><p>Una vez encontrado el archivo, seleccionar y presionar el botón <strong>"Siguiente &gt;&gt;"</strong>. De esta forma pasa a la pantalla de preparación de la importación de los datos.</p></li>
+<li><p>Seleccionar en <strong>"Hojas a Importar"</strong>, la hoja <strong>"Datos"</strong>. Configurar las siguientes opciones, marcar la opción <strong>"Ignorar primeras",</strong> colocar el número <strong>6</strong> en líneas al inicio del archivo. Por defecto aparece seleccionada la opción "Seleccionar Primeras" la cual no hay que modificar.</p></li>
+</ol>
+<p><img src="img/open_refine_importar_datos.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li><p>Sobre la esquina superior izquierda del cuadro editar el nombre del proyecto a <strong>"Lectores"</strong> y hacer clic en <strong>crear proyecto.</strong></p></li>
+<li><p>La siguiente pantalla es donde se lleva a cabo toda la manipulación de los datos. Observar que al lado de cada nombre de columna, se dispone de un botón en forma de flecha (<img src="img/flecha_abajo.png" class="img-fluid">) donde se encuentran todas las opciones para manipular los datos de cada una de ellas.</p></li>
+</ol>
+</section>
+<section id="tercer-ejercicio-limpieza-del-conjunto-de-datos." class="level2">
+<h2 class="anchored" data-anchor-id="tercer-ejercicio-limpieza-del-conjunto-de-datos.">Tercer Ejercicio: Limpieza del conjunto de datos.</h2>
+<p><strong>Duracion:</strong> 15 minutos.</p>
+<ol start="6" type="1">
+<li>El primer paso es eliminar las columnas sobrantes o sin datos, para ello hay que hacer clic en la flecha a la derecha de la columna <strong>"Todo"</strong>, seleccionar la opción <strong>"Ordenar/Eliminar Columnas…"</strong> del menú <strong>"Editar Columnas"</strong>.</li>
+</ol>
+<p><img src="img/open_refine_clean1.png" class="img-fluid"></p>
+<ol start="7" type="1">
+<li>A continuación en la ventana abierta para la edición de las columnas, arrastrar las columnas que se desean eliminar al panel de la derecha y en caso de querer alterar el orden de las columnas con datos se puede hacer dentro del mismo panel.</li>
+</ol>
+<p><img src="img/open_refine_clean2.png" class="img-fluid"></p>
+<ol start="8" type="1">
+<li>Una vez que la planilla este con el formato deseado proceder a identificar valores de lectores similares y corregirlos, para ello sobre la columna de <strong>"Nombre"</strong> seleccionar del menú <strong>"Editar Celdas"</strong> la opción <strong>"Agrupar y editar…"</strong></li>
+</ol>
+<p><img src="img/open_refine_clean3.png" class="img-fluid"></p>
+<ol start="9" type="1">
+<li>Dentro de la ventana que se despliega, observar que automáticamente la herramienta identifica los <strong>"Nombres"</strong> similares y los agrupa para su edición, la misma se realizará si se selecciona la opción <strong>"¿Unir?"</strong>, en el cuadro de texto de la izquierda de cada grupo se podrá editar el contenido final de las celdas que se unan. Por último y luego de hacer todos los cambios deseados, hacer clic en <strong>"Unir seleccionados y Cerrar"</strong>.</li>
+</ol>
+<p><img src="img/open_refine_clean4.png" class="img-fluid"></p>
+<ol start="10" type="1">
+<li>Ahora vamos a <strong>eliminar todos los registros que no cuenten con "Codigo Postal"</strong> ya que sin ese dato no se puede identificar a qué localidad pertenece el <em>"Lector"</em>: En la columna <em>"Codigo Postal"</em>, seleccionar del menú <strong>"Facetas"</strong>, el submenú <strong>"Facetas personalizadas"</strong> opción <strong>"Facetas por blanco"</strong>.</li>
+</ol>
+<p><img src="img/open_refine_clean5.png" class="img-fluid"></p>
+<ol start="11" type="1">
+<li>Esto mostrará en el panel de la izquierda las opciones <em>"true"</em> y <em>"false"</em>, seleccionar la opción <strong>"true"</strong> para ver todos los registros que no cuenten con este dato.</li>
+</ol>
+<p><img src="img/open_refine_clean6.png" class="img-fluid"></p>
+<ol start="12" type="1">
+<li>Luego en la columna <strong>"Todo",</strong> seleccionar el menú <strong>"Editar filas"</strong> opción <strong>"Eliminar todas las filas que encajen"</strong>. De esta forma se eliminaran todas las filas sin <strong>"Código postal".</strong></li>
+</ol>
+<p><img src="img/open_refine_clean7.png" class="img-fluid"></p>
+<ol start="13" type="1">
+<li>Por último vamos a identificar los registros duplicados, en cada columna del set de datos seleccionar del submenú <strong>"Facetas personalizadas"</strong> del menú <strong>"Facetas"</strong>, la opción <strong>"Faceta por duplicados"</strong>.</li>
+</ol>
+<p><img src="img/open_refine_clean8.png" class="img-fluid"></p>
+<ol start="14" type="1">
+<li>De esta forma irá apareciendo en el panel de la izquierda dos opciones <em>"true"</em> y <em>"false"</em> para cada una, al finalizar la misma operación para todas las columnas, seleccionar la opción <strong>"true"</strong> de cada una de las ventanas del panel de la izquierda.</li>
+</ol>
+<p><img src="img/open_refine_clean9.png" class="img-fluid"></p>
+<ol start="15" type="1">
+<li>Ahora en la columna <em>"Codigo Postal"</em> seleccionar la opción <strong>"Ordenar…"</strong>, en la ventana emergente seleccionar <strong>"números"</strong> y <strong>"Aceptar"</strong> de esta forma nos quedan los registros duplicados por localidad.</li>
+</ol>
+<p><img src="img/open_refine_clean10.png" class="img-fluid"></p>
+<ol start="16" type="1">
+<li>Aparece la palabra <strong>"Sort"</strong> sobre la fila de los nombre de columnas, seleccionar y elegir la opción <strong>"Ordenar filas permanentemente"</strong> así fijamos el orden dado. De esta forma podremos identificar los registros que realmente sean duplicados, marcar con una estrella y luego seleccionar el filtro por estrellas: menú <em>"Facetas"</em> opción <em>"Facetas con estrellas"</em>. Luego en la columna <strong>"Todo"</strong>, seleccionar el menú <em>"Editar filas"</em> opción <em>"Eliminar todas las filas que encajen"</em>.</li>
+</ol>
+<p><img src="img/open_refine_clean11.png" class="img-fluid"></p>
+</section>
+<section id="cuarto-ejercicio-limpiar-los-datos-de-las-localidades" class="level2">
+<h2 class="anchored" data-anchor-id="cuarto-ejercicio-limpiar-los-datos-de-las-localidades">Cuarto Ejercicio: limpiar los datos de las Localidades</h2>
+<p><strong>Duracion:</strong> 15 minutos</p>
+<ol type="1">
+<li><p>Vamos a generar un nuevo proyecto y vamos a importar nuevamente el set de datos Lectores, pero en esta ocasión, seleccionaremos la hoja de Localidades. Al proyecto le pondremos de nombre <em>Localidades</em>.</p></li>
+<li><p>Como siguiente paso seleccionamos la columna <strong>Provincia -&gt; Facetas -&gt; Facetas por Texto</strong>.</p></li>
+</ol>
+<p><img src="https://lh7-us.googleusercontent.com/yv9cNO4bKjNWKCVPRMUvqSBm7ey2qKINmLROq8tKWQqyu2mIYKEBXKGslchoPsWfXNSIUAsEmx5vGFFRs-_d0AohQz_WaFB8P7Imf0jecgoJhR_eq6nSiXqj2CIoTy5L6reor3IC54FTdTBQ_XR-RA.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Nos aparece a la izquierda un panel con todos los textos diferentes que tiene esa columna y podemos ver que hay nombres de una misma provincia escrito de manera diferente.&nbsp; Para cambiarlos a todos juntos seleccionamos editar y ponemos el valor correcto.&nbsp; La herramienta cambiará todos estos casos juntos.</li>
+</ol>
+<p><img src="https://lh7-us.googleusercontent.com/PA7WRwOTchVcvubnVB_mSIhOaKHdicjVHuufvTe_fDbaRawNRIFRyGEzD6NbfKFiOU39pSOtRwzErFNrp1Mk_6jItxISMDJqZ4G2xVbsQsztg3H3yMe1D3C2a-w9PrONodIfpPx0E79gElS-2slqLg.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Realizar similar tarea con los datos de <strong>"Localidad"</strong>, seleccionar la opción "Faceta de texto" del menú "Facetas", aparece en el panel de la izquierda otra ventana, ahora con los nombres de las localidades agrupados por cantidad de apariciones. Para la edición de la misma se podrá utilizar el filtro de provincias, de esta forma se evitará eliminar localidad con el mismo nombre pero de diferentes "Provincias".</li>
+</ol>
+<p><img src="https://lh7-us.googleusercontent.com/FWaTtNtmPVD8McHhEmw5pGCLyHgJq0Ah4-IV2GORvCye6fJPLGE5oTuUtCaMN0AF3rn_KhnG21CYw6pCCjV9dw8Y-xPcMRjPj5fPBkSEZUzdXI-_fKhB135sfKfI4TQfFMl6g4-YErh4US-xhYIjqQ.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li><p>Después de realizar todas estas modificaciones, ordenar de nuevo:&nbsp; seleccionar en la columna "Provincia" la opción "Ordenar…", hacer lo mismo con "Localidad" de esta forma quedan en filas consecutivas las filas duplicadas.&nbsp; Para poder eliminar las filas duplicadas debemos:</p></li>
+<li><p>Seleccionar la palabras "Sort" sobre los nombres de las columnas y luego la opción "Reordenar filas permanentemente".</p></li>
+<li><p>Seleccionar en la columna "Localidad" la opción "Vaciar hacia abajo" del menú "Editar celdas". Así se borran los datos de Localidad duplicados.</p></li>
+</ol>
+<p><img src="https://lh7-us.googleusercontent.com/OJOe1r0WOHH5CAIYBdxna5RrclGkAYZ0zz70n7aRbggfYSG2ig5Dc6djhKDx7Y7jYi8yNtWiC4AdReCHTmJjuiv79LHYG4dTbR08zfn4uS4VdEJ7K_LnKw8YPTIP57yAj4i2p4NiGYLswVuKrNVQjA.png" class="img-fluid"></p>
+<ol start="8" type="1">
+<li><p>Para eliminar las filas con celdas vacías en la columna "Localidad", seleccionar <strong>Facetas -&gt; Facetas personalizadas -&gt; Faceta por blanco</strong>"</p></li>
+<li><p>Esto muestra en el panel de la izquierda las opciones "true" y "false" para "Localidad", seleccionar "true" y así se muestran todas las filas sin dato de Localidad". En la columna "Todo" seleccionar "Eliminar todas las filas que encajan del menú "Editar filas"</p></li>
+<li><p>Como último paso para cerrar la edición de este set de datos, cerrar todas las ventanas en el panel de la izquierda. De esta forma aparecerán los datos que quedaron. <strong>Observar que siguen existiendo datos duplicados,</strong></p></li>
+<li><p>Esta última edición la realizaremos marcando los registros repetidos que visualmente encontremos. Para ello en la columna "Localidad" seleccionar la opción "Faceta de texto" en el menú "Facetas", vemos que el panel de las izquierda nos muestra nuevamente las localidades dentro de las que vemos algunas con 2 apariciones, ordenamos por "conteo" y seleccionar con la opción "include" de cada renglón las que tengan más de una aparición. Ahora con el listado de las repetidas marcar con una estrella los registros a eliminar.</p></li>
+</ol>
+<p><img src="https://lh7-us.googleusercontent.com/5G6NO6-aLDDT79nZ4aEfiKgp0ubhIym4AYygekql-BtfSjHLw-JqyiT0A2uOmA7TRN7BFCPaVkbsOVHwEb6K-uaVFoi7-5n66yxnj-kBZCFFmJOE1PixH95lf1LsUm-IULofl63tlhUdBWbE5Ny80A.png" class="img-fluid"></p>
+<ol start="12" type="1">
+<li>Seleccionar en la columna "Todo", la opción "Faceta por estrellas" en el menú "Facetas", aparece la ventana en el panel izquierdo, con las opciones "true" y "false", seleccionar "true" en dicha ventana. Luego seleccionar la opción "Eliminar todas las filas que encajan" del menú "Editar filas" de la columna "Todo". Cerramos nuevamente todas las ventanas del panel izquierdo</li>
+</ol>
+<p><br>
+</p>
+</section>
+<section id="caso-unificar-los-set-de-datos-de-lectores-con-localidades" class="level2">
+<h2 class="anchored" data-anchor-id="caso-unificar-los-set-de-datos-de-lectores-con-localidades">Caso: Unificar los set de datos de Lectores con Localidades</h2>
+<ol type="1">
+<li>Para comenzar con la última parte de la consolidación de los datos del caso de estudio abrir nuevamente el set de datos Lectores, con el botón "Abrir…" que se encuentra en el rincón superior derecho.</li>
+</ol>
+<p><img src="https://lh7-us.googleusercontent.com/H1861K4Q1czH4Xy4ZRcYlTKfEDhh-XZHvoWuScHkJ2vs1_AxwkNMPEnhgSYqA2rlpolHVewEQ9Dc__VIi9WKPlHBjdLMiHlyQpQEg7hAIoE0YgwrT2qFKCYs16uDixh8OgYWbxU9j3iBXmphiIYJhA.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li><p>Hacer click en la solapa de la izquierda "Abrir proyecto", esto nos muestra todos los proyectos que se generaron. Seleccionar el proyecto "Lectores" para abrirlo nuevamente.</p></li>
+<li><p>Ahora agregar nuevas columnas "Localidad" y "Provincia" al proyecto actual desde el proyecto "Localidades". Para esto usaremos la opción "Agregar columna basada en esta columna…" en el menú "Editar columnas" de la columna "Codigo Postal"</p></li>
+</ol>
+<p><img src="https://lh7-us.googleusercontent.com/Y47H0Jd1JQmvepW-WVmtX-P8_ctHUMT_I-7Zv1HnFH1-kpxJKPbb68PMNmVEXkTC2Tye_DxbZZxpETueH00tV1BKLkGtkHe_CIwyC1JvmmoUd5bFQ-Vx4PXTJoOMTJIuWfBEOvtSILY1FGM_jDKbEQ.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Al seleccionar esta opción se abre una ventana emergente en donde configurar opciones que nos va a permitir agregar nuevas columnas. Dentro de las configuraciones, completar el nombre de la nueva columna, en el primer caso sería "Localidad", dejar seleccionado "cambiar a en blanco", el lenguaje a utilizar será "GREL" como está configurado y en el cuadro "Expresión" completar con la expresión:</li>
+</ol>
+<p><br>
+</p>
+<p><strong>cell.cross(“Localidades”,“Codigo postal”).cells[“Localidad”].value[0]</strong></p>
+<p><br>
+</p>
+<p><img src="https://lh7-us.googleusercontent.com/tPj9F98tEM2ZGqAFmKIiMEdKRZFGeLQi1m86A5BaM9ojWNnoCnWJtYzcUqGL_D1gbKBYI-u8FI2UKVk3EvcbxZlwg8aiIkzuhiCUA0Hsw51B6nucaWjHSD7sVvwuz6zrSMiX8nDzO2U1M56aubdV9w.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>En el cuadro inferior se muestra una vista previa de la columna agregada. Realizar la misma secuencia para agregar la columna de "Provincia", también basada en el "Codigo postal". La expresión que se debe utilizar para la nueva columna es la siguiente:</li>
+</ol>
+<p><br>
+</p>
+<p><strong>cell.cross(“Localidades”,“Codigo postal”).cells[“Provincia”].value[0]</strong></p>
+<ol start="6" type="1">
+<li>Como así también se debe tener en cuenta que el nombre de la columna debe ser "Provincia". Luego de estos pasos contamos con el listado de lectores sin duplicados y con el dato de Localidad y Provincia.</li>
+</ol>
+<p><img src="https://lh7-us.googleusercontent.com/0puax6CzIi8BkjnDPVber9Hl2xq6az-9Ctg8xJ2ZL1s4spBAvPaYCJqH-GpbyAnGwUFSj-FRapHCkNb3YI1MgLsDoWD38GTdqb4ia-v7RML7UeRJVVhZlCJRDokAB0bZzCzdxQ3CgSl0gcWeBObDgg.png" class="img-fluid"></p>
+<p><br>
+</p>
+</section>
+<section id="caso-registro-de-todos-los-cambios-realizados" class="level2">
+<h2 class="anchored" data-anchor-id="caso-registro-de-todos-los-cambios-realizados">Caso: Registro de todos los cambios realizados</h2>
+<p>Open Refine lleva un registro de todos los cambios y acciones que realizamos sobre los datos trabajados en el proyecto. Si es necesario volver algún paso atrás o tener el historial de acciones realizadas sobre los datos, la herramienta los documenta por nosotros. Se pueden ver haciendo clic sobre la opción Deshacer/Rehacer:</p>
+<p><img src="https://lh7-us.googleusercontent.com/YG7o8ORL9RQ1hSEvXOCJOWtgKA0M7qpGd5Bs7um7Ztjlx7VxJlxfMOP-yKl0nL3lHjYkfbVa_fHIoTlUO_VR9bLoHkhMaLaUpdjVG0QwQBq_oh18awcq7XGVF39WTjQks1GF1LRWDrEPuvA5u7K5Yw.png" class="img-fluid"></p>
+<p><br>
+</p>
+</section>
+<section id="caso-guardando-los-datos-trabajados" class="level2">
+<h2 class="anchored" data-anchor-id="caso-guardando-los-datos-trabajados">Caso: Guardando los datos trabajados</h2>
+<ol type="1">
+<li>Para finalizar y obtener un archivo con los datos ya limpios y trabajados como necesitamos debemos hacer clic en "Exportar" y allí seleccionar el formato que más nos convenga.</li>
+</ol>
+<p><img src="https://lh7-us.googleusercontent.com/N7wNSRZVWI-NtV4BUHPscnwV4LuPpO0zOewHPiAKi6h2pV9FAcBiGrL_iHezGh6A0wRZFRbHSzopGydRQSy4vVVkbj7qVZ4ki8AnVO_4As8OnI3CQ__qJ7XNECHqQ93RdPY3Qb7upvCHr2HnF0Mm4g.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Hacer clic en el botón "Exportar" que se encuentra en la esquina superior derecha de la pantalla, allí visualizar todas las opciones de exportación junto con los formatos en los que se pueden exportar los datos, en este caso vamos a seleccionar el formato "Excel en XML (.xlsx)".&nbsp; Al seleccionar la opción se abrirá otra ventana en el explorador:</li>
+</ol>
+<p><img src="https://lh7-us.googleusercontent.com/Nu4fEzRtF53Cz20OK0l7Ufoi7c2dD9RV0_Ck3p3_Cmcaaj0Yiv5-JIk7AdeRRRv8ffzZK-bkLoThAaqpOfwJRgAqk1FvxQhkIoIfD-YBCWMIywWBC5iVgc5bm5B6YbkZP9803hSybru4Oe-pgGHPYA.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>En esta nueva ventana seleccionar la opción "Guardar como" asi poder elegir la ubicación del archivo final.</li>
+</ol>
+<p><br>
+<br>
+<br>
+</p>
+<p><img src="https://lh7-us.googleusercontent.com/8LR1AshzC2ilQ5DbirOwiM4W5e8_J7syCWwqx9BOEb0v-u9YqMpO4kGgWacEpP45j9BkA92HKxvdJNeno6NnKgGk9cYB4OoM_Ox8eSuJn7bxfoo0mBXELUYJkTamrz8vs5oKRawhmPNhSkZZJVb6eA.png" title="guion corto" class="img-fluid"></p>
+<p><br>
+</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
