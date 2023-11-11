@@ -119,96 +119,81 @@ Toda la edición de los datos se realizará con la herramienta Open Refine, que 
 
 2.  Como siguiente paso seleccionamos la columna **Provincia -\> Facetas -\> Facetas por Texto**.
 
-![](https://lh7-us.googleusercontent.com/yv9cNO4bKjNWKCVPRMUvqSBm7ey2qKINmLROq8tKWQqyu2mIYKEBXKGslchoPsWfXNSIUAsEmx5vGFFRs-_d0AohQz_WaFB8P7Imf0jecgoJhR_eq6nSiXqj2CIoTy5L6reor3IC54FTdTBQ_XR-RA)
+![](img/open_refine_clean12.png)
 
 3.  Nos aparece a la izquierda un panel con todos los textos diferentes que tiene esa columna y podemos ver que hay nombres de una misma provincia escrito de manera diferente.  Para cambiarlos a todos juntos seleccionamos editar y ponemos el valor correcto.  La herramienta cambiará todos estos casos juntos.
 
-![](https://lh7-us.googleusercontent.com/PA7WRwOTchVcvubnVB_mSIhOaKHdicjVHuufvTe_fDbaRawNRIFRyGEzD6NbfKFiOU39pSOtRwzErFNrp1Mk_6jItxISMDJqZ4G2xVbsQsztg3H3yMe1D3C2a-w9PrONodIfpPx0E79gElS-2slqLg)
+![](img/open_refine_clean13.png)
 
-4.  Realizar similar tarea con los datos de **\"Localidad\"**, seleccionar la opción \"Faceta de texto\" del menú \"Facetas\", aparece en el panel de la izquierda otra ventana, ahora con los nombres de las localidades agrupados por cantidad de apariciones. Para la edición de la misma se podrá utilizar el filtro de provincias, de esta forma se evitará eliminar localidad con el mismo nombre pero de diferentes \"Provincias\".
+4.  Realizar similar tarea con los datos de **\"Localidad\"**, seleccionar la opción **\"Faceta de texto\"** del menú **\"Facetas\"**, aparece en el panel de la izquierda otra ventana, ahora con los nombres de las localidades agrupados por cantidad de apariciones. Para la edición de la misma se podrá utilizar el filtro de provincias, de esta forma se evitará eliminar localidad con el mismo nombre pero de diferentes *\"Provincias\"*.
 
-![](https://lh7-us.googleusercontent.com/FWaTtNtmPVD8McHhEmw5pGCLyHgJq0Ah4-IV2GORvCye6fJPLGE5oTuUtCaMN0AF3rn_KhnG21CYw6pCCjV9dw8Y-xPcMRjPj5fPBkSEZUzdXI-_fKhB135sfKfI4TQfFMl6g4-YErh4US-xhYIjqQ)
+![](img/open_refine_clean14.png)
 
-5.  Después de realizar todas estas modificaciones, ordenar de nuevo:  seleccionar en la columna \"Provincia\" la opción \"Ordenar...\", hacer lo mismo con \"Localidad\" de esta forma quedan en filas consecutivas las filas duplicadas.  Para poder eliminar las filas duplicadas debemos:
+5.  Después de realizar todas estas modificaciones, ordenar de nuevo:  seleccionar en la columna **\"Provincia\"** la opción **\"Ordenar...\"**, hacer lo mismo con **\"Localidad\"** de esta forma quedan en filas consecutivas las filas duplicadas.  Para poder eliminar las filas duplicadas debemos:
 
-6.  Seleccionar la palabras \"Sort\" sobre los nombres de las columnas y luego la opción \"Reordenar filas permanentemente\".
+6.  Seleccionar la palabras **\"Sort\"** sobre los nombres de las columnas y luego la opción **\"Reordenar filas permanentemente\"**.
 
-7.  Seleccionar en la columna \"Localidad\" la opción \"Vaciar hacia abajo\" del menú \"Editar celdas\". Así se borran los datos de Localidad duplicados.
+7.  Seleccionar en la columna **\"Localidad\"** la opción **\"Vaciar hacia abajo\"** del menú **\"Editar celdas\"**. Así se borran los datos de Localidad duplicados.
 
-![](https://lh7-us.googleusercontent.com/OJOe1r0WOHH5CAIYBdxna5RrclGkAYZ0zz70n7aRbggfYSG2ig5Dc6djhKDx7Y7jYi8yNtWiC4AdReCHTmJjuiv79LHYG4dTbR08zfn4uS4VdEJ7K_LnKw8YPTIP57yAj4i2p4NiGYLswVuKrNVQjA)
+![](img/open_refine_clean15.png)
 
-8.  Para eliminar las filas con celdas vacías en la columna \"Localidad\", seleccionar **Facetas -\> Facetas personalizadas -\> Faceta por blanco**\"
+8.  Para eliminar las filas con celdas vacías en la columna *\"Localidad\"*, seleccionar **Facetas -\> Facetas personalizadas -\> Faceta por blanco**\"
 
-9.  Esto muestra en el panel de la izquierda las opciones \"true\" y \"false\" para \"Localidad\", seleccionar \"true\" y así se muestran todas las filas sin dato de Localidad\". En la columna \"Todo\" seleccionar \"Eliminar todas las filas que encajan del menú \"Editar filas\"
+9.  Esto muestra en el panel de la izquierda las opciones *\"true\"* y *\"false\"* para *\"Localidad\"*, seleccionar **\"true\"** y así se muestran todas las filas sin dato de *\"Localidad\"*. En la columna **\"Todo\"** seleccionar **\"Eliminar todas las filas que encajan\"** del menú **\"Editar filas\"**
 
 10. Como último paso para cerrar la edición de este set de datos, cerrar todas las ventanas en el panel de la izquierda. De esta forma aparecerán los datos que quedaron. **Observar que siguen existiendo datos duplicados,**
 
-11. Esta última edición la realizaremos marcando los registros repetidos que visualmente encontremos. Para ello en la columna \"Localidad\" seleccionar la opción \"Faceta de texto\" en el menú \"Facetas\", vemos que el panel de las izquierda nos muestra nuevamente las localidades dentro de las que vemos algunas con 2 apariciones, ordenamos por \"conteo\" y seleccionar con la opción \"include\" de cada renglón las que tengan más de una aparición. Ahora con el listado de las repetidas marcar con una estrella los registros a eliminar.
+11. Esta última edición la realizaremos marcando los registros repetidos que visualmente encontremos. Para ello en la columna *\"Localidad\"* seleccionar la opción **\"Faceta de texto\"** en el menú **\"Facetas\"**, vemos que el panel de las izquierda nos muestra nuevamente las localidades dentro de las que vemos algunas con 2 apariciones, *ordenamos* por *\"conteo\"* y seleccionar con la opción *\"include\"* de cada renglón las que tengan más de una aparición. Ahora con el listado de las repetidas *marcar con una estrella* los registros a eliminar.
 
-![](https://lh7-us.googleusercontent.com/5G6NO6-aLDDT79nZ4aEfiKgp0ubhIym4AYygekql-BtfSjHLw-JqyiT0A2uOmA7TRN7BFCPaVkbsOVHwEb6K-uaVFoi7-5n66yxnj-kBZCFFmJOE1PixH95lf1LsUm-IULofl63tlhUdBWbE5Ny80A)
+![](img/open_refine_clean16.png)
 
-12. Seleccionar en la columna \"Todo\", la opción \"Faceta por estrellas\" en el menú \"Facetas\", aparece la ventana en el panel izquierdo, con las opciones \"true\" y \"false\", seleccionar \"true\" en dicha ventana. Luego seleccionar la opción \"Eliminar todas las filas que encajan\" del menú \"Editar filas\" de la columna \"Todo\". Cerramos nuevamente todas las ventanas del panel izquierdo
+12. Seleccionar en la columna **\"Todo\"**, la opción **\"Faceta por estrellas\"** en el menú **\"Facetas\"**, aparece la ventana en el panel izquierdo, con las opciones *\"true\"* y *\"false\"*, seleccionar **\"true\"** en dicha ventana. Luego seleccionar la opción **\"Eliminar todas las filas que encajan\"** del menú **\"Editar filas\"** de la columna **\"Todo\"**. Cerramos nuevamente todas las ventanas del panel izquierdo
 
-\
+## Quinto Ejercicio: Unificar los set de datos de Lectores con Localidades
 
-## Caso: Unificar los set de datos de Lectores con Localidades
+1.  Para comenzar con la última parte de la consolidación de los datos del caso de estudio abrir nuevamente el set de datos *Lectores*, con el botón **\"Abrir...\"** que se encuentra en el rincón superior derecho.
 
-1.  Para comenzar con la última parte de la consolidación de los datos del caso de estudio abrir nuevamente el set de datos Lectores, con el botón \"Abrir...\" que se encuentra en el rincón superior derecho.
+![](img/open_refine_clean17.png)
 
-![](https://lh7-us.googleusercontent.com/H1861K4Q1czH4Xy4ZRcYlTKfEDhh-XZHvoWuScHkJ2vs1_AxwkNMPEnhgSYqA2rlpolHVewEQ9Dc__VIi9WKPlHBjdLMiHlyQpQEg7hAIoE0YgwrT2qFKCYs16uDixh8OgYWbxU9j3iBXmphiIYJhA)
+2.  Hacer click en la solapa de la izquierda **\"Abrir proyecto\"**, esto nos muestra todos los proyectos que se generaron. Seleccionar el proyecto *\"Lectores\"* para abrirlo nuevamente.
 
-2.  Hacer click en la solapa de la izquierda \"Abrir proyecto\", esto nos muestra todos los proyectos que se generaron. Seleccionar el proyecto \"Lectores\" para abrirlo nuevamente.
+3.  Ahora agregar nuevas columnas *\"Localidad\"* y *\"Provincia\"* al proyecto actual desde el proyecto *\"Localidades\"*. Para esto usaremos la opción **\"Agregar columna basada en esta columna...\"** en el menú **\"Editar columnas\"** de la columna *\"Codigo Postal\"*
 
-3.  Ahora agregar nuevas columnas \"Localidad\" y \"Provincia\" al proyecto actual desde el proyecto \"Localidades\". Para esto usaremos la opción \"Agregar columna basada en esta columna...\" en el menú \"Editar columnas\" de la columna \"Codigo Postal\"
+![](img/open_refine_clean18.png)
 
-![](https://lh7-us.googleusercontent.com/Y47H0Jd1JQmvepW-WVmtX-P8_ctHUMT_I-7Zv1HnFH1-kpxJKPbb68PMNmVEXkTC2Tye_DxbZZxpETueH00tV1BKLkGtkHe_CIwyC1JvmmoUd5bFQ-Vx4PXTJoOMTJIuWfBEOvtSILY1FGM_jDKbEQ)
+4.  Al seleccionar esta opción se abre una ventana emergente en donde configurar opciones que nos va a permitir agregar nuevas columnas. Dentro de las configuraciones, completar el nombre de la nueva columna, en el primer caso sería *\"Localidad\"*, dejar seleccionado **\"cambiar a en blanco\"**, el lenguaje a utilizar será **\"GREL\"** como está configurado y en el cuadro **\"Expresión\"** completar con la expresión:
 
-4.  Al seleccionar esta opción se abre una ventana emergente en donde configurar opciones que nos va a permitir agregar nuevas columnas. Dentro de las configuraciones, completar el nombre de la nueva columna, en el primer caso sería \"Localidad\", dejar seleccionado \"cambiar a en blanco\", el lenguaje a utilizar será \"GREL\" como está configurado y en el cuadro \"Expresión\" completar con la expresión:
 
-\
+**`cell.cross("Localidades","Codigo postal").cells\["Localidad"\].value\[0\]`**
 
-**cell.cross("Localidades","Codigo postal").cells\["Localidad"\].value\[0\]**
 
-\
+![](img/open_refine_clean19.png)
 
-![](https://lh7-us.googleusercontent.com/tPj9F98tEM2ZGqAFmKIiMEdKRZFGeLQi1m86A5BaM9ojWNnoCnWJtYzcUqGL_D1gbKBYI-u8FI2UKVk3EvcbxZlwg8aiIkzuhiCUA0Hsw51B6nucaWjHSD7sVvwuz6zrSMiX8nDzO2U1M56aubdV9w)
+5.  En el cuadro inferior se muestra una vista previa de la columna agregada. Realizar la misma secuencia para agregar la columna de *\"Provincia\"*, también basada en el *\"Codigo postal\"*. La expresión que se debe utilizar para la nueva columna es la siguiente:
 
-5.  En el cuadro inferior se muestra una vista previa de la columna agregada. Realizar la misma secuencia para agregar la columna de \"Provincia\", también basada en el \"Codigo postal\". La expresión que se debe utilizar para la nueva columna es la siguiente:
 
-\
+**`cell.cross("Localidades","Codigo postal").cells\["Provincia"\].value\[0\]`**
 
-**cell.cross("Localidades","Codigo postal").cells\["Provincia"\].value\[0\]**
+6.  Como así también se debe tener en cuenta que el nombre de la columna debe ser *\"Provincia\"*. Luego de estos pasos contamos con el listado de lectores sin duplicados y con el dato de Localidad y Provincia.
 
-6.  Como así también se debe tener en cuenta que el nombre de la columna debe ser \"Provincia\". Luego de estos pasos contamos con el listado de lectores sin duplicados y con el dato de Localidad y Provincia.
+![](img/open_refine_clean20.png)
 
-![](https://lh7-us.googleusercontent.com/0puax6CzIi8BkjnDPVber9Hl2xq6az-9Ctg8xJ2ZL1s4spBAvPaYCJqH-GpbyAnGwUFSj-FRapHCkNb3YI1MgLsDoWD38GTdqb4ia-v7RML7UeRJVVhZlCJRDokAB0bZzCzdxQ3CgSl0gcWeBObDgg)
 
-\
-
-## Caso: Registro de todos los cambios realizados
+## Sexto Ejercicio: Registro de todos los cambios realizados
 
 Open Refine lleva un registro de todos los cambios y acciones que realizamos sobre los datos trabajados en el proyecto. Si es necesario volver algún paso atrás o tener el historial de acciones realizadas sobre los datos, la herramienta los documenta por nosotros. Se pueden ver haciendo clic sobre la opción Deshacer/Rehacer:
 
-![](https://lh7-us.googleusercontent.com/YG7o8ORL9RQ1hSEvXOCJOWtgKA0M7qpGd5Bs7um7Ztjlx7VxJlxfMOP-yKl0nL3lHjYkfbVa_fHIoTlUO_VR9bLoHkhMaLaUpdjVG0QwQBq_oh18awcq7XGVF39WTjQks1GF1LRWDrEPuvA5u7K5Yw)
+![](img/open_refine_clean21.png)
 
-\
 
-## Caso: Guardando los datos trabajados
+## Septimo Ejercicio: guardando los datos trabajados
 
-1.  Para finalizar y obtener un archivo con los datos ya limpios y trabajados como necesitamos debemos hacer clic en \"Exportar\" y allí seleccionar el formato que más nos convenga.
+1.  Para finalizar y obtener un archivo con los datos ya limpios y trabajados como necesitamos debemos hacer clic en **\"Exportar\"** y allí seleccionar el formato que más nos convenga.
 
-![](https://lh7-us.googleusercontent.com/N7wNSRZVWI-NtV4BUHPscnwV4LuPpO0zOewHPiAKi6h2pV9FAcBiGrL_iHezGh6A0wRZFRbHSzopGydRQSy4vVVkbj7qVZ4ki8AnVO_4As8OnI3CQ__qJ7XNECHqQ93RdPY3Qb7upvCHr2HnF0Mm4g)
+![](img/open_refine_clean23.png)
 
-2.  Hacer clic en el botón \"Exportar\" que se encuentra en la esquina superior derecha de la pantalla, allí visualizar todas las opciones de exportación junto con los formatos en los que se pueden exportar los datos, en este caso vamos a seleccionar el formato \"Excel en XML (.xlsx)\".  Al seleccionar la opción se abrirá otra ventana en el explorador:
+2.  Hacer clic en el botón **\"Exportar\"** que se encuentra en la esquina superior derecha de la pantalla, allí visualizar todas las opciones de exportación junto con los formatos en los que se pueden exportar los datos, en este caso vamos a seleccionar el formato **\"Excel en XML (.xlsx)\"**. Al seleccionar la opción se abrirá otra ventana en el explorador:
 
-![](https://lh7-us.googleusercontent.com/Nu4fEzRtF53Cz20OK0l7Ufoi7c2dD9RV0_Ck3p3_Cmcaaj0Yiv5-JIk7AdeRRRv8ffzZK-bkLoThAaqpOfwJRgAqk1FvxQhkIoIfD-YBCWMIywWBC5iVgc5bm5B6YbkZP9803hSybru4Oe-pgGHPYA)
+![](img/open_refine_clean24.png)
 
-3.  En esta nueva ventana seleccionar la opción \"Guardar como\" asi poder elegir la ubicación del archivo final.
-
-\
-\
-\
-
-![](https://lh7-us.googleusercontent.com/8LR1AshzC2ilQ5DbirOwiM4W5e8_J7syCWwqx9BOEb0v-u9YqMpO4kGgWacEpP45j9BkA92HKxvdJNeno6NnKgGk9cYB4OoM_Ox8eSuJn7bxfoo0mBXELUYJkTamrz8vs5oKRawhmPNhSkZZJVb6eA "guion corto")
-
-\
+3.  En esta nueva ventana seleccionar la opción **\"Guardar como\"** asi poder elegir la ubicación del archivo final.
