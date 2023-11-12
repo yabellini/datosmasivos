@@ -87,3 +87,11 @@ Generar una estructura tidy de este conjunto de datos.\
 | 18      | \>95%    | \>95%    | \>95%    | \>95%    | \>95%    | \>95%    |
 | La loma | 77%      | 89%      | 3%       | 75%      | 88%      | 3%       |
 | A2      | 25%      | 35%      | 19%      | 25%      | 35%      | 19%      |
+
+## Lecturas sugeridas
+
+* Artículo - [Tidy data](https://vita.had.co.nz/papers/tidy-data.html). Hadley Wickham. The Journal of Statistical Software, vol. 59, 2014. (Inglés)
+
+* Artículo - [Licencias: Compartir material educativo y mantener la autoría](https://learning-learnr.netlify.app/post/compartirmaterialdoi/) (Español)
+
+* Artículo - [Licencias Creative Commons](https://creativecommons.org/licenses/)
