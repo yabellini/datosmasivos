@@ -1,96 +1,92 @@
 ---
-title: "Clase 4 - "
+title: "Clase 4 - Metadatos y Limpieza de datos"
 ---
 
 ## Objetivos de Aprendizaje
 
--   Explicar que es SQL y que lo diferencia de NOSQL.
+-   Definir que es un metadato y Explicar que funcion cumplen.
 
--   Mencionar diferentes productos de software para administrar datos SQL y NOSQL.
+-   Definir el ciclo de degradacion normal de la informacion.
 
--   Identificar y explicar cuatro soluciones de base de datos noSQL.
+-   Definir scrapping.
 
--   Explicar el concepto de "la nube" y mencionar productos para trabajar grandes datos en la nube.
+-   Describir 5 aspectos a tener en cuenta con datos propios y 5 con datos ajenos para poder realizar un proceso de limpieza de datos reproducible.
 
--   Definir Text Mining/Analisis de Texto.
+-   Utilizar Open Refine para limpiar un conjunto de datos.
 
--   Definir bolsa de palabras, análisis y etiquetado sintáctico, asociación de palabras y analisis de sentimiento.
+-   Determinar que tipo de tarea se puede realizar con OpenRefine para limpiar diferentes problemas con datos.
 
-- Identificar las tecnicas de mineria de texto en diferentes casos de uso.
+-   Recuperar datos desde formatos cerrados como los PDF y JPG y almacenarlos en un formato abierto.
+
+-   Utilizar Tabula para obtener datos desde archivos PDF.
 
 ## Slides
 
-<iframe src="https://docs.google.com/presentation/d/1VIYEe8IYNolCswoKjZ_3B7Qqr4qLe8E9gL4MjYfsOQA/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+<iframe src="https://docs.google.com/presentation/d/17a0Q3C2_DZiDPzq-L13Nd7MaJRvh1B6dnzFplbFREKs/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 
 </iframe>
 
 ## Ejercicios
 
-#### 1) Usar una herramienta en la nube
+#### 1) Obteniendo datos desde un PDF on-line
 
-**Duración:** ~10 minutos
+**Duración:** \~12 minutos
 
-1.  Ir a la web: <https://earthengine.google.com/timelapse/> 
+Existen varios software que realizan conversiones de archivos, algunos de ellos funcionan on-line lo que evita tener que instalar el sistema en la propia computadora.
 
-2.  Poner el nombre del lugar donde viven y ver cómo ha cambiado con los años.
+Dentro de este grupo tenemos **PDFToExcel**.
 
+Transformar los datos de dos archivos PDF con tablas a un formato CSV legible.
 
-1.  Ir a la web: <https://global-surface-water.appspot.com/map> 
+1.  Descargamos los dos archivos PDF que se encuentran en el campus (**crns1701.pdf** y **santa2016-12.pdf**).
 
-2.  Buscar el lugar donde viven y vean como se comporta el agua en superficie en los alrrededores.
+2.  Para utilizar el aplicativo entramos en https://www.pdftoexcelonline.com/
 
+La pantalla de inicio nos presenta un paso a paso, donde lo primero es seleccionar el archivo a convertir. Presionando el botón Select your file y seleccionamos el archivo **crns1701.pdf**, luego completamos con el mail al cual deseamos que nos envíe el archivo y finalmente presionamos el botón **Convert Now**
 
-#### 2) Generando nubes de palabras
+![](img/pdf_converter1.png)
 
-**Duración:** ~12 minutos
+Nos aparece un cartel como el siguiente donde nos indica que nos enviarán el archivo convertido por mail:
 
-1. Ingresara la web: <https://wordart.com/>
-2. Tomar los datos de este archivo y generar una nube de palabras: <https://docs.google.com/spreadsheets/d/1POHmFKShKbSjUfrRECiZHFTHH_ObIO1zXMsN8dgGp0s/edit?usp=sharing>
-3. Ingresar en: <https://www.nubedepalabras.es/>
-4. Utilizando el mismo archivo, generar una nube de palabras que tenga la forma de una letra R.
-5. Peguen aquí debajo las nubes de palabras que generaron en el lugar de cada sala
+![](img/pdf_converter2.png)
 
+3.  Entrando al mail que indicamos encontraremos un correo con un link para descargar el archivo convertido, lo guardamos y abrimos para analizar la transformación.
 
-#### 3) Instalando el software para trabajar con texto
+#### 2) Obteniendo datos desde un PDF off-line
 
-**Duración:** ~20 minutos
-
-a.  **Instalando OpenRefine**
+**Duración:** \~20 minutos
 
 
-a.1) Ir a <https://openrefine.org/download.html> y seleccionar la versión correcta para tu sistema operativo.
+También existen software que se instalan en la computadora, uno de ellos es [Tabula](http://tabula.technology/). Para utilizarlo:
 
-a.2) Seguir las instrucciones en la página para instalar y dejar funcionando OpenRefine.
+1.  Si aún no lo hicieron, descarguen el archivo zip desde el sitio <http://tabula.technology/>, lo descomprimimos y luego vamos a la carpeta que acaba de extraer.
 
+2.  Dentro de la misma se encuentran una serie de archivos, ejecuta (haciendo doble click o presionando Enter) el programa **"Tabula"** que se encuentra dentro. Se abrirá un navegador web. Si no lo hace, abra su navegador web y vaya a **http://localhost: 8080**. Aparecerá una pantalla similar a la siguiente.
 
-b.  **Instalando Tabula**
-
-
-b.1) Ir a la página: <https://tabula.technology/>
-
-b.2) Seleccionar la versión para instalar de acuerdo al Sistema Operativo (windows, Mac o Linux). Se debe descargar un .zip.
-
-b.3) Extraer el archivo zip en una carpeta de tu disco rígido que se llama Tabula.
-
-b.4) Dentro de la carpeta ejecutar el archivo Tabula.exe, si se instaló de forma correcta un navegador de internet se tiene que abrir con el Tabula funcionando.
-
-b.5) Si el navegador no se abre solo, ir a nuestro navegador de internet y escribir esta dirección: [http://localhost:8080](http://localhost:8080/) . Ahí está Tabula!
+![](img/pdf_converter3.png)
 
 
-c.  **Instalando los paquetes en R**
+3.  Para iniciar la conversión, presionamos el botón **Browse**, luego elegimos el archivo **santa2016-12.pdf** y presionamos el botón **Import**. Inicia la conversión del archivo PDF.
+
+![](img/pdf_converter4.png)
+
+4.  Cuando termina nos presenta una pantalla para trabajar, si presionamos el botón **Autodetec Tables** nos marca la sección a transformar y con el botón **Preview & Export Extrated Data** podemos obtener la información seleccionada.
+
+![](img/pdf_converter5.png)
+
+La pantalla siguiente nos presenta los datos y nos da varias opciones para exportarlos o copiarlos al portapapeles. También podemos volver atrás para cambiar la selección si vemos que lo elegido no corresponde con lo que necesitamos extraer.
+
+5.  Lo exportamos a un archivo CSV, seleccionamos ese formato en **Export Format** y presionando en el botón **Export**.
+
+![](img/pdf_converter6.png)
+
+6.  Si seleccionamos **Guardar** y damos **Aceptar** el archivo se almacenará en nuestro disco. Lo guardamos y abrimos para analizar la transformación.
+
+![](img/pdf_converter7.png)
 
 
-c.1) Abrir R Studio
+#### 3) Open Refine. Caso: lectores del Horizonte Agropecuario
 
-c.2) Instalar los siguientes paquetes (esto puede llevar un tiempo así que no te preocupes si tarda un rato):
+**Duración:** \~45 minutos
 
-
--   **tidyverse (si ya lo tienen no lo instalen)**
-
--   **readr (si ya lo tienen no lo instalen)**
-
--   tidytext
-
--   wordcloud2
-
--   tm
+1)  Seguir las instrucciones del ejercicio de [limpiza de datos usando Open Refine](docs/OpenRefine.html)
