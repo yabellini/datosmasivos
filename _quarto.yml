@@ -26,9 +26,9 @@ website:
       - href: clase3.qmd
         text: Clase 3 - NOSQL y Text Mining
       - href: clase4.qmd
-        text: Clase 4 -
+        text: Clase 4 - Scrapping y Limpieza de datos
       - href: clase5.qmd
-        text: Clase 5 -
+        text: Clase 5 - Text Mining en R
       - href: clase6.qmd
         text: Clase 6 -
       - href: clase7.qmd

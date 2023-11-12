@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Datos Masivos - Clase 4 -</title>
+<title>Datos Masivos - Clase 4 - Metadatos y Limpieza de datos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -173,8 +173,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ejerciciosextra.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Guía de Ejercicios</span></a>
+  <a href="./OpenRefine.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Guía de OpenRefine</span></a>
   </div>
 </li>
     </ul>
@@ -198,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Clase 4 -</h1>
+<h1 class="title">Clase 4 - Metadatos y Limpieza de datos</h1>
 </div>
 
 
@@ -216,71 +216,74 @@ ul.task-list li input[type="checkbox"] {
 <section id="objetivos-de-aprendizaje" class="level2">
 <h2 class="anchored" data-anchor-id="objetivos-de-aprendizaje">Objetivos de Aprendizaje</h2>
 <ul>
-<li><p>Explicar que es SQL y que lo diferencia de NOSQL.</p></li>
-<li><p>Mencionar diferentes productos de software para administrar datos SQL y NOSQL.</p></li>
-<li><p>Identificar y explicar cuatro soluciones de base de datos noSQL.</p></li>
-<li><p>Explicar el concepto de “la nube” y mencionar productos para trabajar grandes datos en la nube.</p></li>
-<li><p>Definir Text Mining/Analisis de Texto.</p></li>
-<li><p>Definir bolsa de palabras, análisis y etiquetado sintáctico, asociación de palabras y analisis de sentimiento.</p></li>
-<li><p>Identificar las tecnicas de mineria de texto en diferentes casos de uso.</p></li>
+<li><p>Definir que es un metadato y Explicar que funcion cumplen.</p></li>
+<li><p>Definir el ciclo de degradacion normal de la informacion.</p></li>
+<li><p>Definir scrapping.</p></li>
+<li><p>Describir 5 aspectos a tener en cuenta con datos propios y 5 con datos ajenos para poder realizar un proceso de limpieza de datos reproducible.</p></li>
+<li><p>Utilizar Open Refine para limpiar un conjunto de datos.</p></li>
+<li><p>Determinar que tipo de tarea se puede realizar con OpenRefine para limpiar diferentes problemas con datos.</p></li>
+<li><p>Recuperar datos desde formatos cerrados como los PDF y JPG y almacenarlos en un formato abierto.</p></li>
+<li><p>Utilizar Tabula para obtener datos desde archivos PDF.</p></li>
 </ul>
 </section>
 <section id="slides" class="level2">
 <h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<iframe src="https://docs.google.com/presentation/d/1VIYEe8IYNolCswoKjZ_3B7Qqr4qLe8E9gL4MjYfsOQA/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+<iframe src="https://docs.google.com/presentation/d/17a0Q3C2_DZiDPzq-L13Nd7MaJRvh1B6dnzFplbFREKs/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 </iframe>
 </section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
-<section id="usar-una-herramienta-en-la-nube" class="level4">
-<h4 class="anchored" data-anchor-id="usar-una-herramienta-en-la-nube">1) Usar una herramienta en la nube</h4>
-<p><strong>Duración:</strong> ~10 minutos</p>
-<ol type="1">
-<li><p>Ir a la web: <a href="https://earthengine.google.com/timelapse/" class="uri">https://earthengine.google.com/timelapse/</a>&nbsp;</p></li>
-<li><p>Poner el nombre del lugar donde viven y ver cómo ha cambiado con los años.</p></li>
-<li><p>Ir a la web: <a href="https://global-surface-water.appspot.com/map" class="uri">https://global-surface-water.appspot.com/map</a>&nbsp;</p></li>
-<li><p>Buscar el lugar donde viven y vean como se comporta el agua en superficie en los alrrededores.</p></li>
-</ol>
-</section>
-<section id="generando-nubes-de-palabras" class="level4">
-<h4 class="anchored" data-anchor-id="generando-nubes-de-palabras">2) Generando nubes de palabras</h4>
+<section id="obteniendo-datos-desde-un-pdf-on-line" class="level4">
+<h4 class="anchored" data-anchor-id="obteniendo-datos-desde-un-pdf-on-line">1) Obteniendo datos desde un PDF on-line</h4>
 <p><strong>Duración:</strong> ~12 minutos</p>
+<p>Existen varios software que realizan conversiones de archivos, algunos de ellos funcionan on-line lo que evita tener que instalar el sistema en la propia computadora.</p>
+<p>Dentro de este grupo tenemos <strong>PDFToExcel</strong>.</p>
+<p>Transformar los datos de dos archivos PDF con tablas a un formato CSV legible.</p>
 <ol type="1">
-<li>Ingresara la web: <a href="https://wordart.com/" class="uri">https://wordart.com/</a></li>
-<li>Tomar los datos de este archivo y generar una nube de palabras: <a href="https://docs.google.com/spreadsheets/d/1POHmFKShKbSjUfrRECiZHFTHH_ObIO1zXMsN8dgGp0s/edit?usp=sharing" class="uri">https://docs.google.com/spreadsheets/d/1POHmFKShKbSjUfrRECiZHFTHH_ObIO1zXMsN8dgGp0s/edit?usp=sharing</a></li>
-<li>Ingresar en: <a href="https://www.nubedepalabras.es/" class="uri">https://www.nubedepalabras.es/</a></li>
-<li>Utilizando el mismo archivo, generar una nube de palabras que tenga la forma de una letra R.</li>
-<li>Peguen aquí debajo las nubes de palabras que generaron en el lugar de cada sala</li>
+<li><p>Descargamos los dos archivos PDF que se encuentran en el campus (<strong>crns1701.pdf</strong> y <strong>santa2016-12.pdf</strong>).</p></li>
+<li><p>Para utilizar el aplicativo entramos en https://www.pdftoexcelonline.com/</p></li>
+</ol>
+<p>La pantalla de inicio nos presenta un paso a paso, donde lo primero es seleccionar el archivo a convertir. Presionando el botón Select your file y seleccionamos el archivo <strong>crns1701.pdf</strong>, luego completamos con el mail al cual deseamos que nos envíe el archivo y finalmente presionamos el botón <strong>Convert Now</strong></p>
+<p><img src="img/pdf_converter1.png" class="img-fluid"></p>
+<p>Nos aparece un cartel como el siguiente donde nos indica que nos enviarán el archivo convertido por mail:</p>
+<p><img src="img/pdf_converter2.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Entrando al mail que indicamos encontraremos un correo con un link para descargar el archivo convertido, lo guardamos y abrimos para analizar la transformación.</li>
 </ol>
 </section>
-<section id="instalando-el-software-para-trabajar-con-texto" class="level4">
-<h4 class="anchored" data-anchor-id="instalando-el-software-para-trabajar-con-texto">3) Instalando el software para trabajar con texto</h4>
+<section id="obteniendo-datos-desde-un-pdf-off-line" class="level4">
+<h4 class="anchored" data-anchor-id="obteniendo-datos-desde-un-pdf-off-line">2) Obteniendo datos desde un PDF off-line</h4>
 <p><strong>Duración:</strong> ~20 minutos</p>
-<ol type="a">
-<li><strong>Instalando OpenRefine</strong></li>
+<p>También existen software que se instalan en la computadora, uno de ellos es <a href="http://tabula.technology/">Tabula</a>. Para utilizarlo:</p>
+<ol type="1">
+<li><p>Si aún no lo hicieron, descarguen el archivo zip desde el sitio <a href="http://tabula.technology/" class="uri">http://tabula.technology/</a>, lo descomprimimos y luego vamos a la carpeta que acaba de extraer.</p></li>
+<li><p>Dentro de la misma se encuentran una serie de archivos, ejecuta (haciendo doble click o presionando Enter) el programa <strong>“Tabula”</strong> que se encuentra dentro. Se abrirá un navegador web. Si no lo hace, abra su navegador web y vaya a <strong>http://localhost: 8080</strong>. Aparecerá una pantalla similar a la siguiente.</p></li>
 </ol>
-<p>a.1) Ir a <a href="https://openrefine.org/download.html" class="uri">https://openrefine.org/download.html</a> y seleccionar la versión correcta para tu sistema operativo.</p>
-<p>a.2) Seguir las instrucciones en la página para instalar y dejar funcionando OpenRefine.</p>
-<ol start="2" type="a">
-<li><strong>Instalando Tabula</strong></li>
+<p><img src="img/pdf_converter3.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Para iniciar la conversión, presionamos el botón <strong>Browse</strong>, luego elegimos el archivo <strong>santa2016-12.pdf</strong> y presionamos el botón <strong>Import</strong>. Inicia la conversión del archivo PDF.</li>
 </ol>
-<p>b.1) Ir a la página: <a href="https://tabula.technology/" class="uri">https://tabula.technology/</a></p>
-<p>b.2) Seleccionar la versión para instalar de acuerdo al Sistema Operativo (windows, Mac o Linux). Se debe descargar un .zip.</p>
-<p>b.3) Extraer el archivo zip en una carpeta de tu disco rígido que se llama Tabula.</p>
-<p>b.4) Dentro de la carpeta ejecutar el archivo Tabula.exe, si se instaló de forma correcta un navegador de internet se tiene que abrir con el Tabula funcionando.</p>
-<p>b.5) Si el navegador no se abre solo, ir a nuestro navegador de internet y escribir esta dirección: <a href="http://localhost:8080/">http://localhost:8080</a> . Ahí está Tabula!</p>
-<ol start="3" type="a">
-<li><strong>Instalando los paquetes en R</strong></li>
+<p><img src="img/pdf_converter4.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Cuando termina nos presenta una pantalla para trabajar, si presionamos el botón <strong>Autodetec Tables</strong> nos marca la sección a transformar y con el botón <strong>Preview &amp; Export Extrated Data</strong> podemos obtener la información seleccionada.</li>
 </ol>
-<p>c.1) Abrir R Studio</p>
-<p>c.2) Instalar los siguientes paquetes (esto puede llevar un tiempo así que no te preocupes si tarda un rato):</p>
-<ul>
-<li><p><strong>tidyverse (si ya lo tienen no lo instalen)</strong></p></li>
-<li><p><strong>readr (si ya lo tienen no lo instalen)</strong></p></li>
-<li><p>tidytext</p></li>
-<li><p>wordcloud2</p></li>
-<li><p>tm</p></li>
-</ul>
+<p><img src="img/pdf_converter5.png" class="img-fluid"></p>
+<p>La pantalla siguiente nos presenta los datos y nos da varias opciones para exportarlos o copiarlos al portapapeles. También podemos volver atrás para cambiar la selección si vemos que lo elegido no corresponde con lo que necesitamos extraer.</p>
+<ol start="5" type="1">
+<li>Lo exportamos a un archivo CSV, seleccionamos ese formato en <strong>Export Format</strong> y presionando en el botón <strong>Export</strong>.</li>
+</ol>
+<p><img src="img/pdf_converter6.png" class="img-fluid"></p>
+<ol start="6" type="1">
+<li>Si seleccionamos <strong>Guardar</strong> y damos <strong>Aceptar</strong> el archivo se almacenará en nuestro disco. Lo guardamos y abrimos para analizar la transformación.</li>
+</ol>
+<p><img src="img/pdf_converter7.png" class="img-fluid"></p>
+</section>
+<section id="open-refine.-caso-lectores-del-horizonte-agropecuario" class="level4">
+<h4 class="anchored" data-anchor-id="open-refine.-caso-lectores-del-horizonte-agropecuario">3) Open Refine. Caso: lectores del Horizonte Agropecuario</h4>
+<p><strong>Duración:</strong> ~45 minutos</p>
+<ol type="1">
+<li>Seguir las instrucciones del ejercicio de <a href="docs/OpenRefine.html">limpiza de datos usando Open Refine</a></li>
+</ol>
 
 
 </section>
