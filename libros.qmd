@@ -1,0 +1,42 @@
+---
+title: "Libros sugeridos"
+format: html
+editor: visual
+---
+
+### Libro - [Big Data](https://www.bajalibros.com/AR/Big-data-Walter-Sosa-Escudero-eBook-1829799?gclid=Cj0KCQjwytOEBhD5ARIsANnRjVhdyinz26Dme4Ag-p6vCPI3KgXNVykipiGKc_XC-5Oc2LftBDhvN7IaAvYYEALw_wcB?frstPGI3R=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=)- Walter Sosa Escudero (Español)
+
+Libro introductorio a diferentes conceptos, algoritmos y tecnologias relacionados con el mundo del Big Data. 
+
+### Libro - [Armas de destrucción matemática](https://books.google.com.ar/books/about/Armas_de_destrucci%C3%B3n_matem%C3%A1tica.html?id=-L79DwAAQBAJ&printsec=frontcover&source=kp_read_button&redir_esc=y#v=onepage&q&f=false)- Cathy O'Neil (Español)
+
+Libro donde se explica como funcionan diferentes algoritmos y como su uso pueden influir de forma negativa en la vida de las personas.
+
+### Libro [Feminismo de Datos](https://data-feminism.mitpress.mit.edu/bienvenida) (Español)
+
+Traduccion del libro Data Feminist.
+
+### Libro - [R para Ciencia de Datos](https://es.r4ds.hadley.nz/) (Español)
+
+Traduccion de la primera edicion del libro R for Data Science.
+
+### Libro - [Open Data Handbook](http://opendatahandbook.org/) (Inglés)
+
+Libro con recomendaciones para abrir datos.
+
+### Libro - [Java Script para Ciencia de Datos](http://js4ds.org/) (Inglés)
+
+### Libro - [TextMining with R](https://www.tidytextmining.com/) (Inglés)
+
+### Libro - [Las inundaciones en el Noreste de La Pampa. Una mirada multidisciplinar](http://www.unlpam.edu.ar/images/extension/edunlpam/QuedateEnCasa/las-inundaciones-en-el-noreste-de-la-pampa.pdf) (Español)
+
+Leer los capitulos 9 y 10 para mayor detalle sobre el uso de GEE para el seguimiento de inundaciones.
+
+### Libro - [Handbook rgee](https://github.com/ambarja/Handbook_rgee/blob/master/pdf/vol01.pdf) (Español)
+
+### Libro - [Social Media Mining with R](https://pzs.dstu.dp.ua/DataMining/social/bibl/Social%20Media%20Mining%20with%20R.pdf) - Nathan Danneman, Richard Heimann (Inglés)
+
+
+### Libro [Public Policy Analytics](https://www.routledge.com/Public-Policy-Analytics-Code-and-Context-for-Data-Science-in-Government/Steif/p/book/9780367507619) (Inglés)
+
+### Libro - [El modelo relacional y el álgebra relacional](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/200/8/Bases%20de%20datos_M%C3%B3dulo2_El%20modelo%20relacional%20y%20el%20%C3%A1lgebra%20relacional.pdf) - Dolors Costal Costa (Español)

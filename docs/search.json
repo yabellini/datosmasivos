@@ -257,5 +257,89 @@
     "title": "Clase 1 - Introducción",
     "section": "Lecturas sugeridas",
     "text": "Lecturas sugeridas\n\nQuien es Timnit Gebru\nPor que el despido de una investigadora negra de Google se ha convertido en un escandalo global"
+  },
+  {
+    "objectID": "libros.html",
+    "href": "libros.html",
+    "title": "Libros sugeridos",
+    "section": "",
+    "text": "Libro - Big Data- Walter Sosa Escudero (Español)\nLibro introductorio a diferentes conceptos, algoritmos y tecnologias relacionados con el mundo del Big Data.\n\n\nLibro - Armas de destrucción matemática- Cathy O’Neil (Español)\nLibro donde se explica como funcionan diferentes algoritmos y como su uso pueden influir de forma negativa en la vida de las personas.\n\n\nLibro Feminismo de Datos (Español)\nTraduccion del libro Data Feminist.\n\n\nLibro - R para Ciencia de Datos (Español)\nTraduccion de la primera edicion del libro R for Data Science.\n\n\nLibro - Open Data Handbook (Inglés)\nLibro con recomendaciones para abrir datos.\n\n\nLibro - Java Script para Ciencia de Datos (Inglés)\n\n\nLibro - TextMining with R (Inglés)\n\n\nLibro - Las inundaciones en el Noreste de La Pampa. Una mirada multidisciplinar (Español)\nLeer los capitulos 9 y 10 para mayor detalle sobre el uso de GEE para el seguimiento de inundaciones.\n\n\nLibro - Handbook rgee (Español)\n\n\nLibro - Social Media Mining with R - Nathan Danneman, Richard Heimann (Inglés)\n\n\nLibro Public Policy Analytics (Inglés)\n\n\nLibro - El modelo relacional y el álgebra relacional - Dolors Costal Costa (Español)"
+  },
+  {
+    "objectID": "libros.html#libro---big-data--walter-sosa-escudero-español",
+    "href": "libros.html#libro---big-data--walter-sosa-escudero-español",
+    "title": "Libros sugeridos",
+    "section": "",
+    "text": "Libro introductorio a diferentes conceptos, algoritmos y tecnologias relacionados con el mundo del Big Data."
+  },
+  {
+    "objectID": "libros.html#libro---armas-de-destrucción-matemática--cathy-oneil-español",
+    "href": "libros.html#libro---armas-de-destrucción-matemática--cathy-oneil-español",
+    "title": "Libros sugeridos",
+    "section": "Libro - Armas de destrucción matemática- Cathy O’Neil (Español)",
+    "text": "Libro - Armas de destrucción matemática- Cathy O’Neil (Español)\nLibro donde se explica como funcionan diferentes algoritmos y como su uso pueden influir de forma negativa en la vida de las personas."
+  },
+  {
+    "objectID": "libros.html#libro-feminismo-de-datos-español",
+    "href": "libros.html#libro-feminismo-de-datos-español",
+    "title": "Libros sugeridos",
+    "section": "Libro Feminismo de Datos (Español)",
+    "text": "Libro Feminismo de Datos (Español)\nTraduccion del libro Data Feminist."
+  },
+  {
+    "objectID": "libros.html#libro---r-para-ciencia-de-datos-español",
+    "href": "libros.html#libro---r-para-ciencia-de-datos-español",
+    "title": "Libros sugeridos",
+    "section": "Libro - R para Ciencia de Datos (Español)",
+    "text": "Libro - R para Ciencia de Datos (Español)\nTraduccion de la primera edicion del libro R for Data Science."
+  },
+  {
+    "objectID": "libros.html#libro---open-data-handbook-inglés",
+    "href": "libros.html#libro---open-data-handbook-inglés",
+    "title": "Libros sugeridos",
+    "section": "Libro - Open Data Handbook (Inglés)",
+    "text": "Libro - Open Data Handbook (Inglés)\nLibro con recomendaciones para abrir datos."
+  },
+  {
+    "objectID": "libros.html#libro---java-script-para-ciencia-de-datos-inglés",
+    "href": "libros.html#libro---java-script-para-ciencia-de-datos-inglés",
+    "title": "Libros sugeridos",
+    "section": "Libro - Java Script para Ciencia de Datos (Inglés)",
+    "text": "Libro - Java Script para Ciencia de Datos (Inglés)"
+  },
+  {
+    "objectID": "libros.html#libro---textmining-with-r-inglés",
+    "href": "libros.html#libro---textmining-with-r-inglés",
+    "title": "Libros sugeridos",
+    "section": "Libro - TextMining with R (Inglés)",
+    "text": "Libro - TextMining with R (Inglés)"
+  },
+  {
+    "objectID": "libros.html#libro---las-inundaciones-en-el-noreste-de-la-pampa.-una-mirada-multidisciplinar",
+    "href": "libros.html#libro---las-inundaciones-en-el-noreste-de-la-pampa.-una-mirada-multidisciplinar",
+    "title": "Libros sugeridos",
+    "section": "Libro - Las inundaciones en el Noreste de La Pampa. Una mirada multidisciplinar",
+    "text": "Libro - Las inundaciones en el Noreste de La Pampa. Una mirada multidisciplinar\nLeer los capitulos 9 y 10 para mayor detalle sobre el uso de GEE para el seguimiento de inundaciones."
+  },
+  {
+    "objectID": "libros.html#libro---handbook-rgee-en-español",
+    "href": "libros.html#libro---handbook-rgee-en-español",
+    "title": "Libros sugeridos",
+    "section": "Libro - Handbook rgee (en español)",
+    "text": "Libro - Handbook rgee (en español)\nHaga clic en el enlace https://github.com/ambarja/Handbook_rgee/blob/master/pdf/vol01.pdf para abrir el recurso. \nLibro - Social Media Mining with R"
+  },
+  {
+    "objectID": "libros.html#libro-public-policy-analytics-inglés",
+    "href": "libros.html#libro-public-policy-analytics-inglés",
+    "title": "Libros sugeridos",
+    "section": "Libro Public Policy Analytics (Inglés)",
+    "text": "Libro Public Policy Analytics (Inglés)\nHaga clic en el enlace https://www.routledge.com/Public-Policy-Analytics-Code-and-Context-for-Data-Science-in-Government/Steif/p/book/9780367507619 para abrir el recurso."
+  },
+  {
+    "objectID": "libros.html#capítulo-de-libro---el-modelo-relacional-y-el-álgebra-relacional",
+    "href": "libros.html#capítulo-de-libro---el-modelo-relacional-y-el-álgebra-relacional",
+    "title": "Libros sugeridos",
+    "section": "Capítulo de Libro - El modelo relacional y el álgebra relacional",
+    "text": "Capítulo de Libro - El modelo relacional y el álgebra relacional\nHaga clic en el enlace http://openaccess.uoc.edu/webapps/o2/bitstream/10609/200/8/Bases%20de%20datos_M%C3%B3dulo2_El%20modelo%20relacional%20y%20el%20%C3%A1lgebra%20relacional.pdf para abrir el recurso."
   }
 ]
