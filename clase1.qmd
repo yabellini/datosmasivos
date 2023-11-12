@@ -20,7 +20,6 @@ title: "Clase 1 - Introducción"
 <iframe src="https://docs.google.com/presentation/d/139gwVdSPxBcQnNQWyB8DMhqrMZImjiRADi6f0t3ic3U/embed?start=false&loop=false&delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 
-
 ## Ejercicios
 
 #### 1) Miren los siguientes tres videos sobre Ciencia de Datos y contesten en grupo las preguntas:
@@ -74,9 +73,12 @@ Video: [Kilimo](https://youtu.be/4lwa-6Li6t8)
 
 * ¿Les parece que el servicio es exitoso?, ¿Por qué? 
 
-
-
 ::: {.callout-tip}
 ## Documento compartido para resolver ejercicios
 Esta es una [plantilla del documento compartido](https://docs.google.com/document/d/1dIa92lHSONYKNWHcQTywbgrqOq8ROdJikg-1gIYyjhc/edit?usp=sharing) utilizando google docs.  Se debe generar un archivo por cada grupo.  Los grupos se recomiendan que sean entre dos a cuatro personas.
 ::: 
+
+## Lecturas sugeridas
+
+- [Quien es Timnit Gebru](https://es.wikipedia.org/wiki/Timnit_Gebru)
+- [Por que el despido de una investigadora negra de Google se ha convertido en un escandalo global](https://elpais.com/tecnologia/2020-12-12/por-que-el-despido-de-una-investigadora-negra-de-google-se-ha-convertido-en-un-escandalo-global.html)

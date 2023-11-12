@@ -250,5 +250,12 @@
     "title": "Limpieza de datos con OpenRefine",
     "section": "Quinto Ejercicio: Unificar los set de datos de Lectores con Localidades.",
     "text": "Quinto Ejercicio: Unificar los set de datos de Lectores con Localidades.\nDuracion: 15 minutos.\n\nPara comenzar con la última parte de la consolidación de los datos del caso de estudio abrir nuevamente el set de datos Lectores, con el botón \"Abrir…\" que se encuentra en el rincón superior derecho.\n\n\n\nHacer click en la solapa de la izquierda \"Abrir proyecto\", esto nos muestra todos los proyectos que se generaron. Seleccionar el proyecto \"Lectores\" para abrirlo nuevamente.\nAhora agregar nuevas columnas \"Localidad\" y \"Provincia\" al proyecto actual desde el proyecto \"Localidades\". Para esto usaremos la opción \"Agregar columna basada en esta columna…\" en el menú \"Editar columnas\" de la columna \"Codigo Postal\"\n\n\n\nAl seleccionar esta opción se abre una ventana emergente en donde configurar opciones que nos va a permitir agregar nuevas columnas. Dentro de las configuraciones, completar el nombre de la nueva columna, en el primer caso sería \"Localidad\", dejar seleccionado \"cambiar a en blanco\", el lenguaje a utilizar será \"GREL\" como está configurado y en el cuadro \"Expresión\" completar con la expresión:\n\ncell.cross(\"Localidades\",\"Codigo postal\").cells\\[\"Localidad\"\\].value\\[0\\]\n\n\nEn el cuadro inferior se muestra una vista previa de la columna agregada. Realizar la misma secuencia para agregar la columna de \"Provincia\", también basada en el \"Codigo postal\". La expresión que se debe utilizar para la nueva columna es la siguiente:\n\ncell.cross(\"Localidades\",\"Codigo postal\").cells\\[\"Provincia\"\\].value\\[0\\]\n\nComo así también se debe tener en cuenta que el nombre de la columna debe ser \"Provincia\". Luego de estos pasos contamos con el listado de lectores sin duplicados y con el dato de Localidad y Provincia."
+  },
+  {
+    "objectID": "clase1.html#lecturas-sugeridas",
+    "href": "clase1.html#lecturas-sugeridas",
+    "title": "Clase 1 - Introducción",
+    "section": "Lecturas sugeridas",
+    "text": "Lecturas sugeridas\n\nQuien es Timnit Gebru\nPor que el despido de una investigadora negra de Google se ha convertido en un escandalo global"
   }
 ]

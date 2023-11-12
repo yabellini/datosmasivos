@@ -30,7 +30,7 @@ website:
       - href: clase5.qmd
         text: Clase 5 - Text Mining en R
       - href: clase6.qmd
-        text: Clase 6 -
+        text: Clase 6 - Geotecnologias
       - href: clase7.qmd
         text: Clase 7 -
       - href: clase8.qmd
@@ -41,6 +41,8 @@ website:
         text: Clase 10 -
       - href: OpenRefine.qmd
         text: Guía de OpenRefine
+      - href: Geocoding.qmd
+        text: Guía de Información Georeferenciada
 
 format:
   html:
