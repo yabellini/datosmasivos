@@ -354,14 +354,14 @@
     "href": "clase5.html",
     "title": "Clase 5 - Text Mining en R",
     "section": "",
-    "text": "Explicar el proceso de text mining tidy utilizando R.\nDefinir e identificar que es token y stop words."
+    "text": "Explicar el proceso de text mining tidy utilizando R.\nDefinir e identificar que es token y stop words.\nEjercitar las acciones basicas de un analisis de texto utilizando R."
   },
   {
     "objectID": "clase5.html#objetivos-de-aprendizaje",
     "href": "clase5.html#objetivos-de-aprendizaje",
     "title": "Clase 5 - Text Mining en R",
     "section": "",
-    "text": "Explicar el proceso de text mining tidy utilizando R.\nDefinir e identificar que es token y stop words."
+    "text": "Explicar el proceso de text mining tidy utilizando R.\nDefinir e identificar que es token y stop words.\nEjercitar las acciones basicas de un analisis de texto utilizando R."
   },
   {
     "objectID": "clase5.html#slides",
@@ -390,5 +390,19 @@
     "title": "Clase 4 - Metadatos y Limpieza de datos",
     "section": "Lecturas sugeridas",
     "text": "Lecturas sugeridas\n\nArtículo - Nongeospatial Metadata for the Ecological Sciences. William et.al. 1997 (inglés)\nArtículo - Propuesta para una Infraestructura de Datos Agropecuarios del Instituto Nacional de Tecnología Agropecuaria (INTA) (Español)"
+  },
+  {
+    "objectID": "clase6.html#slides",
+    "href": "clase6.html#slides",
+    "title": "Clase 6 - Geotecnologias",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "clase6.html#ejercicios",
+    "href": "clase6.html#ejercicios",
+    "title": "Clase 6 - Geotecnologias",
+    "section": "Ejercicios",
+    "text": "Ejercicios"
   }
 ]
