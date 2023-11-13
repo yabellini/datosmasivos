@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Datos Masivos - Introducción al manejo de grandes volúmenes de datos y datos no estructurados</title>
+<title>Datos Masivos - Clase 5 - Text Mining en R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./clase5.html">Clase 5 - Text Mining en R</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -101,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -137,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./clase5.html" class="sidebar-item-text sidebar-link">
+  <a href="./clase5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Clase 5 - Text Mining en R</span></a>
   </div>
 </li>
@@ -199,19 +233,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown" id="toc-curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown" class="nav-link active" data-scroll-target="#curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown">Curso de la Diplomatura en Ciencias de Datos Aplicada a Políticas Públcias de la Universidad Nacional Guillermo Brown</a>
-  <ul class="collapse">
-  <li><a href="#cantidad-de-horas-semanales-y-totales" id="toc-cantidad-de-horas-semanales-y-totales" class="nav-link" data-scroll-target="#cantidad-de-horas-semanales-y-totales">Cantidad de horas semanales y totales</a></li>
-  <li><a href="#nombres-de-laslos-integrantes-del-equipo-docente" id="toc-nombres-de-laslos-integrantes-del-equipo-docente" class="nav-link" data-scroll-target="#nombres-de-laslos-integrantes-del-equipo-docente">Nombres de las/los integrantes del equipo docente</a></li>
-  <li><a href="#fundamentación" id="toc-fundamentación" class="nav-link" data-scroll-target="#fundamentación">Fundamentación</a></li>
-  <li><a href="#programa-sintético" id="toc-programa-sintético" class="nav-link" data-scroll-target="#programa-sintético">Programa sintético</a></li>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos">Objetivos</a></li>
-  <li><a href="#bibliografía-y-recursos-audiovisuales" id="toc-bibliografía-y-recursos-audiovisuales" class="nav-link" data-scroll-target="#bibliografía-y-recursos-audiovisuales">Bibliografía y recursos audiovisuales</a></li>
-  <li><a href="#metodología" id="toc-metodología" class="nav-link" data-scroll-target="#metodología">Metodología</a></li>
-  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación">Evaluación</a></li>
-  </ul></li>
-  <li><a href="#presentación-de-la-materia" id="toc-presentación-de-la-materia" class="nav-link" data-scroll-target="#presentación-de-la-materia">Presentación de la materia</a></li>
-  <li><a href="#citar-como" id="toc-citar-como" class="nav-link" data-scroll-target="#citar-como">Citar como</a></li>
+  <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje" class="nav-link active" data-scroll-target="#objetivos-de-aprendizaje">Objetivos de Aprendizaje</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -220,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción al manejo de grandes volúmenes de datos y datos no estructurados</h1>
+<h1 class="title">Clase 5 - Text Mining en R</h1>
 </div>
 
 
@@ -235,80 +259,86 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown" class="level2">
-<h2 class="anchored" data-anchor-id="curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown">Curso de la Diplomatura en Ciencias de Datos Aplicada a Políticas Públcias de la Universidad Nacional Guillermo Brown</h2>
-<section id="cantidad-de-horas-semanales-y-totales" class="level3">
-<h3 class="anchored" data-anchor-id="cantidad-de-horas-semanales-y-totales">Cantidad de horas semanales y totales</h3>
-<p>10 clases de tres horas sincrónicas por semana más horas de lectura de bibliografía obligatoria y práctica.</p>
-</section>
-<section id="nombres-de-laslos-integrantes-del-equipo-docente" class="level3">
-<h3 class="anchored" data-anchor-id="nombres-de-laslos-integrantes-del-equipo-docente">Nombres de las/los integrantes del equipo docente</h3>
+<section id="objetivos-de-aprendizaje" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-aprendizaje">Objetivos de Aprendizaje</h2>
 <ul>
-<li>Yanina Bellini Saibene</li>
+<li><p>Explicar el proceso de text mining tidy utilizando R.</p></li>
+<li><p>Definir e identificar que es <em>token</em> y <em>stop words</em>.</p></li>
 </ul>
 </section>
-<section id="fundamentación" class="level3">
-<h3 class="anchored" data-anchor-id="fundamentación">Fundamentación</h3>
-<p>Ante la necesidad de cualquier persona que practique la ciencia de datos de manipular distintos volúmenes de datos, la gestión de los mismos cobra gran importancia. En este curso abordaremos el tema de la gestión de datos no estructurados principalmente desde el punto de vista teórico y práctico, incluyendo estudios de casos y actividades para brindarles las herramientas necesarias para continuar con su formación.</p>
-</section>
-<section id="programa-sintético" class="level3">
-<h3 class="anchored" data-anchor-id="programa-sintético">Programa sintético</h3>
-<ul>
-<li>Introducción a Big Data y una serie de conceptos relacionados.</li>
-<li>Datos estructurados y no estructurados. Dimensiones de los datos. Información.</li>
-<li>Analizar casos de uso de datos masivos y no estructurados en empresas e instituciones.</li>
-<li>Conocer soluciones de software para el tratamiento de datos estructurados, no estructurados y masivos.</li>
-<li>El lenguaje de programación R para el tratamiento de datos no estructurados.</li>
-<li>Introducción a OpenRefine.</li>
-</ul>
-</section>
-<section id="objetivos" class="level3">
-<h3 class="anchored" data-anchor-id="objetivos">Objetivos</h3>
-<p>Los objetivos de la materia son:</p>
-<ul>
-<li>Adquirir nociones sobre la generación y origen de los datos, formas de almacenamiento y su organización.</li>
-<li>Diferenciar datos estructurados de datos no estructurados.</li>
-<li>Definir Big Data, Ciencia de Datos, Minería de Texto, Aprendizaje Automático e Inteligencia Artificial.</li>
-<li>Identificar como estas disciplinas pueden influir en la vida de las personas, especialmente en el ámbito de las políticas públicas.</li>
-<li>Manipular datos de texto con lenguaje R y OpenRefine.</li>
-<li>Manipular datos de sensores remotos con R.</li>
-<li>Manipular un conjunto de datos masivo con R.</li>
-<li>Consumir APIs utilizando R.</li>
-</ul>
-</section>
-<section id="bibliografía-y-recursos-audiovisuales" class="level3">
-<h3 class="anchored" data-anchor-id="bibliografía-y-recursos-audiovisuales">Bibliografía y recursos audiovisuales</h3>
-<ul>
-<li><a href="https://es.r4ds.hadley.nz/">R para ciencia de datos</a>. de Hadley Wickham y Garrett Grolemund. Disponible es:</li>
-</ul>
-<p>Se solicitará a los estudiantes que instalen software libre y gratuito para la realización de las prácticas de la materia:</p>
-<ul>
-<li><p><a href="https://www.r-project.org/">R (lenguaje de programación)</a></p></li>
-<li><p><a href="https://www.rstudio.com/products/rstudio/">RStudio (IDE)</a></p></li>
-<li><p><a href="https://openrefine.org/">OpenRefine</a></p></li>
-</ul>
-<p>Otros materiales y bibliografía serán sugeridos de acuerdo a las discusiones que se generen y el interés de las y los estudiantes.</p>
-</section>
-<section id="metodología" class="level3">
-<h3 class="anchored" data-anchor-id="metodología">Metodología</h3>
-<p>La materia se llevará a cabo en clases sincrónicas e interactivas que incluyen exposiciones teóricas y ejercicios prácticos. Para cada clase se sugerirá bibliografía para leer y complementar los temas vistos como así también ejercicios de práctica si correspondiera. En el campus virtual están disponibles los materiales, clases grabadas y se abrirán foros para preguntas y discusión de los distintos temas. La comunicación se realizará por ese medio.</p>
-</section>
-<section id="evaluación" class="level3">
-<h3 class="anchored" data-anchor-id="evaluación">Evaluación</h3>
-<p><strong>Requisitos de aprobación:</strong> para aprobar la cursada será necesario entregar todos los trabajos prácticos que se presentan en las clases y los que se solicitan en el campus.</p>
-<p>Ver la <a href="schedule.html">agenda</a> de la materia con el cronograma de clases.</p>
-</section>
-</section>
-<section id="presentación-de-la-materia" class="level2">
-<h2 class="anchored" data-anchor-id="presentación-de-la-materia">Presentación de la materia</h2>
-<iframe src="https://docs.google.com/presentation/d/1mgEBpE_UnQ7Fgud3ty73lAzw7NZmkRUOlr_BnQ7RS1Q/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<iframe src="https://docs.google.com/presentation/d/1MVFxiXy0fjbNj6V_SwgfyrFIFwJlmsbkIdC4-ZJVKk4/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 </iframe>
 </section>
-<section id="citar-como" class="level2">
-<h2 class="anchored" data-anchor-id="citar-como">Citar como</h2>
-<p>Yanina Bellini Saibene.</p>
+<section id="ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<section id="chequeando-que-tenemos-todo-instalado" class="level4">
+<h4 class="anchored" data-anchor-id="chequeando-que-tenemos-todo-instalado">1) Chequeando que tenemos todo instalado</h4>
+<p><strong>Duración:</strong> ~15 minutos</p>
+<ol type="1">
+<li><p>Ingresen a su RStudio</p></li>
+<li><p>Ejecuten el siguiente código (de a una linea por vez):</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(learnr)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(remotes)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wordcloud2)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tm)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Si alguno de estas líneas de código les da error (que el paquete no existe) entonces deben instalarlo con</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(nombre_del_paquete)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>por ejemplo:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(remotes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tutorial-interactivo-de-introducción-a-text-mining" class="level4">
+<h4 class="anchored" data-anchor-id="tutorial-interactivo-de-introducción-a-text-mining">2) Tutorial interactivo de Introducción a Text Mining</h4>
+<p><strong>Duración:</strong> ~30 minutos</p>
+<p>Instalar el tutorial learnr de <em>Introducción a Text Mining con R</em>.</p>
+<p>Para instalar la versión de desarrollo desde GitHub tenés que tener instalado el paquete <em>remotes</em>, si no lo tenés instalalo con:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>y luego usá el siguiente código para instalar el tutorial:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"yabellini/TextMiningTutorial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Puede ser que si hay versiones más nuevas de los paquetes que necesitas en la consola te aparezca un mensaje similar a este:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>These packages have more recent versions available.</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>It is recommended to update all of them.</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Which would you like to update?</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span><span class="sc">:</span> All                                 </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span><span class="sc">:</span> CRAN packages only                  </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span><span class="sc">:</span> None                                </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span><span class="sc">:</span> <span class="fu">colorspace</span> (<span class="fl">1.4</span><span class="dv">-1</span>  <span class="ot">-&gt;</span> <span class="fl">2.0</span><span class="dv">-1</span> ) [CRAN]</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span><span class="sc">:</span> <span class="fu">rlang</span>      (<span class="dv">0</span>.<span class="fl">4.2</span>  <span class="ot">-&gt;</span> <span class="dv">0</span>.<span class="fl">4.11</span>) [CRAN]</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span><span class="sc">:</span> <span class="fu">glue</span>       (<span class="dv">1</span>.<span class="fl">4.0</span>  <span class="ot">-&gt;</span> <span class="dv">1</span>.<span class="fl">4.2</span> ) [CRAN]</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a> Enter one or more numbers, or an empty line to skip updates<span class="sc">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ese mensaje nos indica que paquetes podríamos actualizar. Si no queremos actualizar podemos presionar <code>Enter</code> o bien seleccionar el número que dice <em>None</em>, en este caso el 3.</p>
+<p>Si no tenes la ultima versión de RStudio entonces tenés que instalar el paquete <a href="https://rstudio.github.io/learnr/index.html">learnr</a> utilizando el siguiente código:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"learnr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>y luego ejecutar de esta manera el Tutorial:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>learnr<span class="sc">::</span><span class="fu">run_tutorial</span>(<span class="st">"TextMining"</span>, <span class="at">package =</span> <span class="st">"TextMiningTutorial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="completar-los-blancos-en-el-código" class="level4">
+<h4 class="anchored" data-anchor-id="completar-los-blancos-en-el-código">3) Completar los blancos en el código</h4>
+<p><strong>Duración:</strong> ~30 minutos</p>
+<ol type="1">
+<li><p>Descargar el archivo zipeado Ejercicio Text Mining en R que está subido al campus en la clase de hoy.</p></li>
+<li><p>Descomprimir ese archivo y abrir el proyecto de RStudio que se encuentra dentro.</p></li>
+<li><p>Abrir el archivo <em>EjercicioNubeDePalabras.Rmd</em>.</p></li>
+<li><p>Seguir las instrucciones para completar el código y que el mismo funcione.</p></li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -1,0 +1,125 @@
+---
+title: "Clase 5 - Text Mining en R"
+format: html
+editor: visual
+---
+
+## Objetivos de Aprendizaje
+
+-   Explicar el proceso de text mining tidy utilizando R.
+
+-   Definir e identificar que es _token_ y _stop words_.
+
+
+
+## Slides
+
+<iframe src="https://docs.google.com/presentation/d/1MVFxiXy0fjbNj6V_SwgfyrFIFwJlmsbkIdC4-ZJVKk4/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+
+</iframe>
+
+
+## Ejercicios
+
+#### 1) Chequeando que tenemos todo instalado
+
+**Duración:** \~15 minutos
+
+
+1.  Ingresen a su RStudio
+
+2.  Ejecuten el siguiente código (de a una linea por vez):
+
+``` r
+library(tidyverse)
+
+library(tidytext)
+
+library(learnr)
+
+library(remotes)
+
+library(wordcloud2)
+
+library(tm)
+
+library(readr)
+```
+
+3.  Si alguno de estas líneas de código les da error (que el paquete no existe) entonces deben instalarlo con
+
+``` r
+install.packages(nombre_del_paquete)
+```
+
+por ejemplo:
+
+``` r
+install.packages(remotes)
+
+```
+
+
+#### 2) Tutorial interactivo de Introducción a Text Mining
+
+**Duración:** \~30 minutos
+
+Instalar el tutorial learnr de *Introducción a Text Mining con R*.
+
+Para instalar la versión de desarrollo desde GitHub tenés que tener instalado el paquete _remotes_, si no lo tenés instalalo con:
+
+``` r
+install.packages("remotes")
+
+```
+y luego usá el siguiente código para instalar el tutorial:
+
+``` r
+remotes::install_github("yabellini/TextMiningTutorial")
+```
+Puede ser que si hay versiones más nuevas de los paquetes que necesitas en la consola te aparezca un mensaje similar a este:
+
+
+``` r
+These packages have more recent versions available.
+It is recommended to update all of them.
+Which would you like to update?
+
+ 1: All                                 
+ 2: CRAN packages only                  
+ 3: None                                
+ 4: colorspace (1.4-1  -> 2.0-1 ) [CRAN]
+ 5: rlang      (0.4.2  -> 0.4.11) [CRAN]
+ 6: glue       (1.4.0  -> 1.4.2 ) [CRAN]
+ 
+ Enter one or more numbers, or an empty line to skip updates:
+
+``` 
+Ese mensaje nos indica que paquetes podríamos actualizar. Si no queremos actualizar podemos presionar `Enter` o bien seleccionar el número que dice _None_, en este caso el 3. 
+
+Si no tenes la ultima versión de RStudio entonces tenés que instalar el paquete [learnr](https://rstudio.github.io/learnr/index.html) utilizando el siguiente código:
+
+``` r
+install.packages("learnr")
+
+```
+
+y luego ejecutar de esta manera el Tutorial:
+
+``` r
+learnr::run_tutorial("TextMining", package = "TextMiningTutorial")
+``` 
+
+
+#### 3) Completar los blancos en el código
+
+**Duración:** \~30 minutos
+
+1.  Descargar el archivo zipeado Ejercicio Text Mining en R que está subido al campus en la clase de hoy.
+
+2.  Descomprimir ese archivo y abrir el proyecto de RStudio que se encuentra dentro.
+
+3.  Abrir el archivo *EjercicioNubeDePalabras.Rmd*.
+
+4.  Seguir las instrucciones para completar el código y que el mismo funcione.
+
