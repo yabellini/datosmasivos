@@ -94,12 +94,6 @@ La pantalla siguiente nos presenta los datos y nos da varias opciones para expor
 
 ## Lecturas sugeridas
 
-* Artículo - Nongeospatial Metadata for the Ecological Sciences. William et.al. 1997 (inglés)
+* Artículo - [Nongeospatial Metadata for the Ecological Sciences.](https://www.researchgate.net/publication/246959596_Nongeospatial_Metadata_for_the_Ecological_Sciences) William et.al. 1997 (inglés)
 
-Requisitos de finalización
-Haga clic en el enlace https://www.researchgate.net/publication/246959596_Nongeospatial_Metadata_for_the_Ecological_Sciences para abrir el recurso.
-
-* Artículo - Propuesta para una Infraestructura de Datos Agropecuarios del Instituto Nacional de Tecnología Agropecuaria (INTA) (Español)
-
-Requisitos de finalización
-Haga clic en el enlace https://inta.gob.ar/sites/default/files/inta_ida_agranda.pdf para abrir el recurso.
+* Artículo - [Propuesta para una Infraestructura de Datos Agropecuarios del Instituto Nacional de Tecnología Agropecuaria (INTA)](https://inta.gob.ar/sites/default/files/inta_ida_agranda.pdf) (Español)
