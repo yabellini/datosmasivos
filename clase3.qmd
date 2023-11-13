@@ -94,3 +94,16 @@ c.2) Instalar los siguientes paquetes (esto puede llevar un tiempo así que no t
 -   wordcloud2
 
 -   tm
+
+## Lecturas sugeridas
+
+* Artículo - [Tendências de pesquisa em Agroinformática na Argentina: uma análise histórica](http://47jaiio.sadio.org.ar/sites/default/files/CAI-56.pdf) (Portugués)
+
+* Artículo - [Análise das Tendências de pesquisa no Congresso de Agroinformática da Argentina: um estudo regional](http://170.210.201.137/pdfs/cai/CAI-18.pdf) (Portugués)
+
+* Artículo - [Asociaciones de Palabras](https://juliasilge.com/blog/word-associations/) (Inglés)
+
+* Artículo - [¿De qué se habló en el Parlamento uruguayo desde 2017?](https://d4tagirl.com/2018/04/de-qu%C3%A9-se-habl%C3%B3-en-el-parlamento-uruguayo-desde-2017) (Español)
+
+* Artículo - [Conjunto de datos de resultados de la Red Nacional de Cultivares de Girasol de INTA](http://170.210.201.137/pdfs/cai/CAI-28.pdf) (Español)
+
