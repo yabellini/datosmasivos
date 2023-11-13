@@ -41,8 +41,7 @@ Los objetivos de la materia son:
 
 ### Bibliografía y recursos audiovisuales
 
--   [R para ciencia de datos](https://es.r4ds.hadley.nz/). de Hadley Wickham y Garrett Grolemund. Disponible es:
-
+-   [Libros sugeridos](libros.html)
 
 Se solicitará a los estudiantes que instalen software libre y gratuito para la realización de las prácticas de la materia:
 
@@ -69,8 +68,6 @@ Ver la [agenda](schedule.html) de la materia con el cronograma de clases.
 <iframe src="https://docs.google.com/presentation/d/1mgEBpE_UnQ7Fgud3ty73lAzw7NZmkRUOlr_BnQ7RS1Q/embed?start=false&loop=false&delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 
-
 ## Citar como 
-
 
 Yanina Bellini Saibene. 
