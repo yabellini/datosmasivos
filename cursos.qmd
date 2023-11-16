@@ -1,0 +1,57 @@
+---
+title: "Cursos"
+format: html
+editor: visual
+---
+
+## Artículo - Teledetección y bandas mutiespectrales
+
+Requisitos de finalización
+
+Haga clic en el enlace <https://mappinggis.com/2019/05/combinaciones-de-bandas-en-imagenes-de-satelite-landsat-y-sentinel/> para abrir el recurso.
+
+-   [URL](https://campus.unab.edu.ar/mod/url/view.php?id=10582)
+
+-   [Configuración](https://campus.unab.edu.ar/course/modedit.php?update=10582&return=1)
+
+-   [Más](https://campus.unab.edu.ar/mod/url/view.php?id=10582#)
+
+## Listado de recursos en español para aprender R
+
+Requisitos de finalización
+
+Haga clic en el enlace <https://www.learnr4free.com/es/index.html> para abrir el recurso.
+
+Software OCR:
+
+<http://www.free-ocr.com/> 
+
+<http://www.free-online-ocr.com/> 
+
+<https://www.onlineocr.net/es/> 
+
+<https://www.newocr.com/> 
+
+## Curso - Primeros pasos de Git con R (Español)
+
+Requisitos de finalización
+
+Haga clic en el enlace <https://yabellini.netlify.app/es/courses/tallerdegitconr/> para abrir el recurso.
+
+## Curso - Google Earth Engine desde Cero (Español)
+
+Requisitos de finalización
+
+Haga clic en el enlace <https://yabellini.netlify.app/es/courses/gee_cai2019/> para abrir el recurso.
+
+## Tutoriales - Google Earth Engine (Inglés)
+
+Requisitos de finalización
+
+Haga clic en el enlace <https://developers.google.com/earth-engine/tutorials/tutorials>para abrir el recurso.
+
+## Sitio Web - 250 ejemplos de uso de rgee
+
+Requisitos de finalización
+
+Haga clic en el enlace <https://csaybar.github.io/rgee-examples/> para abrir el recurso.
