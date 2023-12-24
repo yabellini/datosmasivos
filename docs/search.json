@@ -4,133 +4,190 @@
     "href": "index.html",
     "title": "Introducción al manejo de grandes volúmenes de datos y datos no estructurados",
     "section": "",
-    "text": "10 clases de tres horas sincrónicas por semana más horas de lectura de bibliografía obligatoria y práctica.\n\n\n\n\nYanina Bellini Saibene\n\n\n\n\nAnte la necesidad de cualquier persona que practique la ciencia de datos de manipular distintos volúmenes de datos, la gestión de los mismos cobra gran importancia. En este curso abordaremos el tema de la gestión de datos no estructurados principalmente desde el punto de vista teórico y práctico, incluyendo estudios de casos y actividades para brindarles las herramientas necesarias para continuar con su formación.\n\n\n\n\nIntroducción a Big Data y una serie de conceptos relacionados.\nDatos estructurados y no estructurados. Dimensiones de los datos. Información.\nAnalizar casos de uso de datos masivos y no estructurados en empresas e instituciones.\nConocer soluciones de software para el tratamiento de datos estructurados, no estructurados y masivos.\nEl lenguaje de programación R para el tratamiento de datos no estructurados.\nIntroducción a OpenRefine.\n\n\n\n\nLos objetivos de la materia son:\n\nAdquirir nociones sobre la generación y origen de los datos, formas de almacenamiento y su organización.\nDiferenciar datos estructurados de datos no estructurados.\nDefinir Big Data, Ciencia de Datos, Minería de Texto, Aprendizaje Automático e Inteligencia Artificial.\nIdentificar como estas disciplinas pueden influir en la vida de las personas, especialmente en el ámbito de las políticas públicas.\nManipular datos de texto con lenguaje R y OpenRefine.\nManipular datos de sensores remotos con R.\nManipular un conjunto de datos masivo con R.\nConsumir APIs utilizando R.\n\n\n\n\n\nLibros sugeridos\n\nSe solicitará a los estudiantes que instalen software libre y gratuito para la realización de las prácticas de la materia:\n\nR (lenguaje de programación)\nRStudio (IDE)\nOpenRefine\n\nOtros materiales y bibliografía serán sugeridos de acuerdo a las discusiones que se generen y el interés de las y los estudiantes.\n\n\n\nLa materia se llevará a cabo en clases sincrónicas e interactivas que incluyen exposiciones teóricas y ejercicios prácticos. Para cada clase se sugerirá bibliografía para leer y complementar los temas vistos como así también ejercicios de práctica si correspondiera. En el campus virtual están disponibles los materiales, clases grabadas y se abrirán foros para preguntas y discusión de los distintos temas. La comunicación se realizará por ese medio.\n\n\n\nRequisitos de aprobación: para aprobar la cursada será necesario entregar todos los trabajos prácticos que se presentan en las clases y los que se solicitan en el campus.\nVer la agenda de la materia con el cronograma de clases."
+    "text": "10 clases de tres horas sincrónicas por semana más horas de lectura de bibliografía obligatoria y práctica.\n\n\n\n\nYanina Bellini Saibene\n\n\n\n\nAnte la necesidad de cualquier persona que practique la ciencia de datos de manipular distintos volúmenes de datos, la gestión de los mismos cobra gran importancia. En este curso abordaremos el tema de la gestión de datos no estructurados principalmente desde el punto de vista teórico y práctico, incluyendo estudios de casos y actividades para brindarles las herramientas necesarias para continuar con su formación.\n\n\n\n\nIntroducción a Big Data y una serie de conceptos relacionados.\nDatos estructurados y no estructurados. Dimensiones de los datos. Información.\nAnalizar casos de uso de datos masivos y no estructurados en empresas e instituciones.\nConocer soluciones de software para el tratamiento de datos estructurados, no estructurados y masivos.\nEl lenguaje de programación R para el tratamiento de datos no estructurados.\nIntroducción a OpenRefine.\n\n\n\n\nLos objetivos de la materia son:\n\nAdquirir nociones sobre la generación y origen de los datos, formas de almacenamiento y su organización.\nDiferenciar datos estructurados de datos no estructurados.\nDefinir Big Data, Ciencia de Datos, Minería de Texto, Aprendizaje Automático e Inteligencia Artificial.\nIdentificar como estas disciplinas pueden influir en la vida de las personas, especialmente en el ámbito de las políticas públicas.\nManipular datos de texto con lenguaje R y OpenRefine.\nManipular datos de sensores remotos con R.\nManipular un conjunto de datos masivo con R.\nConsumir APIs utilizando R.\n\n\n\n\n\nLibros sugeridos\n\nSe solicitará a los estudiantes que instalen software libre y gratuito para la realización de las prácticas de la materia:\n\nR (lenguaje de programación)\nRStudio (IDE)\nOpenRefine\n\nOtros materiales y bibliografía serán sugeridos de acuerdo a las discusiones que se generen y el interés de las y los estudiantes.\n\n\n\nLa materia se llevará a cabo en clases sincrónicas e interactivas que incluyen exposiciones teóricas y ejercicios prácticos. Para cada clase se sugerirá bibliografía para leer y complementar los temas vistos como así también ejercicios de práctica si correspondiera. En el campus virtual están disponibles los materiales, clases grabadas y se abrirán foros para preguntas y discusión de los distintos temas. La comunicación se realizará por ese medio.\n\n\n\nRequisitos de aprobación: para aprobar la cursada será necesario entregar todos los trabajos prácticos que se presentan en las clases y los que se solicitan en el campus.\nVer la agenda de la materia con el cronograma de clases.",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "index.html#curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown",
     "href": "index.html#curso-de-la-diplomatura-en-ciencias-de-datos-aplicada-a-políticas-públcias-de-la-universidad-nacional-guillermo-brown",
     "title": "Introducción al manejo de grandes volúmenes de datos y datos no estructurados",
     "section": "",
-    "text": "10 clases de tres horas sincrónicas por semana más horas de lectura de bibliografía obligatoria y práctica.\n\n\n\n\nYanina Bellini Saibene\n\n\n\n\nAnte la necesidad de cualquier persona que practique la ciencia de datos de manipular distintos volúmenes de datos, la gestión de los mismos cobra gran importancia. En este curso abordaremos el tema de la gestión de datos no estructurados principalmente desde el punto de vista teórico y práctico, incluyendo estudios de casos y actividades para brindarles las herramientas necesarias para continuar con su formación.\n\n\n\n\nIntroducción a Big Data y una serie de conceptos relacionados.\nDatos estructurados y no estructurados. Dimensiones de los datos. Información.\nAnalizar casos de uso de datos masivos y no estructurados en empresas e instituciones.\nConocer soluciones de software para el tratamiento de datos estructurados, no estructurados y masivos.\nEl lenguaje de programación R para el tratamiento de datos no estructurados.\nIntroducción a OpenRefine.\n\n\n\n\nLos objetivos de la materia son:\n\nAdquirir nociones sobre la generación y origen de los datos, formas de almacenamiento y su organización.\nDiferenciar datos estructurados de datos no estructurados.\nDefinir Big Data, Ciencia de Datos, Minería de Texto, Aprendizaje Automático e Inteligencia Artificial.\nIdentificar como estas disciplinas pueden influir en la vida de las personas, especialmente en el ámbito de las políticas públicas.\nManipular datos de texto con lenguaje R y OpenRefine.\nManipular datos de sensores remotos con R.\nManipular un conjunto de datos masivo con R.\nConsumir APIs utilizando R.\n\n\n\n\n\nLibros sugeridos\n\nSe solicitará a los estudiantes que instalen software libre y gratuito para la realización de las prácticas de la materia:\n\nR (lenguaje de programación)\nRStudio (IDE)\nOpenRefine\n\nOtros materiales y bibliografía serán sugeridos de acuerdo a las discusiones que se generen y el interés de las y los estudiantes.\n\n\n\nLa materia se llevará a cabo en clases sincrónicas e interactivas que incluyen exposiciones teóricas y ejercicios prácticos. Para cada clase se sugerirá bibliografía para leer y complementar los temas vistos como así también ejercicios de práctica si correspondiera. En el campus virtual están disponibles los materiales, clases grabadas y se abrirán foros para preguntas y discusión de los distintos temas. La comunicación se realizará por ese medio.\n\n\n\nRequisitos de aprobación: para aprobar la cursada será necesario entregar todos los trabajos prácticos que se presentan en las clases y los que se solicitan en el campus.\nVer la agenda de la materia con el cronograma de clases."
+    "text": "10 clases de tres horas sincrónicas por semana más horas de lectura de bibliografía obligatoria y práctica.\n\n\n\n\nYanina Bellini Saibene\n\n\n\n\nAnte la necesidad de cualquier persona que practique la ciencia de datos de manipular distintos volúmenes de datos, la gestión de los mismos cobra gran importancia. En este curso abordaremos el tema de la gestión de datos no estructurados principalmente desde el punto de vista teórico y práctico, incluyendo estudios de casos y actividades para brindarles las herramientas necesarias para continuar con su formación.\n\n\n\n\nIntroducción a Big Data y una serie de conceptos relacionados.\nDatos estructurados y no estructurados. Dimensiones de los datos. Información.\nAnalizar casos de uso de datos masivos y no estructurados en empresas e instituciones.\nConocer soluciones de software para el tratamiento de datos estructurados, no estructurados y masivos.\nEl lenguaje de programación R para el tratamiento de datos no estructurados.\nIntroducción a OpenRefine.\n\n\n\n\nLos objetivos de la materia son:\n\nAdquirir nociones sobre la generación y origen de los datos, formas de almacenamiento y su organización.\nDiferenciar datos estructurados de datos no estructurados.\nDefinir Big Data, Ciencia de Datos, Minería de Texto, Aprendizaje Automático e Inteligencia Artificial.\nIdentificar como estas disciplinas pueden influir en la vida de las personas, especialmente en el ámbito de las políticas públicas.\nManipular datos de texto con lenguaje R y OpenRefine.\nManipular datos de sensores remotos con R.\nManipular un conjunto de datos masivo con R.\nConsumir APIs utilizando R.\n\n\n\n\n\nLibros sugeridos\n\nSe solicitará a los estudiantes que instalen software libre y gratuito para la realización de las prácticas de la materia:\n\nR (lenguaje de programación)\nRStudio (IDE)\nOpenRefine\n\nOtros materiales y bibliografía serán sugeridos de acuerdo a las discusiones que se generen y el interés de las y los estudiantes.\n\n\n\nLa materia se llevará a cabo en clases sincrónicas e interactivas que incluyen exposiciones teóricas y ejercicios prácticos. Para cada clase se sugerirá bibliografía para leer y complementar los temas vistos como así también ejercicios de práctica si correspondiera. En el campus virtual están disponibles los materiales, clases grabadas y se abrirán foros para preguntas y discusión de los distintos temas. La comunicación se realizará por ese medio.\n\n\n\nRequisitos de aprobación: para aprobar la cursada será necesario entregar todos los trabajos prácticos que se presentan en las clases y los que se solicitan en el campus.\nVer la agenda de la materia con el cronograma de clases.",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "index.html#presentación-de-la-materia",
     "href": "index.html#presentación-de-la-materia",
     "title": "Introducción al manejo de grandes volúmenes de datos y datos no estructurados",
     "section": "Presentación de la materia",
-    "text": "Presentación de la materia"
+    "text": "Presentación de la materia",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "index.html#citar-como",
     "href": "index.html#citar-como",
     "title": "Introducción al manejo de grandes volúmenes de datos y datos no estructurados",
     "section": "Citar como",
-    "text": "Citar como\nYanina Bellini Saibene."
+    "text": "Citar como\nYanina Bellini Saibene.",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "clase1.html",
     "href": "clase1.html",
     "title": "Clase 1 - Introducción",
     "section": "",
-    "text": "Describir las diferencias entre Ciencia de Datos, Minería de Datos, Aprendizaje Automático e Inteligencia Artificial.\nDefinir Dato e Información.\nIdentificar y describir siete dimensiones de los datos.\nDefinir tipos de apertura de datos.\nAnalizar casos de uso e identificar las diferencias de los conceptos mencionados anteriormente."
+    "text": "Describir las diferencias entre Ciencia de Datos, Minería de Datos, Aprendizaje Automático e Inteligencia Artificial.\nDefinir Dato e Información.\nIdentificar y describir siete dimensiones de los datos.\nDefinir tipos de apertura de datos.\nAnalizar casos de uso e identificar las diferencias de los conceptos mencionados anteriormente.",
+    "crumbs": [
+      "Clase 1 - Introducción"
+    ]
   },
   {
     "objectID": "clase1.html#objetivos-de-aprendizaje",
     "href": "clase1.html#objetivos-de-aprendizaje",
     "title": "Clase 1 - Introducción",
     "section": "",
-    "text": "Describir las diferencias entre Ciencia de Datos, Minería de Datos, Aprendizaje Automático e Inteligencia Artificial.\nDefinir Dato e Información.\nIdentificar y describir siete dimensiones de los datos.\nDefinir tipos de apertura de datos.\nAnalizar casos de uso e identificar las diferencias de los conceptos mencionados anteriormente."
+    "text": "Describir las diferencias entre Ciencia de Datos, Minería de Datos, Aprendizaje Automático e Inteligencia Artificial.\nDefinir Dato e Información.\nIdentificar y describir siete dimensiones de los datos.\nDefinir tipos de apertura de datos.\nAnalizar casos de uso e identificar las diferencias de los conceptos mencionados anteriormente.",
+    "crumbs": [
+      "Clase 1 - Introducción"
+    ]
   },
   {
     "objectID": "clase1.html#slides",
     "href": "clase1.html#slides",
     "title": "Clase 1 - Introducción",
     "section": "Slides",
-    "text": "Slides"
+    "text": "Slides",
+    "crumbs": [
+      "Clase 1 - Introducción"
+    ]
   },
   {
     "objectID": "clase1.html#ejercicios",
     "href": "clase1.html#ejercicios",
     "title": "Clase 1 - Introducción",
     "section": "Ejercicios",
-    "text": "Ejercicios\n\n1) Miren los siguientes tres videos sobre Ciencia de Datos y contesten en grupo las preguntas:\nDuración total: ~20 minutos\n\nVideo 1: (1:30 minutos)\nBIG DATA: Oportunidades y desafíos\nCharlar en grupo para contestar esta pregunta (5 minutos)\n\n¿Cuál es el contexto y la oportunidad que menciona el especialista en el video con respecto de los datos?\n\n\n\nVideo 2: (1:10 minutos)\nBIG DATA: Oportunidades y desafíos II\nCharlar en grupo para contestar estas preguntas (7 minutos)\n\nEste video es del 2017, ¿les parece que algo ha cambiado con respecto a la comunidad de organizaciones y/o empresas que aprovechan estas tecnologías?,\n¿Se les ocurren ejemplos de Argentina?\n\n\n\nVideo 3: (2:00 minutos)\nBIG DATA: Oportunidades y desafíos III\nCharlar en grupo para contestar estas preguntas (5 minutos)\n\n¿Qué roles menciona dentro de lo que se conoce como Ciencia de Datos?\n¿Se ven reflejados en alguno de esos roles?\n\n\n\n\n3) Miren el video de esta empresa AgTech que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos\nVideo: Kilimo\nPreguntas: \n\n¿Cuál es el servicio que brindan?\n¿Pueden identificar las 3 Vs del BigData en este servicio? mencione como está representada y porqué.\n\nVelocidad:\nVolumen:\n\nVariedad:\n\n¿Pueden identificar alguna V más?\n¿Les parece que el servicio es exitoso?, ¿Por qué?\n\n\n\n\n\n\n\nDocumento compartido para resolver ejercicios\n\n\n\nEsta es una plantilla del documento compartido utilizando google docs. Se debe generar un archivo por cada grupo. Los grupos se recomiendan que sean entre dos a cuatro personas."
+    "text": "Ejercicios\n\n1) Miren los siguientes tres videos sobre Ciencia de Datos y contesten en grupo las preguntas:\nDuración total: ~20 minutos\n\nVideo 1: (1:30 minutos)\nBIG DATA: Oportunidades y desafíos\nCharlar en grupo para contestar esta pregunta (5 minutos)\n\n¿Cuál es el contexto y la oportunidad que menciona el especialista en el video con respecto de los datos?\n\n\n\nVideo 2: (1:10 minutos)\nBIG DATA: Oportunidades y desafíos II\nCharlar en grupo para contestar estas preguntas (7 minutos)\n\nEste video es del 2017, ¿les parece que algo ha cambiado con respecto a la comunidad de organizaciones y/o empresas que aprovechan estas tecnologías?,\n¿Se les ocurren ejemplos de Argentina?\n\n\n\nVideo 3: (2:00 minutos)\nBIG DATA: Oportunidades y desafíos III\nCharlar en grupo para contestar estas preguntas (5 minutos)\n\n¿Qué roles menciona dentro de lo que se conoce como Ciencia de Datos?\n¿Se ven reflejados en alguno de esos roles?\n\n\n\n\n3) Miren el video de esta empresa AgTech que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos\nVideo: Kilimo\nPreguntas: \n\n¿Cuál es el servicio que brindan?\n¿Pueden identificar las 3 Vs del BigData en este servicio? mencione como está representada y porqué.\n\nVelocidad:\nVolumen:\n\nVariedad:\n\n¿Pueden identificar alguna V más?\n¿Les parece que el servicio es exitoso?, ¿Por qué?\n\n\n\n\n\n\n\nDocumento compartido para resolver ejercicios\n\n\n\nEsta es una plantilla del documento compartido utilizando google docs. Se debe generar un archivo por cada grupo. Los grupos se recomiendan que sean entre dos a cuatro personas.",
+    "crumbs": [
+      "Clase 1 - Introducción"
+    ]
   },
   {
     "objectID": "clase2.html",
     "href": "clase2.html",
     "title": "Clase 2 - Tipos de datos",
     "section": "",
-    "text": "Definir Big Data.\nMencionar y definir diferentes fuentes de datos de big data.\nIdentificar y explicar las diferentes etapas de un proceso de ciencias de datos.\nExplicar de forma general el proceso de aprendizaje automatico supervisado y aprendizaje automatico no supervisado.\nDefinir e identificar datos estructurados y datos no estructurados.\nDescribir tres propiedades de los datos estructurados ordenados.\nDescribir cinco sintomas de datos desordenados.\nAnalizar casos de uso e identificar al menos tres caracteristicas asociadas con big data."
+    "text": "Definir Big Data.\nMencionar y definir diferentes fuentes de datos de big data.\nIdentificar y explicar las diferentes etapas de un proceso de ciencias de datos.\nExplicar de forma general el proceso de aprendizaje automatico supervisado y aprendizaje automatico no supervisado.\nDefinir e identificar datos estructurados y datos no estructurados.\nDescribir tres propiedades de los datos estructurados ordenados.\nDescribir cinco sintomas de datos desordenados.\nAnalizar casos de uso e identificar al menos tres caracteristicas asociadas con big data.",
+    "crumbs": [
+      "Clase 2 - Tipos de Datos"
+    ]
   },
   {
     "objectID": "clase2.html#objetivos-de-aprendizaje",
     "href": "clase2.html#objetivos-de-aprendizaje",
     "title": "Clase 2 - Tipos de datos",
     "section": "",
-    "text": "Definir Big Data.\nMencionar y definir diferentes fuentes de datos de big data.\nIdentificar y explicar las diferentes etapas de un proceso de ciencias de datos.\nExplicar de forma general el proceso de aprendizaje automatico supervisado y aprendizaje automatico no supervisado.\nDefinir e identificar datos estructurados y datos no estructurados.\nDescribir tres propiedades de los datos estructurados ordenados.\nDescribir cinco sintomas de datos desordenados.\nAnalizar casos de uso e identificar al menos tres caracteristicas asociadas con big data."
+    "text": "Definir Big Data.\nMencionar y definir diferentes fuentes de datos de big data.\nIdentificar y explicar las diferentes etapas de un proceso de ciencias de datos.\nExplicar de forma general el proceso de aprendizaje automatico supervisado y aprendizaje automatico no supervisado.\nDefinir e identificar datos estructurados y datos no estructurados.\nDescribir tres propiedades de los datos estructurados ordenados.\nDescribir cinco sintomas de datos desordenados.\nAnalizar casos de uso e identificar al menos tres caracteristicas asociadas con big data.",
+    "crumbs": [
+      "Clase 2 - Tipos de Datos"
+    ]
   },
   {
     "objectID": "clase2.html#slides",
     "href": "clase2.html#slides",
     "title": "Clase 2 - Tipos de datos",
     "section": "Slides",
-    "text": "Slides"
+    "text": "Slides",
+    "crumbs": [
+      "Clase 2 - Tipos de Datos"
+    ]
   },
   {
     "objectID": "clase2.html#ejercicios",
     "href": "clase2.html#ejercicios",
     "title": "Clase 2 - Tipos de datos",
     "section": "Ejercicios",
-    "text": "Ejercicios\n\n1) Miren el video de esta municipalidad que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos\nVideo\nPreguntas:\n\n¿Sobre qué servicio trabajaron?\n¿Pueden identificar las 3 Vs del BigData en este proyecto? mencione como está representada y porqué.\n\nVelocidad:\nVolumen:\nVariedad:\n\n¿Pueden identificar alguna V más?\n¿Se les ocurren problemas con estas características en sus trabajos?, mencione algunos ejemplos de ser así.\n\n\n\n2) Miren el video de este club deportivo que utiliza Ciencia de Datos, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos Video: (5 minutos): Big Data y fútbol: así aprovecha el Real Madrid la tecnología\nCharlar en grupo para contestar estas preguntas (10 minutos):\n¿Cómo toman los datos de los jugadores?\nAnoten algunos de los datos que se mencionan que se registran\n¿Mencionan modelos?¿Cuáles?\nDe acuerdo a lo que vimos en la teoría, ¿pueden indicar si son modelos de predicción o clasificación? ¿pueden indicar si podrían utilizar aprendizaje supervisado o no supervisado?\n\n\n3) Crear una estructura tidy\nDuración: ~10 minutos\nTengo que recolectar datos de lluvias de diversas localidades, necesito almacenar la latitud y longitud del lugar donde está el pluviómetro, el nombre del lugar y el nombre y teléfono del responsable de tomar los datos.  También debo almacenar la fecha y la cantidad de mm de lluvia precipitados en esa fecha.\n\n¿Cuántas tablas debería generar?\nCuáles serían las columnas (estructura) del conjunto o conjuntos de datos para poder almacenar esta información de forma tidy. \n\n\n\nExtra: 4) Ordenen el siguiente conjunto de datos de forma tidy u ordenada.\nDuración: ~10 minutos\nLa columna lote hace referencia al nombre del lote en un campo, contiene tres columnas por cada año con los valores promedio, máximo y mínimo del porcentaje de superficie cosechada en cada lote.\nGenerar una estructura tidy de este conjunto de datos.\n\n\n\n\n\n\n\n\n\n\n\n\n\nLote\n2009 avg\n2009 max\n2009 min\n2010 avg\n2010 max\n2010 min\n\n\nA\n-\n-\n-\n-\n-\n-\n\n\n18\n&gt;95%\n&gt;95%\n&gt;95%\n&gt;95%\n&gt;95%\n&gt;95%\n\n\nLa loma\n77%\n89%\n3%\n75%\n88%\n3%\n\n\nA2\n25%\n35%\n19%\n25%\n35%\n19%"
+    "text": "Ejercicios\n\n1) Miren el video de esta municipalidad que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos\nVideo\nPreguntas:\n\n¿Sobre qué servicio trabajaron?\n¿Pueden identificar las 3 Vs del BigData en este proyecto? mencione como está representada y porqué.\n\nVelocidad:\nVolumen:\nVariedad:\n\n¿Pueden identificar alguna V más?\n¿Se les ocurren problemas con estas características en sus trabajos?, mencione algunos ejemplos de ser así.\n\n\n\n2) Miren el video de este club deportivo que utiliza Ciencia de Datos, discutan en grupo para contestar las siguientes preguntas:\nDuración: ~15 minutos Video: (5 minutos): Big Data y fútbol: así aprovecha el Real Madrid la tecnología\nCharlar en grupo para contestar estas preguntas (10 minutos):\n¿Cómo toman los datos de los jugadores?\nAnoten algunos de los datos que se mencionan que se registran\n¿Mencionan modelos?¿Cuáles?\nDe acuerdo a lo que vimos en la teoría, ¿pueden indicar si son modelos de predicción o clasificación? ¿pueden indicar si podrían utilizar aprendizaje supervisado o no supervisado?\n\n\n3) Crear una estructura tidy\nDuración: ~10 minutos\nTengo que recolectar datos de lluvias de diversas localidades, necesito almacenar la latitud y longitud del lugar donde está el pluviómetro, el nombre del lugar y el nombre y teléfono del responsable de tomar los datos.  También debo almacenar la fecha y la cantidad de mm de lluvia precipitados en esa fecha.\n\n¿Cuántas tablas debería generar?\nCuáles serían las columnas (estructura) del conjunto o conjuntos de datos para poder almacenar esta información de forma tidy. \n\n\n\nExtra: 4) Ordenen el siguiente conjunto de datos de forma tidy u ordenada.\nDuración: ~10 minutos\nLa columna lote hace referencia al nombre del lote en un campo, contiene tres columnas por cada año con los valores promedio, máximo y mínimo del porcentaje de superficie cosechada en cada lote.\nGenerar una estructura tidy de este conjunto de datos.\n\n\n\n\n\n\n\n\n\n\n\n\n\nLote\n2009 avg\n2009 max\n2009 min\n2010 avg\n2010 max\n2010 min\n\n\nA\n-\n-\n-\n-\n-\n-\n\n\n18\n&gt;95%\n&gt;95%\n&gt;95%\n&gt;95%\n&gt;95%\n&gt;95%\n\n\nLa loma\n77%\n89%\n3%\n75%\n88%\n3%\n\n\nA2\n25%\n35%\n19%\n25%\n35%\n19%",
+    "crumbs": [
+      "Clase 2 - Tipos de Datos"
+    ]
   },
   {
     "objectID": "clase3.html",
     "href": "clase3.html",
     "title": "Clase 3 - Text Mining",
     "section": "",
-    "text": "Explicar que es SQL y que lo diferencia de NOSQL.\nMencionar diferentes productos de software para administrar datos SQL y NOSQL.\nIdentificar y explicar cuatro soluciones de base de datos noSQL.\nExplicar el concepto de “la nube” y mencionar productos para trabajar grandes datos en la nube.\nDefinir Text Mining/Analisis de Texto.\nDefinir bolsa de palabras, análisis y etiquetado sintáctico, asociación de palabras y analisis de sentimiento.\nIdentificar las tecnicas de mineria de texto en diferentes casos de uso."
+    "text": "Explicar que es SQL y que lo diferencia de NOSQL.\nMencionar diferentes productos de software para administrar datos SQL y NOSQL.\nIdentificar y explicar cuatro soluciones de base de datos noSQL.\nExplicar el concepto de “la nube” y mencionar productos para trabajar grandes datos en la nube.\nDefinir Text Mining/Analisis de Texto.\nDefinir bolsa de palabras, análisis y etiquetado sintáctico, asociación de palabras y analisis de sentimiento.\nIdentificar las tecnicas de mineria de texto en diferentes casos de uso.",
+    "crumbs": [
+      "Clase 3 - NOSQL y Text Mining"
+    ]
   },
   {
     "objectID": "clase3.html#objetivos-de-aprendizaje",
     "href": "clase3.html#objetivos-de-aprendizaje",
     "title": "Clase 3 - Text Mining",
     "section": "",
-    "text": "Explicar que es SQL y que lo diferencia de NOSQL.\nMencionar diferentes productos de software para administrar datos SQL y NOSQL.\nIdentificar y explicar cuatro soluciones de base de datos noSQL.\nExplicar el concepto de “la nube” y mencionar productos para trabajar grandes datos en la nube.\nDefinir Text Mining/Analisis de Texto.\nDefinir bolsa de palabras, análisis y etiquetado sintáctico, asociación de palabras y analisis de sentimiento.\nIdentificar las tecnicas de mineria de texto en diferentes casos de uso."
+    "text": "Explicar que es SQL y que lo diferencia de NOSQL.\nMencionar diferentes productos de software para administrar datos SQL y NOSQL.\nIdentificar y explicar cuatro soluciones de base de datos noSQL.\nExplicar el concepto de “la nube” y mencionar productos para trabajar grandes datos en la nube.\nDefinir Text Mining/Analisis de Texto.\nDefinir bolsa de palabras, análisis y etiquetado sintáctico, asociación de palabras y analisis de sentimiento.\nIdentificar las tecnicas de mineria de texto en diferentes casos de uso.",
+    "crumbs": [
+      "Clase 3 - NOSQL y Text Mining"
+    ]
   },
   {
     "objectID": "clase3.html#slides",
     "href": "clase3.html#slides",
     "title": "Clase 3 - Text Mining",
     "section": "Slides",
-    "text": "Slides"
+    "text": "Slides",
+    "crumbs": [
+      "Clase 3 - NOSQL y Text Mining"
+    ]
   },
   {
     "objectID": "clase3.html#ejercicios",
     "href": "clase3.html#ejercicios",
     "title": "Clase 3 - Text Mining",
     "section": "Ejercicios",
-    "text": "Ejercicios\n\n1) Usar una herramienta en la nube\nDuración: ~10 minutos\n\nIr a la web: https://earthengine.google.com/timelapse/ \nPoner el nombre del lugar donde viven y ver cómo ha cambiado con los años.\nIr a la web: https://global-surface-water.appspot.com/map \nBuscar el lugar donde viven y vean como se comporta el agua en superficie en los alrrededores.\n\n\n\n2) Generando nubes de palabras\nDuración: ~12 minutos\n\nIngresara la web: https://wordart.com/\nTomar los datos de este archivo y generar una nube de palabras: https://docs.google.com/spreadsheets/d/1POHmFKShKbSjUfrRECiZHFTHH_ObIO1zXMsN8dgGp0s/edit?usp=sharing\nIngresar en: https://www.nubedepalabras.es/\nUtilizando el mismo archivo, generar una nube de palabras que tenga la forma de una letra R.\nPeguen aquí debajo las nubes de palabras que generaron en el lugar de cada sala\n\n\n\n3) Instalando el software para trabajar con texto\nDuración: ~20 minutos\n\nInstalando OpenRefine\n\na.1) Ir a https://openrefine.org/download.html y seleccionar la versión correcta para tu sistema operativo.\na.2) Seguir las instrucciones en la página para instalar y dejar funcionando OpenRefine.\n\nInstalando Tabula\n\nb.1) Ir a la página: https://tabula.technology/\nb.2) Seleccionar la versión para instalar de acuerdo al Sistema Operativo (windows, Mac o Linux). Se debe descargar un .zip.\nb.3) Extraer el archivo zip en una carpeta de tu disco rígido que se llama Tabula.\nb.4) Dentro de la carpeta ejecutar el archivo Tabula.exe, si se instaló de forma correcta un navegador de internet se tiene que abrir con el Tabula funcionando.\nb.5) Si el navegador no se abre solo, ir a nuestro navegador de internet y escribir esta dirección: http://localhost:8080 . Ahí está Tabula!\n\nInstalando los paquetes en R\n\nc.1) Abrir R Studio\nc.2) Instalar los siguientes paquetes (esto puede llevar un tiempo así que no te preocupes si tarda un rato):\n\ntidyverse (si ya lo tienen no lo instalen)\nreadr (si ya lo tienen no lo instalen)\ntidytext\nwordcloud2\ntm"
+    "text": "Ejercicios\n\n1) Usar una herramienta en la nube\nDuración: ~10 minutos\n\nIr a la web: https://earthengine.google.com/timelapse/ \nPoner el nombre del lugar donde viven y ver cómo ha cambiado con los años.\nIr a la web: https://global-surface-water.appspot.com/map \nBuscar el lugar donde viven y vean como se comporta el agua en superficie en los alrrededores.\n\n\n\n2) Generando nubes de palabras\nDuración: ~12 minutos\n\nIngresara la web: https://wordart.com/\nTomar los datos de este archivo y generar una nube de palabras: https://docs.google.com/spreadsheets/d/1POHmFKShKbSjUfrRECiZHFTHH_ObIO1zXMsN8dgGp0s/edit?usp=sharing\nIngresar en: https://www.nubedepalabras.es/\nUtilizando el mismo archivo, generar una nube de palabras que tenga la forma de una letra R.\nPeguen aquí debajo las nubes de palabras que generaron en el lugar de cada sala\n\n\n\n3) Instalando el software para trabajar con texto\nDuración: ~20 minutos\n\nInstalando OpenRefine\n\na.1) Ir a https://openrefine.org/download.html y seleccionar la versión correcta para tu sistema operativo.\na.2) Seguir las instrucciones en la página para instalar y dejar funcionando OpenRefine.\n\nInstalando Tabula\n\nb.1) Ir a la página: https://tabula.technology/\nb.2) Seleccionar la versión para instalar de acuerdo al Sistema Operativo (windows, Mac o Linux). Se debe descargar un .zip.\nb.3) Extraer el archivo zip en una carpeta de tu disco rígido que se llama Tabula.\nb.4) Dentro de la carpeta ejecutar el archivo Tabula.exe, si se instaló de forma correcta un navegador de internet se tiene que abrir con el Tabula funcionando.\nb.5) Si el navegador no se abre solo, ir a nuestro navegador de internet y escribir esta dirección: http://localhost:8080 . Ahí está Tabula!\n\nInstalando los paquetes en R\n\nc.1) Abrir R Studio\nc.2) Instalar los siguientes paquetes (esto puede llevar un tiempo así que no te preocupes si tarda un rato):\n\ntidyverse (si ya lo tienen no lo instalen)\nreadr (si ya lo tienen no lo instalen)\ntidytext\nwordcloud2\ntm",
+    "crumbs": [
+      "Clase 3 - NOSQL y Text Mining"
+    ]
   },
   {
     "objectID": "OpenRefine.html#caso-lectores-del-suplemento-horizonte-agropecuario",
     "href": "OpenRefine.html#caso-lectores-del-suplemento-horizonte-agropecuario",
     "title": "Limpieza de datos con OpenRefine",
     "section": "Caso: Lectores del suplemento Horizonte Agropecuario",
-    "text": "Caso: Lectores del suplemento Horizonte Agropecuario\nLa editorial que imprime y distribuye el suplemento Horizonte Agropecuario, dispone su lista de lectores en una planilla Lectores.xlsx, la que utiliza para imprimir las etiquetas que luego son utilizadas en el franqueo de los envíos, en la misma a lo largo del tiempo se le han ido agregando filas únicamente. Cada fila se agrega al principio del listado por lo que no se controla si figura o no el destinatario en la lista. Solo se tiene en cuenta el código postal que se encuentra en otra hoja de la planilla para la carga del mismo, junto con la dirección y el nombre del destinatario.\nLa estructura de los datos son dos tablas con los siguientes campos:"
+    "text": "Caso: Lectores del suplemento Horizonte Agropecuario\nLa editorial que imprime y distribuye el suplemento Horizonte Agropecuario, dispone su lista de lectores en una planilla Lectores.xlsx, la que utiliza para imprimir las etiquetas que luego son utilizadas en el franqueo de los envíos, en la misma a lo largo del tiempo se le han ido agregando filas únicamente. Cada fila se agrega al principio del listado por lo que no se controla si figura o no el destinatario en la lista. Solo se tiene en cuenta el código postal que se encuentra en otra hoja de la planilla para la carga del mismo, junto con la dirección y el nombre del destinatario.\nLa estructura de los datos son dos tablas con los siguientes campos:",
+    "crumbs": [
+      "Guía de OpenRefine"
+    ]
   },
   {
     "objectID": "OpenRefine.html#primer-ejercicio-conociendo-los-datos-y-entrando-a-openrefine",
     "href": "OpenRefine.html#primer-ejercicio-conociendo-los-datos-y-entrando-a-openrefine",
     "title": "Limpieza de datos con OpenRefine",
     "section": "Primer ejercicio: conociendo los datos y entrando a OpenRefine",
-    "text": "Primer ejercicio: conociendo los datos y entrando a OpenRefine\nDuracion: 5 minutos.\n\nDescargar el archivo Lectores.xlsx del campus \nAbrir la planilla de Excel descargada y realizar una vista rápida de los datos. ¿Pueden encontrar algunos problemas de consistencia?. Hagan un listado de los problemas que encuentren en los datos.\n\nToda la edición de los datos se realizará con la herramienta Open Refine, que realiza una importación de los datos y nos permite dejar el archivo original intacto cumpliendo una de las buenas prácticas del manejo de datos.\n\nEjecutar Open Refine haciendo doble clic sobre el icono del diamante. Se debe abrir un ventana de comandos en la que se ejecuta OpenRefine. De forma predeterminada, la ventana de comandos tiene un fondo negro, similar a la siguiente figura.\n\n\n\nAdemás se abrirá el explorador de internet que esté configurado por defecto. Dentro de la pagina en el explorador sobre el lado izquierdo hay un grupo de solapas: Crear Proyecto, Abrir Proyecto, Importar Proyecto e Idioma. Si al ejecutar el programa no aparece en la versión en español, ingresando en la solapa \"Language Settings\" y configurar la opción \"Español\".\n\n\n\nPor defecto la herramienta se encuentra en la solapa \"Crear Proyecto\", donde da una serie de alternativas para importar datos a OpenRefine, para esta práctica utilizaremos \"Este Equipo\""
+    "text": "Primer ejercicio: conociendo los datos y entrando a OpenRefine\nDuracion: 5 minutos.\n\nDescargar el archivo Lectores.xlsx del campus \nAbrir la planilla de Excel descargada y realizar una vista rápida de los datos. ¿Pueden encontrar algunos problemas de consistencia?. Hagan un listado de los problemas que encuentren en los datos.\n\nToda la edición de los datos se realizará con la herramienta Open Refine, que realiza una importación de los datos y nos permite dejar el archivo original intacto cumpliendo una de las buenas prácticas del manejo de datos.\n\nEjecutar Open Refine haciendo doble clic sobre el icono del diamante. Se debe abrir un ventana de comandos en la que se ejecuta OpenRefine. De forma predeterminada, la ventana de comandos tiene un fondo negro, similar a la siguiente figura.\n\n\n\nAdemás se abrirá el explorador de internet que esté configurado por defecto. Dentro de la pagina en el explorador sobre el lado izquierdo hay un grupo de solapas: Crear Proyecto, Abrir Proyecto, Importar Proyecto e Idioma. Si al ejecutar el programa no aparece en la versión en español, ingresando en la solapa \"Language Settings\" y configurar la opción \"Español\".\n\n\n\nPor defecto la herramienta se encuentra en la solapa \"Crear Proyecto\", donde da una serie de alternativas para importar datos a OpenRefine, para esta práctica utilizaremos \"Este Equipo\"",
+    "crumbs": [
+      "Guía de OpenRefine"
+    ]
   },
   {
     "objectID": "OpenRefine.html#segundo-ejercicio-conformación-del-set-de-datos-lectores.",
     "href": "OpenRefine.html#segundo-ejercicio-conformación-del-set-de-datos-lectores.",
     "title": "Limpieza de datos con OpenRefine",
     "section": "Segundo ejercicio: conformación del set de datos Lectores.",
-    "text": "Segundo ejercicio: conformación del set de datos Lectores.\nDuracion: 5 minutos.\n\nDentro de la solapa \"Crear Proyecto\", en la opción \"Este Equipo\", hacer clic en el botón \"Examinar\" y buscar el archivo \"Lectores.xlsx\" descargado del aula virtual.\n\n\n\nUna vez encontrado el archivo, seleccionar y presionar el botón \"Siguiente &gt;&gt;\". De esta forma pasa a la pantalla de preparación de la importación de los datos.\nSeleccionar en \"Hojas a Importar\", la hoja \"Datos\". Configurar las siguientes opciones, marcar la opción \"Ignorar primeras\", colocar el número 6 en líneas al inicio del archivo. Por defecto aparece seleccionada la opción \"Seleccionar Primeras\" la cual no hay que modificar.\n\n\n\nSobre la esquina superior izquierda del cuadro editar el nombre del proyecto a \"Lectores\" y hacer clic en crear proyecto.\nLa siguiente pantalla es donde se lleva a cabo toda la manipulación de los datos. Observar que al lado de cada nombre de columna, se dispone de un botón en forma de flecha () donde se encuentran todas las opciones para manipular los datos de cada una de ellas."
+    "text": "Segundo ejercicio: conformación del set de datos Lectores.\nDuracion: 5 minutos.\n\nDentro de la solapa \"Crear Proyecto\", en la opción \"Este Equipo\", hacer clic en el botón \"Examinar\" y buscar el archivo \"Lectores.xlsx\" descargado del aula virtual.\n\n\n\nUna vez encontrado el archivo, seleccionar y presionar el botón \"Siguiente &gt;&gt;\". De esta forma pasa a la pantalla de preparación de la importación de los datos.\nSeleccionar en \"Hojas a Importar\", la hoja \"Datos\". Configurar las siguientes opciones, marcar la opción \"Ignorar primeras\", colocar el número 6 en líneas al inicio del archivo. Por defecto aparece seleccionada la opción \"Seleccionar Primeras\" la cual no hay que modificar.\n\n\n\nSobre la esquina superior izquierda del cuadro editar el nombre del proyecto a \"Lectores\" y hacer clic en crear proyecto.\nLa siguiente pantalla es donde se lleva a cabo toda la manipulación de los datos. Observar que al lado de cada nombre de columna, se dispone de un botón en forma de flecha () donde se encuentran todas las opciones para manipular los datos de cada una de ellas.",
+    "crumbs": [
+      "Guía de OpenRefine"
+    ]
   },
   {
     "objectID": "OpenRefine.html#caso-localidades",
@@ -165,35 +222,50 @@
     "href": "clase4.html",
     "title": "Clase 4 - Metadatos y Limpieza de datos",
     "section": "",
-    "text": "Definir que es un metadato y Explicar que funcion cumplen.\nDefinir el ciclo de degradacion normal de la informacion.\nDefinir scrapping.\nDescribir 5 aspectos a tener en cuenta con datos propios y 5 con datos ajenos para poder realizar un proceso de limpieza de datos reproducible.\nUtilizar Open Refine para limpiar un conjunto de datos.\nDeterminar que tipo de tarea se puede realizar con OpenRefine para limpiar diferentes problemas con datos.\nRecuperar datos desde formatos cerrados como los PDF y JPG y almacenarlos en un formato abierto.\nUtilizar Tabula para obtener datos desde archivos PDF."
+    "text": "Definir que es un metadato y Explicar que funcion cumplen.\nDefinir el ciclo de degradacion normal de la informacion.\nDefinir scrapping.\nDescribir 5 aspectos a tener en cuenta con datos propios y 5 con datos ajenos para poder realizar un proceso de limpieza de datos reproducible.\nUtilizar Open Refine para limpiar un conjunto de datos.\nDeterminar que tipo de tarea se puede realizar con OpenRefine para limpiar diferentes problemas con datos.\nRecuperar datos desde formatos cerrados como los PDF y JPG y almacenarlos en un formato abierto.\nUtilizar Tabula para obtener datos desde archivos PDF.",
+    "crumbs": [
+      "Clase 4 - Scrapping y Limpieza de datos"
+    ]
   },
   {
     "objectID": "clase4.html#objetivos-de-aprendizaje",
     "href": "clase4.html#objetivos-de-aprendizaje",
     "title": "Clase 4 - Metadatos y Limpieza de datos",
     "section": "",
-    "text": "Definir que es un metadato y Explicar que funcion cumplen.\nDefinir el ciclo de degradacion normal de la informacion.\nDefinir scrapping.\nDescribir 5 aspectos a tener en cuenta con datos propios y 5 con datos ajenos para poder realizar un proceso de limpieza de datos reproducible.\nUtilizar Open Refine para limpiar un conjunto de datos.\nDeterminar que tipo de tarea se puede realizar con OpenRefine para limpiar diferentes problemas con datos.\nRecuperar datos desde formatos cerrados como los PDF y JPG y almacenarlos en un formato abierto.\nUtilizar Tabula para obtener datos desde archivos PDF."
+    "text": "Definir que es un metadato y Explicar que funcion cumplen.\nDefinir el ciclo de degradacion normal de la informacion.\nDefinir scrapping.\nDescribir 5 aspectos a tener en cuenta con datos propios y 5 con datos ajenos para poder realizar un proceso de limpieza de datos reproducible.\nUtilizar Open Refine para limpiar un conjunto de datos.\nDeterminar que tipo de tarea se puede realizar con OpenRefine para limpiar diferentes problemas con datos.\nRecuperar datos desde formatos cerrados como los PDF y JPG y almacenarlos en un formato abierto.\nUtilizar Tabula para obtener datos desde archivos PDF.",
+    "crumbs": [
+      "Clase 4 - Scrapping y Limpieza de datos"
+    ]
   },
   {
     "objectID": "clase4.html#slides",
     "href": "clase4.html#slides",
     "title": "Clase 4 - Metadatos y Limpieza de datos",
     "section": "Slides",
-    "text": "Slides"
+    "text": "Slides",
+    "crumbs": [
+      "Clase 4 - Scrapping y Limpieza de datos"
+    ]
   },
   {
     "objectID": "clase4.html#ejercicios",
     "href": "clase4.html#ejercicios",
     "title": "Clase 4 - Metadatos y Limpieza de datos",
     "section": "Ejercicios",
-    "text": "Ejercicios\n\n1) Obteniendo datos desde un PDF on-line\nDuración: ~12 minutos\nExisten varios software que realizan conversiones de archivos, algunos de ellos funcionan on-line lo que evita tener que instalar el sistema en la propia computadora.\nDentro de este grupo tenemos PDFToExcel.\nTransformar los datos de dos archivos PDF con tablas a un formato CSV legible.\n\nDescargamos los dos archivos PDF que se encuentran en el campus (crns1701.pdf y santa2016-12.pdf).\nPara utilizar el aplicativo entramos en https://www.pdftoexcelonline.com/\n\nLa pantalla de inicio nos presenta un paso a paso, donde lo primero es seleccionar el archivo a convertir. Presionando el botón Select your file y seleccionamos el archivo crns1701.pdf, luego completamos con el mail al cual deseamos que nos envíe el archivo y finalmente presionamos el botón Convert Now\n\nNos aparece un cartel como el siguiente donde nos indica que nos enviarán el archivo convertido por mail:\n\n\nEntrando al mail que indicamos encontraremos un correo con un link para descargar el archivo convertido, lo guardamos y abrimos para analizar la transformación.\n\n\n\n2) Obteniendo datos desde un PDF off-line\nDuración: ~20 minutos\nTambién existen software que se instalan en la computadora, uno de ellos es Tabula. Para utilizarlo:\n\nSi aún no lo hicieron, descarguen el archivo zip desde el sitio http://tabula.technology/, lo descomprimimos y luego vamos a la carpeta que acaba de extraer.\nDentro de la misma se encuentran una serie de archivos, ejecuta (haciendo doble click o presionando Enter) el programa “Tabula” que se encuentra dentro. Se abrirá un navegador web. Si no lo hace, abra su navegador web y vaya a http://localhost: 8080. Aparecerá una pantalla similar a la siguiente.\n\n\n\nPara iniciar la conversión, presionamos el botón Browse, luego elegimos el archivo santa2016-12.pdf y presionamos el botón Import. Inicia la conversión del archivo PDF.\n\n\n\nCuando termina nos presenta una pantalla para trabajar, si presionamos el botón Autodetec Tables nos marca la sección a transformar y con el botón Preview & Export Extrated Data podemos obtener la información seleccionada.\n\n\nLa pantalla siguiente nos presenta los datos y nos da varias opciones para exportarlos o copiarlos al portapapeles. También podemos volver atrás para cambiar la selección si vemos que lo elegido no corresponde con lo que necesitamos extraer.\n\nLo exportamos a un archivo CSV, seleccionamos ese formato en Export Format y presionando en el botón Export.\n\n\n\nSi seleccionamos Guardar y damos Aceptar el archivo se almacenará en nuestro disco. Lo guardamos y abrimos para analizar la transformación.\n\n\n\n\n3) Open Refine. Caso: lectores del Horizonte Agropecuario\nDuración: ~45 minutos\n\nSeguir las instrucciones del ejercicio de limpiza de datos usando Open Refine"
+    "text": "Ejercicios\n\n1) Obteniendo datos desde un PDF on-line\nDuración: ~12 minutos\nExisten varios software que realizan conversiones de archivos, algunos de ellos funcionan on-line lo que evita tener que instalar el sistema en la propia computadora.\nDentro de este grupo tenemos PDFToExcel.\nTransformar los datos de dos archivos PDF con tablas a un formato CSV legible.\n\nDescargamos los dos archivos PDF que se encuentran en el campus (crns1701.pdf y santa2016-12.pdf).\nPara utilizar el aplicativo entramos en https://www.pdftoexcelonline.com/\n\nLa pantalla de inicio nos presenta un paso a paso, donde lo primero es seleccionar el archivo a convertir. Presionando el botón Select your file y seleccionamos el archivo crns1701.pdf, luego completamos con el mail al cual deseamos que nos envíe el archivo y finalmente presionamos el botón Convert Now\n\nNos aparece un cartel como el siguiente donde nos indica que nos enviarán el archivo convertido por mail:\n\n\nEntrando al mail que indicamos encontraremos un correo con un link para descargar el archivo convertido, lo guardamos y abrimos para analizar la transformación.\n\n\n\n2) Obteniendo datos desde un PDF off-line\nDuración: ~20 minutos\nTambién existen software que se instalan en la computadora, uno de ellos es Tabula. Para utilizarlo:\n\nSi aún no lo hicieron, descarguen el archivo zip desde el sitio http://tabula.technology/, lo descomprimimos y luego vamos a la carpeta que acaba de extraer.\nDentro de la misma se encuentran una serie de archivos, ejecuta (haciendo doble click o presionando Enter) el programa “Tabula” que se encuentra dentro. Se abrirá un navegador web. Si no lo hace, abra su navegador web y vaya a http://localhost: 8080. Aparecerá una pantalla similar a la siguiente.\n\n\n\nPara iniciar la conversión, presionamos el botón Browse, luego elegimos el archivo santa2016-12.pdf y presionamos el botón Import. Inicia la conversión del archivo PDF.\n\n\n\nCuando termina nos presenta una pantalla para trabajar, si presionamos el botón Autodetec Tables nos marca la sección a transformar y con el botón Preview & Export Extrated Data podemos obtener la información seleccionada.\n\n\nLa pantalla siguiente nos presenta los datos y nos da varias opciones para exportarlos o copiarlos al portapapeles. También podemos volver atrás para cambiar la selección si vemos que lo elegido no corresponde con lo que necesitamos extraer.\n\nLo exportamos a un archivo CSV, seleccionamos ese formato en Export Format y presionando en el botón Export.\n\n\n\nSi seleccionamos Guardar y damos Aceptar el archivo se almacenará en nuestro disco. Lo guardamos y abrimos para analizar la transformación.\n\n\n\n\n3) Open Refine. Caso: lectores del Horizonte Agropecuario\nDuración: ~45 minutos\n\nSeguir las instrucciones del ejercicio de limpiza de datos usando Open Refine",
+    "crumbs": [
+      "Clase 4 - Scrapping y Limpieza de datos"
+    ]
   },
   {
     "objectID": "OpenRefine.html#resumen",
     "href": "OpenRefine.html#resumen",
     "title": "Limpieza de datos con OpenRefine",
     "section": "",
-    "text": "Para esta práctica utilizaremos la herramienta OpenRefine que instalamos en la clase anterior.\nSe puede descargar desde http://openrefine.org/ y corre en cualquier versión de sistema operativo. Cuando se ejecuta la herramienta abre una ventana de la línea de comandos y el explorador de internet por defecto, que es donde se usa la herramienta.\nOpenRefine se define como una herramienta libre y abierta para trabajar con datos llenos de problemas."
+    "text": "Para esta práctica utilizaremos la herramienta OpenRefine que instalamos en la clase anterior.\nSe puede descargar desde http://openrefine.org/ y corre en cualquier versión de sistema operativo. Cuando se ejecuta la herramienta abre una ventana de la línea de comandos y el explorador de internet por defecto, que es donde se usa la herramienta.\nOpenRefine se define como una herramienta libre y abierta para trabajar con datos llenos de problemas.",
+    "crumbs": [
+      "Guía de OpenRefine"
+    ]
   },
   {
     "objectID": "OpenRefine.html#puesta-en-práctica",
@@ -207,21 +279,30 @@
     "href": "OpenRefine.html",
     "title": "Limpieza de datos con OpenRefine",
     "section": "",
-    "text": "Para esta práctica utilizaremos la herramienta OpenRefine que instalamos en la clase anterior.\nSe puede descargar desde http://openrefine.org/ y corre en cualquier versión de sistema operativo. Cuando se ejecuta la herramienta abre una ventana de la línea de comandos y el explorador de internet por defecto, que es donde se usa la herramienta.\nOpenRefine se define como una herramienta libre y abierta para trabajar con datos llenos de problemas."
+    "text": "Para esta práctica utilizaremos la herramienta OpenRefine que instalamos en la clase anterior.\nSe puede descargar desde http://openrefine.org/ y corre en cualquier versión de sistema operativo. Cuando se ejecuta la herramienta abre una ventana de la línea de comandos y el explorador de internet por defecto, que es donde se usa la herramienta.\nOpenRefine se define como una herramienta libre y abierta para trabajar con datos llenos de problemas.",
+    "crumbs": [
+      "Guía de OpenRefine"
+    ]
   },
   {
     "objectID": "OpenRefine.html#tercer-ejercicio-limpieza-del-conjunto-de-datos.",
     "href": "OpenRefine.html#tercer-ejercicio-limpieza-del-conjunto-de-datos.",
     "title": "Limpieza de datos con OpenRefine",
     "section": "Tercer Ejercicio: Limpieza del conjunto de datos.",
-    "text": "Tercer Ejercicio: Limpieza del conjunto de datos.\nDuracion: 20 minutos.\n\nEl primer paso es eliminar las columnas sobrantes o sin datos, para ello hay que hacer clic en la flecha a la derecha de la columna \"Todo\", seleccionar la opción \"Ordenar/Eliminar Columnas…\" del menú \"Editar Columnas\".\n\n\n\nA continuación en la ventana abierta para la edición de las columnas, arrastrar las columnas que se desean eliminar al panel de la derecha y en caso de querer alterar el orden de las columnas con datos se puede hacer dentro del mismo panel.\n\n\n\nUna vez que la planilla este con el formato deseado proceder a identificar valores de lectores similares y corregirlos, para ello sobre la columna de \"Nombre\" seleccionar del menú \"Editar Celdas\" la opción \"Agrupar y editar…\"\n\n\n\nDentro de la ventana que se despliega, observar que automáticamente la herramienta identifica los \"Nombres\" similares y los agrupa para su edición, la misma se realizará si se selecciona la opción \"¿Unir?\", en el cuadro de texto de la izquierda de cada grupo se podrá editar el contenido final de las celdas que se unan. Por último y luego de hacer todos los cambios deseados, hacer clic en \"Unir seleccionados y Cerrar\".\n\n\n\nAhora vamos a eliminar todos los registros que no cuenten con \"Codigo Postal\" ya que sin ese dato no se puede identificar a qué localidad pertenece el \"Lector\": En la columna \"Codigo Postal\", seleccionar del menú \"Facetas\", el submenú \"Facetas personalizadas\" opción \"Facetas por blanco\".\n\n\n\nEsto mostrará en el panel de la izquierda las opciones \"true\" y \"false\", seleccionar la opción \"true\" para ver todos los registros que no cuenten con este dato.\n\n\n\nLuego en la columna \"Todo\", seleccionar el menú \"Editar filas\" opción \"Eliminar todas las filas que encajen\". De esta forma se eliminaran todas las filas sin \"Código postal\".\n\n\n\nPor último vamos a identificar los registros duplicados, en cada columna del set de datos seleccionar del submenú \"Facetas personalizadas\" del menú \"Facetas\", la opción \"Faceta por duplicados\".\n\n\n\nDe esta forma irá apareciendo en el panel de la izquierda dos opciones \"true\" y \"false\" para cada una, al finalizar la misma operación para todas las columnas, seleccionar la opción \"true\" de cada una de las ventanas del panel de la izquierda.\n\n\n\nAhora en la columna \"Codigo Postal\" seleccionar la opción \"Ordenar…\", en la ventana emergente seleccionar \"números\" y \"Aceptar\" de esta forma nos quedan los registros duplicados por localidad.\n\n\n\nAparece la palabra \"Sort\" sobre la fila de los nombre de columnas, seleccionar y elegir la opción \"Ordenar filas permanentemente\" así fijamos el orden dado. De esta forma podremos identificar los registros que realmente sean duplicados, marcar con una estrella y luego seleccionar el filtro por estrellas: menú \"Facetas\" opción \"Facetas con estrellas\". Luego en la columna \"Todo\", seleccionar el menú \"Editar filas\" opción \"Eliminar todas las filas que encajen\"."
+    "text": "Tercer Ejercicio: Limpieza del conjunto de datos.\nDuracion: 20 minutos.\n\nEl primer paso es eliminar las columnas sobrantes o sin datos, para ello hay que hacer clic en la flecha a la derecha de la columna \"Todo\", seleccionar la opción \"Ordenar/Eliminar Columnas…\" del menú \"Editar Columnas\".\n\n\n\nA continuación en la ventana abierta para la edición de las columnas, arrastrar las columnas que se desean eliminar al panel de la derecha y en caso de querer alterar el orden de las columnas con datos se puede hacer dentro del mismo panel.\n\n\n\nUna vez que la planilla este con el formato deseado proceder a identificar valores de lectores similares y corregirlos, para ello sobre la columna de \"Nombre\" seleccionar del menú \"Editar Celdas\" la opción \"Agrupar y editar…\"\n\n\n\nDentro de la ventana que se despliega, observar que automáticamente la herramienta identifica los \"Nombres\" similares y los agrupa para su edición, la misma se realizará si se selecciona la opción \"¿Unir?\", en el cuadro de texto de la izquierda de cada grupo se podrá editar el contenido final de las celdas que se unan. Por último y luego de hacer todos los cambios deseados, hacer clic en \"Unir seleccionados y Cerrar\".\n\n\n\nAhora vamos a eliminar todos los registros que no cuenten con \"Codigo Postal\" ya que sin ese dato no se puede identificar a qué localidad pertenece el \"Lector\": En la columna \"Codigo Postal\", seleccionar del menú \"Facetas\", el submenú \"Facetas personalizadas\" opción \"Facetas por blanco\".\n\n\n\nEsto mostrará en el panel de la izquierda las opciones \"true\" y \"false\", seleccionar la opción \"true\" para ver todos los registros que no cuenten con este dato.\n\n\n\nLuego en la columna \"Todo\", seleccionar el menú \"Editar filas\" opción \"Eliminar todas las filas que encajen\". De esta forma se eliminaran todas las filas sin \"Código postal\".\n\n\n\nPor último vamos a identificar los registros duplicados, en cada columna del set de datos seleccionar del submenú \"Facetas personalizadas\" del menú \"Facetas\", la opción \"Faceta por duplicados\".\n\n\n\nDe esta forma irá apareciendo en el panel de la izquierda dos opciones \"true\" y \"false\" para cada una, al finalizar la misma operación para todas las columnas, seleccionar la opción \"true\" de cada una de las ventanas del panel de la izquierda.\n\n\n\nAhora en la columna \"Codigo Postal\" seleccionar la opción \"Ordenar…\", en la ventana emergente seleccionar \"números\" y \"Aceptar\" de esta forma nos quedan los registros duplicados por localidad.\n\n\n\nAparece la palabra \"Sort\" sobre la fila de los nombre de columnas, seleccionar y elegir la opción \"Ordenar filas permanentemente\" así fijamos el orden dado. De esta forma podremos identificar los registros que realmente sean duplicados, marcar con una estrella y luego seleccionar el filtro por estrellas: menú \"Facetas\" opción \"Facetas con estrellas\". Luego en la columna \"Todo\", seleccionar el menú \"Editar filas\" opción \"Eliminar todas las filas que encajen\".",
+    "crumbs": [
+      "Guía de OpenRefine"
+    ]
   },
   {
     "objectID": "OpenRefine.html#cuarto-ejercicio-limpiar-los-datos-de-las-localidades",
     "href": "OpenRefine.html#cuarto-ejercicio-limpiar-los-datos-de-las-localidades",
     "title": "Limpieza de datos con OpenRefine",
     "section": "Cuarto Ejercicio: limpiar los datos de las Localidades",
-    "text": "Cuarto Ejercicio: limpiar los datos de las Localidades\nDuracion: 20 minutos\n\nVamos a generar un nuevo proyecto y vamos a importar nuevamente el set de datos Lectores, pero en esta ocasión, seleccionaremos la hoja de Localidades. Al proyecto le pondremos de nombre Localidades.\nComo siguiente paso seleccionamos la columna Provincia -&gt; Facetas -&gt; Facetas por Texto.\n\n\n\nNos aparece a la izquierda un panel con todos los textos diferentes que tiene esa columna y podemos ver que hay nombres de una misma provincia escrito de manera diferente.  Para cambiarlos a todos juntos seleccionamos editar y ponemos el valor correcto.  La herramienta cambiará todos estos casos juntos.\n\n\n\nRealizar similar tarea con los datos de \"Localidad\", seleccionar la opción \"Faceta de texto\" del menú \"Facetas\", aparece en el panel de la izquierda otra ventana, ahora con los nombres de las localidades agrupados por cantidad de apariciones. Para la edición de la misma se podrá utilizar el filtro de provincias, de esta forma se evitará eliminar localidad con el mismo nombre pero de diferentes \"Provincias\".\n\n\n\nDespués de realizar todas estas modificaciones, ordenar de nuevo:  seleccionar en la columna \"Provincia\" la opción \"Ordenar…\", hacer lo mismo con \"Localidad\" de esta forma quedan en filas consecutivas las filas duplicadas.  Para poder eliminar las filas duplicadas debemos:\nSeleccionar la palabras \"Sort\" sobre los nombres de las columnas y luego la opción \"Reordenar filas permanentemente\".\nSeleccionar en la columna \"Localidad\" la opción \"Vaciar hacia abajo\" del menú \"Editar celdas\". Así se borran los datos de Localidad duplicados.\n\n\n\nPara eliminar las filas con celdas vacías en la columna \"Localidad\", seleccionar Facetas -&gt; Facetas personalizadas -&gt; Faceta por blanco\"\nEsto muestra en el panel de la izquierda las opciones \"true\" y \"false\" para \"Localidad\", seleccionar \"true\" y así se muestran todas las filas sin dato de \"Localidad\". En la columna \"Todo\" seleccionar \"Eliminar todas las filas que encajan\" del menú \"Editar filas\"\nComo último paso para cerrar la edición de este set de datos, cerrar todas las ventanas en el panel de la izquierda. De esta forma aparecerán los datos que quedaron. Observar que siguen existiendo datos duplicados,\nEsta última edición la realizaremos marcando los registros repetidos que visualmente encontremos. Para ello en la columna \"Localidad\" seleccionar la opción \"Faceta de texto\" en el menú \"Facetas\", vemos que el panel de las izquierda nos muestra nuevamente las localidades dentro de las que vemos algunas con 2 apariciones, ordenamos por \"conteo\" y seleccionar con la opción \"include\" de cada renglón las que tengan más de una aparición. Ahora con el listado de las repetidas marcar con una estrella los registros a eliminar.\n\n\n\nSeleccionar en la columna \"Todo\", la opción \"Faceta por estrellas\" en el menú \"Facetas\", aparece la ventana en el panel izquierdo, con las opciones \"true\" y \"false\", seleccionar \"true\" en dicha ventana. Luego seleccionar la opción \"Eliminar todas las filas que encajan\" del menú \"Editar filas\" de la columna \"Todo\". Cerramos nuevamente todas las ventanas del panel izquierdo"
+    "text": "Cuarto Ejercicio: limpiar los datos de las Localidades\nDuracion: 20 minutos\n\nVamos a generar un nuevo proyecto y vamos a importar nuevamente el set de datos Lectores, pero en esta ocasión, seleccionaremos la hoja de Localidades. Al proyecto le pondremos de nombre Localidades.\nComo siguiente paso seleccionamos la columna Provincia -&gt; Facetas -&gt; Facetas por Texto.\n\n\n\nNos aparece a la izquierda un panel con todos los textos diferentes que tiene esa columna y podemos ver que hay nombres de una misma provincia escrito de manera diferente.  Para cambiarlos a todos juntos seleccionamos editar y ponemos el valor correcto.  La herramienta cambiará todos estos casos juntos.\n\n\n\nRealizar similar tarea con los datos de \"Localidad\", seleccionar la opción \"Faceta de texto\" del menú \"Facetas\", aparece en el panel de la izquierda otra ventana, ahora con los nombres de las localidades agrupados por cantidad de apariciones. Para la edición de la misma se podrá utilizar el filtro de provincias, de esta forma se evitará eliminar localidad con el mismo nombre pero de diferentes \"Provincias\".\n\n\n\nDespués de realizar todas estas modificaciones, ordenar de nuevo:  seleccionar en la columna \"Provincia\" la opción \"Ordenar…\", hacer lo mismo con \"Localidad\" de esta forma quedan en filas consecutivas las filas duplicadas.  Para poder eliminar las filas duplicadas debemos:\nSeleccionar la palabras \"Sort\" sobre los nombres de las columnas y luego la opción \"Reordenar filas permanentemente\".\nSeleccionar en la columna \"Localidad\" la opción \"Vaciar hacia abajo\" del menú \"Editar celdas\". Así se borran los datos de Localidad duplicados.\n\n\n\nPara eliminar las filas con celdas vacías en la columna \"Localidad\", seleccionar Facetas -&gt; Facetas personalizadas -&gt; Faceta por blanco\"\nEsto muestra en el panel de la izquierda las opciones \"true\" y \"false\" para \"Localidad\", seleccionar \"true\" y así se muestran todas las filas sin dato de \"Localidad\". En la columna \"Todo\" seleccionar \"Eliminar todas las filas que encajan\" del menú \"Editar filas\"\nComo último paso para cerrar la edición de este set de datos, cerrar todas las ventanas en el panel de la izquierda. De esta forma aparecerán los datos que quedaron. Observar que siguen existiendo datos duplicados,\nEsta última edición la realizaremos marcando los registros repetidos que visualmente encontremos. Para ello en la columna \"Localidad\" seleccionar la opción \"Faceta de texto\" en el menú \"Facetas\", vemos que el panel de las izquierda nos muestra nuevamente las localidades dentro de las que vemos algunas con 2 apariciones, ordenamos por \"conteo\" y seleccionar con la opción \"include\" de cada renglón las que tengan más de una aparición. Ahora con el listado de las repetidas marcar con una estrella los registros a eliminar.\n\n\n\nSeleccionar en la columna \"Todo\", la opción \"Faceta por estrellas\" en el menú \"Facetas\", aparece la ventana en el panel izquierdo, con las opciones \"true\" y \"false\", seleccionar \"true\" en dicha ventana. Luego seleccionar la opción \"Eliminar todas las filas que encajan\" del menú \"Editar filas\" de la columna \"Todo\". Cerramos nuevamente todas las ventanas del panel izquierdo",
+    "crumbs": [
+      "Guía de OpenRefine"
+    ]
   },
   {
     "objectID": "OpenRefine.html#quinto-ejercicio-unificar-los-set-de-datos-de-lectores-con-localidades",
@@ -235,35 +316,50 @@
     "href": "OpenRefine.html#sexto-ejercicio-registro-de-todos-los-cambios-realizados",
     "title": "Limpieza de datos con OpenRefine",
     "section": "Sexto Ejercicio: Registro de todos los cambios realizados",
-    "text": "Sexto Ejercicio: Registro de todos los cambios realizados\nDuracion: 5 minutos.\nOpen Refine lleva un registro de todos los cambios y acciones que realizamos sobre los datos trabajados en el proyecto. Si es necesario volver algún paso atrás o tener el historial de acciones realizadas sobre los datos, la herramienta los documenta por nosotros. Se pueden ver haciendo clic sobre la opción Deshacer/Rehacer:"
+    "text": "Sexto Ejercicio: Registro de todos los cambios realizados\nDuracion: 5 minutos.\nOpen Refine lleva un registro de todos los cambios y acciones que realizamos sobre los datos trabajados en el proyecto. Si es necesario volver algún paso atrás o tener el historial de acciones realizadas sobre los datos, la herramienta los documenta por nosotros. Se pueden ver haciendo clic sobre la opción Deshacer/Rehacer:",
+    "crumbs": [
+      "Guía de OpenRefine"
+    ]
   },
   {
     "objectID": "OpenRefine.html#septimo-ejercicio-guardando-los-datos-trabajados",
     "href": "OpenRefine.html#septimo-ejercicio-guardando-los-datos-trabajados",
     "title": "Limpieza de datos con OpenRefine",
     "section": "Septimo Ejercicio: guardando los datos trabajados",
-    "text": "Septimo Ejercicio: guardando los datos trabajados\nDuracion: 5 minutos.\n\nPara finalizar y obtener un archivo con los datos ya limpios y trabajados como necesitamos debemos hacer clic en \"Exportar\" y allí seleccionar el formato que más nos convenga.\n\n\n\nHacer clic en el botón \"Exportar\" que se encuentra en la esquina superior derecha de la pantalla, allí visualizar todas las opciones de exportación junto con los formatos en los que se pueden exportar los datos, en este caso vamos a seleccionar el formato \"Excel en XML (.xlsx)\". Al seleccionar la opción se abrirá otra ventana en el explorador:\n\n\n\nEn esta nueva ventana seleccionar la opción \"Guardar como\" asi poder elegir la ubicación del archivo final."
+    "text": "Septimo Ejercicio: guardando los datos trabajados\nDuracion: 5 minutos.\n\nPara finalizar y obtener un archivo con los datos ya limpios y trabajados como necesitamos debemos hacer clic en \"Exportar\" y allí seleccionar el formato que más nos convenga.\n\n\n\nHacer clic en el botón \"Exportar\" que se encuentra en la esquina superior derecha de la pantalla, allí visualizar todas las opciones de exportación junto con los formatos en los que se pueden exportar los datos, en este caso vamos a seleccionar el formato \"Excel en XML (.xlsx)\". Al seleccionar la opción se abrirá otra ventana en el explorador:\n\n\n\nEn esta nueva ventana seleccionar la opción \"Guardar como\" asi poder elegir la ubicación del archivo final.",
+    "crumbs": [
+      "Guía de OpenRefine"
+    ]
   },
   {
     "objectID": "OpenRefine.html#quinto-ejercicio-unificar-los-set-de-datos-de-lectores-con-localidades.",
     "href": "OpenRefine.html#quinto-ejercicio-unificar-los-set-de-datos-de-lectores-con-localidades.",
     "title": "Limpieza de datos con OpenRefine",
     "section": "Quinto Ejercicio: Unificar los set de datos de Lectores con Localidades.",
-    "text": "Quinto Ejercicio: Unificar los set de datos de Lectores con Localidades.\nDuracion: 15 minutos.\n\nPara comenzar con la última parte de la consolidación de los datos del caso de estudio abrir nuevamente el set de datos Lectores, con el botón \"Abrir…\" que se encuentra en el rincón superior derecho.\n\n\n\nHacer click en la solapa de la izquierda \"Abrir proyecto\", esto nos muestra todos los proyectos que se generaron. Seleccionar el proyecto \"Lectores\" para abrirlo nuevamente.\nAhora agregar nuevas columnas \"Localidad\" y \"Provincia\" al proyecto actual desde el proyecto \"Localidades\". Para esto usaremos la opción \"Agregar columna basada en esta columna…\" en el menú \"Editar columnas\" de la columna \"Codigo Postal\"\n\n\n\nAl seleccionar esta opción se abre una ventana emergente en donde configurar opciones que nos va a permitir agregar nuevas columnas. Dentro de las configuraciones, completar el nombre de la nueva columna, en el primer caso sería \"Localidad\", dejar seleccionado \"cambiar a en blanco\", el lenguaje a utilizar será \"GREL\" como está configurado y en el cuadro \"Expresión\" completar con la expresión:\n\ncell.cross(\"Localidades\",\"Codigo postal\").cells\\[\"Localidad\"\\].value\\[0\\]\n\n\nEn el cuadro inferior se muestra una vista previa de la columna agregada. Realizar la misma secuencia para agregar la columna de \"Provincia\", también basada en el \"Codigo postal\". La expresión que se debe utilizar para la nueva columna es la siguiente:\n\ncell.cross(\"Localidades\",\"Codigo postal\").cells\\[\"Provincia\"\\].value\\[0\\]\n\nComo así también se debe tener en cuenta que el nombre de la columna debe ser \"Provincia\". Luego de estos pasos contamos con el listado de lectores sin duplicados y con el dato de Localidad y Provincia."
+    "text": "Quinto Ejercicio: Unificar los set de datos de Lectores con Localidades.\nDuracion: 15 minutos.\n\nPara comenzar con la última parte de la consolidación de los datos del caso de estudio abrir nuevamente el set de datos Lectores, con el botón \"Abrir…\" que se encuentra en el rincón superior derecho.\n\n\n\nHacer click en la solapa de la izquierda \"Abrir proyecto\", esto nos muestra todos los proyectos que se generaron. Seleccionar el proyecto \"Lectores\" para abrirlo nuevamente.\nAhora agregar nuevas columnas \"Localidad\" y \"Provincia\" al proyecto actual desde el proyecto \"Localidades\". Para esto usaremos la opción \"Agregar columna basada en esta columna…\" en el menú \"Editar columnas\" de la columna \"Codigo Postal\"\n\n\n\nAl seleccionar esta opción se abre una ventana emergente en donde configurar opciones que nos va a permitir agregar nuevas columnas. Dentro de las configuraciones, completar el nombre de la nueva columna, en el primer caso sería \"Localidad\", dejar seleccionado \"cambiar a en blanco\", el lenguaje a utilizar será \"GREL\" como está configurado y en el cuadro \"Expresión\" completar con la expresión:\n\ncell.cross(\"Localidades\",\"Codigo postal\").cells\\[\"Localidad\"\\].value\\[0\\]\n\n\nEn el cuadro inferior se muestra una vista previa de la columna agregada. Realizar la misma secuencia para agregar la columna de \"Provincia\", también basada en el \"Codigo postal\". La expresión que se debe utilizar para la nueva columna es la siguiente:\n\ncell.cross(\"Localidades\",\"Codigo postal\").cells\\[\"Provincia\"\\].value\\[0\\]\n\nComo así también se debe tener en cuenta que el nombre de la columna debe ser \"Provincia\". Luego de estos pasos contamos con el listado de lectores sin duplicados y con el dato de Localidad y Provincia.",
+    "crumbs": [
+      "Guía de OpenRefine"
+    ]
   },
   {
     "objectID": "clase1.html#lecturas-sugeridas",
     "href": "clase1.html#lecturas-sugeridas",
     "title": "Clase 1 - Introducción",
     "section": "Lecturas sugeridas",
-    "text": "Lecturas sugeridas\n\nQuien es Timnit Gebru\nPor que el despido de una investigadora negra de Google se ha convertido en un escandalo global"
+    "text": "Lecturas sugeridas\n\nQuien es Timnit Gebru\nPor que el despido de una investigadora negra de Google se ha convertido en un escandalo global",
+    "crumbs": [
+      "Clase 1 - Introducción"
+    ]
   },
   {
     "objectID": "libros.html",
     "href": "libros.html",
     "title": "Libros sugeridos",
     "section": "",
-    "text": "Libro - Big Data- Walter Sosa Escudero (Español)\nLibro introductorio a diferentes conceptos, algoritmos y tecnologias relacionados con el mundo del Big Data.\n\n\nLibro - Armas de destrucción matemática- Cathy O’Neil (Español)\nLibro donde se explica como funcionan diferentes algoritmos y como su uso pueden influir de forma negativa en la vida de las personas.\n\n\nLibro Feminismo de Datos (Español)\nTraduccion del libro Data Feminist.\n\n\nLibro - R para Ciencia de Datos (Español)\nTraduccion de la primera edicion del libro R for Data Science.\n\n\nLibro - Open Data Handbook (Inglés)\nLibro con recomendaciones para abrir datos.\n\n\nLibro - Java Script para Ciencia de Datos (Inglés)\n\n\nLibro - TextMining with R (Inglés)\n\n\nLibro - Las inundaciones en el Noreste de La Pampa. Una mirada multidisciplinar (Español)\nLeer los capitulos 9 y 10 para mayor detalle sobre el uso de GEE para el seguimiento de inundaciones.\n\n\nLibro - Handbook rgee (Español)\n\n\nLibro - Social Media Mining with R - Nathan Danneman, Richard Heimann (Inglés)\n\n\nLibro Public Policy Analytics (Inglés)\n\n\nLibro - El modelo relacional y el álgebra relacional - Dolors Costal Costa (Español)"
+    "text": "Libro - Big Data- Walter Sosa Escudero (Español)\nLibro introductorio a diferentes conceptos, algoritmos y tecnologias relacionados con el mundo del Big Data.\n\n\nLibro - Armas de destrucción matemática- Cathy O’Neil (Español)\nLibro donde se explica como funcionan diferentes algoritmos y como su uso pueden influir de forma negativa en la vida de las personas.\n\n\nLibro Feminismo de Datos (Español)\nTraduccion del libro Data Feminist.\n\n\nLibro - R para Ciencia de Datos (Español)\nTraduccion de la primera edicion del libro R for Data Science.\n\n\nLibro - Open Data Handbook (Inglés)\nLibro con recomendaciones para abrir datos.\n\n\nLibro - Java Script para Ciencia de Datos (Inglés)\n\n\nLibro - TextMining with R (Inglés)\n\n\nLibro - Las inundaciones en el Noreste de La Pampa. Una mirada multidisciplinar (Español)\nLeer los capitulos 9 y 10 para mayor detalle sobre el uso de GEE para el seguimiento de inundaciones.\n\n\nLibro - Handbook rgee (Español)\n\n\nLibro - Social Media Mining with R - Nathan Danneman, Richard Heimann (Inglés)\n\n\nLibro Public Policy Analytics (Inglés)\n\n\nLibro - El modelo relacional y el álgebra relacional - Dolors Costal Costa (Español)",
+    "crumbs": [
+      "Libros sugeridos"
+    ]
   },
   {
     "objectID": "libros.html#libro---big-data--walter-sosa-escudero-español",
@@ -347,62 +443,148 @@
     "href": "clase2.html#lecturas-sugeridas",
     "title": "Clase 2 - Tipos de datos",
     "section": "Lecturas sugeridas",
-    "text": "Lecturas sugeridas\n\nArtículo - Tidy data. Hadley Wickham. The Journal of Statistical Software, vol. 59, 2014. (Inglés)\nArtículo - Licencias: Compartir material educativo y mantener la autoría (Español)\nArtículo - Licencias Creative Commons"
+    "text": "Lecturas sugeridas\n\nArtículo - Tidy data. Hadley Wickham. The Journal of Statistical Software, vol. 59, 2014. (Inglés)\nArtículo - Licencias: Compartir material educativo y mantener la autoría (Español)\nArtículo - Licencias Creative Commons",
+    "crumbs": [
+      "Clase 2 - Tipos de Datos"
+    ]
   },
   {
     "objectID": "clase5.html",
     "href": "clase5.html",
     "title": "Clase 5 - Text Mining en R",
     "section": "",
-    "text": "Explicar el proceso de text mining tidy utilizando R.\nDefinir e identificar que es token y stop words.\nEjercitar las acciones basicas de un analisis de texto utilizando R."
+    "text": "Explicar el proceso de text mining tidy utilizando R.\nDefinir e identificar que es token y stop words.\nIdentificar los paquetes de R que permiten realizar una analisis de texto de forma tidy.\nEjercitar las acciones basicas de un analisis de texto utilizando R.",
+    "crumbs": [
+      "Clase 5 - Text Mining en R"
+    ]
   },
   {
     "objectID": "clase5.html#objetivos-de-aprendizaje",
     "href": "clase5.html#objetivos-de-aprendizaje",
     "title": "Clase 5 - Text Mining en R",
     "section": "",
-    "text": "Explicar el proceso de text mining tidy utilizando R.\nDefinir e identificar que es token y stop words.\nEjercitar las acciones basicas de un analisis de texto utilizando R."
+    "text": "Explicar el proceso de text mining tidy utilizando R.\nDefinir e identificar que es token y stop words.\nIdentificar los paquetes de R que permiten realizar una analisis de texto de forma tidy.\nEjercitar las acciones basicas de un analisis de texto utilizando R.",
+    "crumbs": [
+      "Clase 5 - Text Mining en R"
+    ]
   },
   {
     "objectID": "clase5.html#slides",
     "href": "clase5.html#slides",
     "title": "Clase 5 - Text Mining en R",
     "section": "Slides",
-    "text": "Slides"
+    "text": "Slides",
+    "crumbs": [
+      "Clase 5 - Text Mining en R"
+    ]
   },
   {
     "objectID": "clase5.html#ejercicios",
     "href": "clase5.html#ejercicios",
     "title": "Clase 5 - Text Mining en R",
     "section": "Ejercicios",
-    "text": "Ejercicios\n\n1) Chequeando que tenemos todo instalado\nDuración: ~15 minutos\n\nIngresen a su RStudio\nEjecuten el siguiente código (de a una linea por vez):\n\nlibrary(tidyverse)\n\nlibrary(tidytext)\n\nlibrary(learnr)\n\nlibrary(remotes)\n\nlibrary(wordcloud2)\n\nlibrary(tm)\n\nlibrary(readr)\n\nSi alguno de estas líneas de código les da error (que el paquete no existe) entonces deben instalarlo con\n\ninstall.packages(nombre_del_paquete)\npor ejemplo:\ninstall.packages(remotes)\n\n\n2) Tutorial interactivo de Introducción a Text Mining\nDuración: ~30 minutos\nInstalar el tutorial learnr de Introducción a Text Mining con R.\nPara instalar la versión de desarrollo desde GitHub tenés que tener instalado el paquete remotes, si no lo tenés instalalo con:\ninstall.packages(\"remotes\")\ny luego usá el siguiente código para instalar el tutorial:\nremotes::install_github(\"yabellini/TextMiningTutorial\")\nPuede ser que si hay versiones más nuevas de los paquetes que necesitas en la consola te aparezca un mensaje similar a este:\nThese packages have more recent versions available.\nIt is recommended to update all of them.\nWhich would you like to update?\n\n 1: All                                 \n 2: CRAN packages only                  \n 3: None                                \n 4: colorspace (1.4-1  -&gt; 2.0-1 ) [CRAN]\n 5: rlang      (0.4.2  -&gt; 0.4.11) [CRAN]\n 6: glue       (1.4.0  -&gt; 1.4.2 ) [CRAN]\n \n Enter one or more numbers, or an empty line to skip updates:\nEse mensaje nos indica que paquetes podríamos actualizar. Si no queremos actualizar podemos presionar Enter o bien seleccionar el número que dice None, en este caso el 3.\nSi no tenes la ultima versión de RStudio entonces tenés que instalar el paquete learnr utilizando el siguiente código:\ninstall.packages(\"learnr\")\ny luego ejecutar de esta manera el Tutorial:\nlearnr::run_tutorial(\"TextMining\", package = \"TextMiningTutorial\")\n\n\n3) Completar los blancos en el código\nDuración: ~30 minutos\n\nDescargar el archivo zipeado Ejercicio Text Mining en R que está subido al campus en la clase de hoy.\nDescomprimir ese archivo y abrir el proyecto de RStudio que se encuentra dentro.\nAbrir el archivo EjercicioNubeDePalabras.Rmd.\nSeguir las instrucciones para completar el código y que el mismo funcione."
+    "text": "Ejercicios\n\n1) Chequeando que tenemos todo instalado\nDuración: ~15 minutos\n\nIngresen a su RStudio\nEjecuten el siguiente código (de a una linea por vez):\n\nlibrary(tidyverse)\n\nlibrary(tidytext)\n\nlibrary(learnr)\n\nlibrary(remotes)\n\nlibrary(wordcloud2)\n\nlibrary(tm)\n\nlibrary(readr)\n\nSi alguno de estas líneas de código les da error (que el paquete no existe) entonces deben instalarlo con\n\ninstall.packages(nombre_del_paquete)\npor ejemplo:\ninstall.packages(remotes)\n\n\n2) Tutorial interactivo de Introducción a Text Mining\nDuración: ~30 minutos\nInstalar el tutorial learnr de Introducción a Text Mining con R.\nPara instalar la versión de desarrollo desde GitHub tenés que tener instalado el paquete remotes, si no lo tenés instalalo con:\ninstall.packages(\"remotes\")\ny luego usá el siguiente código para instalar el tutorial:\nremotes::install_github(\"yabellini/TextMiningTutorial\")\nPuede ser que si hay versiones más nuevas de los paquetes que necesitas en la consola te aparezca un mensaje similar a este:\nThese packages have more recent versions available.\nIt is recommended to update all of them.\nWhich would you like to update?\n\n 1: All                                 \n 2: CRAN packages only                  \n 3: None                                \n 4: colorspace (1.4-1  -&gt; 2.0-1 ) [CRAN]\n 5: rlang      (0.4.2  -&gt; 0.4.11) [CRAN]\n 6: glue       (1.4.0  -&gt; 1.4.2 ) [CRAN]\n \n Enter one or more numbers, or an empty line to skip updates:\nEse mensaje nos indica que paquetes podríamos actualizar. Si no queremos actualizar podemos presionar Enter o bien seleccionar el número que dice None, en este caso el 3.\nSi no tenes la ultima versión de RStudio entonces tenés que instalar el paquete learnr utilizando el siguiente código:\ninstall.packages(\"learnr\")\ny luego ejecutar de esta manera el Tutorial:\nlearnr::run_tutorial(\"TextMining\", package = \"TextMiningTutorial\")\n\n\n3) Completar los blancos en el código\nDuración: ~30 minutos\n\nDescargar los archivos EjercicioNubeDePalabras.Rmd y rladies_meetups.csv\nAbrir el archivo EjercicioNubeDePalabras.Rmd.\nSeguir las instrucciones para completar el código y que el mismo funcione.\n\n\n\n\n\n\n\nEjercicios con R\n\n\n\n\nEl ejercicio anterior tambien se puede realizar con un Proyecto de RStudio, para esto se puede subir un archivo zipeado llamado Ejercicio Text Mining en R.zip que contiene el proyecto y está subido al campus en la clase correspondiente.\nLa otra opcion es tener un proyecto en RStudio Cloud (ahora Posit Cloud) con el proyecto y todos los archivos y paquetes necesarios instalados.",
+    "crumbs": [
+      "Clase 5 - Text Mining en R"
+    ]
   },
   {
     "objectID": "clase3.html#lecturas-sugeridas",
     "href": "clase3.html#lecturas-sugeridas",
     "title": "Clase 3 - Text Mining",
     "section": "Lecturas sugeridas",
-    "text": "Lecturas sugeridas\n\nArtículo - Tendências de pesquisa em Agroinformática na Argentina: uma análise histórica (Portugués)\nArtículo - Análise das Tendências de pesquisa no Congresso de Agroinformática da Argentina: um estudo regional (Portugués)\nArtículo - Asociaciones de Palabras (Inglés)\nArtículo - ¿De qué se habló en el Parlamento uruguayo desde 2017? (Español)\nArtículo - Conjunto de datos de resultados de la Red Nacional de Cultivares de Girasol de INTA (Español)"
+    "text": "Lecturas sugeridas\n\nArtículo - Tendências de pesquisa em Agroinformática na Argentina: uma análise histórica (Portugués)\nArtículo - Análise das Tendências de pesquisa no Congresso de Agroinformática da Argentina: um estudo regional (Portugués)\nArtículo - Asociaciones de Palabras (Inglés)\nArtículo - ¿De qué se habló en el Parlamento uruguayo desde 2017? (Español)\nArtículo - Conjunto de datos de resultados de la Red Nacional de Cultivares de Girasol de INTA (Español)",
+    "crumbs": [
+      "Clase 3 - NOSQL y Text Mining"
+    ]
   },
   {
     "objectID": "clase4.html#lecturas-sugeridas",
     "href": "clase4.html#lecturas-sugeridas",
     "title": "Clase 4 - Metadatos y Limpieza de datos",
     "section": "Lecturas sugeridas",
-    "text": "Lecturas sugeridas\n\nArtículo - Nongeospatial Metadata for the Ecological Sciences. William et.al. 1997 (inglés)\nArtículo - Propuesta para una Infraestructura de Datos Agropecuarios del Instituto Nacional de Tecnología Agropecuaria (INTA) (Español)"
+    "text": "Lecturas sugeridas\n\nArtículo - Nongeospatial Metadata for the Ecological Sciences. William et.al. 1997 (inglés)\nArtículo - Propuesta para una Infraestructura de Datos Agropecuarios del Instituto Nacional de Tecnología Agropecuaria (INTA) (Español)",
+    "crumbs": [
+      "Clase 4 - Scrapping y Limpieza de datos"
+    ]
   },
   {
     "objectID": "clase6.html#slides",
     "href": "clase6.html#slides",
     "title": "Clase 6 - Geotecnologias",
     "section": "Slides",
-    "text": "Slides"
+    "text": "Slides",
+    "crumbs": [
+      "Clase 6 - Geotecnologias"
+    ]
   },
   {
     "objectID": "clase6.html#ejercicios",
     "href": "clase6.html#ejercicios",
     "title": "Clase 6 - Geotecnologias",
     "section": "Ejercicios",
-    "text": "Ejercicios"
+    "text": "Ejercicios",
+    "crumbs": [
+      "Clase 6 - Geotecnologias"
+    ]
+  },
+  {
+    "objectID": "cursos.html",
+    "href": "cursos.html",
+    "title": "Cursos",
+    "section": "",
+    "text": "Requisitos de finalización\nHaga clic en el enlace https://mappinggis.com/2019/05/combinaciones-de-bandas-en-imagenes-de-satelite-landsat-y-sentinel/ para abrir el recurso.\n\nURL\nConfiguración\nMás"
+  },
+  {
+    "objectID": "cursos.html#artículo---teledetección-y-bandas-mutiespectrales",
+    "href": "cursos.html#artículo---teledetección-y-bandas-mutiespectrales",
+    "title": "Cursos",
+    "section": "",
+    "text": "Requisitos de finalización\nHaga clic en el enlace https://mappinggis.com/2019/05/combinaciones-de-bandas-en-imagenes-de-satelite-landsat-y-sentinel/ para abrir el recurso.\n\nURL\nConfiguración\nMás"
+  },
+  {
+    "objectID": "cursos.html#listado-de-recursos-en-español-para-aprender-r",
+    "href": "cursos.html#listado-de-recursos-en-español-para-aprender-r",
+    "title": "Cursos",
+    "section": "Listado de recursos en español para aprender R",
+    "text": "Listado de recursos en español para aprender R\nRequisitos de finalización\nHaga clic en el enlace https://www.learnr4free.com/es/index.html para abrir el recurso.\nSoftware OCR:\nhttp://www.free-ocr.com/ \nhttp://www.free-online-ocr.com/ \nhttps://www.onlineocr.net/es/ \nhttps://www.newocr.com/"
+  },
+  {
+    "objectID": "cursos.html#curso---primeros-pasos-de-git-con-r-español",
+    "href": "cursos.html#curso---primeros-pasos-de-git-con-r-español",
+    "title": "Cursos",
+    "section": "Curso - Primeros pasos de Git con R (Español)",
+    "text": "Curso - Primeros pasos de Git con R (Español)\nRequisitos de finalización\nHaga clic en el enlace https://yabellini.netlify.app/es/courses/tallerdegitconr/ para abrir el recurso."
+  },
+  {
+    "objectID": "cursos.html#curso---google-earth-engine-desde-cero-español",
+    "href": "cursos.html#curso---google-earth-engine-desde-cero-español",
+    "title": "Cursos",
+    "section": "Curso - Google Earth Engine desde Cero (Español)",
+    "text": "Curso - Google Earth Engine desde Cero (Español)\nRequisitos de finalización\nHaga clic en el enlace https://yabellini.netlify.app/es/courses/gee_cai2019/ para abrir el recurso."
+  },
+  {
+    "objectID": "cursos.html#tutoriales---google-earth-engine-inglés",
+    "href": "cursos.html#tutoriales---google-earth-engine-inglés",
+    "title": "Cursos",
+    "section": "Tutoriales - Google Earth Engine (Inglés)",
+    "text": "Tutoriales - Google Earth Engine (Inglés)\nRequisitos de finalización\nHaga clic en el enlace https://developers.google.com/earth-engine/tutorials/tutorialspara abrir el recurso."
+  },
+  {
+    "objectID": "cursos.html#sitio-web---250-ejemplos-de-uso-de-rgee",
+    "href": "cursos.html#sitio-web---250-ejemplos-de-uso-de-rgee",
+    "title": "Cursos",
+    "section": "Sitio Web - 250 ejemplos de uso de rgee",
+    "text": "Sitio Web - 250 ejemplos de uso de rgee\nRequisitos de finalización\nHaga clic en el enlace https://csaybar.github.io/rgee-examples/ para abrir el recurso."
+  },
+  {
+    "objectID": "clase5.html#live-coding",
+    "href": "clase5.html#live-coding",
+    "title": "Clase 5 - Text Mining en R",
+    "section": "Live Coding",
+    "text": "Live Coding\nSe inicia el live coding en un nuevo documento rmarkdown. El codigo que se presenta a continuacion se encuentra en su version final. Se va construyendo paso a paso. Este live cosing esta basado en un ejemplo presentado en un meetup de R-Ladies Buenos Aires por Maria Nanton.\n\nCargamos los paquetes que necesitamos\nlibrary(tidyverse)\nlibrary(tidytext)\n\n\nLeo los datos que necesito\n\nlibrary(readr)\ncorpus_mistral &lt;- read_delim(\"corpus_mistral.csv\", \n    \";\", escape_double = FALSE, locale = locale(encoding = \"ISO-8859-1\"), \n    trim_ws = TRUE)\n\n\nVamos a tokenizar\n\npoemas_palabras &lt;- corpus_mistral %&gt;%\n  select(text) %&gt;%\n  unnest_tokens(palabras, text)\n\n\nVamos a contar palabras\n\npoemas_palabras %&gt;%\n  count(palabras, sort = TRUE)\n\nstopwords &lt;- tm::stopwords(kind = \"es\")\n\nstopwords_web&lt;- read.csv(\"https://bitsandbricks.github.io/data/stopwords_es.csv\",\n                      stringsAsFactors = FALSE)\n\npalabras_sin_stopwords &lt;- poemas_palabras %&gt;%\n  anti_join(stopwords_web, by = c(\"palabras\" = \"STOPWORD\"))\n  \npalabras_sin_stopwords %&gt;%\n  group_by(palabras) %&gt;%\n  summarise(cantidad = n()) %&gt;%\n  arrange(desc(cantidad))\n\npalabras_sin_stopwords %&gt;%\n  count(palabras) %&gt;%\n  filter(n &gt; 30 & !is.na(palabras)) %&gt;%\n  mutate(palabras = reorder(palabras,-n)) %&gt;%\n  ggplot(aes(n, palabras)) +\n  geom_col()\n\n\nConstruimos la nube de palabras\nlibrary(wordcloud2)\n\nfrecuencia &lt;- palabras_sin_stopwords %&gt;%\n  count(palabras, sort = TRUE)\n\nwordcloud2(frecuencia)",
+    "crumbs": [
+      "Clase 5 - Text Mining en R"
+    ]
   }
 ]

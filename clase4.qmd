@@ -89,7 +89,7 @@ La pantalla siguiente nos presenta los datos y nos da varias opciones para expor
 
 **Duración:** \~45 minutos
 
-1)  Seguir las instrucciones del ejercicio de [limpiza de datos usando Open Refine](docs/OpenRefine.html)
+1)  Seguir las instrucciones del ejercicio de [limpiza de datos usando Open Refine](OpenRefine.qmd)
 
 
 ## Lecturas sugeridas
