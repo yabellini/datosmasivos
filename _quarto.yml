@@ -17,8 +17,6 @@ website:
     contents:
       - href: index.qmd
         text: Home
-      - href: schedule.qmd
-        text: Schedule
       - href: clase1.qmd
         text: Clase 1 - Introducción
       - href: clase2.qmd
