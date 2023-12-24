@@ -511,21 +511,21 @@
   {
     "objectID": "clase6.html#slides",
     "href": "clase6.html#slides",
-    "title": "Clase 6 - Geotecnologias",
+    "title": "Clase 6 - APIs",
     "section": "Slides",
     "text": "Slides",
     "crumbs": [
-      "Clase 6 - Geotecnologias"
+      "Clase 6 - APIs"
     ]
   },
   {
     "objectID": "clase6.html#ejercicios",
     "href": "clase6.html#ejercicios",
-    "title": "Clase 6 - Geotecnologias",
+    "title": "Clase 6 - APIs",
     "section": "Ejercicios",
-    "text": "Ejercicios",
+    "text": "Ejercicios\n\nEjercicio 1. Obteniendo API Keys\nDuración: ~20 minutos\nMiren el siguiente video sobre API y contesten en grupo las preguntas:\nVideo 1: https://www.youtube.com/watch?v=YzAm7hGCxZY  \n1) Pregunta: ¿Los pasos para obtener el acceso a la API son complejos?\n2) Pregunta: Durante las materias de esta primera parte de la diplomatura ¿habían usado APIs?, ¿cuáles?, ¿habían sacado API Keys? ¿Cuáles?\n3) Pregunta: googlen como sacar una api key de facebook y seleccionen de los resultados algún video, ¿qué pasa si cambian de aplicación, por ejemplo: spotify o instagram o alguna otra aplicación que ustedes quieran ver.  ¿Es difícil conseguir instrucciones?\n\n\nEjercicio 2. Accediendo a la API de Twitter desde R\nCompleta los espacios en blanco para poder resolver los siguientes ejercicios en R utilizando la API de Twitter.\n\nlibrary(_________) #para poder usar el pipe y filtrar y graficar\nlibrary(_________) #para poder hacer text mining\nlibrary(_________) #para poder usar twitter\n\nAutenticarse\nUtilizar el siguiente código para autenticarte en twitter y poder utilizar la API. Necesitas tener una cuenta en twitter.\nauth_setup_default()\n\n\nRecuperar los datos\nObtener los seguidores de la cuenta y a que usuarios la cuenta sigue.\n\nseguidores &lt;- get________(\"____________\")\n\namigues &lt;- get________(\"____________\")\n\n\nRecuperar tweets\nRecuperar los últimos 1000 tweets\n\ntmls &lt;- get___________(\"___________\", n = _____________)\nRecuperar los últimos 1000 favoritos\n\nfavs &lt;- get_________(__________, ____________)\n\n\nHacer text minig sobre los tweets\nPrimero obtener solo el texto de los tweet del timeline\n\ntexto_tweets &lt;- tmls %&gt;% \n  select(full_text) %&gt;% \n  ______________(palabras, full_text)\nAhora hacer lo mismo pero con los favoritos\n\ntexto_favoritos &lt;- ________ %&gt;% \n  __________(____________) %&gt;% \n  ______________(palabras, __________)\nTenemos que remover las stopwords. Revisar bien que idiomas trabaja la cuenta para filtrar todas las stopwords necesarias\n\nstopwords &lt;- tibble(palabras = tm::stopwords(kind = \"es\"))\nstopwords_en &lt;- tibble(palabras = tm::stopwords(kind = \"en\"))\n\ntexto_sin_stopwords &lt;- texto_tweets %&gt;%\n  anti_join(___________) %&gt;% \n  anti_join(___________)\nAhora hay que hacer lo mismo para los favoritos\n\nfavoritos_sin_stopwords &lt;- ____________ %&gt;%\n  ____________(___________) %&gt;% \n  ____________(___________)\nAhora calculamos las frecuencias\nresumen_tw &lt;- texto_sin_stopwords %&gt;%\n  _________(palabras) %&gt;%\n  summarise(cantidad = n()) %&gt;%\n  _________(desc(cantidad))\nY hacemos el mismo cálculo para favoritos\nresumen_favoritos &lt;- _____________ %&gt;%\n  _________(palabras) %&gt;%\n  _________(cantidad = n()) %&gt;%\n  _________(________(cantidad))\n\n\nGráficos\nHacemos un gráfico de barras para el texto de los tweets\n\n# Aqui tu codigo para realizar el gráfico de barras\nHacemos una nube de palabras para el texto de los favoritos\n\n# Aqui tu codigo para hacer la nnube de palabras",
     "crumbs": [
-      "Clase 6 - Geotecnologias"
+      "Clase 6 - APIs"
     ]
   },
   {
@@ -582,9 +582,89 @@
     "href": "clase5.html#live-coding",
     "title": "Clase 5 - Text Mining en R",
     "section": "Live Coding",
-    "text": "Live Coding\nSe inicia el live coding en un nuevo documento rmarkdown. El codigo que se presenta a continuacion se encuentra en su version final. Se va construyendo paso a paso. Este live cosing esta basado en un ejemplo presentado en un meetup de R-Ladies Buenos Aires por Maria Nanton.\n\nCargamos los paquetes que necesitamos\nlibrary(tidyverse)\nlibrary(tidytext)\n\n\nLeo los datos que necesito\n\nlibrary(readr)\ncorpus_mistral &lt;- read_delim(\"corpus_mistral.csv\", \n    \";\", escape_double = FALSE, locale = locale(encoding = \"ISO-8859-1\"), \n    trim_ws = TRUE)\n\n\nVamos a tokenizar\n\npoemas_palabras &lt;- corpus_mistral %&gt;%\n  select(text) %&gt;%\n  unnest_tokens(palabras, text)\n\n\nVamos a contar palabras\n\npoemas_palabras %&gt;%\n  count(palabras, sort = TRUE)\n\nstopwords &lt;- tm::stopwords(kind = \"es\")\n\nstopwords_web&lt;- read.csv(\"https://bitsandbricks.github.io/data/stopwords_es.csv\",\n                      stringsAsFactors = FALSE)\n\npalabras_sin_stopwords &lt;- poemas_palabras %&gt;%\n  anti_join(stopwords_web, by = c(\"palabras\" = \"STOPWORD\"))\n  \npalabras_sin_stopwords %&gt;%\n  group_by(palabras) %&gt;%\n  summarise(cantidad = n()) %&gt;%\n  arrange(desc(cantidad))\n\npalabras_sin_stopwords %&gt;%\n  count(palabras) %&gt;%\n  filter(n &gt; 30 & !is.na(palabras)) %&gt;%\n  mutate(palabras = reorder(palabras,-n)) %&gt;%\n  ggplot(aes(n, palabras)) +\n  geom_col()\n\n\nConstruimos la nube de palabras\nlibrary(wordcloud2)\n\nfrecuencia &lt;- palabras_sin_stopwords %&gt;%\n  count(palabras, sort = TRUE)\n\nwordcloud2(frecuencia)",
+    "text": "Live Coding\nSe inicia el live coding en un nuevo documento rmarkdown. El codigo que se presenta a continuacion se encuentra en su version final. Se va construyendo paso a paso. Se necesita el archivo corpus_mistral.csv para realizar este live coding. Este live cosing esta basado en un ejemplo presentado en un meetup de R-Ladies Buenos Aires por Maria Nanton.\n\nCargamos los paquetes que necesitamos\nlibrary(tidyverse)\nlibrary(tidytext)\n\n\nLeo los datos que necesito\n\nlibrary(readr)\ncorpus_mistral &lt;- read_delim(\"corpus_mistral.csv\", \n    \";\", escape_double = FALSE, locale = locale(encoding = \"ISO-8859-1\"), \n    trim_ws = TRUE)\n\n\nVamos a tokenizar\n\npoemas_palabras &lt;- corpus_mistral %&gt;%\n  select(text) %&gt;%\n  unnest_tokens(palabras, text)\n\n\nVamos a contar palabras\n\npoemas_palabras %&gt;%\n  count(palabras, sort = TRUE)\n\nstopwords &lt;- tm::stopwords(kind = \"es\")\n\nstopwords_web&lt;- read.csv(\"https://bitsandbricks.github.io/data/stopwords_es.csv\",\n                      stringsAsFactors = FALSE)\n\npalabras_sin_stopwords &lt;- poemas_palabras %&gt;%\n  anti_join(stopwords_web, by = c(\"palabras\" = \"STOPWORD\"))\n  \npalabras_sin_stopwords %&gt;%\n  group_by(palabras) %&gt;%\n  summarise(cantidad = n()) %&gt;%\n  arrange(desc(cantidad))\n\npalabras_sin_stopwords %&gt;%\n  count(palabras) %&gt;%\n  filter(n &gt; 30 & !is.na(palabras)) %&gt;%\n  mutate(palabras = reorder(palabras,-n)) %&gt;%\n  ggplot(aes(n, palabras)) +\n  geom_col()\n\n\nConstruimos la nube de palabras\nlibrary(wordcloud2)\n\nfrecuencia &lt;- palabras_sin_stopwords %&gt;%\n  count(palabras, sort = TRUE)\n\nwordcloud2(frecuencia)",
     "crumbs": [
       "Clase 5 - Text Mining en R"
+    ]
+  },
+  {
+    "objectID": "clase6.html",
+    "href": "clase6.html",
+    "title": "Clase 6 - APIs",
+    "section": "",
+    "text": "Definir y explicar como funcionan las API.\nIdentificar al menos 3 formatos en los que las API devuelven su informacion.\nEjercitar el acceso y consumo de informacion de APIs de diferentes plataformas.",
+    "crumbs": [
+      "Clase 6 - APIs"
+    ]
+  },
+  {
+    "objectID": "clase6.html#objetivos-de-aprendizaje",
+    "href": "clase6.html#objetivos-de-aprendizaje",
+    "title": "Clase 6 - APIs",
+    "section": "",
+    "text": "Definir y explicar como funcionan las API.\nIdentificar al menos 3 formatos en los que las API devuelven su informacion.\nEjercitar el acceso y consumo de informacion de APIs de diferentes plataformas.",
+    "crumbs": [
+      "Clase 6 - APIs"
+    ]
+  },
+  {
+    "objectID": "clase6.html#live-coding",
+    "href": "clase6.html#live-coding",
+    "title": "Clase 6 - APIs",
+    "section": "Live Coding",
+    "text": "Live Coding\n\nAccediendo a la API de Twitter\n\n\n\n\n\n\nMastodon en vez de X (ex Twitter)\n\n\n\nEsta clase fue realizada previo a la venta de Twitter y su rebranding a X. Me retire de esa red social debido a lo que esta ocurriendo. X es un lugar hostil. Recomiendo NO usarla para dar clases de ningun tipo.\nExiste un paquete llamado rtoot que permite acceder a Mastodon y se podria realizar una clase similar. Dejo el ejemplo con rtweet porque las ideas son aplicables a cualquier red social.\n\n\nEste live coding utiliza el paquete rtweet y como ejemplo la cuenta de la docente. Se puede seleccionar cualquier cuenta de esa red social para poder realizar el ejercicio.\n\nCargamos los paquetes que vamos a necesitar.\nlibrary(tidyverse)\nlibrary(tidytext)\nlibrary(rtweet)\n\n\n\nAutenticandonos\n\nauth_setup_default()\n\n\nObteniendo info de un usuario\n\nseguidores &lt;- get_followers(\"yabellini\")\n\ndata_usuario &lt;- lookup_users(c(seguidores$from_id))\n\namigues &lt;- get_friends(\"yabellini\")\n\n\nObtener los ultimos tweets\n\ntweets &lt;- get_timeline(\"yabellini\", n = 500)\n\ntweets_favoritos &lt;- get_favorites(\"yabellini\", n = 20)\n\n\nUniendo los conceptos APIs y Textminig\n\nsolo_texto &lt;- tweets %&gt;% \n  select(text) %&gt;% \n  unnest_tokens(palabras, text)\n\nstopwords_es &lt;- tibble(palabras = tm::stopwords(kind = \"es\"))\n\nstopwords_en &lt;- tibble(palabras = tm::stopwords(kind = \"en\"))\n\n\nst_sinsw &lt;- solo_texto %&gt;% \n  anti_join(stopwords_es) %&gt;% \n  anti_join(stopwords_en)\n\nresumen &lt;- st_sinsw %&gt;% \n  count(palabras) %&gt;% \n  filter(palabras !%in% c(\"rt\", \"https\")",
+    "crumbs": [
+      "Clase 6 - APIs"
+    ]
+  },
+  {
+    "objectID": "clase6.html#autenticarse",
+    "href": "clase6.html#autenticarse",
+    "title": "Clase 6 - APIs",
+    "section": "Autenticarse",
+    "text": "Autenticarse\nUtilizar el siguiente código para autenticarte en twitter y poder utilizar la API. Necesitas tener una cuenta en twitter.\nauth_setup_default()",
+    "crumbs": [
+      "Clase 6 - APIs"
+    ]
+  },
+  {
+    "objectID": "clase6.html#recuperar-los-datos",
+    "href": "clase6.html#recuperar-los-datos",
+    "title": "Clase 6 - APIs",
+    "section": "Recuperar los datos",
+    "text": "Recuperar los datos\nObtener los seguidores de la cuenta y a que usuarios la cuenta sigue.\n\nseguidores &lt;- get________(\"____________\")\n\namigues &lt;- get________(\"____________\")",
+    "crumbs": [
+      "Clase 6 - APIs"
+    ]
+  },
+  {
+    "objectID": "clase6.html#recuperar-tweets",
+    "href": "clase6.html#recuperar-tweets",
+    "title": "Clase 6 - APIs",
+    "section": "Recuperar tweets",
+    "text": "Recuperar tweets\nRecuperar los últimos 1000 tweets\n\ntmls &lt;- get___________(\"___________\", n = _____________)\nRecuperar los últimos 1000 favoritos\n\nfavs &lt;- get_________(__________, ____________)",
+    "crumbs": [
+      "Clase 6 - APIs"
+    ]
+  },
+  {
+    "objectID": "clase6.html#hacer-text-minig-sobre-los-tweets",
+    "href": "clase6.html#hacer-text-minig-sobre-los-tweets",
+    "title": "Clase 6 - APIs",
+    "section": "Hacer text minig sobre los tweets",
+    "text": "Hacer text minig sobre los tweets\nPrimero obtener solo el texto de los tweet del timeline\n\ntexto_tweets &lt;- tmls %&gt;% \n  select(full_text) %&gt;% \n  ______________(palabras, full_text)\nAhora hacer lo mismo pero con los favoritos\n\ntexto_favoritos &lt;- ________ %&gt;% \n  __________(____________) %&gt;% \n  ______________(palabras, __________)\nTenemos que remover las stopwords. Revisar bien que idiomas trabaja la cuenta para filtrar todas las stopwords necesarias\n\nstopwords &lt;- tibble(palabras = tm::stopwords(kind = \"es\"))\nstopwords_en &lt;- tibble(palabras = tm::stopwords(kind = \"en\"))\n\ntexto_sin_stopwords &lt;- texto_tweets %&gt;%\n  anti_join(___________) %&gt;% \n  anti_join(___________)\nAhora hay que hacer lo mismo para los favoritos\n\nfavoritos_sin_stopwords &lt;- ____________ %&gt;%\n  ____________(___________) %&gt;% \n  ____________(___________)\nAhora calculamos las frecuencias\nresumen_tw &lt;- texto_sin_stopwords %&gt;%\n  _________(palabras) %&gt;%\n  summarise(cantidad = n()) %&gt;%\n  _________(desc(cantidad))\nY hacemos el mismo cálculo para favoritos\nresumen_favoritos &lt;- _____________ %&gt;%\n  _________(palabras) %&gt;%\n  _________(cantidad = n()) %&gt;%\n  _________(________(cantidad))",
+    "crumbs": [
+      "Clase 6 - APIs"
+    ]
+  },
+  {
+    "objectID": "clase6.html#gráficos",
+    "href": "clase6.html#gráficos",
+    "title": "Clase 6 - APIs",
+    "section": "Gráficos",
+    "text": "Gráficos\nHacemos un gráfico de barras para el texto de los tweets\n\n# Aqui tu codigo para realizar el gráfico de barras\nHacemos una nube de palabras para el texto de los favoritos\n\n# Aqui tu codigo para hacer la nnube de palabras",
+    "crumbs": [
+      "Clase 6 - APIs"
     ]
   }
 ]

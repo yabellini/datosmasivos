@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Datos Masivos - Clase 6 - Geotecnologias</title>
+<title>Datos Masivos - Clase 6 - APIs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -78,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./clase6.html">Clase 6 - Geotecnologias</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./clase6.html">Clase 6 - APIs</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -145,13 +179,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./clase6.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Clase 6 - Geotecnologias</span></a>
+ <span class="menu-text">Clase 6 - APIs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./clase7.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clase 7 -</span></a>
+  <a href="./clase7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 7 - Geotecnologias</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -202,7 +236,19 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje" class="nav-link active" data-scroll-target="#objetivos-de-aprendizaje">Objetivos de Aprendizaje</a></li>
   <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
+  <li><a href="#live-coding" id="toc-live-coding" class="nav-link" data-scroll-target="#live-coding">Live Coding</a>
+  <ul class="collapse">
+  <li><a href="#accediendo-a-la-api-de-twitter" id="toc-accediendo-a-la-api-de-twitter" class="nav-link" data-scroll-target="#accediendo-a-la-api-de-twitter">Accediendo a la API de Twitter</a></li>
+  <li><a href="#autenticandonos" id="toc-autenticandonos" class="nav-link" data-scroll-target="#autenticandonos">Autenticandonos</a></li>
+  <li><a href="#obteniendo-info-de-un-usuario" id="toc-obteniendo-info-de-un-usuario" class="nav-link" data-scroll-target="#obteniendo-info-de-un-usuario">Obteniendo info de un usuario</a></li>
+  <li><a href="#obtener-los-ultimos-tweets" id="toc-obtener-los-ultimos-tweets" class="nav-link" data-scroll-target="#obtener-los-ultimos-tweets">Obtener los ultimos tweets</a></li>
+  <li><a href="#uniendo-los-conceptos-apis-y-textminig" id="toc-uniendo-los-conceptos-apis-y-textminig" class="nav-link" data-scroll-target="#uniendo-los-conceptos-apis-y-textminig">Uniendo los conceptos APIs y Textminig</a></li>
+  </ul></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-1.-obteniendo-api-keys" id="toc-ejercicio-1.-obteniendo-api-keys" class="nav-link" data-scroll-target="#ejercicio-1.-obteniendo-api-keys">Ejercicio 1. Obteniendo API Keys</a></li>
+  <li><a href="#ejercicio-2.-accediendo-a-la-api-de-twitter-desde-r" id="toc-ejercicio-2.-accediendo-a-la-api-de-twitter-desde-r" class="nav-link" data-scroll-target="#ejercicio-2.-accediendo-a-la-api-de-twitter-desde-r">Ejercicio 2. Accediendo a la API de Twitter desde R</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -211,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Clase 6 - Geotecnologias</h1>
+<h1 class="title">Clase 6 - APIs</h1>
 </div>
 
 
@@ -230,16 +276,173 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="objetivos-de-aprendizaje" class="level2">
 <h2 class="anchored" data-anchor-id="objetivos-de-aprendizaje">Objetivos de Aprendizaje</h2>
+<ol type="1">
+<li><p>Definir y explicar como funcionan las API.</p></li>
+<li><p>Identificar al menos 3 formatos en los que las API devuelven su informacion.</p></li>
+<li><p>Ejercitar el acceso y consumo de informacion de APIs de diferentes plataformas.</p></li>
+</ol>
 </section>
 <section id="slides" class="level2">
 <h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<iframe src="./embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+<iframe src="https://docs.google.com/presentation/d/1FgAzscQFyHl2Awexcn5sJsevy6lMUDiCObGYiol2Fbs/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 </iframe>
+</section>
+<section id="live-coding" class="level2">
+<h2 class="anchored" data-anchor-id="live-coding">Live Coding</h2>
+<section id="accediendo-a-la-api-de-twitter" class="level3">
+<h3 class="anchored" data-anchor-id="accediendo-a-la-api-de-twitter">Accediendo a la API de Twitter</h3>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mastodon en vez de X (ex Twitter)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Esta clase fue realizada previo a la venta de Twitter y su rebranding a X. Me retire de esa red social debido a lo que esta ocurriendo. X es un lugar hostil. <strong>Recomiendo NO usarla para dar clases de ningun tipo.</strong></p>
+<p>Existe un paquete llamado <strong>rtoot</strong> que permite acceder a Mastodon y se podria realizar una clase similar. Dejo el ejemplo con rtweet porque las ideas son aplicables a cualquier red social.</p>
+</div>
+</div>
+<p>Este live coding utiliza el paquete <code>rtweet</code> y como ejemplo la cuenta de la docente. Se puede seleccionar cualquier cuenta de esa red social para poder realizar el ejercicio.</p>
+<section id="cargamos-los-paquetes-que-vamos-a-necesitar." class="level4">
+<h4 class="anchored" data-anchor-id="cargamos-los-paquetes-que-vamos-a-necesitar.">Cargamos los paquetes que vamos a necesitar.</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rtweet)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="autenticandonos" class="level3">
+<h3 class="anchored" data-anchor-id="autenticandonos">Autenticandonos</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">auth_setup_default</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="obteniendo-info-de-un-usuario" class="level3">
+<h3 class="anchored" data-anchor-id="obteniendo-info-de-un-usuario">Obteniendo info de un usuario</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>seguidores <span class="ot">&lt;-</span> <span class="fu">get_followers</span>(<span class="st">"yabellini"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>data_usuario <span class="ot">&lt;-</span> <span class="fu">lookup_users</span>(<span class="fu">c</span>(seguidores<span class="sc">$</span>from_id))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>amigues <span class="ot">&lt;-</span> <span class="fu">get_friends</span>(<span class="st">"yabellini"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="obtener-los-ultimos-tweets" class="level3">
+<h3 class="anchored" data-anchor-id="obtener-los-ultimos-tweets">Obtener los ultimos tweets</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tweets <span class="ot">&lt;-</span> <span class="fu">get_timeline</span>(<span class="st">"yabellini"</span>, <span class="at">n =</span> <span class="dv">500</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>tweets_favoritos <span class="ot">&lt;-</span> <span class="fu">get_favorites</span>(<span class="st">"yabellini"</span>, <span class="at">n =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="uniendo-los-conceptos-apis-y-textminig" class="level3">
+<h3 class="anchored" data-anchor-id="uniendo-los-conceptos-apis-y-textminig">Uniendo los conceptos APIs y Textminig</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>solo_texto <span class="ot">&lt;-</span> tweets <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(text) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(palabras, text)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>stopwords_es <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">palabras =</span> tm<span class="sc">::</span><span class="fu">stopwords</span>(<span class="at">kind =</span> <span class="st">"es"</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>stopwords_en <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">palabras =</span> tm<span class="sc">::</span><span class="fu">stopwords</span>(<span class="at">kind =</span> <span class="st">"en"</span>))</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>st_sinsw <span class="ot">&lt;-</span> solo_texto <span class="sc">%&gt;%</span> </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stopwords_es) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stopwords_en)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> st_sinsw <span class="sc">%&gt;%</span> </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(palabras) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(palabras <span class="sc">!%in%</span> <span class="fu">c</span>(<span class="st">"rt"</span>, <span class="st">"https"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<section id="ejercicio-1.-obteniendo-api-keys" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-1.-obteniendo-api-keys">Ejercicio 1. Obteniendo API Keys</h3>
+<p><strong>Duración:</strong> ~20 minutos</p>
+<p>Miren el siguiente video sobre API y contesten en grupo las preguntas:</p>
+<p><strong>Video 1:</strong> <a href="https://www.youtube.com/watch?v=YzAm7hGCxZY" class="uri">https://www.youtube.com/watch?v=YzAm7hGCxZY</a>&nbsp;&nbsp;</p>
+<p><strong>1) Pregunta:</strong> ¿Los pasos para obtener el acceso a la API son complejos?</p>
+<p><strong>2) Pregunta:</strong> Durante las materias de esta primera parte de la diplomatura ¿habían usado APIs?, ¿cuáles?, ¿habían sacado API Keys? ¿Cuáles?</p>
+<p><strong>3) Pregunta:</strong> googlen como sacar una api key de facebook y seleccionen de los resultados algún video, ¿qué pasa si cambian de aplicación, por ejemplo: spotify o instagram o alguna otra aplicación que ustedes quieran ver.&nbsp; ¿Es difícil conseguir instrucciones?</p>
+</section>
+<section id="ejercicio-2.-accediendo-a-la-api-de-twitter-desde-r" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-2.-accediendo-a-la-api-de-twitter-desde-r">Ejercicio 2. Accediendo a la API de Twitter desde R</h3>
+<p>Completa los espacios en blanco para poder resolver los siguientes ejercicios en R utilizando la API de Twitter.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(_________) <span class="co">#para poder usar el pipe y filtrar y graficar</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(_________) <span class="co">#para poder hacer text mining</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(_________) <span class="co">#para poder usar twitter</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="autenticarse" class="level4">
+<h4 class="anchored" data-anchor-id="autenticarse">Autenticarse</h4>
+<p>Utilizar el siguiente código para autenticarte en twitter y poder utilizar la API. Necesitas tener una cuenta en twitter.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">auth_setup_default</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="recuperar-los-datos" class="level4">
+<h4 class="anchored" data-anchor-id="recuperar-los-datos">Recuperar los datos</h4>
+<p>Obtener los seguidores de la cuenta y a que usuarios la cuenta sigue.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>seguidores <span class="ot">&lt;-</span> <span class="fu">get________</span>(<span class="st">"____________"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>amigues <span class="ot">&lt;-</span> <span class="fu">get________</span>(<span class="st">"____________"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="recuperar-tweets" class="level4">
+<h4 class="anchored" data-anchor-id="recuperar-tweets">Recuperar tweets</h4>
+<p>Recuperar los últimos 1000 tweets</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>tmls <span class="ot">&lt;-</span> <span class="fu">get___________</span>(<span class="st">"___________"</span>, <span class="at">n =</span> _____________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Recuperar los últimos 1000 favoritos</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>favs <span class="ot">&lt;-</span> <span class="fu">get_________</span>(__________, ____________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="hacer-text-minig-sobre-los-tweets" class="level4">
+<h4 class="anchored" data-anchor-id="hacer-text-minig-sobre-los-tweets">Hacer text minig sobre los tweets</h4>
+<p>Primero obtener solo el texto de los tweet del timeline</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>texto_tweets <span class="ot">&lt;-</span> tmls <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(full_text) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">______________</span>(palabras, full_text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora hacer lo mismo pero con los favoritos</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>texto_favoritos <span class="ot">&lt;-</span> ________ <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">__________</span>(____________) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">______________</span>(palabras, __________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tenemos que remover las stopwords. Revisar bien que idiomas trabaja la cuenta para filtrar todas las stopwords necesarias</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>stopwords <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">palabras =</span> tm<span class="sc">::</span><span class="fu">stopwords</span>(<span class="at">kind =</span> <span class="st">"es"</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>stopwords_en <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">palabras =</span> tm<span class="sc">::</span><span class="fu">stopwords</span>(<span class="at">kind =</span> <span class="st">"en"</span>))</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>texto_sin_stopwords <span class="ot">&lt;-</span> texto_tweets <span class="sc">%&gt;%</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(___________) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(___________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora hay que hacer lo mismo para los favoritos</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>favoritos_sin_stopwords <span class="ot">&lt;-</span> ____________ <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">____________</span>(___________) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">____________</span>(___________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora calculamos las frecuencias</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>resumen_tw <span class="ot">&lt;-</span> texto_sin_stopwords <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">_________</span>(palabras) <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">cantidad =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">_________</span>(<span class="fu">desc</span>(cantidad))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Y hacemos el mismo cálculo para favoritos</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>resumen_favoritos <span class="ot">&lt;-</span> _____________ <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">_________</span>(palabras) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">_________</span>(<span class="at">cantidad =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">_________</span>(<span class="fu">________</span>(cantidad))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="gráficos" class="level4">
+<h4 class="anchored" data-anchor-id="gráficos">Gráficos</h4>
+<p>Hacemos un gráfico de barras para el texto de los tweets</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Aqui tu codigo para realizar el gráfico de barras</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hacemos una nube de palabras para el texto de los favoritos</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Aqui tu codigo para hacer la nnube de palabras</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

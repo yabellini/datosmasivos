@@ -1,0 +1,38 @@
+---
+title: "Clase 6 - Geotecnologias"
+format: html
+editor: visual
+---
+
+## Objetivos de Aprendizaje
+
+1. Definir Geotecnologia y brindar ejemplos de sus aplicaciones.
+
+2. Definir Sensoramiento Remoto o Teledeteccion. 
+
+3. Identificar y explicar teledeteccion pasiva y activa. Dar ejemplos de cada una.
+
+4. Definir e identifcar diferentes proyecciones. Mencionar ventajas y desventajas de la proyeccion mas comun.
+
+5. Enumerar distintos tipos de datos de informacion espacial.
+
+6. Definir y explicar las caracteristicas de datos vectoriales y datos raster.
+
+7. Explicar que son las bandas multiespectrales y los indices que se pueden calcular con ellas.
+
+8. Definir e Identificar diferentes resoluciones espaciales y temporales.  
+
+9. Definir que es una Infraestructura de Datos Espaciales. Mencionar ejemplos de IDEs locales.
+
+10. Ejercitar el uso de herramientas de acceso a informacion espacial y sensores remotos.
+
+
+## Slides
+
+<iframe src="https://docs.google.com/presentation/d/1xPkp7_Y2QArcDLyFBXAxQSwqUCzFry5NX8akqnmdEEM/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+
+</iframe>
+
+
+## Ejercicios
+
