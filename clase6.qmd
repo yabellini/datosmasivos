@@ -18,7 +18,7 @@ editor: visual
 
 </iframe>
 
-## Live Coding
+## Programacion en vivo (Live Coding)
 
 ### Accediendo a la API de Twitter
 
@@ -40,14 +40,14 @@ library(tidytext)
 library(rtweet)
 ```
 
-### Autenticandonos
+#### Autenticandonos
 
 ``` r
 
 auth_setup_default()
 ```
 
-### Obteniendo info de un usuario
+#### Obteniendo info de un usuario
 
 ``` r
 
@@ -58,7 +58,7 @@ data_usuario <- lookup_users(c(seguidores$from_id))
 amigues <- get_friends("yabellini")
 ```
 
-### Obtener los ultimos tweets
+#### Obtener los ultimos tweets
 
 ``` r
 
@@ -67,7 +67,7 @@ tweets <- get_timeline("yabellini", n = 500)
 tweets_favoritos <- get_favorites("yabellini", n = 20)
 ```
 
-### Uniendo los conceptos APIs y Textminig
+#### Uniendo los conceptos APIs y Textminig
 
 ``` r
 
@@ -87,6 +87,114 @@ st_sinsw <- solo_texto %>%
 resumen <- st_sinsw %>% 
   count(palabras) %>% 
   filter(palabras !%in% c("rt", "https")
+```
+
+### Accediendo a la API de Conftool
+
+Usamos la plataforma ConfTool para useR!2021, una de las grandes ventajas fue la API con la cual podiamos acceder a todos los datos almacenados en la plataforma.  
+
+Este ejemplo nos permite generar un mapa con el pais de todas las personas que se registraron a la conferencia. 
+
+Antes de iniciar con el live coding, se hace una desmotracion de la plataforma y como se ve la misma como un administrador y como se llaman las diferentes vistas, consultas y conjuntos de datos diponibles y que se pueden acceder desde la API.
+
+#### Cargamos todos los paquetes que necesitamos
+
+``` r
+library(tidyverse)
+library(rnaturalearth)
+library(viridis)
+library(ggthemes)
+```
+
+#### Definimos funciones y variables para acceder a la plataforma
+
+``` r
+
+pph <- "Aca va el password"
+
+
+pass <- function(nonce) {
+  nonce <- as.integer(Sys.time())
+  passhash <- digest::digest(paste0(nonce, pph), algo = "sha256", serialize = FALSE)
+  list(nonce = nonce,
+       passhash = passhash)
+}
+
+query_conftool <- function(query) {
+  query <- c(pass(), as.list(query))
+  url <- "https://www.conftool.org/user2021/rest.php"
+  file <- tempfile(fileext = ".csv")
+  r <- httr::GET(url,
+                 query = query,
+                 httr::write_disk(file))
+  file
+}
+
+```
+
+#### Ahora consultamos los datos
+
+``` r
+by_event  <- list(page = "adminExport",
+                  export_select = "event_participants",
+                  form_include_deleted = 0,
+                  cmd_create_export = "true",
+                  form_export_format = "csv_comma",
+                  form_export_header = "default",
+                  form_export_events_options = "extended") %>%
+  query_conftool() %>%
+  data.table::fread()
+
+```
+
+#### Contamos por país
+
+``` r
+countries <- by_event %>%
+  select(personID, country) %>%
+  unique() %>%
+  as_tibble() %>%
+  group_by(country) %>%
+  count()
+```
+
+#### Generamos el Mapa y guardamos los datos
+
+``` r
+countries <- countries %>%
+  drop_na() %>%
+  mutate(country = case_when(
+    country == 'Palestinian Territories'	~ 'Palestine', 
+    country == 'Dominican Republic'	~ 'Dominican Rep.', 
+    country == 'Czech Republic'	~ 'Czech Rep.',
+    country == 'South Korea'	~ 'Republic of Korea',
+    country == "CÃ´te d'Ivoire" ~ "Côte d'Ivoire", 
+    TRUE ~ country))
+
+mapa <- ne_countries(scale = "medium", returnclass = "sf")
+
+mapa <- mapa %>%
+  left_join(countries, by = c("brk_name" = "country"))
+
+ggplot() +
+  geom_sf(data = mapa, alpha = 1, aes(fill = n), color = "gray88", size = 0.01) +
+  scale_fill_viridis( 
+                      trans = "log",
+                      breaks = scales::log_breaks(),                 
+                      direction = 1,
+                      name="Registered")+ 
+  labs(
+    title = "People registered to useR! 2021",
+    subtitle = paste0("We reached ", nrow(countries)-1, " countries - ", Sys.Date()),
+    caption = "Data: useR! Conftool | Made with <3 by Yani Bellini Saibene | https://user2021.r-project.org/"
+  ) +
+  theme_map() +
+  theme(legend.position = "bottom") +
+  coord_sf(ylim = c(-55, 90), expand = FALSE)
+
+ggsave("countries.png", dpi = 300, width = 10, height = 6)
+
+write_csv(countries, "countries.csv")
 ```
 
 ## Ejercicios
