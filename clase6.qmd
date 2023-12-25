@@ -233,7 +233,6 @@ auth_setup_default()
 
 ```
 
-
 #### Recuperar los datos
 
 Obtener los seguidores de la cuenta y a que usuarios la cuenta sigue.
@@ -349,5 +348,14 @@ Hacemos una nube de palabras para el texto de los favoritos
 
 ```
 
+### Ejercicio 3. Analizando un ejemplo de la API de Meetup
 
+1. Lee [este articulo de blog](https://yabellini.netlify.app/blog/2019_nubedepalabras_es/) explicando como se accede a la API de Meetup para obtener los datos de los titulos de los eventos de R-Ladies.  
+
+2. Replica el codigo con los datos actualizados.  
+
+
+## Lecturas sugeridas
+
+* [Campaña de Twitter de R-Ladies IWD 2019. Explicando el proyecto de twitter para el IWD 2019](https://yabellini.netlify.app/blog/2019_iwdrladies_es/)
 
