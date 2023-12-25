@@ -28,9 +28,9 @@ website:
       - href: clase5.qmd
         text: Clase 5 - Text Mining en R
       - href: clase6.qmd
-        text: Clase 6 - Geotecnologias
+        text: Clase 6 - APIs
       - href: clase7.qmd
-        text: Clase 7 -
+        text: Clase 7 - Geotecnologias
       - href: clase8.qmd
         text: Clase 8 -
       - href: clase9.qmd

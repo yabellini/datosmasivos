@@ -1,20 +1,361 @@
 ---
-title: "Clase 6 - Geotecnologias"
+title: "Clase 6 - APIs"
 format: html
 editor: visual
 ---
 
 ## Objetivos de Aprendizaje
 
+1.  Definir y explicar como funcionan las API.
 
+2.  Identificar al menos 3 formatos en los que las API devuelven su informacion.
 
+3.  Ejercitar el acceso y consumo de informacion de APIs de diferentes plataformas.
 
 ## Slides
 
-<iframe src="/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+<iframe src="https://docs.google.com/presentation/d/1FgAzscQFyHl2Awexcn5sJsevy6lMUDiCObGYiol2Fbs/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 
 </iframe>
 
+## Programacion en vivo (Live Coding)
+
+### Accediendo a la API de Twitter
+
+::: callout-caution
+## Mastodon en vez de X (ex Twitter)
+
+Esta clase fue realizada previo a la venta de Twitter y su rebranding a X. Me retire de esa red social debido a lo que esta ocurriendo. X es un lugar hostil. **Recomiendo NO usarla para dar clases de ningun tipo.**
+
+Existe un paquete llamado **rtoot** que permite acceder a Mastodon y se podria realizar una clase similar. Dejo el ejemplo con rtweet porque las ideas son aplicables a cualquier red social.
+:::
+
+Este live coding utiliza el paquete `rtweet` y como ejemplo la cuenta de la docente. Se puede seleccionar cualquier cuenta de esa red social para poder realizar el ejercicio.
+
+#### Cargamos los paquetes que vamos a necesitar.
+
+``` r
+library(tidyverse)
+library(tidytext)
+library(rtweet)
+```
+
+#### Autenticandonos
+
+``` r
+
+auth_setup_default()
+```
+
+#### Obteniendo info de un usuario
+
+``` r
+
+seguidores <- get_followers("yabellini")
+
+data_usuario <- lookup_users(c(seguidores$from_id))
+
+amigues <- get_friends("yabellini")
+```
+
+#### Obtener los ultimos tweets
+
+``` r
+
+tweets <- get_timeline("yabellini", n = 500)
+
+tweets_favoritos <- get_favorites("yabellini", n = 20)
+```
+
+#### Uniendo los conceptos APIs y Textminig
+
+``` r
+
+solo_texto <- tweets %>% 
+  select(text) %>% 
+  unnest_tokens(palabras, text)
+
+stopwords_es <- tibble(palabras = tm::stopwords(kind = "es"))
+
+stopwords_en <- tibble(palabras = tm::stopwords(kind = "en"))
+
+
+st_sinsw <- solo_texto %>% 
+  anti_join(stopwords_es) %>% 
+  anti_join(stopwords_en)
+
+resumen <- st_sinsw %>% 
+  count(palabras) %>% 
+  filter(palabras !%in% c("rt", "https")
+```
+
+### Accediendo a la API de Conftool
+
+Usamos la plataforma ConfTool para useR!2021, una de las grandes ventajas fue la API con la cual podiamos acceder a todos los datos almacenados en la plataforma.  
+
+Este ejemplo nos permite generar un mapa con el pais de todas las personas que se registraron a la conferencia. 
+
+Antes de iniciar con el live coding, se hace una desmotracion de la plataforma y como se ve la misma como un administrador y como se llaman las diferentes vistas, consultas y conjuntos de datos diponibles y que se pueden acceder desde la API.
+
+#### Cargamos todos los paquetes que necesitamos
+
+``` r
+library(tidyverse)
+library(rnaturalearth)
+library(viridis)
+library(ggthemes)
+```
+
+#### Definimos funciones y variables para acceder a la plataforma
+
+``` r
+
+pph <- "Aca va el password"
+
+
+pass <- function(nonce) {
+  nonce <- as.integer(Sys.time())
+  passhash <- digest::digest(paste0(nonce, pph), algo = "sha256", serialize = FALSE)
+  list(nonce = nonce,
+       passhash = passhash)
+}
+
+query_conftool <- function(query) {
+  query <- c(pass(), as.list(query))
+  url <- "https://www.conftool.org/user2021/rest.php"
+  file <- tempfile(fileext = ".csv")
+  r <- httr::GET(url,
+                 query = query,
+                 httr::write_disk(file))
+  file
+}
+
+```
+
+#### Ahora consultamos los datos
+
+``` r
+by_event  <- list(page = "adminExport",
+                  export_select = "event_participants",
+                  form_include_deleted = 0,
+                  cmd_create_export = "true",
+                  form_export_format = "csv_comma",
+                  form_export_header = "default",
+                  form_export_events_options = "extended") %>%
+  query_conftool() %>%
+  data.table::fread()
+
+```
+
+#### Contamos por país
+
+``` r
+countries <- by_event %>%
+  select(personID, country) %>%
+  unique() %>%
+  as_tibble() %>%
+  group_by(country) %>%
+  count()
+```
+
+#### Generamos el Mapa y guardamos los datos
+
+``` r
+countries <- countries %>%
+  drop_na() %>%
+  mutate(country = case_when(
+    country == 'Palestinian Territories'	~ 'Palestine', 
+    country == 'Dominican Republic'	~ 'Dominican Rep.', 
+    country == 'Czech Republic'	~ 'Czech Rep.',
+    country == 'South Korea'	~ 'Republic of Korea',
+    country == "CÃ´te d'Ivoire" ~ "Côte d'Ivoire", 
+    TRUE ~ country))
+
+mapa <- ne_countries(scale = "medium", returnclass = "sf")
+
+mapa <- mapa %>%
+  left_join(countries, by = c("brk_name" = "country"))
+
+ggplot() +
+  geom_sf(data = mapa, alpha = 1, aes(fill = n), color = "gray88", size = 0.01) +
+  scale_fill_viridis( 
+                      trans = "log",
+                      breaks = scales::log_breaks(),                 
+                      direction = 1,
+                      name="Registered")+ 
+  labs(
+    title = "People registered to useR! 2021",
+    subtitle = paste0("We reached ", nrow(countries)-1, " countries - ", Sys.Date()),
+    caption = "Data: useR! Conftool | Made with <3 by Yani Bellini Saibene | https://user2021.r-project.org/"
+  ) +
+  theme_map() +
+  theme(legend.position = "bottom") +
+  coord_sf(ylim = c(-55, 90), expand = FALSE)
+
+ggsave("countries.png", dpi = 300, width = 10, height = 6)
+
+write_csv(countries, "countries.csv")
+```
 
 ## Ejercicios
+
+### Ejercicio 1. Obteniendo API Keys
+
+**Duración:** \~20 minutos
+
+Miren el siguiente video sobre API y contesten en grupo las preguntas:
+
+**Video 1:** <https://www.youtube.com/watch?v=YzAm7hGCxZY>  
+
+**1) Pregunta:** ¿Los pasos para obtener el acceso a la API son complejos?
+
+**2) Pregunta:** Durante las materias de esta primera parte de la diplomatura ¿habían usado APIs?, ¿cuáles?, ¿habían sacado API Keys? ¿Cuáles?
+
+**3) Pregunta:** googlen como sacar una api key de facebook y seleccionen de los resultados algún video, ¿qué pasa si cambian de aplicación, por ejemplo: spotify o instagram o alguna otra aplicación que ustedes quieran ver.  ¿Es difícil conseguir instrucciones?
+
+### Ejercicio 2. Accediendo a la API de Twitter desde R
+
+Completa los espacios en blanco para poder resolver los siguientes ejercicios en R utilizando la API de Twitter.
+
+``` r
+
+library(_________) #para poder usar el pipe y filtrar y graficar
+library(_________) #para poder hacer text mining
+library(_________) #para poder usar twitter
+```
+
+#### Autenticarse
+
+Utilizar el siguiente código para autenticarte en twitter y poder utilizar la API.  Necesitas tener una cuenta en twitter.
+
+``` r 
+auth_setup_default()
+
+```
+
+#### Recuperar los datos
+
+Obtener los seguidores de la cuenta y a que usuarios la cuenta sigue.
+
+``` r
+
+seguidores <- get________("____________")
+
+amigues <- get________("____________")
+
+```
+
+#### Recuperar tweets
+
+Recuperar los últimos 1000 tweets
+
+``` r
+
+tmls <- get___________("___________", n = _____________)
+
+```
+
+Recuperar los últimos 1000 favoritos
+
+``` r
+
+favs <- get_________(__________, ____________)
+
+```
+
+#### Hacer text minig sobre los tweets
+
+
+Primero obtener solo el texto de los tweet del timeline
+
+``` r
+
+texto_tweets <- tmls %>% 
+  select(full_text) %>% 
+  ______________(palabras, full_text)
+
+```
+
+Ahora hacer lo mismo pero con los favoritos
+
+``` r
+
+texto_favoritos <- ________ %>% 
+  __________(____________) %>% 
+  ______________(palabras, __________)
+
+```
+
+Tenemos que remover las stopwords. Revisar bien que idiomas trabaja la cuenta para
+filtrar todas las stopwords necesarias
+
+``` r
+
+stopwords <- tibble(palabras = tm::stopwords(kind = "es"))
+stopwords_en <- tibble(palabras = tm::stopwords(kind = "en"))
+
+texto_sin_stopwords <- texto_tweets %>%
+  anti_join(___________) %>% 
+  anti_join(___________)
+
+```
+
+Ahora hay que hacer lo mismo para los favoritos
+
+``` r
+
+favoritos_sin_stopwords <- ____________ %>%
+  ____________(___________) %>% 
+  ____________(___________)
+
+```
+
+Ahora calculamos las frecuencias
+
+``` r 
+resumen_tw <- texto_sin_stopwords %>%
+  _________(palabras) %>%
+  summarise(cantidad = n()) %>%
+  _________(desc(cantidad))
+
+```
+
+Y hacemos el mismo cálculo para favoritos
+
+``` r 
+resumen_favoritos <- _____________ %>%
+  _________(palabras) %>%
+  _________(cantidad = n()) %>%
+  _________(________(cantidad))
+
+```
+
+#### Gráficos
+
+Hacemos un gráfico de barras para el texto de los tweets
+
+``` r
+
+# Aqui tu codigo para realizar el gráfico de barras
+
+```
+
+Hacemos una nube de palabras para el texto de los favoritos
+
+``` r
+
+# Aqui tu codigo para hacer la nnube de palabras
+
+```
+
+### Ejercicio 3. Analizando un ejemplo de la API de Meetup
+
+1. Lee [este articulo de blog](https://yabellini.netlify.app/blog/2019_nubedepalabras_es/) explicando como se accede a la API de Meetup para obtener los datos de los titulos de los eventos de R-Ladies.  
+
+2. Replica el codigo con los datos actualizados.  
+
+
+## Lecturas sugeridas
+
+* [Campaña de Twitter de R-Ladies IWD 2019. Explicando el proyecto de twitter para el IWD 2019](https://yabellini.netlify.app/blog/2019_iwdrladies_es/)
 

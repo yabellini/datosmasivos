@@ -94,7 +94,7 @@ wordcloud2(frecuencia)
 
 ## Ejercicios
 
-#### 1) Chequeando que tenemos todo instalado
+### 1) Chequeando que tenemos todo instalado
 
 **Duración:** \~15 minutos
 
@@ -130,7 +130,7 @@ por ejemplo:
 install.packages(remotes)
 ```
 
-#### 2) Tutorial interactivo de Introducción a Text Mining
+### 2) Tutorial interactivo de Introducción a Text Mining
 
 **Duración:** \~30 minutos
 
@@ -179,7 +179,7 @@ y luego ejecutar de esta manera el Tutorial:
 learnr::run_tutorial("TextMining", package = "TextMiningTutorial")
 ```
 
-#### 3) Completar los blancos en el código
+### 3) Completar los blancos en el código
 
 **Duración:** \~30 minutos
 

@@ -179,13 +179,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./clase6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clase 6 - Geotecnologias</span></a>
+ <span class="menu-text">Clase 6 - APIs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./clase7.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clase 7 -</span></a>
+  <a href="./clase7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 7 - Geotecnologias</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -244,7 +244,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#vamos-a-contar-palabras" id="toc-vamos-a-contar-palabras" class="nav-link" data-scroll-target="#vamos-a-contar-palabras">Vamos a contar palabras</a></li>
   <li><a href="#construimos-la-nube-de-palabras" id="toc-construimos-la-nube-de-palabras" class="nav-link" data-scroll-target="#construimos-la-nube-de-palabras">Construimos la nube de palabras</a></li>
   </ul></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a>
+  <ul class="collapse">
+  <li><a href="#chequeando-que-tenemos-todo-instalado" id="toc-chequeando-que-tenemos-todo-instalado" class="nav-link" data-scroll-target="#chequeando-que-tenemos-todo-instalado">1) Chequeando que tenemos todo instalado</a></li>
+  <li><a href="#tutorial-interactivo-de-introducción-a-text-mining" id="toc-tutorial-interactivo-de-introducción-a-text-mining" class="nav-link" data-scroll-target="#tutorial-interactivo-de-introducción-a-text-mining">2) Tutorial interactivo de Introducción a Text Mining</a></li>
+  <li><a href="#completar-los-blancos-en-el-código" id="toc-completar-los-blancos-en-el-código" class="nav-link" data-scroll-target="#completar-los-blancos-en-el-código">3) Completar los blancos en el código</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -286,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="live-coding" class="level2">
 <h2 class="anchored" data-anchor-id="live-coding">Live Coding</h2>
-<p>Se inicia el live coding en un nuevo documento rmarkdown. El codigo que se presenta a continuacion se encuentra en su version final. Se va construyendo paso a paso. Este live cosing esta basado en un ejemplo presentado en un meetup de R-Ladies Buenos Aires por Maria Nanton.</p>
+<p>Se inicia el live coding en un nuevo documento rmarkdown. El codigo que se presenta a continuacion se encuentra en su version final. Se va construyendo paso a paso. Se necesita el archivo <a href="clase5_data/clase5_data.csv">corpus_mistral.csv</a> para realizar este live coding. Este live cosing esta basado en un ejemplo presentado en un meetup de R-Ladies Buenos Aires por Maria Nanton.</p>
 <section id="cargamos-los-paquetes-que-necesitamos" class="level3">
 <h3 class="anchored" data-anchor-id="cargamos-los-paquetes-que-necesitamos">Cargamos los paquetes que necesitamos</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -345,8 +350,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
-<section id="chequeando-que-tenemos-todo-instalado" class="level4">
-<h4 class="anchored" data-anchor-id="chequeando-que-tenemos-todo-instalado">1) Chequeando que tenemos todo instalado</h4>
+<section id="chequeando-que-tenemos-todo-instalado" class="level3">
+<h3 class="anchored" data-anchor-id="chequeando-que-tenemos-todo-instalado">1) Chequeando que tenemos todo instalado</h3>
 <p><strong>Duración:</strong> ~15 minutos</p>
 <ol type="1">
 <li><p>Ingresen a su RStudio</p></li>
@@ -372,8 +377,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>por ejemplo:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(remotes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="tutorial-interactivo-de-introducción-a-text-mining" class="level4">
-<h4 class="anchored" data-anchor-id="tutorial-interactivo-de-introducción-a-text-mining">2) Tutorial interactivo de Introducción a Text Mining</h4>
+<section id="tutorial-interactivo-de-introducción-a-text-mining" class="level3">
+<h3 class="anchored" data-anchor-id="tutorial-interactivo-de-introducción-a-text-mining">2) Tutorial interactivo de Introducción a Text Mining</h3>
 <p><strong>Duración:</strong> ~30 minutos</p>
 <p>Instalar el tutorial learnr de <em>Introducción a Text Mining con R</em>.</p>
 <p>Para instalar la versión de desarrollo desde GitHub tenés que tener instalado el paquete <em>remotes</em>, si no lo tenés instalalo con:</p>
@@ -399,11 +404,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>y luego ejecutar de esta manera el Tutorial:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>learnr<span class="sc">::</span><span class="fu">run_tutorial</span>(<span class="st">"TextMining"</span>, <span class="at">package =</span> <span class="st">"TextMiningTutorial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="completar-los-blancos-en-el-código" class="level4">
-<h4 class="anchored" data-anchor-id="completar-los-blancos-en-el-código">3) Completar los blancos en el código</h4>
+<section id="completar-los-blancos-en-el-código" class="level3">
+<h3 class="anchored" data-anchor-id="completar-los-blancos-en-el-código">3) Completar los blancos en el código</h3>
 <p><strong>Duración:</strong> ~30 minutos</p>
 <ol type="1">
-<li><p>Descargar los archivos <a href="clase5_data.zip">EjercicioNubeDePalabras.Rmd</a> y <a href="clase5_data.zip">rladies_meetups.csv</a></p></li>
+<li><p>Descargar los archivos <a href="clase5_data/clase5_data.zip">EjercicioNubeDePalabras.Rmd</a> y <a href="clase5_data/clase5_data.zip">rladies_meetups.csv</a></p></li>
 <li><p>Abrir el archivo <em>EjercicioNubeDePalabras.Rmd</em>.</p></li>
 <li><p>Seguir las instrucciones para completar el código y que el mismo funcione.</p></li>
 </ol>
