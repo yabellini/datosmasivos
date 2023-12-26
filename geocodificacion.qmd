@@ -79,29 +79,29 @@ Se nos presenta un cuadro de diálogo donde se indica el avance la importación 
 
 **Paso 10:** Cuando la importación termina, se presenta un listado con aquellos casos que no se pudieron resolver y al lado de cada caso dos opciones: una dice ¿Quisiste decir?... Y la otra Ingresar la nueva dirección.  En el primer caso, cuando presionamos el botón nos sugiere opciones de direcciones, en el segundo caso nos permite editar el texto agregando información o corrigiéndolo para analizar nuevamente si es factible ubicar el punto correspondiente.\
 
- ![](https://lh7-us.googleusercontent.com/nuBMbK4kU3ggrYSu8WWcp9cAlkeuvv9s1M4ec-ayIV5Rng4-0VRzqIN1r5v3ZISfsnY-vQ22__Z4EDXW2_ZaLFtMwWPflRDaZEOKelMfCl5UoxYgWKh5uPSkcCG9I-8hBLMUVOXt4qqlDoRClK9z9g)
+ ![](img/geocoding9.png)
 
 En caso que la nueva información ingresada permita resolver la localización, el botón se deshabilita (se pone en color gris) con la leyenda La reparación fue exitosa, caso contrario se presenta un cuadro de dialogo que dice Fallo la recuperación de codificación geográfica.
 
- ![](https://lh7-us.googleusercontent.com/Tsbnt1Bn13OCBEcqyiDHrI2__KEmoslD60HJxWxJoKl4VXeA1clXfhutMkEXX3buZZKaLwZkc3WBUx09cj0zPdFUhS3SYxYO2wXpuCp3Lc-3UZmSaDC44muWTNgrjbyN7KG4bKgXJh1JFAWcQTwHMg)
+ ![](img/geocoding10.png)
 
-Paso 11: Cuando terminamos de revisar y corregir aquellos casos posibles, presionamos en el botón Aceptar. Nos presentará un cuadro de diálogo que nos consulta si queremos aplicar una plantilla a los datos, contestamos que Si.
+**Paso 11:** Cuando terminamos de revisar y corregir aquellos casos posibles, presionamos en el botón Aceptar. Nos presentará un cuadro de diálogo que nos consulta si queremos aplicar una plantilla a los datos, contestamos que Si.
 
- ![](https://lh7-us.googleusercontent.com/l0-GBqDhl24kPbVBJGDBEdAOpxPtGDtphRRihjJRCGdEkHQDaqLfCJm1BOnJaELyCBHAqHYXabX5vYgB9hnUjt2H4_DQmheGDFCpowY0mnXGBeM2kkeCePZTKVTaLavmbOn5OJGKJjaTXK-twbd48w)
+ ![](img/geocoding11.png)
 
-Paso 12: configuramos la plantilla, primero le indicamos cual va a ser el campo que le va a dar la etiqueta a los casos.  Le indicamos Nombre
+**Paso 12:** configuramos la plantilla, primero le indicamos cual va a ser el campo que le va a dar la etiqueta a los casos.  Le indicamos Nombre
 
- ![](https://lh7-us.googleusercontent.com/muShmynPLlcljZi6tXiDugSpctgfn0h9dJ996Ydjldn3bE19a8PgUPmlyRmG3rTsaQLNusZqbpwCbiPbfy7dep2lTZ0u2YYiGuJVLq-5c7kL1A-rDVSnDmAlQDNljEy11Em-kuQ5p6NJ7n6-QIXyMg)
+ ![](img/geocoding12.png)
 
 Luego especificamos el color que tendrá el ícono que marcará el lugar de cada caso en el mapa.  Esta característica se puede dar a partir de información en un campo de la tabla de datos, asi por ejemplo, podríamos tener un campo que sea color, con un color diferente para diferentes tipos de lectores, por ejemplo: amarillo para productores, azul para entidades de gobierno, verde para empresas agropecuarias, naranja para docentes, rojo para estudiantes, etc.
 
-![](https://lh7-us.googleusercontent.com/y3jdiU89323BS-CcPyHFOT1fnw8kYd7k5vepvW9ntDU4fIVXJ8RYdLRqScp_G26iZzxjiHu5mzu7YF2mi8PicR1KJHH4ZnE0svBExsrFhIBjLqcsFkmWKZcZO57QkUXMaSBybVGl6vTe5f6eKuM2Og)
+![](img/geocoding13.png)
 
  
 
 Después del color nos solicita que especifiquemos el tipo de ícono para representar los casos: 
 
- ![](https://lh7-us.googleusercontent.com/0eZaQjqB4vSMTpMbEPCHV0Jj6RuAhvYl6G5JkFhTEfneI0LapHWg82xOy-owC403K4aIM1gbYFXiv7tRZitvMewqSmr4iOsTmVAvcXJ2PsWL3HLVOEGrTv_K3TGLvUUAzHcv2o9cjW4OxbZoeL2lwg)
+ ![](img/geocoding14.png)
 
 Cuando terminamos con todos los detalles presionamos el botón Aceptar. Seguidamente, nos permite guardar la plantilla, con el objetivo de usarla con otro set de datos, en caso que lo necesitemos, evitando tener que volver a indicar todas estas opciones nuevamente.  Le dejamos el nombre sugerido de Lectores.
 
