@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Datos Masivos - Clase 2 - Tipos de datos</title>
+<title>Datos Masivos - Información Georeferenciada</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./clase2.html">Clase 2 - Tipos de Datos</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./geocodificacion.html">Guía de Información Georeferenciada</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -120,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./clase2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./clase2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Clase 2 - Tipos de Datos</span></a>
   </div>
 </li>
@@ -180,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./geocodificacion.html" class="sidebar-item-text sidebar-link">
+  <a href="./geocodificacion.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Guía de Información Georeferenciada</span></a>
   </div>
 </li>
@@ -200,10 +200,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje" class="nav-link active" data-scroll-target="#objetivos-de-aprendizaje">Objetivos de Aprendizaje</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
-  <li><a href="#lecturas-sugeridas" id="toc-lecturas-sugeridas" class="nav-link" data-scroll-target="#lecturas-sugeridas">Lecturas sugeridas</a></li>
+  <li><a href="#práctica-de-geocodificacion" id="toc-práctica-de-geocodificacion" class="nav-link active" data-scroll-target="#práctica-de-geocodificacion">Práctica de geocodificacion</a></li>
+  <li><a href="#transformando-direcciones-postales-en-coordenada-geográficas" id="toc-transformando-direcciones-postales-en-coordenada-geográficas" class="nav-link" data-scroll-target="#transformando-direcciones-postales-en-coordenada-geográficas"><strong>1. Transformando direcciones postales en coordenada geográficas</strong></a>
+  <ul class="collapse">
+  <li><a href="#usando-google-earth-pro" id="toc-usando-google-earth-pro" class="nav-link" data-scroll-target="#usando-google-earth-pro"><strong>1.1. Usando Google Earth Pro</strong></a></li>
+  <li><a href="#utilizando-excel-geocoding-tool" id="toc-utilizando-excel-geocoding-tool" class="nav-link" data-scroll-target="#utilizando-excel-geocoding-tool"><strong>1.2. Utilizando Excel Geocoding Tool</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -212,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Clase 2 - Tipos de datos</h1>
+<h1 class="title">Información Georeferenciada</h1>
 </div>
 
 
@@ -229,136 +231,103 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="objetivos-de-aprendizaje" class="level2">
-<h2 class="anchored" data-anchor-id="objetivos-de-aprendizaje">Objetivos de Aprendizaje</h2>
+<section id="práctica-de-geocodificacion" class="level2">
+<h2 class="anchored" data-anchor-id="práctica-de-geocodificacion">Práctica de geocodificacion</h2>
+</section>
+<section id="transformando-direcciones-postales-en-coordenada-geográficas" class="level2">
+<h2 class="anchored" data-anchor-id="transformando-direcciones-postales-en-coordenada-geográficas"><strong>1. Transformando direcciones postales en coordenada geográficas</strong></h2>
+<p>Utilizaremos dos herramientas diferentes para geolocalizar una serie de direcciones postales en un mapa.&nbsp; Para eso usaremos el set de datos Lectores.xlsx, utilizado en la práctica de OpenRefine (Clase 4).</p>
+<section id="usando-google-earth-pro" class="level3">
+<h3 class="anchored" data-anchor-id="usando-google-earth-pro"><strong>1.1. Usando Google Earth Pro</strong></h3>
+<p>Existen dos versiones de Google Earth, la común y la Pro.&nbsp; Esta última versión es gratuita desde el año 2016.&nbsp; Ambas versiones permiten realizar las siguientes tareas de visualización de una manera sencilla e intuitiva:</p>
 <ul>
-<li><p>Definir Big Data.</p></li>
-<li><p>Mencionar y definir diferentes fuentes de datos de big data.</p></li>
-<li><p>Identificar y explicar las diferentes etapas de un proceso de ciencias de datos.</p></li>
-<li><p>Explicar de forma general el proceso de aprendizaje automatico supervisado y aprendizaje automatico no supervisado.</p></li>
-<li><p>Definir e identificar datos estructurados y datos no estructurados.</p></li>
-<li><p>Describir tres propiedades de los datos estructurados ordenados.</p></li>
-<li><p>Describir cinco sintomas de datos desordenados.</p></li>
-<li><p>Analizar casos de uso e identificar al menos tres caracteristicas asociadas con big data.</p></li>
+<li><p>Explorar el detallado contenido geográfico.</p></li>
+<li><p>Acercar la imagen desde el espacio hasta una calle.</p></li>
+<li><p>Buscar la ubicación de empresas.</p></li>
+<li><p>Visualizar rutas registradas con GPS y compartirlos con otros usuarios.</p></li>
+<li><p>Sobrevolar ciudades (o todo el planeta) en 3D.</p></li>
+<li><p>Retroceder en el tiempo con las imágenes históricas.</p></li>
+<li><p>Sumergirse bajo la superficie del océano.</p></li>
 </ul>
-</section>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<iframe src="https://docs.google.com/presentation/d/1ElbJdEJAtRs1BlEfLUwJaYbODDvVkEbxWbIKcR9ZYjY/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
-</iframe>
-</section>
-<section id="ejercicios" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
-<section id="miren-el-video-de-esta-municipalidad-que-utiliza-bigdata-discutan-en-grupo-para-contestar-las-siguientes-preguntas" class="level4">
-<h4 class="anchored" data-anchor-id="miren-el-video-de-esta-municipalidad-que-utiliza-bigdata-discutan-en-grupo-para-contestar-las-siguientes-preguntas">1) Miren el video de esta municipalidad que utiliza BigData, discutan en grupo para contestar las siguientes preguntas:</h4>
-<p><strong>Duración:</strong> ~15 minutos</p>
-<p><a href="https://www.youtube.com/watch?v=_s7YOkX6C2Y">Video</a></p>
-<p><strong>Preguntas:</strong></p>
+<p>En el caso de Google Earth Pro además agrega las siguientes funcionalidades:</p>
 <ul>
-<li><p>¿Sobre qué servicio trabajaron?</p></li>
-<li><p>¿Pueden identificar las 3 Vs del BigData en este proyecto? mencione como está representada y porqué.</p>
-<ul>
-<li>Velocidad:</li>
-<li>Volumen:</li>
-<li>Variedad:</li>
-</ul></li>
-<li><p>¿Pueden identificar alguna V más?</p></li>
-<li><p>¿Se les ocurren problemas con estas características en sus trabajos?, mencione algunos ejemplos de ser así.</p></li>
+<li><p>Calcular distancias y áreas utilizando herramientas de medición.</p></li>
+<li><p>Utilizar Movie Maker para vuelos editados.</p></li>
+<li><p>Imprimir imágenes de alta resolución para presentaciones e informes.</p></li>
+<li><p>Importar archivos vectoriales para representar datos SIG en un mapa.</p></li>
+<li><p>Crea mapas de direcciones con importación de hojas de cálculo.</p></li>
 </ul>
-</section>
-<section id="miren-el-video-de-este-club-deportivo-que-utiliza-ciencia-de-datos-discutan-en-grupo-para-contestar-las-siguientes-preguntas" class="level4">
-<h4 class="anchored" data-anchor-id="miren-el-video-de-este-club-deportivo-que-utiliza-ciencia-de-datos-discutan-en-grupo-para-contestar-las-siguientes-preguntas">2) Miren el video de este club deportivo que utiliza Ciencia de Datos, discutan en grupo para contestar las siguientes preguntas:</h4>
-<p><strong>Duración</strong>: ~15 minutos Video: (5 minutos): <a href="https://youtu.be/DXq30dvE0Xg">Big Data y fútbol: así aprovecha el Real Madrid la tecnología</a></p>
-<p>Charlar en grupo para contestar estas preguntas (10 minutos):</p>
-<p>¿Cómo toman los datos de los jugadores?</p>
-<p>Anoten algunos de los datos que se mencionan que se registran</p>
-<p>¿Mencionan modelos?¿Cuáles?</p>
-<p>De acuerdo a lo que vimos en la teoría, ¿pueden indicar si son modelos de predicción o clasificación? ¿pueden indicar si podrían utilizar aprendizaje supervisado o no supervisado?</p>
-</section>
-<section id="crear-una-estructura-tidy" class="level4">
-<h4 class="anchored" data-anchor-id="crear-una-estructura-tidy">3) Crear una estructura tidy</h4>
-<p><strong>Duración:</strong> ~10 minutos</p>
-<p>Tengo que recolectar datos de lluvias de diversas localidades, necesito almacenar la latitud y longitud del lugar donde está el pluviómetro, el nombre del lugar y el nombre y teléfono del responsable de tomar los datos.&nbsp; También debo almacenar la fecha y la cantidad de mm de lluvia precipitados en esa fecha.</p>
-<ol type="1">
-<li><p>¿Cuántas tablas debería generar?</p></li>
-<li><p>Cuáles serían las columnas (estructura) del conjunto o conjuntos de datos para poder almacenar esta información de forma tidy.&nbsp;</p></li>
-</ol>
-</section>
-<section id="extra-4-ordenen-el-siguiente-conjunto-de-datos-de-forma-tidy-u-ordenada." class="level4">
-<h4 class="anchored" data-anchor-id="extra-4-ordenen-el-siguiente-conjunto-de-datos-de-forma-tidy-u-ordenada.">Extra: 4) Ordenen el siguiente conjunto de datos de forma tidy u ordenada.</h4>
-<p><strong>Duración:</strong> ~10 minutos</p>
-<p>La columna lote hace referencia al nombre del lote en un campo, contiene tres columnas por cada año con los valores promedio, máximo y mínimo del porcentaje de superficie cosechada en cada lote.</p>
-<p>Generar una estructura tidy de este conjunto de datos.<br>
+<p>Vamos a utilizar características de la versión Pro para esta práctica. </p>
+<p><strong>Paso 1:</strong> descargamos la planilla Lectores.xlsx desde el campus:&nbsp;</p>
+<p><strong>Paso 2:</strong> abrimos el archivo con el Excel y lo convertimos en un archivo separado por tabulaciones.&nbsp; Para ello seleccionamos Archivo -&gt; Guardar como -&gt; Texto (separado por tabulaciones) le dejamos el nombre Lectores y presionamos el botón Guardar.</p>
+<p>&nbsp;<img src="img/geocoding1.png" class="img-fluid"></p>
+<p><strong>Paso 3:</strong> Aparece una advertencia porque nuestro libro tiene dos hojas y solo se guardará la primera.&nbsp; Presionamos el botón Aceptar.</p>
+<p>&nbsp;<img src="img/geocoding2.png" class="img-fluid"></p>
+<p><strong>Paso 4:</strong> Se nos vuelve a advertir sobre la incompatibilidad del formato seleccionado con algunos de los datos de la hoja por medio de otro mensaje de advertencia.&nbsp; Presionamos el botón Si.</p>
+<p>&nbsp;<img src="img/geocoding3.png" class="img-fluid"></p>
+<p><strong>Paso 5:</strong> Finalmente salimos de Excel, cuando nos pregunte si queremos guardar los cambios contestamos que No.</p>
+<p><strong>Paso 6:</strong> Abrimos <strong>Google Earth Pro</strong> y seleccionamos <strong>Archivo -&gt; Importar.</strong>&nbsp; Vamos completando las pantallas que nos parecen con los datos que figuran en las siguientes figuras: en la primera pantalla se debe seleccionar Delimitado y Tabulación. Nos presenta una vista preliminar de los datos a importar, si se ven los datos correctamente presionamos el botón Siguiente.</p>
+<p>&nbsp;<img src="img/geocoding4.png" class="img-fluid"></p>
+<p><strong>Paso 7:</strong> La segunda pantalla nos permite indicar en que columnas/atributos/campos se presentan los datos de latitud y longitud, como en este caso no contamos con esa información vamos a tildar la opción Este conjunto de datos no contiene información de latitud y longitud, sino de direcciones postales y presionamos el botón Siguiente.</p>
+<p>&nbsp;<img src="img/geocoding5.png" class="img-fluid"></p>
+<p><strong>Paso 8:</strong> En la tercera pantalla se nos permite indicar que campos contienen la información postal, si está toda en una sola columna o si se encuentra en más de un campo, en este caso seleccionamos Las direcciones se separan en varios campos y especificamos que el Campo de calle es Direccion y el campo de código postal es Código Postal.&nbsp; El resto los dejamos con N/A, ya que no contamos con esa información.&nbsp; Presionamos el botón Siguiente.</p>
+<p>&nbsp;<img src="img/geocoding6.png" class="img-fluid"></p>
+<p><strong>Paso 9:</strong> La última pantalla es opcional y nos permite indicar el tipo de dato de los campos donde se encuentra la información de la dirección postal, si el archivo fue leído correctamente, los tipos especificados son correctos y no se deben cambiar, verifiquemos que sea así: Nombre es cadena (sinónimo de texto o carácter) al igual que la Dirección, mientras que el código postal es un entero (sinónimo de numérico).&nbsp; Luego presionamos el botón Finalizar.</p>
+<p>&nbsp;<img src="img/geocoding7.png" class="img-fluid"></p>
+<p>Se nos presenta un cuadro de diálogo donde se indica el avance la importación de los datos:&nbsp;</p>
+<p>&nbsp;<img src="img/geocoding8.png" class="img-fluid"></p>
+<p><strong>Paso 10:</strong> Cuando la importación termina, se presenta un listado con aquellos casos que no se pudieron resolver y al lado de cada caso dos opciones: una dice ¿Quisiste decir?… Y la otra Ingresar la nueva dirección.&nbsp; En el primer caso, cuando presionamos el botón nos sugiere opciones de direcciones, en el segundo caso nos permite editar el texto agregando información o corrigiéndolo para analizar nuevamente si es factible ubicar el punto correspondiente.<br>
 </p>
-<table class="table">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Lote</td>
-<td>2009 avg</td>
-<td>2009 max</td>
-<td>2009 min</td>
-<td>2010 avg</td>
-<td>2010 max</td>
-<td>2010 min</td>
-</tr>
-<tr class="even">
-<td>A</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr class="odd">
-<td>18</td>
-<td>&gt;95%</td>
-<td>&gt;95%</td>
-<td>&gt;95%</td>
-<td>&gt;95%</td>
-<td>&gt;95%</td>
-<td>&gt;95%</td>
-</tr>
-<tr class="even">
-<td>La loma</td>
-<td>77%</td>
-<td>89%</td>
-<td>3%</td>
-<td>75%</td>
-<td>88%</td>
-<td>3%</td>
-</tr>
-<tr class="odd">
-<td>A2</td>
-<td>25%</td>
-<td>35%</td>
-<td>19%</td>
-<td>25%</td>
-<td>35%</td>
-<td>19%</td>
-</tr>
-</tbody>
-</table>
+<p>&nbsp;<img src="img/geocoding9.png" class="img-fluid"></p>
+<p>En caso que la nueva información ingresada permita resolver la localización, el botón se deshabilita (se pone en color gris) con la leyenda La reparación fue exitosa, caso contrario se presenta un cuadro de dialogo que dice Fallo la recuperación de codificación geográfica.</p>
+<p>&nbsp;<img src="img/geocoding10.png" class="img-fluid"></p>
+<p><strong>Paso 11:</strong> Cuando terminamos de revisar y corregir aquellos casos posibles, presionamos en el botón Aceptar. Nos presentará un cuadro de diálogo que nos consulta si queremos aplicar una plantilla a los datos, contestamos que Si.</p>
+<p>&nbsp;<img src="img/geocoding11.png" class="img-fluid"></p>
+<p><strong>Paso 12:</strong> configuramos la plantilla, primero le indicamos cual va a ser el campo que le va a dar la etiqueta a los casos.&nbsp; Le indicamos Nombre</p>
+<p>&nbsp;<img src="img/geocoding12.png" class="img-fluid"></p>
+<p>Luego especificamos el color que tendrá el ícono que marcará el lugar de cada caso en el mapa.&nbsp; Esta característica se puede dar a partir de información en un campo de la tabla de datos, asi por ejemplo, podríamos tener un campo que sea color, con un color diferente para diferentes tipos de lectores, por ejemplo: amarillo para productores, azul para entidades de gobierno, verde para empresas agropecuarias, naranja para docentes, rojo para estudiantes, etc.</p>
+<p><img src="img/geocoding13.png" class="img-fluid"></p>
+<p>&nbsp;</p>
+<p>Después del color nos solicita que especifiquemos el tipo de ícono para representar los casos:&nbsp;</p>
+<p>&nbsp;<img src="img/geocoding14.png" class="img-fluid"></p>
+<p>Cuando terminamos con todos los detalles presionamos el botón Aceptar. Seguidamente, nos permite guardar la plantilla, con el objetivo de usarla con otro set de datos, en caso que lo necesitemos, evitando tener que volver a indicar todas estas opciones nuevamente.&nbsp; Le dejamos el nombre sugerido de Lectores.</p>
+<p><img src="img/geocoding15.png" class="img-fluid"></p>
+<p><strong>Paso 13:</strong> para visualizar los datos, en el cuadro de búsqueda escribimos Santa Rosa, La Pampa, el mapa se posiciona sobre la ciudad.&nbsp; En la sección izquierda, en el cuadro llamado Lugares se presenta un área que se llama Lugares temporales y dentro de la misma aparece Lectores.txt, cuando expandimos dichas carpetas se listan todos los casos que fueron localizados exitosamente presentando su nombre.</p>
+<p><img src="img/geocoding16.png" class="img-fluid"></p>
+<p>Para ver donde está ubicado cada lector en el mapa, hacemos click en el check box de la carpeta lectores, aparece un mapa similar al de la siguiente figura:</p>
+<p><img src="img/geocoding17.png" class="img-fluid">&nbsp;</p>
+<p>Si hacemos zoom en el mapa, los puntos se empezarán a acomodar y podremos ver el detalle de la ubicación, haciendo click sobre uno de ellos se presentará la información que importamos desde la tabla de Lectores.txt</p>
+<p><img src="img/geocoding18.png" class="img-fluid"></p>
+<p><strong>Paso 14:</strong> para guardar la nueva capa de información, hacemos click con el botón derecho del mouse sobre Lectores.txt&nbsp; y seleccionamos la opción Guardar lugar como…, elegimos el tipo KML y le dejamos de nombre Lectores.</p>
+<p><img src="img/geocoding19.png" class="img-fluid">&nbsp;</p>
 </section>
-</section>
-<section id="lecturas-sugeridas" class="level2">
-<h2 class="anchored" data-anchor-id="lecturas-sugeridas">Lecturas sugeridas</h2>
-<ul>
-<li><p>Artículo - <a href="https://vita.had.co.nz/papers/tidy-data.html">Tidy data</a>. Hadley Wickham. The Journal of Statistical Software, vol.&nbsp;59, 2014. (Inglés)</p></li>
-<li><p>Artículo - <a href="https://learning-learnr.netlify.app/post/compartirmaterialdoi/">Licencias: Compartir material educativo y mantener la autoría</a> (Español)</p></li>
-<li><p>Artículo - <a href="https://creativecommons.org/licenses/">Licencias Creative Commons</a></p></li>
-</ul>
+<section id="utilizando-excel-geocoding-tool" class="level3">
+<h3 class="anchored" data-anchor-id="utilizando-excel-geocoding-tool"><strong>1.2. Utilizando Excel Geocoding Tool</strong></h3>
+<p><strong>Paso 1:</strong> Se descarga la herramienta desde http://excelgeocodingtool.com/ y la abrimos en Excel, se debe habilitar la edición y las macros. <strong>La herramienta se encuentra disponible en el campus.</strong></p>
+<p><strong>Paso 2:</strong> la herramienta utiliza Bing para referenciar, por lo que necesitamos obtener una llave para que funcione.&nbsp; La practica previa a esta clase implicada obtener una clave de API, si no tienen el dato de la APIKey disponible deben:</p>
+<ol type="1">
+<li><p>Ingresar a su cuenta de BingMaps <a href="https://www.bingmapsportal.com/" class="uri">https://www.bingmapsportal.com/</a></p></li>
+<li><p>Seleccionar My Account -&gt; My Keys&nbsp;</p></li>
+<li><p>Aparecen los detalles de la clave y la copiamos haciendo click en el link Copy Key para utilizarla en la planilla de Excel (si tenemos bloqueado la opción de copiar desde el link, podemos seleccionar la llave y presionar Ctrl+C).</p></li>
+</ol>
+<p><img src="img/geocoding20.png" class="img-fluid"></p>
+<p><strong>Paso 3:</strong> Copiamos la clave en la planilla (Ctrl+V)</p>
+<p>&nbsp;<img src="img/geocoding21.png" class="img-fluid"></p>
+<p><strong>Paso 4:</strong> Chequeamos que las Macros de Excel estén habilitadas, presionando el botón Are Macros enabled?, si aparece el cuadro de diálogo las macros funcionan correctamente.&nbsp; De lo contrario se deben habilitar, para ello se cierra la planilla, se vuelve a abrir y se presiona en Habilitar Macros.</p>
+<p>&nbsp;<img src="img/geocoding22.png" class="img-fluid"></p>
+<p><strong>Paso 5:</strong> vamos a preparar los datos para copiarlos, abrimos la planilla de Lectores.xlsx y agregamos una columna que diga Argentina en todas las celdas que haya datos.&nbsp; También agregamos otra columna donde vamos a unir todos los datos en un solo campo, para ello escribimos la siguiente función:</p>
+<p>=CONCATENAR(B2,“,”,C2,“,”,D2)</p>
+<p><strong>Paso 6:</strong> Copiamos la columna donde concatenamos los datos de la dirección y la pegamos en la hoja Geocode.&nbsp; Se pueden indicar direcciones completas, ciudad + estado/provincia, código postal, cruce de calles, nombre de un lugar o localizaciones internacionales.</p>
+<p><strong>Paso 7:</strong> presionamos el botón Geocode all rows, nos presenta un detalle de la cantidad de direcciones copiadas, la cantidad que geocodificó y el porcentaje que encontró.</p>
+<p><img src="img/geocoding23.png" class="img-fluid">&nbsp;</p>
+<p>En la lista de direcciones, va completando los datos correspondientes a cada dirección lugar: Latitud, Longitud, confianza con la que realizó la localización y el link para verlo en el mapa.</p>
+<p>&nbsp;<img src="img/geocoding24.png" class="img-fluid"></p>
+<p><br>
+<strong>Paso 8:</strong> cuando finalice copiamos las columnas de Latitud y Longitud y se las pegamos a la planilla de Lectores.xlsx, la guardamos como Excel y luego la guardamos como archivo delimitado por tabulaciones, contestamos que Si y Aceptar a las advertencias de Excel con respecto del formato del archivo.&nbsp;</p>
+<p><img src="img/geocoding25.png" class="img-fluid"></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
