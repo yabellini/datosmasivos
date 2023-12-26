@@ -1,0 +1,105 @@
+---
+title: "Clase 8 - Redes"
+---
+
+## Objetivos de Aprendizaje
+
+* Definir redes y sus componentes.
+
+* Definir e identificar grafo, nodo, vinculo, direccion, peso.
+
+* Definir y explicar dos tipos de formato de representacion de datos de redes.
+
+* Explicar el formato de datos tidy para redes.
+
+* Mencionar 7 razones para visualizar datos con redes.
+
+* Mencionar y definir 10 metricas de redes.
+
+* Analizar casos de uso de redes.
+
+* Ejercitar con la construccion y analisis de redes en R.
+
+
+## Slides
+
+<iframe src="https://docs.google.com/presentation/d/18wna1o-QzhFiyZ-iVhXIr_TQjJ5UXeeIl5ltm_4QeKk/embed?start=false&loop=false&delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+## Ejercicios
+
+### 1) Instalar los paquetes
+
+Instalar los siguientes paquetes para poder realizar los live coding y los ejercicios.
+
+{igraph} 
+{igraphdata}
+{network}
+{tidygraph}
+{ggraph}
+
+### 2) Ejercicio de Redes
+
+Duracion: 25 minutos
+
+En grupos, una persona por grupo comparte la pantalla y todes colaboran en la resolución de los ejercicios. 
+
+* Descarguen el archivo `gr_NodesEdges.xlsx` del campus.
+
+* Creen un nuevo rmarkdown y carguen los paquetes necesarios para trabajar con redes
+
+#### Creando la red
+
+* En el primer chunk de codigo vamos a leer dos archivos de excel que contienen la información de la red y vamos a generar un tipo de red tidy.  
+
+* Vean la ayuda de la función tbl_graph y explicar debajo del chunk que hacen los parámetros `nodes`, `edges` y `direct`.
+
+* Antes de leer los datos chequeen el lugar donde copiaron `gr_NodesEdges.xlsx` y modifiquen el código para que funcionen correctamente.
+
+``` r
+# Leo los archivos de datos
+
+gr_Nodes <- read_excel("gr_NodesEdges.xlsx")
+gr_Edges <- read_excel("gr_NodesEdges.xlsx", sheet = "Edges")
+
+# Creo la red
+
+red <- tbl_graph(nodes = gr_Nodes, edges = gr_Edges, direct = TRUE)
+
+```
+
+#### Analizando la red
+
+Analizando la red que recien crearon contesten estas caracteristicas de la red:
+
+- Cantidad de nodos:
+- Cantidad de vínculos:
+- ¿La red es dirigida?
+
+
+``` r
+# tu codigo aqui
+```
+
+
+#### Graficando la red
+
+Realizar un gráfico de la red que presente:
+
+- Los nodos con un tamaño de 6 y su nombre correspondiente,
+- Los vínculos
+- El color de fondo de los nodos en rojo
+- El color de los vínculos en verde.
+
+``` r
+# tu codigo aqui
+```
+
+
+#### Generando un reporte
+
+* Hagan knit del documento y compartan el HTML resultante en el foro de consultas del campus.  
+
+* Pongan en el mensaje los integrantes de la sala que generaron este informe.
+
+
