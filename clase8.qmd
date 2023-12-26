@@ -1,0 +1,260 @@
+---
+title: "Clase 8 - Redes"
+---
+
+## Objetivos de Aprendizaje
+
+-   Definir redes y sus componentes.
+
+-   Definir e identificar grafo, nodo, vinculo, direccion, peso.
+
+-   Definir y explicar dos tipos de formato de representacion de datos de redes.
+
+-   Explicar el formato de datos tidy para redes.
+
+-   Mencionar 7 razones para visualizar datos con redes.
+
+-   Mencionar y definir 10 metricas de redes.
+
+-   Analizar casos de uso de redes.
+
+-   Ejercitar con la construccion y analisis de redes en R.
+
+## Slides
+
+<iframe src="https://docs.google.com/presentation/d/18wna1o-QzhFiyZ-iVhXIr_TQjJ5UXeeIl5ltm_4QeKk/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+
+</iframe>
+
+## Programacion en vivo (live coding)
+
+Como siempre iniciamos con un rmarkdown en blanco y vamos completando el codigo.  Usamos los subtitulos para separar los conceptos y las diferentes partes del codigo
+
+### Cargamos los paquetes 
+
+
+``` r
+
+# Paquetes para poder trabajar con redes
+
+library(igraph)
+library(tidygraph)
+
+# Paquete con datos de redes
+
+library(igraphdata)
+
+# Paquete para graficar las redes
+
+library(ggraph)
+
+```
+
+### Datos de redes: Karate
+
+``` r
+data("karate")
+class(karate)
+
+karate_tidy <- as_tbl_graph(karate)
+
+class(karate_tidy)
+```
+
+### Visualizando propiedades de la red
+
+``` r
+karate_tidy
+
+```
+
+### Mi primer gráfico de redes
+
+``` r
+
+plot(karate)
+
+```
+
+### Graficando tipo ggplot2
+
+
+``` r
+
+ggraph(karate_tidy, layout = 'linear') +
+  geom_edge_arc(color = 'blue') +
+  geom_node_point(aes(color = color), size = 8) +
+  geom_node_text(aes(label = label))
+
+```
+
+### Calculando algunas metricas
+
+``` r
+# Densidad
+
+graph.density(karate)
+
+degree(karate)
+
+V(karate)$deg <- degree(karate)
+
+plot(karate, vertex.size = V(karate)$deg)
+
+```
+
+
+## Ejercicios
+
+### 1) Instalar los paquetes
+
+Instalar los siguientes paquetes para poder realizar los live coding y los ejercicios.
+
+{igraph} {igraphdata} {network} {tidygraph} {ggraph}
+
+### 2) Ejercicio de Redes
+
+Duracion: 25 minutos
+
+En grupos, una persona por grupo comparte la pantalla y todes colaboran en la resolución de los ejercicios.
+
+-   Descarguen el archivo [`gr_NodesEdges.xlsx`](/clase8_data/gr_NodesEdges.xlsx) del campus.
+
+-   Creen un nuevo rmarkdown y carguen los paquetes necesarios para trabajar con redes
+
+#### Creando la red
+
+-   En el primer chunk de codigo vamos a leer dos archivos de excel que contienen la información de la red y vamos a generar un tipo de red tidy.
+
+-   Vean la ayuda de la función tbl_graph y explicar debajo del chunk que hacen los parámetros `nodes`, `edges` y `direct`.
+
+-   Antes de leer los datos chequeen el lugar donde copiaron `gr_NodesEdges.xlsx` y modifiquen el código para que funcionen correctamente.
+
+``` r
+# Leo los archivos de datos
+
+gr_Nodes <- read_excel("gr_NodesEdges.xlsx")
+gr_Edges <- read_excel("gr_NodesEdges.xlsx", sheet = "Edges")
+
+# Creo la red
+
+red <- tbl_graph(nodes = gr_Nodes, edges = gr_Edges, direct = TRUE)
+```
+
+#### Analizando la red
+
+Analizando la red que recien crearon contesten estas caracteristicas de la red:
+
+-   Cantidad de nodos:
+-   Cantidad de vínculos:
+-   ¿La red es dirigida?
+
+``` r
+# tu codigo aqui
+```
+
+#### Graficando la red
+
+Realizar un gráfico de la red que presente:
+
+-   Los nodos con un tamaño de 6 y su nombre correspondiente,
+-   Los vínculos
+-   El color de fondo de los nodos en rojo
+-   El color de los vínculos en verde.
+
+``` r
+# tu codigo aqui
+```
+
+#### Generando un reporte
+
+-   Hagan knit del documento y compartan el HTML resultante en el foro de consultas del campus.
+
+-   Pongan en el mensaje los integrantes de la sala que generaron este informe.
+
+### 3) Graficando redes
+
+Creen un documento markdown nuevo y sigan estas las instrucciones:
+
+#### Cargado paquetes y creando la red
+
+``` r
+# Carguen los paquetes necesarios para trabajar con redes
+
+
+# Lean los archivos de datos: gr_NodesEdges.xlsx
+gr_Nodes <- read_______("_____________")
+gr_Edges <- read_______("_____________", sheet = "_______")
+
+# Creo la red
+red <- __________(nodes = gr_Nodes, edges = gr_Edges, direct = TRUE)
+```
+
+#### Graficando
+
+Esta red representa trenes que viajan entre ciudades.\
+Analizar los atributos que tiene la red.
+
+#### Un gráfico sencillo de la red
+
+Vamos a generar un gráfico donde se presenten:
+
+-   Los nodos con la etiqueta del nombre (ver los atributos para saber donde está el nombre de la ciudad) y un tamaño de 4.
+-   Los vínculos con color gris y un ancho de 1
+
+``` r
+
+# Tu codigo va aqui
+```
+
+#### Un gráfico con vínculos diferentes
+
+Vamos a generar un gráfico de la red donde:
+
+-   el ancho de los vínculos esté dado por el tiempo que se tarda en viajar de un nodo a otro y
+
+-   los nodos tengan como etiqueta el nombre de la ciudad, sean de color verde y de tamaño 5.
+
+Completa el código del chunk para obtener ese gráfico
+
+``` r
+ggraph(_________) + 
+    geom_edge_diagonal(aes(___________), ________ = "gray65") +
+    geom_node_point(_________________) +
+    geom_node_text(aes(____________), repel = TRUE) +
+    theme_void()
+```
+
+#### Un gráfico con layout
+
+Al gráfico anterior agregarle la opción de `layout` y probar con diferentes opciones, por ejemplo "nicely", "star", "grid", "kk", "lgl".
+
+``` r
+
+# Tu codigo va aqui
+```
+
+#### Un gráfico con etiquetas en los nodos
+
+Al gráfico anterior, en el `geom_edge_diagonal`, asiganar el atributo del tiempo que tardan los viajes a la estética de la etiqueta (`label`) para que los vínculos también estén etiquedatos. Ver los atributos de la red para saber como se llama el atributo que guarda el tiempo de viaje.
+
+``` r
+
+# Tu codigo va aqui
+```
+
+::: callout-note
+## Archivos rmarkdown
+
+Para los dos ultimos ejercicios se pueden generar los archivos rmarkdown prellenos con las instrucciones y el codigo.
+
+Estos archivos se pueden usar en un proyecto Posit Cloud, se puede compaetir un proyecto de RStudio con los archivos markdown y el archivo de datos zipeado o bien solo compatir el archivo .Rmd correspondiente.
+
+En esa materia estos materiales se subian para su descarga al campus en la clase correspondiente.
+:::
+
+## Lecturas sugeridas
+
+* Los ejemplos de la programacion en vivo de esta clase se basan en el tutorial ["Introducción al análisis de redes con R"](https://github.com/LatinR/presentaciones-LatinR2021#introducción-al-análisis-de-redes-con-r) de La Dra. María Cristina Ramos para LatinR 2021.
+
+* R Visualizations. David W. Gerbing. ISBN: 978-1-03-224327-6. Chapter 8 Visualize Maps and Networks. 

@@ -190,8 +190,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./clase8.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clase 8 -</span></a>
+  <a href="./clase8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 8 - Redes</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -238,13 +238,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
   <li><a href="#programacion-en-vivo-live-coding" id="toc-programacion-en-vivo-live-coding" class="nav-link" data-scroll-target="#programacion-en-vivo-live-coding">Programacion en vivo (Live Coding)</a>
   <ul class="collapse">
+  <li><a href="#datos-espaciales-con-r" id="toc-datos-espaciales-con-r" class="nav-link" data-scroll-target="#datos-espaciales-con-r">Datos espaciales con R</a></li>
   <li><a href="#google-earch-engine" id="toc-google-earch-engine" class="nav-link" data-scroll-target="#google-earch-engine">Google Earch Engine</a></li>
   </ul></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a>
   <ul class="collapse">
   <li><a href="#sacar-un-usuario-de-google-earth-engine" id="toc-sacar-un-usuario-de-google-earth-engine" class="nav-link" data-scroll-target="#sacar-un-usuario-de-google-earth-engine">1) Sacar un usuario de Google Earth Engine</a></li>
-  <li><a href="#geocodificacion-caso-lectores-del-horizonte-agropecuario" id="toc-geocodificacion-caso-lectores-del-horizonte-agropecuario" class="nav-link" data-scroll-target="#geocodificacion-caso-lectores-del-horizonte-agropecuario">2) Geocodificacion Caso: lectores del Horizonte Agropecuario</a></li>
+  <li><a href="#mapeando-en-r" id="toc-mapeando-en-r" class="nav-link" data-scroll-target="#mapeando-en-r">2) Mapeando en R</a></li>
+  <li><a href="#geocodificacion-caso-lectores-del-horizonte-agropecuario" id="toc-geocodificacion-caso-lectores-del-horizonte-agropecuario" class="nav-link" data-scroll-target="#geocodificacion-caso-lectores-del-horizonte-agropecuario">3) Geocodificacion Caso: lectores del Horizonte Agropecuario</a></li>
   </ul></li>
+  <li><a href="#lecturas-sugeridas" id="toc-lecturas-sugeridas" class="nav-link" data-scroll-target="#lecturas-sugeridas">Lecturas sugeridas</a></li>
   </ul>
 </nav>
     </div>
@@ -287,119 +290,148 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="slides" class="level2">
 <h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<iframe src="https://docs.google.com/presentation/d/1xPkp7_Y2QArcDLyFBXAxQSwqUCzFry5NX8akqnmdEEM/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+<iframe src="https://docs.google.com/presentation/d/1M68qXgS-mmKzGiWVZuY6hijztI1SN_rf0sP7AmHkaAg/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 </iframe>
 </section>
 <section id="programacion-en-vivo-live-coding" class="level2">
 <h2 class="anchored" data-anchor-id="programacion-en-vivo-live-coding">Programacion en vivo (Live Coding)</h2>
+<section id="datos-espaciales-con-r" class="level3">
+<h3 class="anchored" data-anchor-id="datos-espaciales-con-r">Datos espaciales con R</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mapa <span class="ot">&lt;-</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_countries</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">country =</span> <span class="fu">c</span>(<span class="st">"argentina"</span>, <span class="st">"chile"</span>, <span class="st">"uruguay"</span>, <span class="st">"paraguay"</span>, <span class="st">"brazil"</span>, <span class="st">"bolivia"</span>, <span class="st">"falkland islands"</span>), <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mapa) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">fill =</span> <span class="cn">NA</span>, </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">color =</span> <span class="st">"black"</span>, </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">size =</span> <span class="fl">0.2</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(observaciones, <span class="fu">aes</span>(lon, lat)) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> tmax_media)) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  mi_mapa <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">55</span>, <span class="sc">-</span><span class="dv">20</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">80</span>, <span class="sc">-</span><span class="dv">50</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="google-earch-engine" class="level3">
 <h3 class="anchored" data-anchor-id="google-earch-engine">Google Earch Engine</h3>
 <p>Para que los estudiantes puedan codificar junto contigo tienen que tener el usuario de GEE activado. Vamos a usar el entorno de desarrollo en el navegador de internet: http://code.earthengine.google.com. Antes de iniciar con la programcion en vivo repasar las secciones del entorno de desarrollo. Mostrar como cargar un archivo shape al area de assets para que esten disponibles para su uso en los scripts.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> agua<span class="op">:</span> <span class="fu">FeatureColecction</span> (<span class="dv">57</span> elements)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> no_agua<span class="op">:</span> <span class="fu">FeatureColecction</span> (<span class="dv">76</span> elements)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">// Clasificación supervisada de agua con imágenes S2</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">//  Seleccionar producto: Indicar el ImageCollection ID</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> producto <span class="op">=</span> ee<span class="op">.</span><span class="fu">ImageCollection</span>(<span class="st">'COPERNICUS/S2'</span>)<span class="op">;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">// área de estudio </span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> zona <span class="op">=</span> ee<span class="op">.</span><span class="fu">FeatureCollection</span>(<span class="st">"users/yabellini/zona_estudio"</span>)<span class="op">;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">// Filtrar colección</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> producto_filtrado <span class="op">=</span> producto</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Por área de estudio. Debe estar cargada el área</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">// en este caso en la variable “zona”</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filterBounds</span>( zona )</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">//por rango de fechas</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filterDate</span>(<span class="st">'2017-08-01'</span><span class="op">,</span> <span class="st">'2017-08-31'</span>)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">// por cobertura de nubes máxima – Sentinel 2</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filterMetadata</span>(<span class="st">'CLOUDY_PIXEL_PERCENTAGE'</span><span class="op">,</span><span class="st">'less_than'</span><span class="op">,</span> <span class="dv">40</span>)<span class="op">;</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">// Bandas disponibles</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">// B1 Aerosols 443nm 60m</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">// B2 Blue 490nm 10m</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">// B3 Green 560nm 10m</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">// B4 Red 665nm 10m</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">// B5 Red Edge 1 705nm 20m</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">// B6 Red Edge 2 740nm 20m</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">// B7 Red Edge 3 783nm 20m</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">// B8 NIR 842nm 10m</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co">// B8a Red Edge 4 865nm 20m</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co">// B9 Water vapor 940nm 60m</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co">// B10 Cirrus 1375nm 60m</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co">// B11 SWIR 1 1610nm 20m</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co">// B12 SWIR 2 2190nm 20m</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co">// Definir bandas a seleccionar</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> bandas <span class="op">=</span> [<span class="st">'B8A'</span><span class="op">,</span><span class="st">'B4'</span><span class="op">,</span><span class="st">'B11'</span><span class="op">,</span> <span class="st">'B2'</span><span class="op">,</span> <span class="st">'B3'</span><span class="op">,</span> <span class="st">'B5'</span><span class="op">,</span><span class="st">'B6'</span><span class="op">,</span><span class="st">'B7'</span><span class="op">,</span><span class="st">'B8'</span>]</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>producto_filtrado <span class="op">=</span> producto_filtrado<span class="op">.</span><span class="fu">select</span>(bandas)<span class="op">;</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co">// Aplicar reducción de mediana</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> stack1 <span class="op">=</span> producto_filtrado<span class="op">.</span><span class="fu">median</span>()<span class="op">;</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="co">// ver imagen en mapa:</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(stack1<span class="op">.</span><span class="fu">clip</span>(zona)<span class="op">,</span> {<span class="dt">bands</span><span class="op">:</span> [<span class="st">'B8A'</span><span class="op">,</span> <span class="st">'B11'</span><span class="op">,</span> <span class="st">'B4'</span>]<span class="op">,</span> <span class="dt">min</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span>]<span class="op">,</span> <span class="dt">max</span><span class="op">:</span>[<span class="dv">10000</span><span class="op">,</span><span class="dv">10000</span><span class="op">,</span><span class="dv">10000</span>] } <span class="op">,</span> <span class="st">"S2 B8a-B11-B4"</span> )<span class="op">;</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="co">// centrar en area de estudio - indicar nivel de zoom</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">centerObject</span>( zona<span class="op">,</span> <span class="dv">8</span> )<span class="op">;</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="co">// Unir muestras por clase en un único FeatureCollection</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> samples <span class="op">=</span> agua<span class="op">.</span><span class="fu">merge</span>( no_agua )<span class="op">;</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> seed <span class="op">=</span> <span class="dv">2015</span><span class="op">;</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> samples<span class="op">.</span><span class="fu">randomColumn</span>(<span class="st">'random'</span><span class="op">,</span> seed)<span class="op">;</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="co">// extraccion de información incluyendo atributos clase y "random"</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> set_datos <span class="op">=</span> stack1<span class="op">.</span><span class="fu">sampleRegions</span>({</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  <span class="dt">collection</span><span class="op">:</span> samples<span class="op">,</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  <span class="dt">properties</span><span class="op">:</span> [<span class="st">'clase'</span><span class="op">,</span><span class="st">'random'</span>]<span class="op">,</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  <span class="dt">scale</span><span class="op">:</span> <span class="dv">10</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="co">// Separación entre Entrenamiento y validación. Identificar umbral de separación</span></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> training <span class="op">=</span> set_datos<span class="op">.</span><span class="fu">filterMetadata</span>(<span class="st">'random'</span><span class="op">,</span> <span class="st">'not_less_than'</span><span class="op">,</span> <span class="fl">0.6</span>)<span class="op">;</span></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> testing <span class="op">=</span> set_datos<span class="op">.</span><span class="fu">filterMetadata</span>(<span class="st">'random'</span><span class="op">,</span> <span class="st">'less_than'</span><span class="op">,</span> <span class="fl">0.6</span>)<span class="op">;</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> (<span class="st">"Set de datos entrenamiento"</span><span class="op">,</span> training)<span class="op">;</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> (<span class="st">"Set de datos validación"</span><span class="op">,</span> testing)<span class="op">;</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="co">// Entrenamiento</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> bandas_sel <span class="op">=</span> [<span class="st">'B8A'</span><span class="op">,</span><span class="st">'B4'</span><span class="op">,</span><span class="st">'B11'</span>]<span class="op">;</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> trained <span class="op">=</span> ee<span class="op">.</span><span class="at">Classifier</span><span class="op">.</span><span class="fu">smileRandomForest</span>(<span class="dv">20</span>)<span class="op">.</span><span class="fu">train</span>(training<span class="op">,</span> <span class="st">'clase'</span><span class="op">,</span> bandas_sel)<span class="op">;</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="co">// clasificación con el modelo entrenado</span></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> classified <span class="op">=</span> stack1<span class="op">.</span><span class="fu">select</span>(bandas)<span class="op">.</span><span class="fu">classify</span>(trained)<span class="op">.</span><span class="fu">clip</span>(zona)<span class="op">;</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(classified<span class="op">,</span> {<span class="dt">min</span><span class="op">:</span><span class="dv">0</span><span class="op">,</span> <span class="dt">max</span><span class="op">:</span><span class="dv">1</span><span class="op">,</span> <span class="dt">palette</span><span class="op">:</span> [<span class="st">'339820'</span><span class="op">,</span> <span class="st">'e6f0c2'</span>]}<span class="op">,</span> <span class="st">'Clasificacion'</span>)<span class="op">;</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="co">//print(classified);</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="co">// guardar mapa clasificado como geotiff en google drive</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>Export<span class="op">.</span><span class="at">image</span><span class="op">.</span><span class="fu">toDrive</span>({</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>  <span class="dt">image</span><span class="op">:</span>classified<span class="op">,</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>  <span class="dt">description</span><span class="op">:</span> <span class="st">'clasificacion'</span><span class="op">,</span></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>  <span class="dt">scale</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>  <span class="dt">region</span><span class="op">:</span> czonae</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="co">//Generación de matriz de confusión y resultados</span></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> validation <span class="op">=</span> testing<span class="op">.</span><span class="fu">classify</span>(trained)<span class="op">;</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> errorMatrix <span class="op">=</span> validation<span class="op">.</span><span class="fu">errorMatrix</span>(<span class="st">'clase'</span><span class="op">,</span> <span class="st">'classification'</span>)<span class="op">;</span></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Matriz de Confusión:'</span><span class="op">,</span> errorMatrix)<span class="op">;</span></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Exactitud General:'</span><span class="op">,</span> errorMatrix<span class="op">.</span><span class="fu">accuracy</span>())<span class="op">;</span></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Indice Kappa:'</span><span class="op">,</span> errorMatrix<span class="op">.</span><span class="fu">kappa</span>())<span class="op">;</span></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> agua<span class="op">:</span> <span class="fu">FeatureColecction</span> (<span class="dv">57</span> elements)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> no_agua<span class="op">:</span> <span class="fu">FeatureColecction</span> (<span class="dv">76</span> elements)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">// Clasificación supervisada de agua con imágenes S2</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">//  Seleccionar producto: Indicar el ImageCollection ID</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> producto <span class="op">=</span> ee<span class="op">.</span><span class="fu">ImageCollection</span>(<span class="st">'COPERNICUS/S2'</span>)<span class="op">;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">// área de estudio </span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> zona <span class="op">=</span> ee<span class="op">.</span><span class="fu">FeatureCollection</span>(<span class="st">"users/yabellini/zona_estudio"</span>)<span class="op">;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">// Filtrar colección</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> producto_filtrado <span class="op">=</span> producto</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Por área de estudio. Debe estar cargada el área</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">// en este caso en la variable “zona”</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filterBounds</span>( zona )</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">//por rango de fechas</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filterDate</span>(<span class="st">'2017-08-01'</span><span class="op">,</span> <span class="st">'2017-08-31'</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">// por cobertura de nubes máxima – Sentinel 2</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filterMetadata</span>(<span class="st">'CLOUDY_PIXEL_PERCENTAGE'</span><span class="op">,</span><span class="st">'less_than'</span><span class="op">,</span> <span class="dv">40</span>)<span class="op">;</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">// Bandas disponibles</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">// B1 Aerosols 443nm 60m</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">// B2 Blue 490nm 10m</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">// B3 Green 560nm 10m</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">// B4 Red 665nm 10m</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co">// B5 Red Edge 1 705nm 20m</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">// B6 Red Edge 2 740nm 20m</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co">// B7 Red Edge 3 783nm 20m</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co">// B8 NIR 842nm 10m</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co">// B8a Red Edge 4 865nm 20m</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co">// B9 Water vapor 940nm 60m</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co">// B10 Cirrus 1375nm 60m</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co">// B11 SWIR 1 1610nm 20m</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co">// B12 SWIR 2 2190nm 20m</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co">// Definir bandas a seleccionar</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> bandas <span class="op">=</span> [<span class="st">'B8A'</span><span class="op">,</span><span class="st">'B4'</span><span class="op">,</span><span class="st">'B11'</span><span class="op">,</span> <span class="st">'B2'</span><span class="op">,</span> <span class="st">'B3'</span><span class="op">,</span> <span class="st">'B5'</span><span class="op">,</span><span class="st">'B6'</span><span class="op">,</span><span class="st">'B7'</span><span class="op">,</span><span class="st">'B8'</span>]</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>producto_filtrado <span class="op">=</span> producto_filtrado<span class="op">.</span><span class="fu">select</span>(bandas)<span class="op">;</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co">// Aplicar reducción de mediana</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> stack1 <span class="op">=</span> producto_filtrado<span class="op">.</span><span class="fu">median</span>()<span class="op">;</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co">// ver imagen en mapa:</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(stack1<span class="op">.</span><span class="fu">clip</span>(zona)<span class="op">,</span> {<span class="dt">bands</span><span class="op">:</span> [<span class="st">'B8A'</span><span class="op">,</span> <span class="st">'B11'</span><span class="op">,</span> <span class="st">'B4'</span>]<span class="op">,</span> <span class="dt">min</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span>]<span class="op">,</span> <span class="dt">max</span><span class="op">:</span>[<span class="dv">10000</span><span class="op">,</span><span class="dv">10000</span><span class="op">,</span><span class="dv">10000</span>] } <span class="op">,</span> <span class="st">"S2 B8a-B11-B4"</span> )<span class="op">;</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co">// centrar en area de estudio - indicar nivel de zoom</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">centerObject</span>( zona<span class="op">,</span> <span class="dv">8</span> )<span class="op">;</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co">// Unir muestras por clase en un único FeatureCollection</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> samples <span class="op">=</span> agua<span class="op">.</span><span class="fu">merge</span>( no_agua )<span class="op">;</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> seed <span class="op">=</span> <span class="dv">2015</span><span class="op">;</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> samples<span class="op">.</span><span class="fu">randomColumn</span>(<span class="st">'random'</span><span class="op">,</span> seed)<span class="op">;</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="co">// extraccion de información incluyendo atributos clase y "random"</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> set_datos <span class="op">=</span> stack1<span class="op">.</span><span class="fu">sampleRegions</span>({</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="dt">collection</span><span class="op">:</span> samples<span class="op">,</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="dt">properties</span><span class="op">:</span> [<span class="st">'clase'</span><span class="op">,</span><span class="st">'random'</span>]<span class="op">,</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="dt">scale</span><span class="op">:</span> <span class="dv">10</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="co">// Separación entre Entrenamiento y validación. Identificar umbral de separación</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> training <span class="op">=</span> set_datos<span class="op">.</span><span class="fu">filterMetadata</span>(<span class="st">'random'</span><span class="op">,</span> <span class="st">'not_less_than'</span><span class="op">,</span> <span class="fl">0.6</span>)<span class="op">;</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> testing <span class="op">=</span> set_datos<span class="op">.</span><span class="fu">filterMetadata</span>(<span class="st">'random'</span><span class="op">,</span> <span class="st">'less_than'</span><span class="op">,</span> <span class="fl">0.6</span>)<span class="op">;</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> (<span class="st">"Set de datos entrenamiento"</span><span class="op">,</span> training)<span class="op">;</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> (<span class="st">"Set de datos validación"</span><span class="op">,</span> testing)<span class="op">;</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="co">// Entrenamiento</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> bandas_sel <span class="op">=</span> [<span class="st">'B8A'</span><span class="op">,</span><span class="st">'B4'</span><span class="op">,</span><span class="st">'B11'</span>]<span class="op">;</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> trained <span class="op">=</span> ee<span class="op">.</span><span class="at">Classifier</span><span class="op">.</span><span class="fu">smileRandomForest</span>(<span class="dv">20</span>)<span class="op">.</span><span class="fu">train</span>(training<span class="op">,</span> <span class="st">'clase'</span><span class="op">,</span> bandas_sel)<span class="op">;</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="co">// clasificación con el modelo entrenado</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> classified <span class="op">=</span> stack1<span class="op">.</span><span class="fu">select</span>(bandas)<span class="op">.</span><span class="fu">classify</span>(trained)<span class="op">.</span><span class="fu">clip</span>(zona)<span class="op">;</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(classified<span class="op">,</span> {<span class="dt">min</span><span class="op">:</span><span class="dv">0</span><span class="op">,</span> <span class="dt">max</span><span class="op">:</span><span class="dv">1</span><span class="op">,</span> <span class="dt">palette</span><span class="op">:</span> [<span class="st">'339820'</span><span class="op">,</span> <span class="st">'e6f0c2'</span>]}<span class="op">,</span> <span class="st">'Clasificacion'</span>)<span class="op">;</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="co">//print(classified);</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="co">// guardar mapa clasificado como geotiff en google drive</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>Export<span class="op">.</span><span class="at">image</span><span class="op">.</span><span class="fu">toDrive</span>({</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="dt">image</span><span class="op">:</span>classified<span class="op">,</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>  <span class="dt">description</span><span class="op">:</span> <span class="st">'clasificacion'</span><span class="op">,</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>  <span class="dt">scale</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  <span class="dt">region</span><span class="op">:</span> czonae</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="co">//Generación de matriz de confusión y resultados</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> validation <span class="op">=</span> testing<span class="op">.</span><span class="fu">classify</span>(trained)<span class="op">;</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> errorMatrix <span class="op">=</span> validation<span class="op">.</span><span class="fu">errorMatrix</span>(<span class="st">'clase'</span><span class="op">,</span> <span class="st">'classification'</span>)<span class="op">;</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Matriz de Confusión:'</span><span class="op">,</span> errorMatrix)<span class="op">;</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Exactitud General:'</span><span class="op">,</span> errorMatrix<span class="op">.</span><span class="fu">accuracy</span>())<span class="op">;</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Indice Kappa:'</span><span class="op">,</span> errorMatrix<span class="op">.</span><span class="fu">kappa</span>())<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Live Coding Opcional
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El live coding de GEE puede ser opcional. En las slides se presenta un video donde se muestran detalles del modelo generado. Teniendo en cuenta el tiempo disponible, el interes de los estudiantes y si tienen acceso a GEE, se puede decidir mostrar el video o bien hacer el live coding.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="ejercicios" class="level2">
@@ -409,13 +441,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Necesitamos que te registres en la herramienta para poder utilizarla durante el curso, para ello debes entrar en este link:</p>
 <p>https://signup.earthengine.google.com/</p>
 </section>
+<section id="mapeando-en-r" class="level3">
+<h3 class="anchored" data-anchor-id="mapeando-en-r">2) Mapeando en R</h3>
+<p>Usando un proyecto en Posit Cloud con todos los datos y paquetes instalados:</p>
+<ul>
+<li><p>Intentá replicar el mismo mapa presentado en el live coding, pero con los datos que están en el archivo <code>estaciones_siga.csv</code> dentro de la carpeta <code>datos</code> del proyecto.</p></li>
+<li><p>El código lo pueden seguir desde aqui: https://yabellini.github.io/AgriRemoteSensing/02-r-spatial.html</p></li>
+</ul>
+</section>
 <section id="geocodificacion-caso-lectores-del-horizonte-agropecuario" class="level3">
-<h3 class="anchored" data-anchor-id="geocodificacion-caso-lectores-del-horizonte-agropecuario">2) Geocodificacion Caso: lectores del Horizonte Agropecuario</h3>
+<h3 class="anchored" data-anchor-id="geocodificacion-caso-lectores-del-horizonte-agropecuario">3) Geocodificacion Caso: lectores del Horizonte Agropecuario</h3>
 <p>Duración: ~30 minutos</p>
 <p>Seguir las instrucciones del <a href="./geocodificacion.html">ejercicio de geocodificacion con Google Earth Engine y Excel Geocoding Tool</a>.</p>
-
-
 </section>
+</section>
+<section id="lecturas-sugeridas" class="level2">
+<h2 class="anchored" data-anchor-id="lecturas-sugeridas">Lecturas sugeridas</h2>
+<ul>
+<li><p>Artículo - <a href="https://www.researchgate.net/publication/246959596_Nongeospatial_Metadata_for_the_Ecological_Sciences">Nongeospatial Metadata for the Ecological Sciences. William et.al. 1997</a> (inglés)</p></li>
+<li><p>Artículo - <a href="https://inta.gob.ar/sites/default/files/inta_ida_agranda.pdf">Propuesta para una Infraestructura de Datos Agropecuarios del Instituto Nacional de Tecnología Agropecuaria (INTA)</a> (Español)</p></li>
+<li><p>Artículo - <a href="https://mappinggis.com/2019/05/combinaciones-de-bandas-en-imagenes-de-satelite-landsat-y-sentinel/">Teledetección y bandas mutiespectrales</a></p></li>
+<li><p>Curso - <a href="https://yabellini.netlify.app/courses/gee_course/">Google Earth Engine desde Cero</a> (Español)</p></li>
+<li><p>Tutoriales - <a href="https://developers.google.com/earth-engine/tutorials/tutorials">Google Earth Engine (Inglés)</a></p></li>
+<li><p>Sitio Web - <a href="https://csaybar.github.io/rgee-examples/">250 ejemplos de uso de rgee</a></p></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->

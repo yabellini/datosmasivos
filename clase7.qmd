@@ -28,18 +28,34 @@ editor: visual
 
 ## Slides
 
-<iframe src="https://docs.google.com/presentation/d/1xPkp7_Y2QArcDLyFBXAxQSwqUCzFry5NX8akqnmdEEM/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+<iframe src="https://docs.google.com/presentation/d/1M68qXgS-mmKzGiWVZuY6hijztI1SN_rf0sP7AmHkaAg/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 
 </iframe>
 
 ## Programacion en vivo (Live Coding)
 
+### Datos espaciales con R
+
+``` r
+
+mapa <- rnaturalearth::ne_countries(
+country = c("argentina", "chile", "uruguay", "paraguay", "brazil", "bolivia", "falkland islands"), returnclass = "sf")
+
+ggplot(mapa) +
+  geom_sf(
+fill = NA, 
+color = "black", 
+size = 0.2)
+
+ggplot(observaciones, aes(lon, lat)) +
+  geom_point(aes(color = tmax_media)) +
+  mi_mapa +
+  coord_sf(ylim = c(-55, -20), xlim = c(-80, -50))
+```
+
 ### Google Earch Engine
 
-Para que los estudiantes puedan codificar junto contigo tienen que tener el usuario de GEE activado.  Vamos a usar el entorno de desarrollo en el navegador de internet: http://code.earthengine.google.com. 
-Antes de iniciar con la programcion en vivo repasar las secciones del entorno de desarrollo.
-Mostrar como cargar un archivo shape al area de assets para que esten disponibles para su uso en los scripts.
-
+Para que los estudiantes puedan codificar junto contigo tienen que tener el usuario de GEE activado. Vamos a usar el entorno de desarrollo en el navegador de internet: http://code.earthengine.google.com. Antes de iniciar con la programcion en vivo repasar las secciones del entorno de desarrollo. Mostrar como cargar un archivo shape al area de assets para que esten disponibles para su uso en los scripts.
 
 ``` js
 
@@ -146,9 +162,13 @@ var errorMatrix = validation.errorMatrix('clase', 'classification');
 print('Matriz de Confusión:', errorMatrix);
 print('Exactitud General:', errorMatrix.accuracy());
 print('Indice Kappa:', errorMatrix.kappa());
-
-
 ```
+
+::: callout-note
+## Live Coding Opcional
+
+El live coding de GEE puede ser opcional. En las slides se presenta un video donde se muestran detalles del modelo generado. Teniendo en cuenta el tiempo disponible, el interes de los estudiantes y si tienen acceso a GEE, se puede decidir mostrar el video o bien hacer el live coding.
+:::
 
 ## Ejercicios
 
@@ -158,8 +178,31 @@ Necesitamos que te registres en la herramienta para poder utilizarla durante el 
 
 https://signup.earthengine.google.com/
 
+### 2) Mapeando en R
 
-### 2) Geocodificacion Caso: lectores del Horizonte Agropecuario
-Duración: ~30 minutos
+Usando un proyecto en Posit Cloud con todos los datos y paquetes instalados:
+
+-   Intentá replicar el mismo mapa presentado en el live coding, pero con los datos que están en el archivo `estaciones_siga.csv` dentro de la carpeta `datos` del proyecto.
+
+-   El código lo pueden seguir desde aqui: https://yabellini.github.io/AgriRemoteSensing/02-r-spatial.html
+
+### 3) Geocodificacion Caso: lectores del Horizonte Agropecuario
+
+Duración: \~30 minutos
 
 Seguir las instrucciones del [ejercicio de geocodificacion con Google Earth Engine y Excel Geocoding Tool](/geocodificacion.qmd).
+
+
+## Lecturas sugeridas
+
+* Artículo - [Nongeospatial Metadata for the Ecological Sciences. William et.al. 1997](https://www.researchgate.net/publication/246959596_Nongeospatial_Metadata_for_the_Ecological_Sciences) (inglés) 
+
+* Artículo - [Propuesta para una Infraestructura de Datos Agropecuarios del Instituto Nacional de Tecnología Agropecuaria (INTA)](https://inta.gob.ar/sites/default/files/inta_ida_agranda.pdf)  (Español)
+
+* Artículo - [Teledetección y bandas mutiespectrales](https://mappinggis.com/2019/05/combinaciones-de-bandas-en-imagenes-de-satelite-landsat-y-sentinel/) 
+
+* Curso - [Google Earth Engine desde Cero](https://yabellini.netlify.app/courses/gee_course/) (Español)
+
+* Tutoriales - [Google Earth Engine (Inglés)](https://developers.google.com/earth-engine/tutorials/tutorials) 
+
+* Sitio Web - [250 ejemplos de uso de rgee](https://csaybar.github.io/rgee-examples/)
