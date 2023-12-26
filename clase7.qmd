@@ -162,7 +162,6 @@ var errorMatrix = validation.errorMatrix('clase', 'classification');
 print('Matriz de Confusión:', errorMatrix);
 print('Exactitud General:', errorMatrix.accuracy());
 print('Indice Kappa:', errorMatrix.kappa());
-
 ```
 
 ::: callout-note
@@ -192,3 +191,18 @@ Usando un proyecto en Posit Cloud con todos los datos y paquetes instalados:
 Duración: \~30 minutos
 
 Seguir las instrucciones del [ejercicio de geocodificacion con Google Earth Engine y Excel Geocoding Tool](/geocodificacion.qmd).
+
+
+## Lecturas sugeridas
+
+* Artículo - [Nongeospatial Metadata for the Ecological Sciences. William et.al. 1997](https://www.researchgate.net/publication/246959596_Nongeospatial_Metadata_for_the_Ecological_Sciences) (inglés) 
+
+* Artículo - [Propuesta para una Infraestructura de Datos Agropecuarios del Instituto Nacional de Tecnología Agropecuaria (INTA)](https://inta.gob.ar/sites/default/files/inta_ida_agranda.pdf)  (Español)
+
+* Artículo - [Teledetección y bandas mutiespectrales](https://mappinggis.com/2019/05/combinaciones-de-bandas-en-imagenes-de-satelite-landsat-y-sentinel/) 
+
+* Curso - [Google Earth Engine desde Cero](https://yabellini.netlify.app/courses/gee_course/) (Español)
+
+* Tutoriales - [Google Earth Engine (Inglés)](https://developers.google.com/earth-engine/tutorials/tutorials) 
+
+* Sitio Web - [250 ejemplos de uso de rgee](https://csaybar.github.io/rgee-examples/)

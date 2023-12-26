@@ -236,11 +236,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje" class="nav-link active" data-scroll-target="#objetivos-de-aprendizaje">Objetivos de Aprendizaje</a></li>
   <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#programacion-en-vivo-live-coding" id="toc-programacion-en-vivo-live-coding" class="nav-link" data-scroll-target="#programacion-en-vivo-live-coding">Programacion en vivo (live coding)</a>
+  <ul class="collapse">
+  <li><a href="#cargamos-los-paquetes" id="toc-cargamos-los-paquetes" class="nav-link" data-scroll-target="#cargamos-los-paquetes">Cargamos los paquetes</a></li>
+  <li><a href="#datos-de-redes-karate" id="toc-datos-de-redes-karate" class="nav-link" data-scroll-target="#datos-de-redes-karate">Datos de redes: Karate</a></li>
+  <li><a href="#visualizando-propiedades-de-la-red" id="toc-visualizando-propiedades-de-la-red" class="nav-link" data-scroll-target="#visualizando-propiedades-de-la-red">Visualizando propiedades de la red</a></li>
+  <li><a href="#mi-primer-gráfico-de-redes" id="toc-mi-primer-gráfico-de-redes" class="nav-link" data-scroll-target="#mi-primer-gráfico-de-redes">Mi primer gráfico de redes</a></li>
+  <li><a href="#graficando-tipo-ggplot2" id="toc-graficando-tipo-ggplot2" class="nav-link" data-scroll-target="#graficando-tipo-ggplot2">Graficando tipo ggplot2</a></li>
+  <li><a href="#calculando-algunas-metricas" id="toc-calculando-algunas-metricas" class="nav-link" data-scroll-target="#calculando-algunas-metricas">Calculando algunas metricas</a></li>
+  </ul></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a>
   <ul class="collapse">
   <li><a href="#instalar-los-paquetes" id="toc-instalar-los-paquetes" class="nav-link" data-scroll-target="#instalar-los-paquetes">1) Instalar los paquetes</a></li>
   <li><a href="#ejercicio-de-redes" id="toc-ejercicio-de-redes" class="nav-link" data-scroll-target="#ejercicio-de-redes">2) Ejercicio de Redes</a></li>
+  <li><a href="#graficando-redes" id="toc-graficando-redes" class="nav-link" data-scroll-target="#graficando-redes">3) Graficando redes</a></li>
   </ul></li>
+  <li><a href="#lecturas-sugeridas" id="toc-lecturas-sugeridas" class="nav-link" data-scroll-target="#lecturas-sugeridas">Lecturas sugeridas</a></li>
   </ul>
 </nav>
     </div>
@@ -284,6 +295,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <iframe src="https://docs.google.com/presentation/d/18wna1o-QzhFiyZ-iVhXIr_TQjJ5UXeeIl5ltm_4QeKk/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 </iframe>
 </section>
+<section id="programacion-en-vivo-live-coding" class="level2">
+<h2 class="anchored" data-anchor-id="programacion-en-vivo-live-coding">Programacion en vivo (live coding)</h2>
+<p>Como siempre iniciamos con un rmarkdown en blanco y vamos completando el codigo. Usamos los subtitulos para separar los conceptos y las diferentes partes del codigo</p>
+<section id="cargamos-los-paquetes" class="level3">
+<h3 class="anchored" data-anchor-id="cargamos-los-paquetes">Cargamos los paquetes</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Paquetes para poder trabajar con redes</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygraph)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Paquete con datos de redes</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraphdata)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Paquete para graficar las redes</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggraph)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="datos-de-redes-karate" class="level3">
+<h3 class="anchored" data-anchor-id="datos-de-redes-karate">Datos de redes: Karate</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"karate"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(karate)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>karate_tidy <span class="ot">&lt;-</span> <span class="fu">as_tbl_graph</span>(karate)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(karate_tidy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="visualizando-propiedades-de-la-red" class="level3">
+<h3 class="anchored" data-anchor-id="visualizando-propiedades-de-la-red">Visualizando propiedades de la red</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>karate_tidy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="mi-primer-gráfico-de-redes" class="level3">
+<h3 class="anchored" data-anchor-id="mi-primer-gráfico-de-redes">Mi primer gráfico de redes</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(karate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="graficando-tipo-ggplot2" class="level3">
+<h3 class="anchored" data-anchor-id="graficando-tipo-ggplot2">Graficando tipo ggplot2</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggraph</span>(karate_tidy, <span class="at">layout =</span> <span class="st">'linear'</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_arc</span>(<span class="at">color =</span> <span class="st">'blue'</span>) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> color), <span class="at">size =</span> <span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> label))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="calculando-algunas-metricas" class="level3">
+<h3 class="anchored" data-anchor-id="calculando-algunas-metricas">Calculando algunas metricas</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Densidad</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">graph.density</span>(karate)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">degree</span>(karate)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(karate)<span class="sc">$</span>deg <span class="ot">&lt;-</span> <span class="fu">degree</span>(karate)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(karate, <span class="at">vertex.size =</span> <span class="fu">V</span>(karate)<span class="sc">$</span>deg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <section id="instalar-los-paquetes" class="level3">
@@ -296,7 +365,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Duracion: 25 minutos</p>
 <p>En grupos, una persona por grupo comparte la pantalla y todes colaboran en la resolución de los ejercicios.</p>
 <ul>
-<li><p>Descarguen el archivo <code>gr_NodesEdges.xlsx</code> del campus.</p></li>
+<li><p>Descarguen el archivo <a href="./clase8_data/gr_NodesEdges.xlsx"><code>gr_NodesEdges.xlsx</code></a> del campus.</p></li>
 <li><p>Creen un nuevo rmarkdown y carguen los paquetes necesarios para trabajar con redes</p></li>
 </ul>
 <section id="creando-la-red" class="level4">
@@ -306,14 +375,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Vean la ayuda de la función tbl_graph y explicar debajo del chunk que hacen los parámetros <code>nodes</code>, <code>edges</code> y <code>direct</code>.</p></li>
 <li><p>Antes de leer los datos chequeen el lugar donde copiaron <code>gr_NodesEdges.xlsx</code> y modifiquen el código para que funcionen correctamente.</p></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leo los archivos de datos</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>gr_Nodes <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"gr_NodesEdges.xlsx"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>gr_Edges <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"gr_NodesEdges.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"Edges"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Creo la red</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>red <span class="ot">&lt;-</span> <span class="fu">tbl_graph</span>(<span class="at">nodes =</span> gr_Nodes, <span class="at">edges =</span> gr_Edges, <span class="at">direct =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leo los archivos de datos</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>gr_Nodes <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"gr_NodesEdges.xlsx"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>gr_Edges <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"gr_NodesEdges.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"Edges"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Creo la red</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>red <span class="ot">&lt;-</span> <span class="fu">tbl_graph</span>(<span class="at">nodes =</span> gr_Nodes, <span class="at">edges =</span> gr_Edges, <span class="at">direct =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="analizando-la-red" class="level4">
 <h4 class="anchored" data-anchor-id="analizando-la-red">Analizando la red</h4>
@@ -323,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Cantidad de vínculos:</li>
 <li>¿La red es dirigida?</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tu codigo aqui</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tu codigo aqui</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="graficando-la-red" class="level4">
 <h4 class="anchored" data-anchor-id="graficando-la-red">Graficando la red</h4>
@@ -334,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>El color de fondo de los nodos en rojo</li>
 <li>El color de los vínculos en verde.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tu codigo aqui</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tu codigo aqui</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="generando-un-reporte" class="level4">
 <h4 class="anchored" data-anchor-id="generando-un-reporte">Generando un reporte</h4>
@@ -342,10 +411,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Hagan knit del documento y compartan el HTML resultante en el foro de consultas del campus.</p></li>
 <li><p>Pongan en el mensaje los integrantes de la sala que generaron este informe.</p></li>
 </ul>
-
-
 </section>
 </section>
+<section id="graficando-redes" class="level3">
+<h3 class="anchored" data-anchor-id="graficando-redes">3) Graficando redes</h3>
+<p>Creen un documento markdown nuevo y sigan estas las instrucciones:</p>
+<section id="cargado-paquetes-y-creando-la-red" class="level4">
+<h4 class="anchored" data-anchor-id="cargado-paquetes-y-creando-la-red">Cargado paquetes y creando la red</h4>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carguen los paquetes necesarios para trabajar con redes</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Lean los archivos de datos: gr_NodesEdges.xlsx</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>gr_Nodes <span class="ot">&lt;-</span> <span class="fu">read_______</span>(<span class="st">"_____________"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>gr_Edges <span class="ot">&lt;-</span> <span class="fu">read_______</span>(<span class="st">"_____________"</span>, <span class="at">sheet =</span> <span class="st">"_______"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Creo la red</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>red <span class="ot">&lt;-</span> <span class="fu">__________</span>(<span class="at">nodes =</span> gr_Nodes, <span class="at">edges =</span> gr_Edges, <span class="at">direct =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="graficando" class="level4">
+<h4 class="anchored" data-anchor-id="graficando">Graficando</h4>
+<p>Esta red representa trenes que viajan entre ciudades.<br>
+Analizar los atributos que tiene la red.</p>
+</section>
+<section id="un-gráfico-sencillo-de-la-red" class="level4">
+<h4 class="anchored" data-anchor-id="un-gráfico-sencillo-de-la-red">Un gráfico sencillo de la red</h4>
+<p>Vamos a generar un gráfico donde se presenten:</p>
+<ul>
+<li>Los nodos con la etiqueta del nombre (ver los atributos para saber donde está el nombre de la ciudad) y un tamaño de 4.</li>
+<li>Los vínculos con color gris y un ancho de 1</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Tu codigo va aqui</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="un-gráfico-con-vínculos-diferentes" class="level4">
+<h4 class="anchored" data-anchor-id="un-gráfico-con-vínculos-diferentes">Un gráfico con vínculos diferentes</h4>
+<p>Vamos a generar un gráfico de la red donde:</p>
+<ul>
+<li><p>el ancho de los vínculos esté dado por el tiempo que se tarda en viajar de un nodo a otro y</p></li>
+<li><p>los nodos tengan como etiqueta el nombre de la ciudad, sean de color verde y de tamaño 5.</p></li>
+</ul>
+<p>Completa el código del chunk para obtener ese gráfico</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggraph</span>(_________) <span class="sc">+</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_edge_diagonal</span>(<span class="fu">aes</span>(___________), <span class="at">________ =</span> <span class="st">"gray65"</span>) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_node_point</span>(_________________) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(____________), <span class="at">repel =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="un-gráfico-con-layout" class="level4">
+<h4 class="anchored" data-anchor-id="un-gráfico-con-layout">Un gráfico con layout</h4>
+<p>Al gráfico anterior agregarle la opción de <code>layout</code> y probar con diferentes opciones, por ejemplo “nicely”, “star”, “grid”, “kk”, “lgl”.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Tu codigo va aqui</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="un-gráfico-con-etiquetas-en-los-nodos" class="level4">
+<h4 class="anchored" data-anchor-id="un-gráfico-con-etiquetas-en-los-nodos">Un gráfico con etiquetas en los nodos</h4>
+<p>Al gráfico anterior, en el <code>geom_edge_diagonal</code>, asiganar el atributo del tiempo que tardan los viajes a la estética de la etiqueta (<code>label</code>) para que los vínculos también estén etiquedatos. Ver los atributos de la red para saber como se llama el atributo que guarda el tiempo de viaje.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Tu codigo va aqui</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Archivos rmarkdown
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para los dos ultimos ejercicios se pueden generar los archivos rmarkdown prellenos con las instrucciones y el codigo.</p>
+<p>Estos archivos se pueden usar en un proyecto Posit Cloud, se puede compaetir un proyecto de RStudio con los archivos markdown y el archivo de datos zipeado o bien solo compatir el archivo .Rmd correspondiente.</p>
+<p>En esa materia estos materiales se subian para su descarga al campus en la clase correspondiente.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="lecturas-sugeridas" class="level2">
+<h2 class="anchored" data-anchor-id="lecturas-sugeridas">Lecturas sugeridas</h2>
+<ul>
+<li><p>Los ejemplos de la programacion en vivo de esta clase se basan en el tutorial <a href="https://github.com/LatinR/presentaciones-LatinR2021#introducción-al-análisis-de-redes-con-r">“Introducción al análisis de redes con R”</a> de La Dra. María Cristina Ramos para LatinR 2021.</p></li>
+<li><p>R Visualizations. David W. Gerbing. ISBN: 978-1-03-224327-6. Chapter 8 Visualize Maps and Networks.</p></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
