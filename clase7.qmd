@@ -32,4 +32,134 @@ editor: visual
 
 </iframe>
 
+## Programacion en vivo (Live Coding)
+
+### Google Earch Engine
+
+Para que los estudiantes puedan codificar junto contigo tienen que tener el usuario de GEE activado.  Vamos a usar el entorno de desarrollo en el navegador de internet: http://code.earthengine.google.com. 
+Antes de iniciar con la programcion en vivo repasar las secciones del entorno de desarrollo.
+Mostrar como cargar un archivo shape al area de assets para que esten disponibles para su uso en los scripts.
+
+
+``` js
+
+var agua: FeatureColecction (57 elements)
+var no_agua: FeatureColecction (76 elements)
+   
+
+// Clasificación supervisada de agua con imágenes S2
+
+//  Seleccionar producto: Indicar el ImageCollection ID
+var producto = ee.ImageCollection('COPERNICUS/S2');
+
+// área de estudio 
+var zona = ee.FeatureCollection("users/yabellini/zona_estudio");
+
+// Filtrar colección
+var producto_filtrado = producto
+    // Por área de estudio. Debe estar cargada el área
+    // en este caso en la variable “zona”
+    .filterBounds( zona )
+
+    //por rango de fechas
+    .filterDate('2017-08-01', '2017-08-31')
+
+    // por cobertura de nubes máxima – Sentinel 2
+    .filterMetadata('CLOUDY_PIXEL_PERCENTAGE','less_than', 40);
+
+
+// Bandas disponibles
+
+// B1 Aerosols 443nm 60m
+// B2 Blue 490nm 10m
+// B3 Green 560nm 10m
+// B4 Red 665nm 10m
+// B5 Red Edge 1 705nm 20m
+// B6 Red Edge 2 740nm 20m
+// B7 Red Edge 3 783nm 20m
+// B8 NIR 842nm 10m
+// B8a Red Edge 4 865nm 20m
+// B9 Water vapor 940nm 60m
+// B10 Cirrus 1375nm 60m
+// B11 SWIR 1 1610nm 20m
+// B12 SWIR 2 2190nm 20m
+
+
+// Definir bandas a seleccionar
+var bandas = ['B8A','B4','B11', 'B2', 'B3', 'B5','B6','B7','B8']
+producto_filtrado = producto_filtrado.select(bandas);
+
+
+// Aplicar reducción de mediana
+var stack1 = producto_filtrado.median();
+
+
+// ver imagen en mapa:
+Map.addLayer(stack1.clip(zona), {bands: ['B8A', 'B11', 'B4'], min: [0,0,0], max:[10000,10000,10000] } , "S2 B8a-B11-B4" );
+
+// centrar en area de estudio - indicar nivel de zoom
+Map.centerObject( zona, 8 );
+
+// Unir muestras por clase en un único FeatureCollection
+var samples = agua.merge( no_agua );
+
+
+var seed = 2015;
+samples = samples.randomColumn('random', seed);
+
+// extraccion de información incluyendo atributos clase y "random"
+var set_datos = stack1.sampleRegions({
+  collection: samples,
+  properties: ['clase','random'],
+  scale: 10
+});
+
+
+// Separación entre Entrenamiento y validación. Identificar umbral de separación
+var training = set_datos.filterMetadata('random', 'not_less_than', 0.6);
+var testing = set_datos.filterMetadata('random', 'less_than', 0.6);
+
+print ("Set de datos entrenamiento", training);
+print ("Set de datos validación", testing);
+
+// Entrenamiento
+var bandas_sel = ['B8A','B4','B11'];
+var trained = ee.Classifier.smileRandomForest(20).train(training, 'clase', bandas_sel);
+
+// clasificación con el modelo entrenado
+var classified = stack1.select(bandas).classify(trained).clip(zona);
+Map.addLayer(classified, {min:0, max:1, palette: ['339820', 'e6f0c2']}, 'Clasificacion');
+//print(classified);
+
+// guardar mapa clasificado como geotiff en google drive
+Export.image.toDrive({
+  image:classified,
+  description: 'clasificacion',
+  scale: 30,
+  region: czonae
+});
+
+//Generación de matriz de confusión y resultados
+var validation = testing.classify(trained);
+var errorMatrix = validation.errorMatrix('clase', 'classification');
+
+print('Matriz de Confusión:', errorMatrix);
+print('Exactitud General:', errorMatrix.accuracy());
+print('Indice Kappa:', errorMatrix.kappa());
+
+
+```
+
 ## Ejercicios
+
+### 1) Sacar un usuario de Google Earth Engine
+
+Necesitamos que te registres en la herramienta para poder utilizarla durante el curso, para ello debes entrar en este link:
+
+https://signup.earthengine.google.com/
+
+
+### 2) Geocodificacion Caso: lectores del Horizonte Agropecuario
+Duración: ~30 minutos
+
+Seguir las instrucciones del [ejercicio de geocodificacion con Google Earth Engine y Excel Geocoding Tool](/geocodificacion.qmd).
