@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.528">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Datos Masivos - Clase 9 - Arrow</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./clase9.html">Clase 9 - Arrow</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Datos Masivos</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/yabellini/gestiondedatos" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 1 - Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 2 - Tipos de Datos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 3 - NOSQL y Text Mining</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 4 - Scrapping y Limpieza de datos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 5 - Text Mining en R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 6 - APIs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 7 - Geotecnologias</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 8 - Redes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase9.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Clase 9 - Arrow</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./clase10.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clase 10 -</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./OpenRefine.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Guía de OpenRefine</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./geocodificacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Guía de Información Georeferenciada</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./libros.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Libros sugeridos</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje" class="nav-link active" data-scroll-target="#objetivos-de-aprendizaje">Objetivos de Aprendizaje</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#programacion-en-vivo-live-coding" id="toc-programacion-en-vivo-live-coding" class="nav-link" data-scroll-target="#programacion-en-vivo-live-coding">Programacion en vivo (live coding)</a>
+  <ul class="collapse">
+  <li><a href="#leyendo-y-escribiendo-datos-con-arrow" id="toc-leyendo-y-escribiendo-datos-con-arrow" class="nav-link" data-scroll-target="#leyendo-y-escribiendo-datos-con-arrow">Leyendo y escribiendo datos con Arrow</a></li>
+  <li><a href="#analizando-datos" id="toc-analizando-datos" class="nav-link" data-scroll-target="#analizando-datos">Analizando datos</a></li>
+  </ul></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a>
+  <ul class="collapse">
+  <li><a href="#instalar-los-paquetes" id="toc-instalar-los-paquetes" class="nav-link" data-scroll-target="#instalar-los-paquetes">1) Instalar los paquetes</a></li>
+  <li><a href="#analizando-un-data-set" id="toc-analizando-un-data-set" class="nav-link" data-scroll-target="#analizando-un-data-set">2) Analizando un data set</a></li>
+  </ul></li>
+  <li><a href="#lecturas-sugeridas" id="toc-lecturas-sugeridas" class="nav-link" data-scroll-target="#lecturas-sugeridas">Lecturas sugeridas</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Clase 9 - Arrow</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="objetivos-de-aprendizaje" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-aprendizaje">Objetivos de Aprendizaje</h2>
+<ul>
+<li><p>Explicar que es Arrow.</p></li>
+<li><p>Identificar las diferentes formas de representar los datos en memoria.</p></li>
+<li><p>Explicar el formato parquet.</p></li>
+<li><p>Ejercitar la lectura, escritura y analisis de datos usando Arrow y el formato parquet.</p></li>
+</ul>
+</section>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<iframe src="https://docs.google.com/presentation/d/1XhrOZChN7YYLsbgcehiIItwbCEcBOSI-HaVlx0765fM/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+</iframe>
+</section>
+<section id="programacion-en-vivo-live-coding" class="level2">
+<h2 class="anchored" data-anchor-id="programacion-en-vivo-live-coding">Programacion en vivo (live coding)</h2>
+<p>Como siempre iniciamos con un rmarkdown en blanco y vamos completando el codigo. Usamos los subtitulos para separar los conceptos y las diferentes partes del codigo.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Conjunto de datos de ejemplo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En este caso el livecondig se hace con un conjunto de datos del padron electoral argentino del 2011 al que Yanina tuvo acceso por ser parte de Open Data Cordoba. El mismo se usa como un ejemplo local de grandes datos, pero no se puede publicar.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplos de lectura de datos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Este live conding es una adaptacion de los ejemplos mostrados por Danielle Navarro en su keynote de LatinR 2021.</p>
+</div>
+</div>
+<section id="leyendo-y-escribiendo-datos-con-arrow" class="level3">
+<h3 class="anchored" data-anchor-id="leyendo-y-escribiendo-datos-con-arrow">Leyendo y escribiendo datos con Arrow</h3>
+<section id="cargo-los-paquetes-necesarios" class="level4">
+<h4 class="anchored" data-anchor-id="cargo-los-paquetes-necesarios">Cargo los paquetes necesarios</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow) </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tictoc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este ejemplo muestra cuanto tarda en cargar un CSV con mas de 26 millones de filas.</p>
+</section>
+<section id="leer-un-csv-con-read_csv" class="level4">
+<h4 class="anchored" data-anchor-id="leer-un-csv-con-read_csv">Leer un CSV con read_csv</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>padron_2011 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"clase9_data/padron-2011.csv"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"ISO-8859-1"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Rows<span class="sc">:</span> <span class="dv">26</span>,<span class="dv">694</span>,<span class="dv">811</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>Columns<span class="sc">:</span> <span class="dv">8</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> provincia      <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>…</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> documento      <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">1194</span>..., <span class="dv">723</span>..., <span class="dv">176</span>..., <span class="dv">22</span>..., <span class="dv">354</span>...., <span class="dv">297</span>...., <span class="dv">2131</span>..., <span class="dv">1448</span>....., <span class="dv">3397</span>....., <span class="dv">20</span>....., <span class="dv">1878</span>...., <span class="dv">175</span>....., <span class="dv">2535034</span>…</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> nacimiento     <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">1955</span>, <span class="dv">1934</span>, <span class="dv">1966</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1989</span>, <span class="dv">1968</span>, <span class="dv">0</span>, <span class="dv">1966</span>, <span class="dv">1976</span>, <span class="dv">0</span>, <span class="dv">1967</span>, <span class="dv">0</span>, <span class="dv">1949</span>, <span class="dv">1980</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1938</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, …</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> nombre         <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"FRANKLIN JESUS"</span>, <span class="st">"GABRIEL"</span>, <span class="st">"GABRIEL ROQUE"</span>, <span class="st">"MARIA ARACELI"</span>, <span class="st">"ANA LAURA"</span>, <span class="st">"ANDREA LORENA"</span>, <span class="st">"MONICA MARCELA"</span>, <span class="st">"GRACIELA ELIZA…</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="st">$ apellido       &lt;chr&gt; "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN CABRERA<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABBOUDI<span class="st">", "</span>ABDENUR<span class="st">", "</span>ABELEND…</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> ocupacion      <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"EMPL"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"DOCENTE"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"A/C"</span>, <span class="st">"ABOG"</span>, <span class="st">"MEDICO"</span>, <span class="st">"ESTUD"</span>, <span class="st">"…</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="st">$ tipo_documento &lt;chr&gt; "</span>DNI<span class="st">", "</span>L<span class="st">", "</span>DNI<span class="sc">-</span>EA<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="sc">-</span>EA<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNIC<span class="st">", "</span>L<span class="st">", "</span>…</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> sexo           <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"…</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="st">20.7 sec elapsed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="leer-el-mismo-csv-con-arrow" class="level4">
+<h4 class="anchored" data-anchor-id="leer-el-mismo-csv-con-arrow">Leer el mismo CSV con Arrow</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>padron_2011_arrow<span class="ot">&lt;-</span> <span class="fu">read_csv_arrow</span>(<span class="st">"clase9_data/padron-2011.csv"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">read_options =</span> <span class="fu">csv_read_options</span>(<span class="at">encoding =</span> <span class="st">"ISO-8859-1"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Rows<span class="sc">:</span> <span class="dv">26</span>,<span class="dv">694</span>,<span class="dv">811</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>Columns<span class="sc">:</span> <span class="dv">8</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> provincia      <span class="sc">&lt;</span>int<span class="sc">&gt;</span> <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>…</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> documento      <span class="sc">&lt;</span>int<span class="sc">&gt;</span> <span class="dv">119</span>..., <span class="dv">723</span>..., <span class="dv">176</span>..., <span class="dv">221</span>..., <span class="dv">35</span>..., <span class="dv">297</span>..., <span class="dv">21</span>...., <span class="dv">14</span>...., <span class="dv">33</span>...., <span class="dv">20</span>..., <span class="dv">187</span>..., <span class="dv">17</span>...., <span class="dv">25</span>...…</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> nacimiento     <span class="sc">&lt;</span>int<span class="sc">&gt;</span> <span class="dv">1955</span>, <span class="dv">1934</span>, <span class="dv">1966</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1989</span>, <span class="dv">1968</span>, <span class="dv">0</span>, <span class="dv">1966</span>, <span class="dv">1976</span>, <span class="dv">0</span>, <span class="dv">1967</span>, <span class="dv">0</span>, <span class="dv">1949</span>, <span class="dv">1980</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1938</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, …</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> nombre         <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"FRANKLIN JESUS"</span>, <span class="st">"GABRIEL"</span>, <span class="st">"GABRIEL ROQUE"</span>, <span class="st">"MARIA ARACELI"</span>, <span class="st">"ANA LAURA"</span>, <span class="st">"ANDREA LORENA"</span>, <span class="st">"MONICA MARCELA"</span>, <span class="st">"GRACIELA ELIZA…</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">$ apellido       &lt;chr&gt; "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN CABRERA<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABBOUDI<span class="st">", "</span>ABDENUR<span class="st">", "</span>ABELEND…</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> ocupacion      <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"EMPL"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"DOCENTE"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"A/C"</span>, <span class="st">"ABOG"</span>, <span class="st">"MEDICO"</span>, <span class="st">"ESTUD"</span>, <span class="st">"…</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">$ tipo_documento &lt;chr&gt; "</span>DNI<span class="st">", "</span>L<span class="st">", "</span>DNI<span class="sc">-</span>EA<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="sc">-</span>EA<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNIC<span class="st">", "</span>L<span class="st">", "</span>…</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> sexo           <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"…</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">15.327 sec elapsed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ahora-leemos-el-mismo-csv-con-arrow-y-con-el-formato-de-arrow" class="level4">
+<h4 class="anchored" data-anchor-id="ahora-leemos-el-mismo-csv-con-arrow-y-con-el-formato-de-arrow">Ahora leemos el mismo CSV con Arrow y con el formato de Arrow</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>padron_2011_arrow <span class="ot">&lt;-</span> <span class="fu">read_csv_arrow</span>(<span class="st">"clase9_data/padron-2011.csv"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">read_options =</span> <span class="fu">csv_read_options</span>(<span class="at">encoding =</span> <span class="st">"ISO-8859-1"</span>), </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">as_data_frame =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>Table</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="dv">26</span>,<span class="dv">694</span>,<span class="dv">811</span> rows x <span class="dv">8</span> columns</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> provincia       <span class="sc">&lt;</span>int64<span class="sc">&gt;</span> <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">1</span>…</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> documento       <span class="sc">&lt;</span>int64<span class="sc">&gt;</span> <span class="dv">11944140</span>, <span class="dv">7235680</span>, <span class="dv">17633570</span>, <span class="dv">22146481</span>, <span class="dv">35477705</span>, <span class="dv">29737895</span>, <span class="dv">21310234</span>, <span class="dv">14489916</span>, <span class="dv">33970306</span>, <span class="dv">20125003</span>, <span class="dv">18785721</span>, <span class="dv">17581272</span>, <span class="dv">253503</span>…</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> nacimiento      <span class="sc">&lt;</span>int64<span class="sc">&gt;</span> <span class="dv">1955</span>, <span class="dv">1934</span>, <span class="dv">1966</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1989</span>, <span class="dv">1968</span>, <span class="dv">0</span>, <span class="dv">1966</span>, <span class="dv">1976</span>, <span class="dv">0</span>, <span class="dv">1967</span>, <span class="dv">0</span>, <span class="dv">1949</span>, <span class="dv">1980</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1938</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,…</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> nombre         <span class="sc">&lt;</span>string<span class="sc">&gt;</span> <span class="st">"FRANKLIN JESUS"</span>, <span class="st">"GABRIEL"</span>, <span class="st">"GABRIEL ROQUE"</span>, <span class="st">"MARIA ARACELI"</span>, <span class="st">"ANA LAURA"</span>, <span class="st">"ANDREA LORENA"</span>, <span class="st">"MONICA MARCELA"</span>, <span class="st">"GRACIELA ELIZ…</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="st">$ apellido       &lt;string&gt; "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN CABRERA<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABBOUDI<span class="st">", "</span>ABDENUR<span class="st">", "</span>ABELEN…</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> ocupacion      <span class="sc">&lt;</span>string<span class="sc">&gt;</span> <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"EMPL"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"DOCENTE"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"A/C"</span>, <span class="st">"ABOG"</span>, <span class="st">"MEDICO"</span>, <span class="st">"ESTUD"</span>, …</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> tipo_documento <span class="sc">&lt;</span>string<span class="sc">&gt;</span> <span class="st">"DNI"</span>, <span class="st">"L"</span>, <span class="st">"DNI-EA"</span>, <span class="st">"DNI"</span>, <span class="st">"DNI"</span>, <span class="st">"DNI"</span>, <span class="st">"DNI"</span>, <span class="st">"DNID"</span>, <span class="st">"DNI"</span>, <span class="st">"DNID"</span>, <span class="st">"DNI"</span>, <span class="st">"DNID"</span>, <span class="st">"DNI-EA"</span>, <span class="st">"DNI"</span>, <span class="st">"DNI"</span>, <span class="st">"DNIC"</span>, <span class="st">"L"</span>, …</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> sexo           <span class="sc">&lt;</span>string<span class="sc">&gt;</span> <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, …</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fl">7.263</span> sec elapsed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="guardar-los-datos-con-el-formato-parquet" class="level4">
+<h4 class="anchored" data-anchor-id="guardar-los-datos-con-el-formato-parquet">Guardar los datos con el formato parquet</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>padron_2011_arrow <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_dataset</span>(<span class="at">path =</span> <span class="st">"clase9_data/padron-2011"</span>, <span class="at">format =</span> <span class="st">"parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Luego de ejecutar este codigo mostrar que se genera una carpeta que contiene el archivo</p>
+</section>
+<section id="leer-los-datos-desde-un-archivo-parquet-a-un-dataframe" class="level4">
+<h4 class="anchored" data-anchor-id="leer-los-datos-desde-un-archivo-parquet-a-un-dataframe">Leer los datos desde un archivo parquet a un dataframe</h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>padron_2011_parquet <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">"clase9_data/padron-2011/part-0.parquet"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>Rows<span class="sc">:</span> <span class="dv">26</span>,<span class="dv">694</span>,<span class="dv">811</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>Columns<span class="sc">:</span> <span class="dv">8</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> provincia      <span class="sc">&lt;</span>int<span class="sc">&gt;</span> <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>…</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> documento      <span class="sc">&lt;</span>int<span class="sc">&gt;</span> <span class="dv">11</span>..., <span class="dv">72</span>..., <span class="dv">17</span>..., <span class="dv">22</span>..., <span class="dv">35</span>..., <span class="dv">29</span>..., <span class="dv">21</span>...., <span class="dv">14</span>...., <span class="dv">33</span>..., <span class="dv">20</span>..., <span class="dv">18</span>..., <span class="dv">17</span>..., <span class="dv">25</span>....…</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> nacimiento     <span class="sc">&lt;</span>int<span class="sc">&gt;</span> <span class="dv">1955</span>, <span class="dv">1934</span>, <span class="dv">1966</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1989</span>, <span class="dv">1968</span>, <span class="dv">0</span>, <span class="dv">1966</span>, <span class="dv">1976</span>, <span class="dv">0</span>, <span class="dv">1967</span>, <span class="dv">0</span>, <span class="dv">1949</span>, <span class="dv">1980</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1938</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, …</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> nombre         <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"FRANKLIN JESUS"</span>, <span class="st">"GABRIEL"</span>, <span class="st">"GABRIEL ROQUE"</span>, <span class="st">"MARIA ARACELI"</span>, <span class="st">"ANA LAURA"</span>, <span class="st">"ANDREA LORENA"</span>, <span class="st">"MONICA MARCELA"</span>, <span class="st">"GRACIELA ELIZA…</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="st">$ apellido       &lt;chr&gt; "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN CABRERA<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABBOUDI<span class="st">", "</span>ABDENUR<span class="st">", "</span>ABELEND…</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> ocupacion      <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"EMPL"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"DOCENTE"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"A/C"</span>, <span class="st">"ABOG"</span>, <span class="st">"MEDICO"</span>, <span class="st">"ESTUD"</span>, <span class="st">"…</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="st">$ tipo_documento &lt;chr&gt; "</span>DNI<span class="st">", "</span>L<span class="st">", "</span>DNI<span class="sc">-</span>EA<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="sc">-</span>EA<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNIC<span class="st">", "</span>L<span class="st">", "</span>…</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> sexo           <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"…</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="st">1.292 sec elapsed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="leer-el-formato-parquet-a-una-tabla-arrow" class="level4">
+<h4 class="anchored" data-anchor-id="leer-el-formato-parquet-a-una-tabla-arrow">Leer el formato parquet a una tabla Arrow</h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>padron_2011_parquet <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">"clase9_data/padron-2011/part-0.parquet"</span>, <span class="at">as_data_frame =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>Rows<span class="sc">:</span> <span class="dv">26</span>,<span class="dv">694</span>,<span class="dv">811</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>Columns<span class="sc">:</span> <span class="dv">8</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> provincia      <span class="sc">&lt;</span>int<span class="sc">&gt;</span> <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>, <span class="dv">17</span>…</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> documento      <span class="sc">&lt;</span>int<span class="sc">&gt;</span> <span class="dv">11</span>..., <span class="dv">72</span>..., <span class="dv">17</span>..., <span class="dv">22</span>..., <span class="dv">35</span>..., <span class="dv">29</span>..., <span class="dv">21</span>...., <span class="dv">14</span>...., <span class="dv">33</span>..., <span class="dv">20</span>..., <span class="dv">18</span>..., <span class="dv">17</span>..., <span class="dv">25</span>....…</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> nacimiento     <span class="sc">&lt;</span>int<span class="sc">&gt;</span> <span class="dv">1955</span>, <span class="dv">1934</span>, <span class="dv">1966</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1989</span>, <span class="dv">1968</span>, <span class="dv">0</span>, <span class="dv">1966</span>, <span class="dv">1976</span>, <span class="dv">0</span>, <span class="dv">1967</span>, <span class="dv">0</span>, <span class="dv">1949</span>, <span class="dv">1980</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1938</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, …</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> nombre         <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"FRANKLIN JESUS"</span>, <span class="st">"GABRIEL"</span>, <span class="st">"GABRIEL ROQUE"</span>, <span class="st">"MARIA ARACELI"</span>, <span class="st">"ANA LAURA"</span>, <span class="st">"ANDREA LORENA"</span>, <span class="st">"MONICA MARCELA"</span>, <span class="st">"GRACIELA ELIZA…</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="st">$ apellido       &lt;chr&gt; "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABALOS<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN CABRERA<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABAN<span class="st">", "</span>ABBOUDI<span class="st">", "</span>ABDENUR<span class="st">", "</span>ABELEND…</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> ocupacion      <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"EMPL"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"DOCENTE"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"ESTUD"</span>, <span class="st">"A/C"</span>, <span class="st">"ABOG"</span>, <span class="st">"MEDICO"</span>, <span class="st">"ESTUD"</span>, <span class="st">"…</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="st">$ tipo_documento &lt;chr&gt; "</span>DNI<span class="st">", "</span>L<span class="st">", "</span>DNI<span class="sc">-</span>EA<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="st">", "</span>DNID<span class="st">", "</span>DNI<span class="sc">-</span>EA<span class="st">", "</span>DNI<span class="st">", "</span>DNI<span class="st">", "</span>DNIC<span class="st">", "</span>L<span class="st">", "</span>…</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> sexo           <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"…</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="st">1.184 sec elapsed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="analizando-datos" class="level3">
+<h3 class="anchored" data-anchor-id="analizando-datos">Analizando datos</h3>
+<p>Ahora vamos a utilizar dplyr sintaxis para analizar los datos</p>
+<section id="ver-cuales-son-los-nombres-mas-usados" class="level4">
+<h4 class="anchored" data-anchor-id="ver-cuales-son-los-nombres-mas-usados">Ver cuales son los nombres mas usados</h4>
+<p>Usamos count para ver cuales son los nombres mas usados. Vemos los primeros 10. Se puede jugar buscando el nombre de los estudiantes.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="ot">&lt;-</span> padron_2011 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(nombre)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(nombre)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> JUAN CARLOS <span class="dv">181835</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> MIGUEL ANGEL <span class="dv">154287</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> CARLOS ALBERTO <span class="dv">117332</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> JOSE LUIS <span class="dv">99595</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> ANA MARIA <span class="dv">95920</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> MARIA CRISTINA <span class="dv">76394</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> LUIS ALBERTO <span class="dv">73048</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span> MARIA DEL CARMEN <span class="dv">65597</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> STELLA MARIS <span class="dv">54061</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> JUAN JOSE <span class="dv">53647</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="analizar-las-ocupaciones-por-provincia" class="level4">
+<h4 class="anchored" data-anchor-id="analizar-las-ocupaciones-por-provincia">Analizar las ocupaciones por provincia</h4>
+<p>Ademas de filtrar se puede almacenar los resultados en un dataset y analizar todos los resultados. Es interesante que hay muchos oficios detallados pero no tantas profesiones universitarias.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>padron_2011 <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(provincia <span class="sc">==</span> <span class="dv">11</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ocupacion)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> A.DE C <span class="dv">45383</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> ESTUD. <span class="dv">44341</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> EMPL. <span class="dv">31665</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="analizar-otras-caracteristicas" class="level4">
+<h4 class="anchored" data-anchor-id="analizar-otras-caracteristicas">Analizar otras caracteristicas</h4>
+<p>Aqui se pregunta a les estudiantes que les gustaria analizar y se generan consultas de acuerdo a sus propuestas. algunas ideas que surgen:</p>
+<ul>
+<li>Mujeres y varones por provincia</li>
+<li>El apellido mas comun</li>
+<li>Cuanto dato faltante hay</li>
+<li>El nombre mas comun de varon y de mujer</li>
+<li>Grafico de cantidad de votantes por fecha de nacimiento</li>
+<li>Tipos de documentos diferentes</li>
+</ul>
+<p>Discusiones sobre limpieza de datos, por ejemplo de la ocupacion para que los agrupamientos y calculos sean mas exactos.</p>
+</section>
+</section>
+</section>
+<section id="ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<section id="instalar-los-paquetes" class="level3">
+<h3 class="anchored" data-anchor-id="instalar-los-paquetes">1) Instalar los paquetes</h3>
+<p>Instalar los siguientes paquetes para poder realizar los live coding y los ejercicios.</p>
+<ol type="1">
+<li>{arrow}</li>
+<li>{tictoc}</li>
+</ol>
+</section>
+<section id="analizando-un-data-set" class="level3">
+<h3 class="anchored" data-anchor-id="analizando-un-data-set">2) Analizando un data set</h3>
+<p>En grupos de trabajo, resolver el siguiente ejercicio.</p>
+<ol type="1">
+<li>Leer el siguiente conjunto de datos de viajes de taxi de Nueva Yor correspondientes a Junio de 2019. Tengan paciencia que puede tardar un rato en cargar.</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="at">file =</span> <span class="st">"s3://voltrondata-labs-datasets/nyc-taxi/year=2019/month=6/part-0.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><p>Ver la estructura del conjunto de datos.</p></li>
+<li><p>Realizar una consulta que permita saber cuanto dinero total (total_amount) cobraron los taxis con cada tipo de pago (payment_type).</p></li>
+<li><p>Realizar una consulta que devuelva el promedio de pasajeros y de la ditancia de todos los viajes realizados.</p></li>
+</ol>
+</section>
+</section>
+<section id="lecturas-sugeridas" class="level2">
+<h2 class="anchored" data-anchor-id="lecturas-sugeridas">Lecturas sugeridas</h2>
+<ul>
+<li><p><a href="https://djnavarro.net/slides-arrow-latinr-2022/">La charla de Danielle Navarro para LatinR 2022.</a> - En ingles</p></li>
+<li><p><a href="https://parquet.apache.org/">Parquet File Format</a></p></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
