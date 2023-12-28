@@ -61,7 +61,7 @@ La materia se llevará a cabo en clases sincrónicas e interactivas que incluyen
 
 **Requisitos de aprobación:** para aprobar la cursada será necesario entregar todos los trabajos prácticos que se presentan en las clases y los que se solicitan en el campus.
 
-Ver la [agenda](schedule.html) de la materia con el cronograma de clases.
+Ver la agenda de la materia con el cronograma de clases.
 
 ## Presentación de la materia
 
@@ -70,4 +70,4 @@ Ver la [agenda](schedule.html) de la materia con el cronograma de clases.
 
 ## Citar como 
 
-Yanina Bellini Saibene. 
+Yanina Bellini Saibene (2023). Introducción al manejo de grandes volúmenes de datos y datos no estructurados.  
