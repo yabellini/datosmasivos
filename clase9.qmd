@@ -1,0 +1,264 @@
+---
+title: "Clase 9 - Arrow"
+---
+
+## Objetivos de Aprendizaje
+
+-   Explicar que es Arrow.
+
+-   Identificar las diferentes formas de representar los datos en memoria.
+
+-   Explicar el formato parquet.
+
+-   Ejercitar la lectura, escritura y analisis de datos usando Arrow y el formato parquet.
+
+## Slides
+
+<iframe src="https://docs.google.com/presentation/d/1XhrOZChN7YYLsbgcehiIItwbCEcBOSI-HaVlx0765fM/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="760" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+
+</iframe>
+
+## Programacion en vivo (live coding)
+
+Como siempre iniciamos con un rmarkdown en blanco y vamos completando el codigo. Usamos los subtitulos para separar los conceptos y las diferentes partes del codigo.
+
+::: callout-warning
+## Conjunto de datos de ejemplo
+
+En este caso el livecondig se hace con un conjunto de datos del padron electoral argentino del 2011 al que Yanina tuvo acceso por ser parte de Open Data Cordoba. El mismo se usa como un ejemplo local de grandes datos, pero no se puede publicar.
+:::
+
+::: callout-note
+## Ejemplos de lectura de datos
+
+Este live conding es una adaptacion de los ejemplos mostrados por Danielle Navarro en su keynote de LatinR 2021. 
+
+:::
+
+### Leyendo y escribiendo datos con Arrow
+
+#### Cargo los paquetes necesarios
+
+``` r
+library(tidyverse) 
+library(arrow) 
+library(tictoc)
+```
+
+Este ejemplo muestra cuanto tarda en cargar un CSV con mas de 26 millones de filas.
+
+
+#### Leer un CSV con read_csv
+``` r
+
+tic()
+padron_2011 <- read_csv("clase9_data/padron-2011.csv",
+                        locale = locale(encoding = "ISO-8859-1")) %>%
+  glimpse()
+toc()
+
+Rows: 26,694,811
+Columns: 8
+$ provincia      <dbl> 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17…
+$ documento      <dbl> 1194..., 723..., 176..., 22..., 354...., 297...., 2131..., 1448....., 3397....., 20....., 1878...., 175....., 2535034…
+$ nacimiento     <dbl> 1955, 1934, 1966, 0, 0, 0, 0, 0, 1989, 1968, 0, 1966, 1976, 0, 1967, 0, 1949, 1980, 0, 0, 0, 0, 0, 0, 0, 0, 1938, 0, 0, 0, 0, …
+$ nombre         <chr> "FRANKLIN JESUS", "GABRIEL", "GABRIEL ROQUE", "MARIA ARACELI", "ANA LAURA", "ANDREA LORENA", "MONICA MARCELA", "GRACIELA ELIZA…
+$ apellido       <chr> "ABALOS", "ABALOS", "ABALOS", "ABALOS", "ABAN", "ABAN", "ABAN CABRERA", "ABAN", "ABAN", "ABAN", "ABBOUDI", "ABDENUR", "ABELEND…
+$ ocupacion      <chr> "ESTUD", "ESTUD", "EMPL", "ESTUD", "ESTUD", "ESTUD", "DOCENTE", "ESTUD", "ESTUD", "ESTUD", "A/C", "ABOG", "MEDICO", "ESTUD", "…
+$ tipo_documento <chr> "DNI", "L", "DNI-EA", "DNI", "DNI", "DNI", "DNI", "DNID", "DNI", "DNID", "DNI", "DNID", "DNI-EA", "DNI", "DNI", "DNIC", "L", "…
+$ sexo           <chr> "M", "M", "M", "F", "F", "F", "F", "F", "M", "M", "F", "M", "M", "F", "M", "F", "M", "M", "F", "F", "F", "F", "F", "F", "F", "…
+
+20.7 sec elapsed
+```
+
+#### Leer el mismo CSV con Arrow
+
+``` r 
+tic()
+padron_2011_arrow<- read_csv_arrow("clase9_data/padron-2011.csv",
+                                   read_options = csv_read_options(encoding = "ISO-8859-1")) %>%
+  glimpse()
+toc()
+
+Rows: 26,694,811
+Columns: 8
+$ provincia      <int> 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17…
+$ documento      <int> 119..., 723..., 176..., 221..., 35..., 297..., 21...., 14...., 33...., 20..., 187..., 17...., 25...…
+$ nacimiento     <int> 1955, 1934, 1966, 0, 0, 0, 0, 0, 1989, 1968, 0, 1966, 1976, 0, 1967, 0, 1949, 1980, 0, 0, 0, 0, 0, 0, 0, 0, 1938, 0, 0, 0, 0, …
+$ nombre         <chr> "FRANKLIN JESUS", "GABRIEL", "GABRIEL ROQUE", "MARIA ARACELI", "ANA LAURA", "ANDREA LORENA", "MONICA MARCELA", "GRACIELA ELIZA…
+$ apellido       <chr> "ABALOS", "ABALOS", "ABALOS", "ABALOS", "ABAN", "ABAN", "ABAN CABRERA", "ABAN", "ABAN", "ABAN", "ABBOUDI", "ABDENUR", "ABELEND…
+$ ocupacion      <chr> "ESTUD", "ESTUD", "EMPL", "ESTUD", "ESTUD", "ESTUD", "DOCENTE", "ESTUD", "ESTUD", "ESTUD", "A/C", "ABOG", "MEDICO", "ESTUD", "…
+$ tipo_documento <chr> "DNI", "L", "DNI-EA", "DNI", "DNI", "DNI", "DNI", "DNID", "DNI", "DNID", "DNI", "DNID", "DNI-EA", "DNI", "DNI", "DNIC", "L", "…
+$ sexo           <chr> "M", "M", "M", "F", "F", "F", "F", "F", "M", "M", "F", "M", "M", "F", "M", "F", "M", "M", "F", "F", "F", "F", "F", "F", "F", "…
+
+15.327 sec elapsed
+```
+
+#### Ahora leemos el mismo CSV con Arrow y con el formato de Arrow
+
+``` r
+
+tic()
+padron_2011_arrow <- read_csv_arrow("clase9_data/padron-2011.csv",
+                                    read_options = csv_read_options(encoding = "ISO-8859-1"), 
+                                    as_data_frame = FALSE) %>%
+  glimpse()
+toc()
+
+Table
+26,694,811 rows x 8 columns
+$ provincia       <int64> 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 1…
+$ documento       <int64> 11944140, 7235680, 17633570, 22146481, 35477705, 29737895, 21310234, 14489916, 33970306, 20125003, 18785721, 17581272, 253503…
+$ nacimiento      <int64> 1955, 1934, 1966, 0, 0, 0, 0, 0, 1989, 1968, 0, 1966, 1976, 0, 1967, 0, 1949, 1980, 0, 0, 0, 0, 0, 0, 0, 0, 1938, 0, 0, 0, 0,…
+$ nombre         <string> "FRANKLIN JESUS", "GABRIEL", "GABRIEL ROQUE", "MARIA ARACELI", "ANA LAURA", "ANDREA LORENA", "MONICA MARCELA", "GRACIELA ELIZ…
+$ apellido       <string> "ABALOS", "ABALOS", "ABALOS", "ABALOS", "ABAN", "ABAN", "ABAN CABRERA", "ABAN", "ABAN", "ABAN", "ABBOUDI", "ABDENUR", "ABELEN…
+$ ocupacion      <string> "ESTUD", "ESTUD", "EMPL", "ESTUD", "ESTUD", "ESTUD", "DOCENTE", "ESTUD", "ESTUD", "ESTUD", "A/C", "ABOG", "MEDICO", "ESTUD", …
+$ tipo_documento <string> "DNI", "L", "DNI-EA", "DNI", "DNI", "DNI", "DNI", "DNID", "DNI", "DNID", "DNI", "DNID", "DNI-EA", "DNI", "DNI", "DNIC", "L", …
+$ sexo           <string> "M", "M", "M", "F", "F", "F", "F", "F", "M", "M", "F", "M", "M", "F", "M", "F", "M", "M", "F", "F", "F", "F", "F", "F", "F", …
+
+7.263 sec elapsed
+
+```
+
+#### Guardar los datos con el formato parquet
+
+``` r
+padron_2011_arrow %>%
+  write_dataset(path = "clase9_data/padron-2011", format = "parquet")
+```
+
+Luego de ejecutar este codigo mostrar que se genera una carpeta que contiene el archivo
+
+
+#### Leer los datos desde un archivo parquet a un dataframe
+
+``` r
+tic()
+padron_2011_parquet <- read_parquet("clase9_data/padron-2011/part-0.parquet") %>%
+  glimpse()
+toc()
+
+Rows: 26,694,811
+Columns: 8
+$ provincia      <int> 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17…
+$ documento      <int> 11..., 72..., 17..., 22..., 35..., 29..., 21...., 14...., 33..., 20..., 18..., 17..., 25....…
+$ nacimiento     <int> 1955, 1934, 1966, 0, 0, 0, 0, 0, 1989, 1968, 0, 1966, 1976, 0, 1967, 0, 1949, 1980, 0, 0, 0, 0, 0, 0, 0, 0, 1938, 0, 0, 0, 0, …
+$ nombre         <chr> "FRANKLIN JESUS", "GABRIEL", "GABRIEL ROQUE", "MARIA ARACELI", "ANA LAURA", "ANDREA LORENA", "MONICA MARCELA", "GRACIELA ELIZA…
+$ apellido       <chr> "ABALOS", "ABALOS", "ABALOS", "ABALOS", "ABAN", "ABAN", "ABAN CABRERA", "ABAN", "ABAN", "ABAN", "ABBOUDI", "ABDENUR", "ABELEND…
+$ ocupacion      <chr> "ESTUD", "ESTUD", "EMPL", "ESTUD", "ESTUD", "ESTUD", "DOCENTE", "ESTUD", "ESTUD", "ESTUD", "A/C", "ABOG", "MEDICO", "ESTUD", "…
+$ tipo_documento <chr> "DNI", "L", "DNI-EA", "DNI", "DNI", "DNI", "DNI", "DNID", "DNI", "DNID", "DNI", "DNID", "DNI-EA", "DNI", "DNI", "DNIC", "L", "…
+$ sexo           <chr> "M", "M", "M", "F", "F", "F", "F", "F", "M", "M", "F", "M", "M", "F", "M", "F", "M", "M", "F", "F", "F", "F", "F", "F", "F", "…
+
+1.292 sec elapsed
+```
+
+#### Leer el formato parquet a una tabla Arrow
+
+``` r
+tic()
+padron_2011_parquet <- read_parquet("clase9_data/padron-2011/part-0.parquet", as_data_frame = FALSE) %>%
+  glimpse()
+toc()
+
+Rows: 26,694,811
+Columns: 8
+$ provincia      <int> 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17…
+$ documento      <int> 11..., 72..., 17..., 22..., 35..., 29..., 21...., 14...., 33..., 20..., 18..., 17..., 25....…
+$ nacimiento     <int> 1955, 1934, 1966, 0, 0, 0, 0, 0, 1989, 1968, 0, 1966, 1976, 0, 1967, 0, 1949, 1980, 0, 0, 0, 0, 0, 0, 0, 0, 1938, 0, 0, 0, 0, …
+$ nombre         <chr> "FRANKLIN JESUS", "GABRIEL", "GABRIEL ROQUE", "MARIA ARACELI", "ANA LAURA", "ANDREA LORENA", "MONICA MARCELA", "GRACIELA ELIZA…
+$ apellido       <chr> "ABALOS", "ABALOS", "ABALOS", "ABALOS", "ABAN", "ABAN", "ABAN CABRERA", "ABAN", "ABAN", "ABAN", "ABBOUDI", "ABDENUR", "ABELEND…
+$ ocupacion      <chr> "ESTUD", "ESTUD", "EMPL", "ESTUD", "ESTUD", "ESTUD", "DOCENTE", "ESTUD", "ESTUD", "ESTUD", "A/C", "ABOG", "MEDICO", "ESTUD", "…
+$ tipo_documento <chr> "DNI", "L", "DNI-EA", "DNI", "DNI", "DNI", "DNI", "DNID", "DNI", "DNID", "DNI", "DNID", "DNI-EA", "DNI", "DNI", "DNIC", "L", "…
+$ sexo           <chr> "M", "M", "M", "F", "F", "F", "F", "F", "M", "M", "F", "M", "M", "F", "M", "F", "M", "M", "F", "F", "F", "F", "F", "F", "F", "…
+
+1.184 sec elapsed
+```
+
+### Analizando datos
+
+Ahora vamos a utilizar dplyr sintaxis para analizar los datos
+
+#### Ver cuales son los nombres mas usados
+
+Usamos count para ver cuales son los nombres mas usados. Vemos los primeros 10.  Se puede jugar buscando el nombre de los estudiantes.
+
+```r
+nombre <- padron_2011 %>% 
+  count(nombre)
+  
+View(nombre)
+
+1 JUAN CARLOS 181835
+2 MIGUEL ANGEL 154287
+3 CARLOS ALBERTO 117332
+4 JOSE LUIS 99595
+5 ANA MARIA 95920
+6 MARIA CRISTINA 76394
+7 LUIS ALBERTO 73048
+8 MARIA DEL CARMEN 65597
+9 STELLA MARIS 54061
+10 JUAN JOSE 53647
+
+```
+
+#### Analizar las ocupaciones por provincia
+
+Ademas de filtrar se puede almacenar los resultados en un dataset y analizar todos los resultados.  Es interesante que hay muchos oficios detallados pero no tantas profesiones universitarias. 
+
+``` r
+
+padron_2011 %>%
+  filter(provincia == 11) %>% 
+  count(ocupacion)
+
+1 A.DE C 45383
+2 ESTUD. 44341
+3 EMPL. 31665
+
+```
+
+#### Analizar otras caracteristicas
+
+Aqui se pregunta a les estudiantes que les gustaria analizar y se generan consultas de acuerdo a sus propuestas.
+algunas ideas que surgen:
+
+* Mujeres y varones por provincia
+* El apellido mas comun
+* Cuanto dato faltante hay
+* El nombre mas comun de varon y de mujer
+* Grafico de cantidad de votantes por fecha de nacimiento
+* Tipos de documentos diferentes
+
+Discusiones sobre limpieza de datos, por ejemplo de la ocupacion para que los agrupamientos y calculos sean mas exactos.
+
+## Ejercicios
+
+### 1) Instalar los paquetes
+
+Instalar los siguientes paquetes para poder realizar los live coding y los ejercicios.
+
+1. {arrow}
+2. {tictoc}
+
+### 2) Analizando un data set
+
+En grupos de trabajo, resolver el siguiente ejercicio.
+
+1. Leer el siguiente conjunto de datos de viajes de taxi de Nueva Yor correspondientes a Junio de 2019.  Tengan paciencia que puede tardar un rato en cargar.
+
+``` r
+df <- read_parquet(file = "s3://voltrondata-labs-datasets/nyc-taxi/year=2019/month=6/part-0.parquet")
+```
+
+2. Ver la estructura del conjunto de datos.  
+
+3. Realizar una consulta que permita saber cuanto dinero total (total_amount) cobraron los taxis con cada tipo de pago (payment_type).
+
+4. Realizar una consulta que devuelva el promedio de pasajeros y de la ditancia de todos los viajes realizados.
+
+
+## Lecturas sugeridas
+
+-   [La charla de Danielle Navarro para LatinR 2022.](https://djnavarro.net/slides-arrow-latinr-2022/) - En ingles 
+
+-   [Parquet File Format](https://parquet.apache.org/)
