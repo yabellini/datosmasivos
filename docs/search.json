@@ -34,7 +34,7 @@
     "href": "index.html#citar-como",
     "title": "Introducción al manejo de grandes volúmenes de datos y datos no estructurados",
     "section": "Citar como",
-    "text": "Citar como\nYanina Bellini Saibene.",
+    "text": "Citar como\nYanina Bellini Saibene (2023). Introducción al manejo de grandes volúmenes de datos y datos no estructurados.",
     "crumbs": [
       "Home"
     ]
@@ -122,41 +122,41 @@
   {
     "objectID": "clase3.html",
     "href": "clase3.html",
-    "title": "Clase 3 - Text Mining",
+    "title": "Clase 3 - NOSLQ y Text Mining",
     "section": "",
     "text": "Explicar que es SQL y que lo diferencia de NOSQL.\nMencionar diferentes productos de software para administrar datos SQL y NOSQL.\nIdentificar y explicar cuatro soluciones de base de datos noSQL.\nExplicar el concepto de “la nube” y mencionar productos para trabajar grandes datos en la nube.\nDefinir Text Mining/Analisis de Texto.\nDefinir bolsa de palabras, análisis y etiquetado sintáctico, asociación de palabras y analisis de sentimiento.\nIdentificar las tecnicas de mineria de texto en diferentes casos de uso.",
     "crumbs": [
-      "Clase 3 - NOSQL y Text Mining"
+      "Clase 3 - NOSQL e Intro a Text Mining"
     ]
   },
   {
     "objectID": "clase3.html#objetivos-de-aprendizaje",
     "href": "clase3.html#objetivos-de-aprendizaje",
-    "title": "Clase 3 - Text Mining",
+    "title": "Clase 3 - NOSLQ y Text Mining",
     "section": "",
     "text": "Explicar que es SQL y que lo diferencia de NOSQL.\nMencionar diferentes productos de software para administrar datos SQL y NOSQL.\nIdentificar y explicar cuatro soluciones de base de datos noSQL.\nExplicar el concepto de “la nube” y mencionar productos para trabajar grandes datos en la nube.\nDefinir Text Mining/Analisis de Texto.\nDefinir bolsa de palabras, análisis y etiquetado sintáctico, asociación de palabras y analisis de sentimiento.\nIdentificar las tecnicas de mineria de texto en diferentes casos de uso.",
     "crumbs": [
-      "Clase 3 - NOSQL y Text Mining"
+      "Clase 3 - NOSQL e Intro a Text Mining"
     ]
   },
   {
     "objectID": "clase3.html#slides",
     "href": "clase3.html#slides",
-    "title": "Clase 3 - Text Mining",
+    "title": "Clase 3 - NOSLQ y Text Mining",
     "section": "Slides",
     "text": "Slides",
     "crumbs": [
-      "Clase 3 - NOSQL y Text Mining"
+      "Clase 3 - NOSQL e Intro a Text Mining"
     ]
   },
   {
     "objectID": "clase3.html#ejercicios",
     "href": "clase3.html#ejercicios",
-    "title": "Clase 3 - Text Mining",
+    "title": "Clase 3 - NOSLQ y Text Mining",
     "section": "Ejercicios",
     "text": "Ejercicios\n\n1) Usar una herramienta en la nube\nDuración: ~10 minutos\n\nIr a la web: https://earthengine.google.com/timelapse/ \nPoner el nombre del lugar donde viven y ver cómo ha cambiado con los años.\nIr a la web: https://global-surface-water.appspot.com/map \nBuscar el lugar donde viven y vean como se comporta el agua en superficie en los alrrededores.\n\n\n\n2) Generando nubes de palabras\nDuración: ~12 minutos\n\nIngresara la web: https://wordart.com/\nTomar los datos de este archivo y generar una nube de palabras: https://docs.google.com/spreadsheets/d/1POHmFKShKbSjUfrRECiZHFTHH_ObIO1zXMsN8dgGp0s/edit?usp=sharing\nIngresar en: https://www.nubedepalabras.es/\nUtilizando el mismo archivo, generar una nube de palabras que tenga la forma de una letra R.\nPeguen aquí debajo las nubes de palabras que generaron en el lugar de cada sala\n\n\n\n3) Instalando el software para trabajar con texto\nDuración: ~20 minutos\n\nInstalando OpenRefine\n\na.1) Ir a https://openrefine.org/download.html y seleccionar la versión correcta para tu sistema operativo.\na.2) Seguir las instrucciones en la página para instalar y dejar funcionando OpenRefine.\n\nInstalando Tabula\n\nb.1) Ir a la página: https://tabula.technology/\nb.2) Seleccionar la versión para instalar de acuerdo al Sistema Operativo (windows, Mac o Linux). Se debe descargar un .zip.\nb.3) Extraer el archivo zip en una carpeta de tu disco rígido que se llama Tabula.\nb.4) Dentro de la carpeta ejecutar el archivo Tabula.exe, si se instaló de forma correcta un navegador de internet se tiene que abrir con el Tabula funcionando.\nb.5) Si el navegador no se abre solo, ir a nuestro navegador de internet y escribir esta dirección: http://localhost:8080 . Ahí está Tabula!\n\nInstalando los paquetes en R\n\nc.1) Abrir R Studio\nc.2) Instalar los siguientes paquetes (esto puede llevar un tiempo así que no te preocupes si tarda un rato):\n\ntidyverse (si ya lo tienen no lo instalen)\nreadr (si ya lo tienen no lo instalen)\ntidytext\nwordcloud2\ntm",
     "crumbs": [
-      "Clase 3 - NOSQL y Text Mining"
+      "Clase 3 - NOSQL e Intro a Text Mining"
     ]
   },
   {
@@ -491,11 +491,11 @@
   {
     "objectID": "clase3.html#lecturas-sugeridas",
     "href": "clase3.html#lecturas-sugeridas",
-    "title": "Clase 3 - Text Mining",
+    "title": "Clase 3 - NOSLQ y Text Mining",
     "section": "Lecturas sugeridas",
     "text": "Lecturas sugeridas\n\nArtículo - Tendências de pesquisa em Agroinformática na Argentina: uma análise histórica (Portugués)\nArtículo - Análise das Tendências de pesquisa no Congresso de Agroinformática da Argentina: um estudo regional (Portugués)\nArtículo - Asociaciones de Palabras (Inglés)\nArtículo - ¿De qué se habló en el Parlamento uruguayo desde 2017? (Español)\nArtículo - Conjunto de datos de resultados de la Red Nacional de Cultivares de Girasol de INTA (Español)",
     "crumbs": [
-      "Clase 3 - NOSQL y Text Mining"
+      "Clase 3 - NOSQL e Intro a Text Mining"
     ]
   },
   {

@@ -1,5 +1,5 @@
 ---
-title: "Clase 3 - Text Mining"
+title: "Clase 3 - NOSLQ y Text Mining"
 ---
 
 ## Objetivos de Aprendizaje
