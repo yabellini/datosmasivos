@@ -70,4 +70,6 @@ Ver la agenda de la materia con el cronograma de clases.
 
 ## Citar como 
 
-Yanina Bellini Saibene (2023). Introducción al manejo de grandes volúmenes de datos y datos no estructurados.  
+![](https://zenodo.org/badge/DOI/10.5281/zenodo.10440059.svg)
+
+Yanina Bellini Saibene. (2023, December 28). Introducción al manejo de grandes volúmenes de datos y datos no estructurados. Zenodo. https://doi.org/10.5281/zenodo.10440059
