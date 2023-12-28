@@ -1,5 +1,5 @@
 ---
-title: "Clase 4 - Metadatos y Limpieza de datos"
+title: "Clase 4 - Metadatos, Scrapping y Limpieza de datos"
 ---
 
 ## Objetivos de Aprendizaje

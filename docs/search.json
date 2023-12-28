@@ -220,41 +220,41 @@
   {
     "objectID": "clase4.html",
     "href": "clase4.html",
-    "title": "Clase 4 - Metadatos y Limpieza de datos",
+    "title": "Clase 4 - Metadatos, Scrapping y Limpieza de datos",
     "section": "",
     "text": "Definir que es un metadato y Explicar que funcion cumplen.\nDefinir el ciclo de degradacion normal de la informacion.\nDefinir scrapping.\nDescribir 5 aspectos a tener en cuenta con datos propios y 5 con datos ajenos para poder realizar un proceso de limpieza de datos reproducible.\nUtilizar Open Refine para limpiar un conjunto de datos.\nDeterminar que tipo de tarea se puede realizar con OpenRefine para limpiar diferentes problemas con datos.\nRecuperar datos desde formatos cerrados como los PDF y JPG y almacenarlos en un formato abierto.\nUtilizar Tabula para obtener datos desde archivos PDF.",
     "crumbs": [
-      "Clase 4 - Scrapping y Limpieza de datos"
+      "Clase 4 - Metadatos, Scrapping y Limpieza de datos"
     ]
   },
   {
     "objectID": "clase4.html#objetivos-de-aprendizaje",
     "href": "clase4.html#objetivos-de-aprendizaje",
-    "title": "Clase 4 - Metadatos y Limpieza de datos",
+    "title": "Clase 4 - Metadatos, Scrapping y Limpieza de datos",
     "section": "",
     "text": "Definir que es un metadato y Explicar que funcion cumplen.\nDefinir el ciclo de degradacion normal de la informacion.\nDefinir scrapping.\nDescribir 5 aspectos a tener en cuenta con datos propios y 5 con datos ajenos para poder realizar un proceso de limpieza de datos reproducible.\nUtilizar Open Refine para limpiar un conjunto de datos.\nDeterminar que tipo de tarea se puede realizar con OpenRefine para limpiar diferentes problemas con datos.\nRecuperar datos desde formatos cerrados como los PDF y JPG y almacenarlos en un formato abierto.\nUtilizar Tabula para obtener datos desde archivos PDF.",
     "crumbs": [
-      "Clase 4 - Scrapping y Limpieza de datos"
+      "Clase 4 - Metadatos, Scrapping y Limpieza de datos"
     ]
   },
   {
     "objectID": "clase4.html#slides",
     "href": "clase4.html#slides",
-    "title": "Clase 4 - Metadatos y Limpieza de datos",
+    "title": "Clase 4 - Metadatos, Scrapping y Limpieza de datos",
     "section": "Slides",
     "text": "Slides",
     "crumbs": [
-      "Clase 4 - Scrapping y Limpieza de datos"
+      "Clase 4 - Metadatos, Scrapping y Limpieza de datos"
     ]
   },
   {
     "objectID": "clase4.html#ejercicios",
     "href": "clase4.html#ejercicios",
-    "title": "Clase 4 - Metadatos y Limpieza de datos",
+    "title": "Clase 4 - Metadatos, Scrapping y Limpieza de datos",
     "section": "Ejercicios",
     "text": "Ejercicios\n\n1) Obteniendo datos desde un PDF on-line\nDuración: ~12 minutos\nExisten varios software que realizan conversiones de archivos, algunos de ellos funcionan on-line lo que evita tener que instalar el sistema en la propia computadora.\nDentro de este grupo tenemos PDFToExcel.\nTransformar los datos de dos archivos PDF con tablas a un formato CSV legible.\n\nDescargamos los dos archivos PDF que se encuentran en el campus (crns1701.pdf y santa2016-12.pdf).\nPara utilizar el aplicativo entramos en https://www.pdftoexcelonline.com/\n\nLa pantalla de inicio nos presenta un paso a paso, donde lo primero es seleccionar el archivo a convertir. Presionando el botón Select your file y seleccionamos el archivo crns1701.pdf, luego completamos con el mail al cual deseamos que nos envíe el archivo y finalmente presionamos el botón Convert Now\n\nNos aparece un cartel como el siguiente donde nos indica que nos enviarán el archivo convertido por mail:\n\n\nEntrando al mail que indicamos encontraremos un correo con un link para descargar el archivo convertido, lo guardamos y abrimos para analizar la transformación.\n\n\n\n2) Obteniendo datos desde un PDF off-line\nDuración: ~20 minutos\nTambién existen software que se instalan en la computadora, uno de ellos es Tabula. Para utilizarlo:\n\nSi aún no lo hicieron, descarguen el archivo zip desde el sitio http://tabula.technology/, lo descomprimimos y luego vamos a la carpeta que acaba de extraer.\nDentro de la misma se encuentran una serie de archivos, ejecuta (haciendo doble click o presionando Enter) el programa “Tabula” que se encuentra dentro. Se abrirá un navegador web. Si no lo hace, abra su navegador web y vaya a http://localhost: 8080. Aparecerá una pantalla similar a la siguiente.\n\n\n\nPara iniciar la conversión, presionamos el botón Browse, luego elegimos el archivo santa2016-12.pdf y presionamos el botón Import. Inicia la conversión del archivo PDF.\n\n\n\nCuando termina nos presenta una pantalla para trabajar, si presionamos el botón Autodetec Tables nos marca la sección a transformar y con el botón Preview & Export Extrated Data podemos obtener la información seleccionada.\n\n\nLa pantalla siguiente nos presenta los datos y nos da varias opciones para exportarlos o copiarlos al portapapeles. También podemos volver atrás para cambiar la selección si vemos que lo elegido no corresponde con lo que necesitamos extraer.\n\nLo exportamos a un archivo CSV, seleccionamos ese formato en Export Format y presionando en el botón Export.\n\n\n\nSi seleccionamos Guardar y damos Aceptar el archivo se almacenará en nuestro disco. Lo guardamos y abrimos para analizar la transformación.\n\n\n\n\n3) Open Refine. Caso: lectores del Horizonte Agropecuario\nDuración: ~45 minutos\n\nSeguir las instrucciones del ejercicio de limpiza de datos usando Open Refine",
     "crumbs": [
-      "Clase 4 - Scrapping y Limpieza de datos"
+      "Clase 4 - Metadatos, Scrapping y Limpieza de datos"
     ]
   },
   {
@@ -501,11 +501,11 @@
   {
     "objectID": "clase4.html#lecturas-sugeridas",
     "href": "clase4.html#lecturas-sugeridas",
-    "title": "Clase 4 - Metadatos y Limpieza de datos",
+    "title": "Clase 4 - Metadatos, Scrapping y Limpieza de datos",
     "section": "Lecturas sugeridas",
     "text": "Lecturas sugeridas\n\nArtículo - Nongeospatial Metadata for the Ecological Sciences. William et.al. 1997 (inglés)\nArtículo - Propuesta para una Infraestructura de Datos Agropecuarios del Instituto Nacional de Tecnología Agropecuaria (INTA) (Español)",
     "crumbs": [
-      "Clase 4 - Scrapping y Limpieza de datos"
+      "Clase 4 - Metadatos, Scrapping y Limpieza de datos"
     ]
   },
   {
